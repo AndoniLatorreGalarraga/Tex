@@ -1,0 +1,742 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\title{Segundo Seminario de Álgebra II}
+\author{Andoni Latorre Galarraga}
+\date{}
+
+\begin{document}
+
+\maketitle
+\noindent \textbf{1.}\\
+%
+%
+%a)
+%
+%
+\textit{a)}
+Escribimos la matriz correspondiente al endomorfismo:\\
+$$
+\left( \begin{array}{ccc}
+    5 & 2 & -3\\
+    4 & 5 & -4\\
+    6 & 4 & -4
+\end{array} \right)
+$$
+Calculamos el polinomio caraterístico:
+$$
+c_A(x) = |xI-A| = 
+\left| \begin{array}{ccc}
+    x-5 & -2 & 3\\
+    -4 & x-5 & 4\\
+    -6 & -4 & x+4
+\end{array} \right| =
+x^3-6x^2+11x-6 = (x-1)(x-2)(x-3)
+$$
+Se tiene que los valores propios son $1,2,3$. Calculamos los subespacios asociados:\
+Cuando $\lambda = 1$:
+$$
+\left( \begin{array}{ccc}
+    5 & 2 & -3\\
+    4 & 5 & -4\\
+    6 & 4 & -4
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 1
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     4x+2y-3z =0  \\
+     4x+4y-4z =0  \\
+     6x+4y-5z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      \frac{\mu}{2} \\
+      \frac{\mu}{2} \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{R}
+$$
+Cuando $\lambda = 2$:
+$$
+\left( \begin{array}{ccc}
+    5 & 2 & -3\\
+    4 & 5 & -4\\
+    6 & 4 & -4
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 2
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     3x+2y-3z =0  \\
+     4x+3y-4z =0  \\
+     6x+4y-6z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      \mu \\
+      0 \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{R}
+$$
+Cuando $\lambda = 3$:
+$$
+\left( \begin{array}{ccc}
+    5 & 2 & -3\\
+    4 & 5 & -4\\
+    6 & 4 & -4
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 3
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     2x+2y-3z =0  \\
+     4x+2y-4z =0  \\
+     6x+4y-7z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      \frac{\mu}{2} \\
+      \mu \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{R}
+$$
+Como la multiplicidad algebraica del cada valor propio vcomo raiz del polinomio caracteristico coincide con la dimensión del subespacio propio asociado a dicho valor propio en todos los casos, se tiene que el endomorfismo es diagonalizable. Se tiene:
+$$
+P^{-1}AP =
+\left( \begin{array}{ccc}
+    -4 & -2 & 4\\
+    2 & 0 & -1\\
+    2 & 2 & -2
+\end{array} \right)
+\left( \begin{array}{ccc}
+    5 & 2 & -3\\
+    4 & 5 & -4\\
+    6 & 4 & -4
+\end{array} \right)
+\left( \begin{array}{ccc}
+    \frac{1}{2} &  1 & \frac{1}{2}\\
+    \frac{1}{2} &  0 & 1\\
+    1 & 1 & 1
+\end{array} \right) =
+\left( \begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & 2 & 0\\
+    0 & 0 & 3
+\end{array} \right)
+$$\\
+%
+%
+%b)
+%
+%
+\textit{b)}
+Escribimos la matriz correspondiente al endomorfismo:\\
+$$
+\left( \begin{array}{ccc}
+    8 & 15 & -36\\
+    8 & 21 & -46\\
+    5 & 12 & -27
+\end{array} \right)
+$$
+Calculamos el polinomio caraterístico:
+$$
+c_A(x) = |xI-A| = 
+\left| \begin{array}{ccc}
+    x-8 & -15 & 36\\
+    -8 & x-21 & 46\\
+    -5 & -12 & x+27
+\end{array} \right| =
+x^3-2x^2-3x-6 = (x-2)(x-\sqrt{3})(x+\sqrt{3})
+$$
+El único valor propio en $\mathbb{Q}$ es $2$. Calculamos el subespacio asociads:\
+$$
+\left( \begin{array}{ccc}
+    8 & 15 & -36\\
+    8 & 21 & -46\\
+    5 & 12 & -27
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 2
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     6x+15y-36z =0  \\
+     8x+19y-46z =0  \\
+     5x+12y-29z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      \mu \\
+      2\mu \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{Q}
+$$
+Al no tener todos sus valores propios en $\mathbb{Q}$ no es diagonalizable.\\\\
+%
+%
+%c)
+%
+%
+\textit{c)}
+Escribimos la matriz correspondiente al endomorfismo:\\
+$$
+\left( \begin{array}{ccc}
+    8 & 15 & -36\\
+    8 & 21 & -46\\
+    5 & 12 & -27
+\end{array} \right)
+$$
+Calculamos el polinomio caraterístico:
+$$
+c_A(x) = |xI-A| = 
+\left| \begin{array}{ccc}
+    x-8 & -15 & 36\\
+    -8 & x-21 & 46\\
+    -5 & -12 & x+27
+\end{array} \right| =
+x^3-2x^2-3x-6 = (x-2)(x-\sqrt{3})(x+\sqrt{3})
+$$
+Los valores propios son: $2,\pm\sqrt{3}$. Calculamos los subespacios asociados:\\
+Cuando $\lambda=2$:
+$$
+\left( \begin{array}{ccc}
+    8 & 15 & -36\\
+    8 & 21 & -46\\
+    5 & 12 & -27
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 2
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     6x+15y-36z =0  \\
+     8x+19y-46z =0  \\
+     5x+12y-29z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      \mu \\
+      2\mu \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{R}
+$$
+cuando $\lambda=\sqrt{3}$:
+$$
+\left( \begin{array}{ccc}
+    8 & 15 & -36\\
+    8 & 21 & -46\\
+    5 & 12 & -27
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = \sqrt{3}
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     (-\sqrt{3}+8)x+15y-36z =0  \\
+     8x+(-\sqrt{3}+21)y-46z =0  \\
+     5x+12y-(-\sqrt{3}-27)z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      (\sqrt{3}+3)\mu \\
+      \frac{-\sqrt{3}+3}{3}\mu \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{R}
+$$
+cuando $\lambda=-\sqrt{3}$:
+$$
+\left( \begin{array}{ccc}
+    8 & 15 & -36\\
+    8 & 21 & -46\\
+    5 & 12 & -27
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = \sqrt{3}
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     (\sqrt{3}+8)x+15y-36z =0  \\
+     8x+(\sqrt{3}+21)y-46z =0  \\
+     5x+12y-(\sqrt{3}-27)z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      (-\sqrt{3}+3)\mu \\
+      \frac{\sqrt{3}+3}{3}\mu \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{R}
+$$
+Como la multiplicidad algebraica del cada valor propio vcomo raiz del polinomio caracteristico coincide con la dimensión del subespacio propio asociado a dicho valor propio en todos los casos, se tiene que el endomorfismo es diagonalizable. Se tiene:
+$$
+P^{-1}AP =
+$$
+$$
+\left( \begin{array}{ccc}
+    1 & 3 & -6\\
+    \frac{\sqrt{3}-1}{2} & \frac{2\sqrt{3}-3}{2} & \frac{-5\sqrt{3}+7}{2}\\
+    \frac{-\sqrt{3}-1}{2} & \frac{-2\sqrt{3}-3}{2} & \frac{5\sqrt{3}+7}{2}
+\end{array} \right)
+\left( \begin{array}{ccc}
+    8 & 15 & -36\\
+    8 & 21 & -46\\
+    5 & 12 & -27
+\end{array} \right)
+\left( \begin{array}{ccc}
+    1 & \sqrt{3}+3 & -\sqrt{3}+3\\
+    2 & \frac{-\sqrt{3}+3}{3} & \frac{\sqrt{3}+3}{3}\\
+    1 & 1 & 1
+\end{array} \right)
+$$
+$$
+=
+\left( \begin{array}{ccc}
+    1 & 0 & 0\\
+    0 & \sqrt{3} & 0\\
+    0 & 0 & -\sqrt{3}
+\end{array} \right)
+$$\\
+%
+%
+%d)
+%
+%
+\textit{d)}
+Escribimos la matriz correspondiente al endomorfismo:\\
+$$
+\left( \begin{array}{ccc}
+    4 & 7 & -5\\
+    -4 & 5 & 0\\
+    1 & 9 & -4
+\end{array} \right)
+$$
+Calculamos el polinomio caraterístico:
+$$
+c_A(x) = |xI-A| = 
+\left| \begin{array}{ccc}
+    x-4 & -7 & -5\\
+    4 & x-5 & 0\\
+    -5 & -9 & x+4
+\end{array} \right| =
+x^3-5x^2+17x-13 = (x-1)(x-2+3i)(x+2-3i)
+$$
+el único valor propio en $\mathbb{Q}$ es: $1$. Calculamos el subespacio asociado:\\
+Cuando $\lambda=1$:
+$$
+\left( \begin{array}{ccc}
+    4 & 7 & -5\\
+    -4 & 5 & 0\\
+    1 & 9 & -4
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 1
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     3x+7y-5z =0  \\
+     -4x+4y =0  \\
+     x+9y-5z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      \frac{\mu}{2} \\
+      \frac{\mu}{2} \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{Q}
+$$
+Al no estar todos los valores propios en el cuerpo, no es diagonaizable.\\\\
+%
+%
+%e)
+%
+%
+\textit{e)}
+Escribimos la matriz correspondiente al endomorfismo:\\
+$$
+\left( \begin{array}{ccc}
+    4 & 7 & -5\\
+    -4 & 5 & 0\\
+    1 & 9 & -4
+\end{array} \right)
+$$
+Calculamos el polinomio caraterístico:
+$$
+c_A(x) = |xI-A| = 
+\left| \begin{array}{ccc}
+    x-4 & -7 & -5\\
+    4 & x-5 & 0\\
+    -5 & -9 & x+4
+\end{array} \right| =
+x^3-5x^2+17x-13 = (x-1)(x-2+3i)(x+2-3i)
+$$
+Los valores propios son: $1,2-3i,-2+3i$. Calculamos los subespacios asociados:\\
+Cuando $\lambda=1$:
+$$
+\left( \begin{array}{ccc}
+    4 & 7 & -5\\
+    -4 & 5 & 0\\
+    1 & 9 & -4
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 1
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     3x+7y-5z =0  \\
+     -4x+4y =0  \\
+     x+9y-5z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      \frac{\mu}{2} \\
+      \frac{\mu}{2} \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{Q}
+$$
+Cuando $\lambda=2-3i$:
+$$
+\left( \begin{array}{ccc}
+    4 & 7 & -5\\
+    -4 & 5 & 0\\
+    1 & 9 & -4
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 1
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     (2+3i)x+7y-5z =0  \\
+     -4x+(3+3i)y =0  \\
+     x+9y-(6+3i)z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      (\frac{12}{17}+\frac{3}{17}i)\mu \\
+      (\frac{10}{17}-\frac{6}{17}i)\mu \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{Q}
+$$
+Cuando $\lambda=2-3i$:
+$$
+\left( \begin{array}{ccc}
+    4 & 7 & -5\\
+    -4 & 5 & 0\\
+    1 & 9 & -4
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 1
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     (2-3i)x+7y-5z =0  \\
+     -4x+(3-3i)y =0  \\
+     x+9y-(6-3i)z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      (\frac{12}{17}-\frac{3}{17}i)\mu \\
+      (\frac{10}{17}+\frac{6}{17}i)\mu \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{Q}
+$$
+Como la multiplicidad algebraica del cada valor propio vcomo raiz del polinomio caracteristico coincide con la dimensión del subespacio propio asociado a dicho valor propio en todos los casos, se tiene que el endomorfismo es diagonalizable. Se tiene:
+$$
+P^{-1}AP=
+$$
+$$
+\left( \begin{array}{ccc}
+     -4 & -2 & 4 \\
+     \frac{4-i}{2} & \frac{6+7i}{6} & \frac{-9-2i}{6} \\
+     \frac{4+i}{2} & \frac{6-7i}{6} & \frac{-9+2i}{6}
+\end{array}\right)
+\left( \begin{array}{ccc}
+     4 & 7 & -5 \\
+     -4 & 5 & 0 \\
+     1 & 9 & -4 
+\end{array}\right)
+\left( \begin{array}{ccc}
+     \frac{1}{2} & \frac{12\mu}{17}+\frac{(3\mu)i}{17} & \frac{12\mu}{17}-\frac{(3\mu)i}{17} \\
+     \frac{1}{2} & \frac{10\mu}{17}-\frac{(6\mu)i}{17} & \frac{10\mu}{17}+\frac{(6\mu)i}{17} \\
+     1 & 1 & 1 
+\end{array}\right)
+$$
+$$
+=
+\left( \begin{array}{ccc}
+     1 & 0 & 0 \\
+     0 & 2-3i & 0 \\
+     0 & 0 & 2+3i 
+\end{array}\right)
+$$\\
+%
+%
+%f)
+%
+%
+\textit{f)}
+Escribimos la matriz correspondiente al endomorfismo:\\
+$$
+\left( \begin{array}{ccc}
+    4 & 2 & -5\\
+    6 & 4 & -9\\
+    5 & 3 & -7
+\end{array} \right)
+$$
+Calculamos el polinomio caraterístico:
+$$
+c_A(x) = |xI-A| = 
+\left| \begin{array}{ccc}
+    x-4 & -2 & 5\\
+    -6 & x-4 & 9\\
+    -5 & -3 & x+7
+\end{array} \right| =
+x^3-x^2 = x^2(x-1)
+$$
+Losvalores propios son: $1,0$. Calculamos los subespacios asociados:\\
+Cuando $\lambda=0$:
+$$
+\left( \begin{array}{ccc}
+    4 & 2 & -5\\
+    6 & 4 & -9\\
+    5 & 3 & -7
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 1
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     4x+2y-5z =0  \\
+     6x+4y-9z=0  \\
+     5x+3y-7z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      \frac{\mu}{2} \\
+      \frac{3\mu}{2} \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{Q}
+$$
+Cuando $\lambda=1$:
+$$
+\left( \begin{array}{ccc}
+    4 & 2 & -5\\
+    6 & 4 & -9\\
+    5 & 3 & -7
+\end{array} \right)
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) = 1
+\left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right)
+$$
+$$
+\Leftrightarrow \left\{ \begin{array}{c}
+     3x+2y-5z =0  \\
+     6x+3y-9z=0  \\
+     5x+3y-8z =0
+\end{array} \right.
+\Leftrightarrow \left( \begin{array}{c}
+      x \\
+      y \\
+      z
+\end{array} \right) =
+\left( \begin{array}{c}
+      \mu \\
+      \mu \\
+      \mu
+\end{array} \right) \forall \mu \in \mathbb{Q}
+$$
+La multiplicidad algebráica de $0$ no coincide con la dimensión del subespacio asociado. Por lo tanto, no es diagonalizable.
+%
+%
+%Ejercicio 2
+%
+%
+\\
+\noindent \textbf{2.}\\
+Dado que $A$ es inversible, se tiene que $|A| \ne 0$. Ahora, sabemos que el término independiente del polinomio caraterístico es $(-1)^n |A|$. Por lo tanto:
+$$
+c_A (0) = (-1)^n |A| \ne 0
+$$
+Por lo que $0$ no es valor propio al no ser raiz del polinomio característico.\\
+Sabemos que $\exists v$ tal que:
+$$
+Av=\lambda v \Rightarrow v = A^{-1} \lambda v\Rightarrow \lambda^{-1} v = A^{-1} v
+$$
+Por lo que $\lambda^{-1}$ es valor propio de $A^{-1}$.\\\\
+%
+%
+%Ejercicio 3
+%
+%
+\noindent \textbf{3.} Por inducción:
+$$
+\exists v : f^2(v) = f(f(v)) = f(\lambda v) = \lambda f(v) = \lambda\lambda v =\lambda^2v \quad (1)
+$$
+$$
+f^3(v) = f^2(f(v)) = f^2(\lambda v) = \underbrace{\lambda f^2(v) = \lambda \lambda^2 v}_{(1)} = \lambda^3 v \quad (2)
+$$
+$$
+f^4(v) = f^3(f(v)) = f^3(\lambda v) = \underbrace{\lambda f^3(v) = \lambda \lambda^3 v}_{(2)} = \lambda^4 v \quad (3)
+$$
+$$
+\vdots
+$$
+$$
+f^{n+1}(v) = f^n(f(v)) = f^n(\lambda v) = \underbrace{\lambda f^n(v) = \lambda \lambda^n v}_{(n-1)} = \lambda^{n+1} v \quad (n)
+$$
+$$
+\vdots
+$$
+\end{document}

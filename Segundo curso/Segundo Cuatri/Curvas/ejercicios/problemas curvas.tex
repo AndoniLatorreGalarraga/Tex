@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Problemas curvas}
+\author{Andoni Latorre Galarraga}
+\date{}
+\begin{document}
+\setlength{\parindent}{0cm}
+\maketitle
+
+\textbf{Problema 1:}
+
+\textit{i)} Para una recta que pasa por $P=(p_1,p_2)$ y tiene dirección $\vec{v}=(v_1,v_2)$. La parametrización es\\
+\url{https://www.geogebra.org/calculator/ura8hpkn}
+$$
+\alpha(t)=(p_1+tv_1,p_2+tv_2)
+$$
+\textit{ii)} Para una circunferencia de centro $(c_1,c_2)$ y de radio $r$. La parametrización es\\
+\url{https://www.geogebra.org/calculator/qzqgdytc}
+$$
+\alpha(t)=(c_1+r\cos(t),c_2+r\sin(t))
+$$
+\textit{iii)} Para un elipse de centro $(c_1,c_2)$ semiejes $a$ y $b$ e inclinación $k$.La parametrización es\\
+\url{https://www.geogebra.org/calculator/u9mgmabb}
+$$
+\alpha(t)=(a\cos(t)\cos(k)-b\sin(t) \sin(k)+c_1,a\cos(t) \sin(k)+b\sin(t)\cos(k)+c_2)
+$$
+
+\textbf{Problema 2:}
+
+
+Como $h\in\mathcal{C}^\infty(-1,1)$ veamos si $h'(t)\ne 0$ para $t\in(_1,1)$.
+$$
+h'(t)=sec^2(\pi t/2) \frac{\pi}{2}
+$$
+$\sec(t)$ nunca es igual a 0. Por otra parte $h'(t)>0$ para $t\in(-1)$ por lo que es biyectiva y es un posible cambio de parámetro.\\\\
+
+\textbf{Problema 3:} Tenemos que $g\in\mathcal{C}^\infty (0,\infty)$. Veamos que ocurre en con $g'(t)$
+$$
+g'(t)=\frac{2t(t^2+1)-2t^3}{(t^2+1)^2}=\frac{2t}{(t^2+1)^2}
+$$
+Observamos que $g'(t)=\Leftrightarrow t=0$ y $g'(t)>0$ para $t\in(0,\infty)$ por lo que es biyectiva y es un posible cambio de parámetro.\\\\
+
+\textbf{Problema 4:}
+
+De nuevo, $h\in\mathcal{C}^\infty(\mathbb{R})$ y
+$$
+h'(t)=15t^4+30t^2+15
+$$
+$$
+t^2=\frac{-30\pm\sqrt{30^2-4\cdot15\cdot15}}{30}=-1
+$$
+Por lo que $h'(t)$ no tiene raíces en $\mathbb{R}$. Además $h'(t)>0$ parra $t\in\mathbb{R}$ por lo que es biyectiva y es un posible cambio de parámetro.\\\\
+
+\textbf{Problema 5:}
+
+Sabiendo que la derivada del coseno hiperbólico es el seno hiperbólico y viceversa. Por la definición de longitud:
+$$
+L_{[0,\pi]}(\alpha)=\int_o^\pi \sqrt{6^2 sinh^2(2t) + 6^2 cosh(2t) + 6^2} dt = 6\int_o^\pi \underbrace{\sqrt{sinh(2t)+cosh^2(2t)+1}}_{\sqrt{cosh(4t)+1}=\sqrt{2cosh^2(2t)}} dt = 3\sqrt{2} \int_0^\pi 2 cosh(2t) dt
+$$
+$$
+= 3\sqrt{2} [sinh(2\pi)-sinh(0)] =  6\sqrt{2} [sinh(2\pi)-0] = 3\sqrt{2}sinh(\pi)\approx 1136
+$$
+
+\textbf{Problema 6:}
+
+Parametrizamos con longitud de arco.
+$$
+h(s)=\int_o^s \sqrt{e^{2t} \sen^2(t) + e^{2t} \cos^2(t) + e^{2t}} dt = \int_0^s e^t \sqrt{\sen^2(t) + cos^2(t) + 1} dt = \sqrt{2}\int_0^se^t dt
+$$
+$$
+\sqrt{2}(e^s-1)
+$$
+Veamos que es una parametrización unitaria.
+$$
+\alpha(h(s))=(e^{\sqrt{2}(e^s-1)}cos(\sqrt{2}(e^s-1)),e^{\sqrt{2}(e^s-1)}sen(\sqrt{2}(e^s-1)), e^{\sqrt{2}(e^s-1)})
+$$
+
+\textbf{Problema 7:}
+\end{document}

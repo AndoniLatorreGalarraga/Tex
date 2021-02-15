@@ -1,0 +1,219 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Homomorfismos}
+\author{Andoni Latorre Galarraga}
+\date{}
+\begin{document}
+\setlength{\parindent}{0cm}
+\maketitle
+
+
+\textbf{Definición:}\\
+Sean $(G_1,\cdot)$ y $(G_2,*)$ grupos. Decimos que $f\::\:G_1\longrightarrow G_2$ es un homomorfismo de de grupos, si verifica
+$$
+f(x\cdot y)=f(x)*f(y)\quad\forall x,y\in G_1
+$$
+
+
+\textbf{Ejemplo: }\\
+Homomorfismo trivial $f(x)=e_2 \quad \forall x\in G_1$.
+
+
+\textbf{Definición: }\\
+Un homomorfismo inyectivo se llama monomorfismo.\\
+Un homomorfismo suprayectivo se llama epimorfismo.\\
+Un homomorfismo biyectivo se llama isomorfismo.\\
+Si existe un isomorfismo entre $G_1$ y $G_2$ decimos que son isomorfos y escribimos $G_1\simeq G_2$.
+
+\textbf{Proposición:}\\
+Ser isomorfo es relación de equivalencia.\\
+\textit{Dem:}\\
+Propiedad reflexiva: $\begin{array}{cccc}
+    1_G\::&G&\longrightarrow&G\\
+        &g&\longmapsto&g
+\end{array}$ es isomorfismo.\\
+Propiedad simétrica: Si existe $\varphi$ isomorfismo $\begin{array}{cccc}
+    \varphi\::&G_1&\longrightarrow&G_2\\
+        &g&\longmapsto&\varphi(g)
+\end{array}$ Por ser biyectiva existe $\tilde{\varphi}$ bien definida $\begin{array}{cccc}
+    \tilde{\varphi}\::&G_2&\longrightarrow&G_1\\
+        &\varphi(g)&\longmapsto&g
+\end{array}$ Veamos que $\tilde{\varphi}$ es isomorfismo.
+$$
+\tilde{\varphi}(\underbrace{x}_{=\varphi(g)}*\underbrace{y}_{=\varphi(h)})=\tilde{\varphi}(\varphi(g)*\varphi(h))=\tilde{\varphi}(\varphi(g\cdot h))=g\cdot h = \tilde{\varphi}(\varphi(g))\cdot\tilde{\varphi}(\varphi(h))=\tilde{\varphi}(x)\cdot\tilde{\varphi}(y)
+$$
+Propiedad transitiva: Sabemos que la composición de funciones biyectivas es biyectiva. Veamos que la composición de homomorfismos es homomorfismo. Sean $(G_1, \overset{1}{*})$, $(G_2, \overset{2}{*})$ y $(G_3, \overset{3}{*})$ grupos. Si $f$ y $g$ son homomorfismos, entonces $g\circ f$ es homomorfismo.
+$$
+\begin{array}{cccccc}
+    G_1 & \overset{g}{\longrightarrow} & G_2 & \overset{f}{\longrightarrow} & G_3\\
+    g_1 &\longmapsto&g_2&\longmapsto&g_3
+     & 
+\end{array}
+$$
+$$
+f(g(x\overset{1}{*}y))=f(g(x)\overset{2}{*}g(y))=f(g(x))\overset{3}{*}f(g(y))
+$$
+
+\textbf{Definición:}\\
+Si $(G_1,\cdot)=(G_2,*)=G$ se llama endomorfismo, y si es biyectivo automorfismo.
+
+
+\textbf{Elemplo:}\\
+Automorfismo identidad $1_G(x)=x \quad \forall x\in G$.
+
+
+\textbf{Proposición:}\\
+Si  $f\::\:G_1\longrightarrow G_2$ es un homomorfismo de de grupos, entonces se verifican\\
+$$
+\begin{array}{ll}
+\text{\textit{i)}} & \text{$f(e_1)=e_2$}\\
+\text{\textit{ii)}} & \text{$f(a^{-1})=f(a)^{-1}$}\\
+\text{\textit{iii)}} & \text{Si $o(a)=n<\infty$, entonces $f(a)^n=e_2$}\\
+\text{\textit{iv}} & \text{Si $H_1\le G_1$, entonces $f(H_1)\le G_2$}\\
+\text{\textit{v)}} & \text{Si $H_2\le G_2$, entonces $f^1(H_2)\le G_1$}\\
+\end{array}
+$$
+\textit{Dem:}\\
+\textit{i)} $f(e_1)=f(e_1\cdot e_1)=f(e_1)*f(e_1)$,  entonces $f(e_1)=f(e_1)*f(e_1) \Leftrightarrow f(e_1)^{-1} * f(e_1)= f(e_1)^{-1}*f(e_1)*f(e_1) \Leftrightarrow e_2=e_2*f(e_1)=f(e_1)$.\\ \textit{ii)} Veamos que $f(a)*f(a^-1)=e_2=f(a^{-1})*f(a)$.Aplicando \textit{i)} $f(a)*f(a^{-1})=f(a\cdot a^{-1})=f(e_1)=e_2=f(e_1)=f(a^{-1}\cdot a)=f(a^{-1})*f(a)$.\\
+\textit{iii)} $f(a^n)=f(a)*\overset{n}{\cdots}*f(a)=f(a)^n$,entonces $e_2=f(e_1)=f(a^{o(a)})=f(a)^{o(a)}$\\
+\textit{iv)}
+$$
+\begin{array}{rcl}
+e_2\in f(H_1) && f(\underbrace{e_1}_{\in H_1})=e_2 \\
+f(y)\in f(H_1)\Rightarrow f(y)^{-1}\in f(H_1) && f(y)^{-1}=f(\underbrace{y^{-1}}_{\in H_1})\in f(H_1)
+\end{array}
+$$
+\textit{v)}
+$$
+\begin{array}{rcl}
+e_1\in f^{-1}(H_2) && f^{-1}(\underbrace{e_2}_{\in H_2})\ni e_1 \\
+y\in f^{-1}(H_2)\Rightarrow y^{-1}\in f^{-1}(H_1) && f(y)\in H_2 \Rightarrow f(y)^{-1}\in H_2\Rightarrow f(y^{-1})\in H_2 \Rightarrow y^{-1}\in f^{-1}(H_2)
+\end{array}
+$$
+
+\textbf{Definición:}\\
+Dado un homorfismo $f$ de $(G_1,\cdot)$ en $(G_2,*)$. Llamamos núcleo de $f$ a $Ker(f)=\{ g\in G_1 \mid f(g)=e_2 \}$.
+
+\textbf{Propocición:}\\
+Dado un homorfismo $f$ de $(G_1,\cdot)$ en $(G_2,*)$. $Ker(f)\trianglelefteq G_1$\\
+\textit{Dem:}\\
+Primero veamos que es subgrupo. $e_1\in Ker(f)$ ya que $f(e_1)=e_2$. Si $x\in Ker(f)$, entonces $x^{-1}\in Ker(f)$ ya que $e_2=f(e_1)=f(x^{-1} x)=f(x^{-1})*f(x)=f(x^{-1})*e_2=f(x^{-1})$. Ahora veamos que es subgrupo normal probando que $x\in Ker(f) \Rightarrow y^{-1}xy\in Ker(f)$. Observamos que $f(y^{-1}xy)=f(y^{-1})*f(x)*f(y)=f(y)^{-1}*e-2*f(y)=e_2$.
+
+\textbf{Proposición:}\\
+Dado un homorfismo $f$ de $(G_1,\cdot)$ en $(G_2,*)$. $f$ es inyectivo sii $Ker(f)=\{e_1\}$.\\
+\textit{Dem:}\\
+Si $f$ es inyectiva $f(a)=e_2=f(e_1)$, entonces $a=e_1$. Si $f(a)=f(b)$, entonces $e_2=f(a)*f(b)^{-1}=f(a)*f(b^{-1})=f(ab^{-1})\in Ker(f)=\{e_1\}$, ahora $ab^{-1}=e_1$ y $a=b$
+
+\textbf{Primer teorema de isomorfía de grupos:}\\
+Dado un homorfismo $f$ de $G_1,\cdot)$ en $(G_2,*)$. $G_1/Ker(f)\simeq f(G_1)$.\\
+\textit{Dem:}\\
+Consideramos la siguiente aplicación
+$$
+\begin{array}{cccc}
+    \bar{f}\::&G_1/Ker(f)&\longrightarrow&f(G_1)\\
+        &aKer(f)&\longmapsto&f(a)
+\end{array}
+$$
+Veamos que es isomorfismo.Primero que es suprayectiva pues todo elemento de $f(G_1)$ es de la forma $f(x)$ con $x\in G_1$. Veamos que es inyectiva, si $aKer(f)\in Ker(\bar{f})$ entonces $f(a)=e_2$ por lo que $a\in Ker(f)$ y $aKer(f)=Ker(f)$. Veamos que es homomorfismo $\bar{f}(aKer(f)\cdot bKer(f))=\bar{f}((ab)Ker(f))=f(ab)=f(a)*f(b)=\bar{f}(aKer(f))*\bar{f}(bKer(f))$.
+
+\textbf{Definición:}\\
+Sea $G$ un grupo y $N\trianglelefteq G$. Definimos el epimorfismo canónico
+$$
+\begin{array}{cccc}
+    \pi\::&G&\longrightarrow&G/N\\
+        &g&\longmapsto&gN
+\end{array}
+$$
+Es epimorfismo ya que todo elemento de $G/N$ es de la forma $xN$ y por lo tanto es imagen de $x$. Por otra parte, $\pi(xy)=(xy)N=(xN)(yN)=\pi(x)\pi(y)$.
+
+
+\textbf{Proposición:} Si $f\::\:G\longrightarrow H$ es homomorfismo, entonces $Ker(f)\trianglelefteq G$ y $
+\begin{array}{cccc}
+    \pi\::&G&\longrightarrow&g/Ker(f)\\
+        &a&\longmapsto&aKer(f)
+\end{array}
+$ es un epimorfismo con $Ker(\pi)=Ker(f)$.\\
+\textit{Dem:}\\
+$Ker(f)\trianglelefteq G$ ya está probado, y $x\in Ker(\pi)$ entonces $xKer(f)=Ker(f)$ y $x\in Ker(f)$. Ahora, si $x\in Ker(f)$, entonces $\pi(x)=xKer(f)=Ker(f)$ y $x \in Ker(\pi)$.
+
+\textbf{Definición:}\\
+Dado un homorfismo $f$ de $G_1,\cdot)$ en $(G_2,*)$.Se tiene la descomposición canonica del homomorfismo $$f=\underbrace{\iota}_\text{monomorfismo inclusión} \circ \underbrace{\bar{f}}_\text{isomorfismo} \circ \underbrace{\pi}_\text{epimorfismo canónico}$$
+$$
+\overset{f}{\overrightarrow{\begin{array}{cccccccccccc}
+    G_1&\overset{\pi}{\longrightarrow}&G_1/Ker(f)&\overset{\bar{f}}{\longrightarrow}&f(G_1)&\overset{\iota}{\longrightarrow}&G_2\\
+    a&\longmapsto&aKer(f)&\longmapsto&f(a)&\longmapsto&f(a)
+\end{array}}}
+$$
+
+\textbf{Teorema:} Sea $N\trianglelefteq G$. Entonces todo subgrupo de $G/N$ es de la forma $H/N$ con $N\subseteq H \le G$.\\
+\textit{Dem:}\\
+Suponganmos que $K\le G/N$, Sea $H=\{ x\in G \mid xN\in K \}$. Veamos que $H$ es subgrupo. Tenemos que $e\in H$ ya que $e_1N=N$ que es el elemento neutro en $G/N$ y por lo tanto esta en $K$. Veamos que si $y\in H$, entonces $y^{-1}\in H$. Tenemos que $yN\in K$ entonces por ser $N$ subgrupo normal $K\ni(yN)^{-1}=N^{-1}y^{-1}=Ny^{-1}=y^{-1}N$ por lo que $y^{-1}\in H$. Para ver que $N\subseteq H$, si $n\in N$, entonces $nN=N\in K$ por ser el elemento neutro y $n\in H$.
+
+\textbf{Teorema:} Sea $N\trianglelefteq G$. Entonces si $N\le H\le G$ entonces $H/N\le G/N$.\\
+\textit{Dem:}\\
+Veamos que es subgrupo. Si $x,y\in H$, $xN,yN\in H/N$ entonces $xy\in H$ y $(xy)N\in H/N$. Si $e\in H$, entonces $eN=N$. Si $x\in H$, $xN\in H/N$, entonces $x^{-1}\in H$ y $x^{-1}N\in H/N$, $(xN)(x^{-1}N)=(Nx)(x^{-1})=N$.
+
+\textbf{Segundo teorema de isomorfía de grupos:}\\
+Sea $G$ un grupo, $N\trianglelefteq G$ y $H\le G$, entonces
+$$
+\begin{array}{ll}
+    \text{\textit{i)}} & \text{$N\trianglelefteq NH$} \\
+    \text{\textit{ii)}} &  \text{$N\cap H \trianglelefteq H$}\\
+    \text{\textit{iii)}} & \text{$NH/N\simeq H/(N\cap H)$}
+\end{array}
+$$
+\textit{Dem:}\\
+\textit{i)} Veamos que $(nh)^{-1}N(nh)=N$. $(nh)^{-1}N(nh)=h^{-1}n^{-1}Nnh=h^{-1}Nh=N$.\\
+\textit{ii)} Veamos que si $h \in H$, entonces $h^{-1}(N\cap H)h=N\cap H$. $(h^{-1}Nh)\cap(h^{-1}Hh)=N\cap H$.\\
+\textit{iii)} La aplicación $
+\begin{array}{cccc}
+    \bar{f}\::&NH/N&\longrightarrow&H/(N\cap H)\\
+        &hnN&\longmapsto&h(N\cap H)
+\end{array}
+$ es un isomorfismo de grupos. Está bien definida ya que si $hN=h'N$ entonces $h^{-1}h'\in N,H$ y $h(N\cap H)=h'(N\cap H)$. Es homomorfismo ya que $f((hN)(h'N))=f((hh')N) = (hh')(N\cap H)=h(N\cap H)h'(N\cap H))=f(hN)f(h'N)$. Es inyectiva ya que si $x\in Ker(f)$, entonces $x\in (N\cap H)$ y $xN=N$, es decir, $Ker(f)=\{N\}$. Es suprayectiva ya que dado un $h\in H$ existe $hN$ tal que $f(hN)=h(N\cap H)$.
+
+\textbf{Tercer teorema de isomorfia de grupos:}\\
+Sea $G$ un grupo y $N\subseteq M$ dos subgrupos normales de $G$. Entonces se verifican
+$$
+\begin{array}{ll}
+    \text{\textit{i)}} & M/N \trianglelefteq G/N \\
+    \text{\textit{ii)}} & (G/N)/(M/N)\simeq G/M
+\end{array}
+$$
+\textit{Dem:}\\
+Sabemos que $M/N$ es subgrupo.
+$$
+(gN)^{-1}(mN)(gN)=(g^{-1}mg)N=mN
+$$
+Consideramos la aplicación $\begin{array}{cccc}
+    f\::&G/N&\longrightarrow&G/M\\
+        &xN&\longmapsto&xM
+\end{array}$, esta bien definida ya que si $xN=yN$, entonces $x^{-1}y\in N\subseteq M$ y $xM=yM$. Es homomorfismo ya que $f((xN)(yN)=f((xy)N)=(xy)M=f(xN)f(yN)$. Es suprayectiva ya que para todo $xM\in G/M$ existe $xN\in G/N$ tal que $f(xN)=xM$. Calculamos $ker(f)$, si $N=f(xM)=xN$ se tiene que $x\in N$ por lo que
+$$
+Ker(f)=\{xM\mid x\in N\}=M/N
+$$
+Por el primer teorema de isomorfía, aplicado a $f$,
+$$
+(G/N)/Ker(f)=(G/N)/(M/N)\simeq f(G/N)=G/M
+$$
+$$
+(G/N)/(M/N)\simeq G/M
+$$
+\end{document}

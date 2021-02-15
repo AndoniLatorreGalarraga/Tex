@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\title{Seminario álgebra}
+\author{Andoni Latorre Galarraga}
+\date{}
+
+\begin{document}
+
+\maketitle
+\noindent \textbf{2.}\\
+\textit{c)} Primero buscamos una base de $W$:
+$$
+x^1 + x^2 = x^1 - x^2 \Rightarrow x^2 = 0
+$$
+$$
+x^3 + x^4 = x^3 - x^4 \Rightarrow x^4 = 0
+$$
+$$
+x^1 - x^2 = x^3 + x^4 \Rightarrow x^1 = x^3
+$$
+$$
+\Rightarrow W = <(1,0,1,0)>
+$$
+Es facil ver que $\{ \overline{(1,0,0,0)}, \overline{(0,1,0,0)}, \overline{(0,0,0,1)} \}$ es base del espacio cociente:
+$$
+(1,0,0,0)-(0,1,0,0)=(1,-1,0,0)\notin W
+$$
+$$
+(1,0,0,0)-(0,0,0,1)=(1,0,0,-1)\notin W
+$$
+$$
+(0,1,0,0)-(0,0,0,1)=(0,1,0,-1)\notin W
+$$
+Por lo tanto, por ser $\mathbb{R}^4/W$ de dimensión 3, $\mathbb{R}^4/W = < \overline{(1,0,0,0)}, \overline{(0,1,0,0)}, \overline{(0,0,0,1)} >$.
+\\
+\\
+\textit{d)} $W$ es, evidentemente, de dimensión 3. Por lo tanto, $\mathbb{R}^4/W$ es de dimensión 1 y se tiene que: $\mathbb{R}^4/W = <\overline{(1,0,0,0)}>$.
+\\\\
+\textbf{6.}\\
+\textit{b)} Restando las ecuaciones se tiene:
+$$
+z + 2t= 0 \Leftrightarrow  z = -2t
+$$
+Por otra parte,
+$$
+y -2t + t = 0 \Leftrightarrow y = t
+$$
+Por lo tanto $W=<(1,0,0,0),(0,1,-2,1)>$, ahora sabemos que $\mathbb{R}^4/W$ de dimensión 2. Es fácil ver que $\mathbb{R}^4/W = <\overline{(0,1,0,0)},\overline{(0,0,1,0)}>$. $[(1,0,1,0)]= \overline{(1,0,0,0)}+\overline{(0,0,1,0)}= \bar{0} + \overline{(0,0,1,0)} = \overline{(0,0,1,0)}$ Por lo tanto las coordenadas son $(0,1)$
+$$
+(0,1,0,0)-(0,1,0,0)=(0,1,-1,0)\notin W \Leftrightarrow 1-2+0\ne0
+$$
+Por lo tanto $B_{\mathbb{R}^4/W} = \{ \overline{(0,1,0,0)}, \overline{(0,0,1,0)} \}$.\\\\
+\textit{c)} $W = <(1,1,1,1), (0,1,0,1), (1,-1,1,-1)> = <(1,1,1,1), (0,1,0,1)>$ ya que, $(1,-1,1,-1) = (1,1,1,1) - 2(0,1,0,1)$ y también es fácil ver que los vectores $(1,1,1,1)$ y $(0,1,0,1)$ son linealmente independientes. Por lo tanto $\mathbb{R}^4/W$ es de dimensión 2.
+$$
+(1,0,0,0)-(0,1,0,0)=(1,-1,0,0)\notin W
+$$
+Por lo tanto $B_{\mathbb{R}^4/W} = \{ \overline{(1,0,0,0)}, \overline{(0,1,0,0)} \}$. Como $(1,0,1,0) = (1,1,1,1)-(0,1,0,1)\in W \Rightarrow [(1,0,1,0)]=\bar{0}$\\\\
+\textit{d)} Es evidente que $W$ es de dimensión 2. Observamos que:
+$$
+(0,0,1,0)-(0,0,0,1)=(0,0,1,-1)\notin W
+$$
+Por lo tanto $B_{\mathbb{R}^4/W} = \{ \overline{(0,0,1,0)}, \overline{(0,0,0,1)} \}$. $[(1,0,1,0)] = \overline{(1,0,\frac{1}{2},\frac{1}{2})} + \frac{1}{2} \overline{(0,0,1,0)} - \frac{1}{2} \overline{(0,0,0,1)} = \bar{0} + \frac{1}{2} \overline{(0,0,1,0)} - \frac{1}{2} \overline{(0,0,0,1)}$ Por lo tanto, las coordenadas son $(\frac{1}{2}, -\frac{1}{2})$
+\\\\
+\textbf{10.}\\
+$ii)$ Supongamos que $(x_1,y_1,z_1,t_1)-(x_2,y_2,z_2,t_2)\in W$ escribimos la resta en función de la base, $x_1-x_2= \lambda, y_1-y_2=\lambda + \mu, z_1-z_2= \lambda + \mu, t_1-t_2=\mu$:
+$$
+\phi(v_1)-\phi(v_2) = (x_1+t_1,3x_1-y_1,3x_1-z_1,x_1-2t_1)-(x_2+t_2,3x_2-y_2,3x_2-z_2,x_2-2t_2)
+$$
+$$
+=(x_1-x_2+t_1-t_2,3x_1-3x_2-y_1+y_2,3x_1-3x_2-z_1+z_2,x_1-x_2-2t_1+2t_2)
+$$
+$$
+=(\lambda + \mu, 3 \lambda - \lambda - \mu, 3 \lambda - \lambda - \mu, \lambda - 2\mu) =
+\lambda(1,2,2,1) + \mu(1,-1,-1,-2)
+$$
+$$
+= \lambda((1,1,1,0)+(0,1,1,1)) + \mu(1,1,1,0)-2(0,1,1,1)) \in W
+$$
+Por lo tanto $\phi$ está bien definida.
+\\\\
+\textbf{11.}\\
+\textit{a)}
+Para probar que induce endomorfismo basta con probar que $W$ es invariante:
+$$
+f(\lambda, \lambda, \lambda, \lambda) = (2\lambda, 2\lambda, 2\lambda, 2\lambda) = 2(\lambda, \lambda, \lambda, \lambda)\in W
+$$
+Tomamos $B_V = \{ (1,1,1,1), (0,1,0,0), (0,0,1,0), (0,0,0,1)\}$ por lo tanto:
+$$
+\left( \begin{array}{cccc}
+     \textcolor{red}{2}&  1&  0& 0\\
+     \textcolor{blue}{0}&  \textcolor{green}{0}&  \textcolor{green}{1}& \textcolor{green}{0}\\
+     \textcolor{blue}{0}&  \textcolor{green}{-1}&  \textcolor{green}{1}& \textcolor{green}{1}\\
+     \textcolor{blue}{0}&  \textcolor{green}{-1}&  \textcolor{green}{0}& \textcolor{green}{1}\\
+\end{array} \right)
+$$
+
+\end{document}
