@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Busqueda y ordenación 1}
+\author{Andoni Latorre Galarraga}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+$$
+t(n) = n + 2 \cdot t(\frac{n}{2}) = n + 2 \cdot ( \frac{n}{2} + 2 \cdot t(\frac{n}{4}) )
+$$
+$$
+= 2 \cdot n + 4 \cdot t(\frac{n}{4}) = 2 \cdot n + 4 \cdot ( \frac{n}{4} + 2 \cdot t(\frac{n}{8}))
+$$
+$$
+= 3 \cdot n + 8 \cdot t(\frac{n}{8}) = \cdots
+$$
+$$
+= k \cdot n + 2^k \cdot t(\frac{n}{2^k})
+$$
+Cuando $k = \log_2 n$:
+$$
+t(n) = \log_2 n \cdot n + 2^{\log_2 n} \cdot t(\frac{n}{2^{\log_2 n}})
+$$
+$$
+= n \cdot \log_2 n + n \cdot t(1) = n \cdot \log_2 n + n
+$$
+\section{}
+$$
+t(n) = n + t(n-1) = n + n-1 + t(n-2) = n + n-1 + n-2 + t(n-3) =
+$$
+$$
+\cdots = n + n-1 + \cdots + n-k+1 + t(n-k)
+$$
+Cuando $k = n-1$
+$$
+= n + n-1 + \cdots + 2 + t(1) = \frac{n^2+n}{2} = \frac{1}{2} n^2 + \frac{1}{2} n
+$$
+\end{document}

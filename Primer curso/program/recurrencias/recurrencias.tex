@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}%esta linea no estaba en el original
+\title{Recurrencias}
+\author{Andoni Latorre Galarraga}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+$$
+t(n) = \log_2(n) + t(\frac{n}{2}) = \log_2(n) + \log_2(\frac{n}{2}) + t(\frac{n}{4})
+$$
+$$
+= 2 \log_2(n) - 1 + t(\frac{n}{4}) = 2 \log_2(n) - 1 + \log_2(\frac{n}{4}) + t(\frac{n}{8})
+$$
+$$
+= 3 \log_2(n) - 1 - 2 + t(\frac{n}{8}) = 4 \log_2(n) - 1 - 2 -3 + t(\frac{n}{16})
+$$
+$$
+= k \log_2 n - \frac{k(k-1)}{2} + t(\frac{n}{2^k})
+$$
+$$
+1 = \frac{n}{2^k} \quad \Leftrightarrow \quad k = \log_2(n)
+$$
+$$
+t(n) = \log_2(n) \log_2 n - \frac{\log_2(n)(\log_2(n)-1)}{2} + t(1) = \log_2^2(n) - \frac{\log_2^2(n) - \log_2(n)}{2} + 1
+$$
+$$
+t(n) = \log_2^2(n) - \frac{\log_2(n)}{2} + 1
+$$
+\section{}
+$$
+t(n) = n^2 + t(n-1) = n^2 + (n-1)^2 + t(n-2) = \cdots = n^2 + (n+1)^2 + \cdots + 0^2 + t(0)
+$$
+$$
+t(n) = \frac{n(n+1)(2n+1)}{6}+1
+$$
+\section{}
+\textit{Recursion.py}\\
+Es evidente que el metodo de expansión no lleva a ninguna parte. Intentemos encontrar una cota superior $t_{\text{sup}}(n)$. Y una cota inferior $t_{\text{inf}}(n) = 1$
+$$
+t_{\text{sup}}(n)=1+2 \cdot t(n-1)= 1 + 2 + 4 \cdot t(n-2)
+$$
+$$
+\cdots = \frac{k^2+1}{2} + 2^k \cdot t(n-k)
+$$
+$$
+t_{\text{sup}}(n) = \frac{n^2+1}{2} + 2^n \cdot t(0) = \frac{n^2+1}{2} + 2^n
+$$
+$$
+t(n,K) \in O(2^n) \land t(n,k) \in \Omega(1)
+$$
+\end{document}

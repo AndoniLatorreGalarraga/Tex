@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Seminario 4}
+\author{Andoni Latorre Galarraga}
+\date{}
+
+\begin{document}
+
+\maketitle
+Sustituimos $x_n = \epsilon_n + \alpha$ en $x_{n+1} = x_n -\frac{x_n - x_{n-1}}{f(x_n)-f(x_{n-1})}f(x_n)$.
+$$
+\epsilon_{n+1} = \epsilon_n - \frac{\epsilon_n-\epsilon_{n+1}}{f(\epsilon_{n+1} + \alpha)-}f(\epsilon_n + \alpha)
+$$
+Sustituimos el desrrollo de Taylor $f(x)\approx f^\prime(\alpha) (x-\alpha) + \frac{1}{2} f^{\prime\prime}(\alpha)(x-\alpha)^2$.
+$$
+f(\epsilon_n+\alpha)\approx \epsilon_n f^\prime(\alpha)(1+\frac{f^{\prime\prime}(\alpha)}{2f^\prime(\alpha)}
+$$
+$$
+\epsilon_{n+1} \approx \epsilon_n - \frac{\epsilon_n(1+\frac{f^{\prime\prime}(\alpha)}{2f^\prime(\alpha)}\epsilon_n)}{1+ \frac{f^{\prime\prime}(\alpha)}{2f^\prime(\alpha)}(e_n + \epsilon_{n+1})}
+=
+\frac{\frac{f^{\prime\prime}(\alpha)}{2f^\prime(\alpha)}\epsilon_n \epsilon_{n+1}}{1+ \frac{f^{\prime\prime}(\alpha)}{2f^\prime(\alpha)}(e_n + \epsilon_{n+1})}
+$$
+$$
+\approx \frac{f^{\prime\prime}(\alpha)}{2f^\prime(\alpha)}\epsilon_n \epsilon_{n+1}
+$$
+Ahora:
+$$
+|\epsilon_{n+1}| = \lambda |\epsilon_n|^p \iff |\frac{f^{\prime\prime}(\alpha)}{2f^\prime(\alpha)}||\epsilon_n||\epsilon_{n+1}| \approx \lambda |\epsilon_n|^p
+$$
+$$
+|\epsilon_n| \approx \left( \frac{|\frac{f^{\prime\prime}(\alpha)}{2f^\prime(\alpha)}|}{\lambda}\right)^{\frac{1}{p-1}} |\epsilon_{n+1}|^{\frac{1}{p-1}}
+\Rightarrow
+\lambda = \left( \frac{\frac{|f^{\prime\prime}(\alpha)}{2f^\prime(\alpha)}|}{\lambda}\right)^{\frac{1}{p-1}}
+$$
+Entonces, $p = \frac{1}{p-1}$. Por lo que $p = \frac{1+ \sqrt{5}}{2}$, que es la razón aurea.
+\end{document}

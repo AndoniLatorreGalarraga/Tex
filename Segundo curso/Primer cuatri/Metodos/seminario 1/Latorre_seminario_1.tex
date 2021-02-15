@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Seminario 1}
+\author{Andoni Latorre Galarraga}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{1.}
+\\
+\textit{a)}
+$$
+RE_{x \cdot y} \approx \frac{y}{x y} \frac{\partial xy}{\partial y} RE_y + \frac{x}{x y} \frac{\partial xy}{\partial x} RE_x = RE_x + RE_y
+$$
+\textit{b)}
+$$
+RE_{x / y} \approx \frac{x}{x/y} \frac{\partial x/y}{\partial x} RE_x + \frac{y}{x/y} \frac{\partial x/y}{\partial y} RE_y = RE_x - RE_y
+$$
+\textit{c)}
+$$
+RE_{x + y} \approx \frac{x}{x+y} \frac{\partial x+y}{\partial x} RE_x + \frac{y}{x+y} \frac{\partial x+y}{\partial y} RE_y = \frac{x}{x+y} RE_x + \frac{y}{x+y} RE_y
+$$
+\textit{d)}
+$$
+RE_{\sqrt{x}} \approx \frac{x}{\sqrt{x}} \frac{\partial \sqrt{x}}{\partial x} RE_x = \frac{1}{2} RE_x
+$$
+\textbf{2.}
+$$
+RE_{\sqrt{3+\lg^2x}} 
+\approx
+\frac{1}{2} RE_{3+\lg^2x}
+\approx
+\frac{3}{6+2\lg^2x} RE_3 + \frac{\lg^2x }{6+2\lg2x} RE_{\lg^2x}
+$$
+$$
+\approx
+\frac{3}{6+2\lg^2x}  \varepsilon + \frac{\lg^2 x }{6+2\lg2x} 2 RE_{\lg x}
+\approx
+\frac{3}{6+2\lg^2x}  \varepsilon + \frac{\lg^2x }{6+2\lg2x} 10 \varepsilon
+$$
+$$
+\frac{3+10 \lg^2x}{6+2\lg^2x}\varepsilon
+$$
+\end{document}

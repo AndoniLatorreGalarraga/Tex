@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Heaps}
+\author{Andoni Latorre Galarraga}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+\textit{Heaps.py}\\
+Siendo $n=len(heap)$ antes de insertar y $n=len(heap)-1$ despues de insertar, lo de dentro del \textit{while} tiene coste fijo y se ejecuta $\left \lfloor{\log_2n}\rfloor \right.$ veces como máximo.
+$$
+t_{sup}(n) = 1 + \sum_{i=1}^{\left \lfloor{\log_2n}\rfloor \right.} i = \left \lfloor{\log_2n}\rfloor \right. +1
+$$
+Por lo que $t(n) \in O(\log n)$ y $t(n) \in \Omega(1)$ cuando $n=1$
+\section{}
+\textit{Heaps.py}\\
+Siendo $n=len(heap)-1$, lo de dentro del \textit{while} tiene coste fijo y se ejecuta $\left \lfloor{\log_2n}\rfloor \right.$ veces como máximo.
+$$
+t_{sup}(n) = 1 + \sum_{i=1}^{\left \lfloor{\log_2n}\rfloor \right.} i = \left \lfloor{\log_2n}\rfloor \right. +1
+$$
+Por lo que $t(n) \in O(\log n)$
+\section{}
+\textit{Heaps.py}\\
+La funcion de prioridad tiene coste fijo. Las funciones \textit{enqueue} y \textit{dequeue} tienen coste $\left \lfloor{\log_2n}\rfloor \right.$ como hemos visto en los ejercicios 1 y 2.
+$$
+t_{sup}(n) = 1 + 2\cdot \sum_{i=1}^{n} \left \lfloor{\log_2n}\rfloor \right. = 2n \cdot \left \lfloor{\log_2n}\rfloor \right. + 1
+$$
+Por lo tanto, $t(n) \in O(n\cdot \log n)$.
+\end{document}

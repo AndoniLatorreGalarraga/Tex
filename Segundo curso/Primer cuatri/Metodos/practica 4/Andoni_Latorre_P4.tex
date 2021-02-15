@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Práctica final}
+\author{Andoni Latorre Galarraga}
+\date{}
+
+\begin{document}
+\maketitle
+\noindent1.
+$$
+\int_0^x e^{-t^2}dt = \int_0^x \sum_{n=0}^\infty \frac{(-1)^n t^{2n}}{n!}dt=\sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{n!(2n+1)}=0.5
+$$
+2.
+$$
+(x_k-c_1)^2 + (y_k-c_2)^2= r^2 \quad (-2x_kc_1)+(-2y_kc_2)+(c_1^2-c_2^2-r^2) = -x_k^2 -y_k2
+$$
+$$
+\lambda = -2c_1 \quad \phi = -2c_2 \quad \gamma = c_1^2-c_2^2-r^2
+$$
+$$
+\left(\begin{array}{ccc}
+    x_1 & y_1 & 1 \\
+    x_2 & y_2 & 1 \\
+    \vdots & \vdots & \vdots \\
+    x_8 & y_8 & 1
+\end{array}\right)
+\left(\begin{array}{c}
+    \lambda \\
+    \mu \\
+    \gamma
+\end{array}\right)=
+\left(\begin{array}{c}
+    x_1^2 - y_1^2 \\
+    x_2^2- y_2^2 \\
+    \vdots \\
+    x_8^2 - y_8^2
+\end{array}\right)
+$$
+$$
+c_1 = \frac{-\Lambda}{2} \quad c_2 = \frac{-\Phi}{2} \quad r = \sqrt{c_1^2-c_2^2-\Gamma}
+$$
+3.
+$$
+f(x_1,x_2)=(x_1^2+4x_2^2-5,2x_1^2-2x_1-3x_2-2.5)
+$$
+$$
+J =
+\left(\begin{array}{cc}
+    2x_1 & 8x_2 \\
+    4x_1-2 & -3
+\end{array}\right)
+$$
+\end{document}
