@@ -54,4 +54,24 @@ Por \eqref{eq:1k}, $b(s)=\frac{1}{k}$.
 $$
 x_0-\alpha(s)=\frac{1}{k}\bb{N}(s)+c(s)\bb{B}(s)
 $$
-\end{document}
+Derivando,
+$$
+-\alpha'(s)=\frac{1}{k}\bb{N}'(s)+c(s)\bb{B}'(s)+c'(s)\bb{B}(s)
+$$
+$$
+-\alpha(s)=\frac{1}{k}(-k\bb{T}(s)+\tau(s)\bb{B}(s))+c(s)(-\tau(s)\bb{N}(s))+c'(s)\bb{B}(s)
+$$
+$$
+-\bb{T}(s)=-\bb{T}(s)+\bb{N}\underbrace{(-\tau(s)c(s))}_0+\bb{B}(s)\underbrace{\left( \frac{\tau(s)}{k}+c'(s) \right)}_0
+$$
+Tenemos que
+$$
+\left\{
+    \begin{array}{c}
+        -\tau(s)c(s)=0 \\
+        \frac{\tau(s)}{k}-c'(s)
+    \end{array}\right.
+$$
+Tenemos dos casos, $\tau(s)=0$ y $\tau(s)\ne0$. En el segundo caso tenemos que $c(s)=0$ por lo que $c'(s)=0$ y $\frac{\tau(s)}{k}=0$. En ambos casos $\tau(s)=0$. Tenemos que la curva es plana y por estar contenida en una esfera es un arco de circunferencia.\\
+Para el recíproco, supongamos que es un aco de circunferencia. Evidentemente está contenida en un esfera con el mismo centro y radio $r$ que la circunferencia. También sabemos que la curvatura es $\frac{1}{r}\forall s$.
+\end{document}     
