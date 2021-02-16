@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.14)  15 FEB 2021 04:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.14)  16 FEB 2021 21:46
 entering extended mode
 **"d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex"
 ("d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex"
@@ -265,7 +265,10 @@ Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 File: l3backend-pdftex.def 2021-02-06 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count280
 \l__pdf_internal_box=\box49
-) ("d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.aux")
+) ("d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.aux"
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+)
 \openout1 = `cicloide.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -353,6 +356,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 27.
 LaTeX Info: Redefining \pageref on input line 27.
 LaTeX Info: Redefining \nameref on input line 27.
+ ("d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out") ("d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out")
 \@outlinefile=\write3
 \openout3 = `cicloide.out'.
 
@@ -364,22 +368,22 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<figuras/cicloide descipcion 1.PNG, id=3, 613.0905pt x 207.174pt>
+<figuras/cicloide descipcion 1.PNG, id=43, 613.0905pt x 207.174pt>
 File: figuras/cicloide descipcion 1.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 1.PNG>
 Package pdftex.def Info: figuras/cicloide descipcion 1.PNG  used on input line 38.
 (pdftex.def)             Requested size: 183.92856pt x 62.15266pt.
-<figuras/cicloide descipcion 2.PNG, id=5, 540.21825pt x 196.3335pt>
+<figuras/cicloide descipcion 2.PNG, id=45, 540.21825pt x 196.3335pt>
 File: figuras/cicloide descipcion 2.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 2.PNG>
 Package pdftex.def Info: figuras/cicloide descipcion 2.PNG  used on input line 38.
 (pdftex.def)             Requested size: 162.06671pt x 58.9005pt.
-<figuras/cicloide descipcion 3.PNG, id=6, 540.8205pt x 186.09525pt>
+<figuras/cicloide descipcion 3.PNG, id=46, 540.8205pt x 186.09525pt>
 File: figuras/cicloide descipcion 3.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 3.PNG>
 Package pdftex.def Info: figuras/cicloide descipcion 3.PNG  used on input line 38.
 (pdftex.def)             Requested size: 162.24739pt x 55.829pt.
-<figuras/cicloide descipcion 4.PNG, id=7, 541.42274pt x 189.1065pt>
+<figuras/cicloide descipcion 4.PNG, id=47, 541.42274pt x 189.1065pt>
 File: figuras/cicloide descipcion 4.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 4.PNG>
 Package pdftex.def Info: figuras/cicloide descipcion 4.PNG  used on input line 38.
@@ -400,76 +404,32 @@ File: figuras/cicloide descipcion 4.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 4.PNG>
 Package pdftex.def Info: figuras/cicloide descipcion 4.PNG  used on input line 38.
 (pdftex.def)             Requested size: 162.42807pt x 56.73238pt.
-<figuras/cicloide descipcion 5.PNG, id=8, 613.0905pt x 222.8325pt>
+<figuras/cicloide descipcion 5.PNG, id=48, 613.0905pt x 222.8325pt>
 File: figuras/cicloide descipcion 5.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 5.PNG>
 Package pdftex.def Info: figuras/cicloide descipcion 5.PNG  used on input line 39.
 (pdftex.def)             Requested size: 183.92856pt x 66.85027pt.
-
-d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex:65: Missing $ inserted.
-<inserted text> 
-                $
-l.65 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex:65: Display math should end with $$.
-<to be read again> 
-                   \par 
-l.65 
-     
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-Overfull \hbox (22.847pt too wide) detected at line 65
-[][] \OML/cmm/m/it/10  [] dt \OT1/cmr/m/n/10 = [][] []\OML/cmm/m/it/10 dt \OT1/cmr/m/n/10 = [] [][] []\OML/cmm/m/it/10 dt \OT1/cmr/m/n/10 = [] [][] = [][]4 = 8
- []
-
-d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex:67: Missing $ inserted.
-<inserted text> 
-                $
-l.67 \subsection
-                {Parametrización por Longitud de arco}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex:67: Display math should end with $$.
-<to be read again> 
-                   \par 
-l.67 \subsection
-                {Parametrización por Longitud de arco}
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-[1
+ [1
 
 {C:/Users/User/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 1.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 2.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 3.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 4.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 5.PNG>] [2] ("d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.aux"
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-
-Package rerunfilecheck Warning: File `cicloide.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `cicloide.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  BD58B2C674A607563B23020D9B9F4E21;1441.
+Package rerunfilecheck Info: File `cicloide.out' has not changed.
+(rerunfilecheck)             Checksum: E90ADBABB8840ADE5A417FAF1472F212;1336.
  ) 
 Here is how much of TeX's memory you used:
- 10912 strings out of 479616
- 158721 string characters out of 2865476
- 474547 words of memory out of 3000000
- 27926 multiletter control sequences out of 15000+200000
- 410985 words of font info for 57 fonts, out of 3000000 for 9000
+ 10929 strings out of 479616
+ 159132 string characters out of 2865476
+ 475787 words of memory out of 3000000
+ 27939 multiletter control sequences out of 15000+200000
+ 411331 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,74p,387b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.pdf" (2 pages, 211085 bytes).
+ 71i,12n,74p,467b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.pdf" (2 pages, 228181 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 119 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

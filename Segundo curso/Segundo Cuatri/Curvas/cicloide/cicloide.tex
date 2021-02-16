@@ -29,7 +29,7 @@
 \maketitle
 
 \section{Descripción}
-Una cicloide es la curva que recorre un punto de la circunferencia al rodar.
+Si tomamos una circunferencia de radio $r$ y observamos la trayectoria que recorre el punto que comienza en el punto más bajo durante una vuelta completa, obtenemos una cicloide.
 \begin{center}\begin{align*}
     \includegraphics[scale=0.3]{figuras/cicloide descipcion 1.PNG}&
     \includegraphics[scale=0.3]{figuras/cicloide descipcion 2.PNG}\\
@@ -61,16 +61,18 @@ Tenemos que $\begin{array}{crcl}
 \section{Longitud}
 Para calcular la longitud de la cicloide evaluamos la siguiente integral
 $$
-\int_0^2\pi \left\| \alpha'(t) \right\| dt = \int_0^{2\pi} \sqrt{2-2\cos(t)} dt =\sqrt{2} \int_0^{2\pi} \sqrt{1-\cos(t)} dt = \sqrt{2}\left[ -2 \sqrt{1-\cos(t)}\cot\left(\frac{t}{2}\right)\right]_0^{2\pi} = \sqrt{2}\sqrt{2}4=8
-
+\int_0^2\pi \left\| \alpha'(t) \right\| dt = \int_0^{2\pi} \sqrt{2-2\cos(t)} dt =\sqrt{2} \int_0^{2\pi} \sqrt{1-\cos(t)} dt
+$$
+$$
+= \sqrt{2}\left[ -2 \sqrt{1-\cos(t)}\cot\left(\frac{t}{2}\right)\right]_0^{2\pi} = \sqrt{2}\sqrt{2}4=8
 $$
 \subsection{Parametrización por Longitud de arco}
 
 \section{Curvatura}
 
-\section{Circunferencia osculatriz}
-
 \section{Curiosidades}
-\subsection{Curva braquistocrona}
-\subsection{Curva tautócrona}
+\subsection{Curva braquistócrona}
+La palabra braquistócrona viene del griego \textit{braquistos} que significa el más corto y \textit{chronos} que significa tiempo, es decir, la curva que tiene el tiempo más corto. Si tenemos dos puntos $ P $, $ Q $ y queremos enncontrar la trayectoria que minimiza el tiempo de trayecto entre $ P $ y $ Q $. Obtenemos que dicha trayectoria es una cicloide.
+\subsection{Curva tautócrona o isócrona}
+Las palabras tautócrona e isócrona vienen de los prefijos griegos \textit{tauto/iso} que significan el mismo y de la palabra griega \textit{choronos} que significa tiempo, es decir, la curva tautócrona o isócrona es aquella en la que no importa el punto de partida, el tiempo requerido para llegar al punto más bajo es siempre el mismo. De nuevo, dicha curva es una cicloide.
 \end{document}

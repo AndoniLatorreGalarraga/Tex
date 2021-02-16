@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor}
+%\pagecolor[rgb]{0,0,0} \color[rgb]{1,1,1}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Problema 32}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}[0]{\textbf{Proposición:}}
+\newcommand{\dem}[0]{\textit{Dem:}}
+\begin{document}
+\setlength{\parindent}{0cm}
+\maketitle
+Supongamos que la curva está contenida en una esfera y tiene curvatura constante.\\
+Por ser parte de una esfera,
+\begin{equation}\label{eq:sf}
+\exists x_0 \mid (x_0-\alpha(s))\bb{T}=0 \quad \forall s
+\end{equation}
+Derivando,
+$$
+(x_0-\alpha(s))\bb{T}'(s)-\bb{T}(s)\alpha'(s)=0
+$$
+$$
+k(x_0-\alpha(s))\bb{N}(s)-\bb{T}(s)\bb{T}(s)=0
+$$
+\begin{equation}\label{eq:1k}
+(x_0-\alpha(s))\bb{N}(s)=\frac{1}{k}
+\end{equation}
+Por otra parte, si escribimos $x_0.\alpha(s)$ en la base $\{\bb{T}(s),\bb{N}(s),\bb{B}(s)\}$,
+$$
+x_0-\alpha(s)=a(s)\bb{T}(s)+b(s)\bb{N}(s)+c(s)\bb{B}(s)
+$$
+Por \eqref{eq:sf}, sabemos que $a(s)=0$.
+$$
+x_0-\alpha(s)=b(s)\bb{N}(s)+c(s)\bb{B}(s)
+$$
+Por \eqref{eq:1k}, $b(s)=\frac{1}{k}$.
+$$
+x_0-\alpha(s)=\frac{1}{k}\bb{N}(s)+c(s)\bb{B}(s)
+$$
+\end{document}

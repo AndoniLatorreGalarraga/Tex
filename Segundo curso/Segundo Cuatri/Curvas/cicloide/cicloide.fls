@@ -575,8 +575,18 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\get
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
-OUTPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
 OUTPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.pdf
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
+OUTPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
@@ -666,6 +676,7 @@ INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\figuras\cicloide des
 INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\figuras\cicloide descipcion 5.PNG
 INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\figuras\cicloide descipcion 5.PNG
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\User\AppData\Local\MiKTeX\pdftex\config\pdftex.map
 INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.aux
 INPUT d:\Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.out
@@ -690,5 +701,7 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
