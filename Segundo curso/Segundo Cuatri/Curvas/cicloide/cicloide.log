@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.14)  16 FEB 2021 21:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.14)  21 FEB 2021 22:27
 entering extended mode
 **"d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex"
 ("d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex"
@@ -149,7 +149,14 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layouthoffset=\dimen157
 \Gm@layoutvoffset=\dimen158
 \Gm@dimlist=\toks25
- (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen159
+\WF@size=\dimen160
+\c@WF@wrappedlines=\count269
+\WF@box=\box49
+\WF@everypar=\toks26
+Package: wrapfig 2003/01/31  v 3.6
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2021-02-10 v7.00j Hypertext links for LaTeX
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -176,9 +183,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen159
-\Hy@linkcounter=\count269
-\Hy@pagecounter=\count270
+\@linkdim=\dimen161
+\Hy@linkcounter=\count270
+\Hy@pagecounter=\count271
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2021-02-10 v7.00j Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -190,7 +197,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count271
+\Hy@SavedSpaceFactor=\count272
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2021-02-10 v7.00j Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -203,21 +210,21 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count272
+\c@Hy@tempcnt=\count273
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen160
+\XeTeXLinkMargin=\dimen162
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count273
-\Field@Width=\dimen161
-\Fld@charsize=\dimen162
+\Fld@menulength=\count274
+\Field@Width=\dimen163
+\Fld@charsize=\dimen164
 Package hyperref Info: Hyper figures OFF on input line 6075.
 Package hyperref Info: Link nesting OFF on input line 6080.
 Package hyperref Info: Hyper index ON on input line 6083.
@@ -231,9 +238,9 @@ LaTeX Info: Redefining \pageref on input line 6149.
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi package
 with kernel methods
 )
-\Hy@abspage=\count274
-\c@Item=\count275
-\c@Hfootnote=\count276
+\Hy@abspage=\count275
+\c@Item=\count276
+\c@Hfootnote=\count277
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -242,8 +249,8 @@ File: hpdftex.def 2021-02-10 v7.00j Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
 with kernel methods
 )
-\Fld@listcount=\count277
-\c@bookmark@seq@number=\count278
+\Fld@listcount=\count278
+\c@bookmark@seq@number=\count279
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
@@ -254,17 +261,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip52
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count279
+\etb@tempcnta=\count280
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/vmargin\vmargin.sty
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
-\PaperWidth=\dimen163
-\PaperHeight=\dimen164
+\PaperWidth=\dimen165
+\PaperHeight=\dimen166
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-02-06 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count280
-\l__pdf_internal_box=\box49
+\l__color_backend_stack_int=\count281
+\l__pdf_internal_box=\box50
 ) ("d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.aux"
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
@@ -291,17 +298,17 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count281
-\scratchdimen=\dimen165
-\scratchbox=\box50
-\nofMPsegments=\count282
-\nofMParguments=\count283
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count284
-\MPscratchDim=\dimen166
-\MPnumerator=\count285
-\makeMPintoPDFobject=\count286
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count282
+\scratchdimen=\dimen167
+\scratchbox=\box51
+\nofMPsegments=\count283
+\nofMParguments=\count284
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count285
+\MPscratchDim=\dimen168
+\MPnumerator=\count286
+\makeMPintoPDFobject=\count287
+\everyMPtoPDFconversion=\toks28
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -351,7 +358,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count287
+\c@section@level=\count288
 )
 LaTeX Info: Redefining \ref on input line 27.
 LaTeX Info: Redefining \pageref on input line 27.
@@ -368,68 +375,101 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<figuras/cicloide descipcion 1.PNG, id=43, 613.0905pt x 207.174pt>
+<figuras/cicloide descipcion 1.PNG, id=39, 613.0905pt x 207.174pt>
 File: figuras/cicloide descipcion 1.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 1.PNG>
-Package pdftex.def Info: figuras/cicloide descipcion 1.PNG  used on input line 38.
-(pdftex.def)             Requested size: 183.92856pt x 62.15266pt.
-<figuras/cicloide descipcion 2.PNG, id=45, 540.21825pt x 196.3335pt>
+Package pdftex.def Info: figuras/cicloide descipcion 1.PNG  used on input line 37.
+(pdftex.def)             Requested size: 245.23184pt x 82.86812pt.
+<figuras/cicloide descipcion 2.PNG, id=41, 540.21825pt x 196.3335pt>
 File: figuras/cicloide descipcion 2.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 2.PNG>
-Package pdftex.def Info: figuras/cicloide descipcion 2.PNG  used on input line 38.
-(pdftex.def)             Requested size: 162.06671pt x 58.9005pt.
-<figuras/cicloide descipcion 3.PNG, id=46, 540.8205pt x 186.09525pt>
+Package pdftex.def Info: figuras/cicloide descipcion 2.PNG  used on input line 37.
+(pdftex.def)             Requested size: 216.08347pt x 78.532pt.
+<figuras/cicloide descipcion 3.PNG, id=42, 540.8205pt x 186.09525pt>
 File: figuras/cicloide descipcion 3.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 3.PNG>
-Package pdftex.def Info: figuras/cicloide descipcion 3.PNG  used on input line 38.
-(pdftex.def)             Requested size: 162.24739pt x 55.829pt.
-<figuras/cicloide descipcion 4.PNG, id=47, 541.42274pt x 189.1065pt>
+Package pdftex.def Info: figuras/cicloide descipcion 3.PNG  used on input line 37.
+(pdftex.def)             Requested size: 216.32436pt x 74.43677pt.
+<figuras/cicloide descipcion 4.PNG, id=43, 541.42274pt x 189.1065pt>
 File: figuras/cicloide descipcion 4.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 4.PNG>
-Package pdftex.def Info: figuras/cicloide descipcion 4.PNG  used on input line 38.
-(pdftex.def)             Requested size: 162.42807pt x 56.73238pt.
+Package pdftex.def Info: figuras/cicloide descipcion 4.PNG  used on input line 37.
+(pdftex.def)             Requested size: 216.56526pt x 75.64125pt.
 File: figuras/cicloide descipcion 1.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 1.PNG>
-Package pdftex.def Info: figuras/cicloide descipcion 1.PNG  used on input line 38.
-(pdftex.def)             Requested size: 183.92856pt x 62.15266pt.
+Package pdftex.def Info: figuras/cicloide descipcion 1.PNG  used on input line 37.
+(pdftex.def)             Requested size: 245.23184pt x 82.86812pt.
 File: figuras/cicloide descipcion 2.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 2.PNG>
-Package pdftex.def Info: figuras/cicloide descipcion 2.PNG  used on input line 38.
-(pdftex.def)             Requested size: 162.06671pt x 58.9005pt.
+Package pdftex.def Info: figuras/cicloide descipcion 2.PNG  used on input line 37.
+(pdftex.def)             Requested size: 216.08347pt x 78.532pt.
 File: figuras/cicloide descipcion 3.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 3.PNG>
-Package pdftex.def Info: figuras/cicloide descipcion 3.PNG  used on input line 38.
-(pdftex.def)             Requested size: 162.24739pt x 55.829pt.
+Package pdftex.def Info: figuras/cicloide descipcion 3.PNG  used on input line 37.
+(pdftex.def)             Requested size: 216.32436pt x 74.43677pt.
 File: figuras/cicloide descipcion 4.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 4.PNG>
-Package pdftex.def Info: figuras/cicloide descipcion 4.PNG  used on input line 38.
-(pdftex.def)             Requested size: 162.42807pt x 56.73238pt.
-<figuras/cicloide descipcion 5.PNG, id=48, 613.0905pt x 222.8325pt>
+Package pdftex.def Info: figuras/cicloide descipcion 4.PNG  used on input line 37.
+(pdftex.def)             Requested size: 216.56526pt x 75.64125pt.
+<figuras/cicloide descipcion 5.PNG, id=44, 613.0905pt x 222.8325pt>
 File: figuras/cicloide descipcion 5.PNG Graphic file (type png)
 <use figuras/cicloide descipcion 5.PNG>
-Package pdftex.def Info: figuras/cicloide descipcion 5.PNG  used on input line 39.
-(pdftex.def)             Requested size: 183.92856pt x 66.85027pt.
+Package pdftex.def Info: figuras/cicloide descipcion 5.PNG  used on input line 38.
+(pdftex.def)             Requested size: 245.23184pt x 89.13141pt.
  [1
 
-{C:/Users/User/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 1.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 2.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 3.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 4.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 5.PNG>] [2] ("d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.aux"
+{C:/Users/User/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 1.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 2.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 3.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 4.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide descipcion 5.PNG>]
+<figuras/circulo angulo.PNG, id=61, 234.8775pt x 231.86626pt>
+File: figuras/circulo angulo.PNG Graphic file (type png)
+<use figuras/circulo angulo.PNG>
+Package pdftex.def Info: figuras/circulo angulo.PNG  used on input line 44.
+(pdftex.def)             Requested size: 93.94933pt x 92.74484pt.
+<figuras/esquema.PNG, id=62, 517.935pt x 444.4605pt>
+File: figuras/esquema.PNG Graphic file (type png)
+<use figuras/esquema.PNG>
+Package pdftex.def Info: figuras/esquema.PNG  used on input line 60.
+(pdftex.def)             Requested size: 155.38168pt x 133.33917pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--95
+
+ []
+
+[2 <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/circulo angulo.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/esquema.PNG>]
+<figuras/cicloide general.PNG, id=74, 412.54124pt x 234.8775pt>
+File: figuras/cicloide general.PNG Graphic file (type png)
+<use figuras/cicloide general.PNG>
+Package pdftex.def Info: figuras/cicloide general.PNG  used on input line 96.
+(pdftex.def)             Requested size: 123.76332pt x 70.46379pt.
+ [3 <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide general.PNG>]
+<figuras/pend 1.PNG, id=82, 211.992pt x 133.09724pt>
+File: figuras/pend 1.PNG Graphic file (type png)
+<use figuras/pend 1.PNG>
+Package pdftex.def Info: figuras/pend 1.PNG  used on input line 174.
+(pdftex.def)             Requested size: 105.99573pt x 66.54845pt.
+<figuras/pend 2.PNG, id=83, 211.992pt x 137.91525pt>
+File: figuras/pend 2.PNG Graphic file (type png)
+<use figuras/pend 2.PNG>
+Package pdftex.def Info: figuras/pend 2.PNG  used on input line 175.
+(pdftex.def)             Requested size: 105.99573pt x 68.95744pt.
+ [4 <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/pend 1.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/pend 2.PNG>] ("d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.aux"
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 Package rerunfilecheck Info: File `cicloide.out' has not changed.
-(rerunfilecheck)             Checksum: E90ADBABB8840ADE5A417FAF1472F212;1336.
+(rerunfilecheck)             Checksum: 7E2EA9B7BBC14D29D0E661657FC4D751;1151.
  ) 
 Here is how much of TeX's memory you used:
- 10929 strings out of 479616
- 159132 string characters out of 2865476
- 475787 words of memory out of 3000000
- 27939 multiletter control sequences out of 15000+200000
+ 11030 strings out of 479616
+ 160810 string characters out of 2865476
+ 477009 words of memory out of 3000000
+ 28030 multiletter control sequences out of 15000+200000
  411331 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,74p,467b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,12n,74p,387b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.pdf" (2 pages, 228181 bytes).
+Output written on "d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.pdf" (4 pages, 353168 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 134 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

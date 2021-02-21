@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}             % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                       % anchura del texto
+{23.42cm}                      % altura del texto
+{10pt}                         % altura de los encabezados
+{1cm}                          % espacio entre el texto y los encabezados
+{0pt}                          % altura del pie de página
+{2cm}                          % espacio entre el texto y el pie de página
+\title{Cálculo}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}[0]{\textbf{Proposición:}}
+\newcommand{\dem}[0]{\textit{Dem:}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+
+\section{Sucesiones y series de funciones}
+
+
+De ahora en adelante $X$ representa un conjunto no vacío y $\{f_n\}$ es una sucesión de funciones tales que $f_n\::\:X\longrightarrow\R$.
+\subsection{Convergencia puntual}
+
+\textbf{Definición:} Se dice que $\{f_n\}$ converge puntualmente a una función $f\::\:X\longrightarrow\R$ si para todo $x\in \R$
+$$
+\lim_{n\to\infty}f_n(x)=f(x)
+$$
+
+\subsubsection{Ejemplo}
+
+Si $X=[0,1]$ y $f_n(x)=x^n$.
+$$
+\lim_{n\to\infty}f_n(x)=
+\left\{
+    \begin{array}{ll}
+        0 & 0\le x<1 \\
+        1 & x=1
+    \end{array}
+\right.
+$$
+
+\subsubsection{Ejemplo}
+
+Si $X=[0,1]$, y $f_n(x)=\frac{\sen(nx)}{n}$.
+$$
+\lim_{n\to\infty} f_n = 0
+$$
+
+\subsubsection{Ejemplo}
+
+Si $X=[0,1]$ y $f_n= \begin{array}{ll}
+    nx & 0\le x<\frac{1}{n} \\
+    2-nx & \frac{2}{n}
+\end{array}$
+\end{document}
