@@ -118,7 +118,7 @@ $$
 $$
 $\alpha'(t) = (1-\cos(t),\sen(t))$ es el vector tangente.
 $$
-\left\| \alpha'(t) \right\| = 1-2\cos(t)+\cos^2(t)+\sen^2(t)=2-2\cos(t)
+\left\| \alpha'(t) \right\| = \sqrt{1-2\cos(t)+\cos^2(t)+\sen^2(t)}=\sqrt{2-2\cos(t)}
 $$
 La circunferencia de partida $\beta(t)=(-\sen(t),-\cos(t))$ tiene $\beta'(t)=(-\cos(t),\sen(t))$ que es $(1,0)+\alpha'(t)$.
 Tiene sentido dada la variación de la coordenada $x$ del punto $P$ que genera la cicloide.
@@ -127,13 +127,16 @@ $$
 \alpha''(t)=(\sen(t),\cos(t))
 $$
 $$
-\bb{T}(t)=\frac{\alpha'(t)}{\left\| \alpha'(t)  \right\|} = \left( \frac{1}{2},\frac{\sen(t)}{2-\cos(t)} \right)
+\bb{T}(t)=\frac{\alpha'(t)}{\left\| \alpha'(t)  \right\|} = \left( \frac{1-\cos(t)}{\sqrt{2-2\cos(t)}},\frac{\sen(t)}{\sqrt{2-2\cos(t)}} \right)
+= \left( \sqrt{\frac{1-\cos(t)}{2}} , \frac{\sen(t)}{\sqrt{2-2\cos(t)}} \right)
 $$
 $$
-\bb{N}(t) = \mathcal{J}\bb{T}(t)= \left( \frac{-\sen(t)}{2-\cos(t)}, \frac{1}{2}\right)
+\bb{N}(t) = \mathcal{J}\bb{T}(t)= \left( \frac{-\sen(t)}{\sqrt{2-2\cos(t)}}, \sqrt{\frac{1-\cos(t)}{2}}\right)
 $$
 $$
-k_(t)=\frac{\alpha''(t)\cdot\bb{N}(t)}{\left\| \alpha'(t) \right\|^2}= \frac{-1}{8 (1-\cos(t))^2}
+k_2(t)=\frac{\alpha''(t)\cdot\bb{N}(t)}{\left\| \alpha'(t) \right\|^2}
+=\frac{(\sen(t),\cos(t))\cdot(1-\cos(t),\sen(t))}{(2-2\cos(t))^{\frac{3}{2}}}
+=\frac{\sen(t)}{(2-2\cos(t))^{\frac{3}{2}}}
 $$
 \section{Longitud}
 Para calcular la longitud de la cicloide evaluamos la siguiente integral
