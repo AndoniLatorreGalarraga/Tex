@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.14)  21 FEB 2021 22:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.14)  22 FEB 2021 12:10
 entering extended mode
 **"d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex"
 ("d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex"
@@ -430,7 +430,7 @@ File: figuras/esquema.PNG Graphic file (type png)
 Package pdftex.def Info: figuras/esquema.PNG  used on input line 60.
 (pdftex.def)             Requested size: 155.38168pt x 133.33917pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--95
+Underfull \hbox (badness 10000) in paragraph at lines 88--94
 
  []
 
@@ -438,18 +438,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--95
 <figuras/cicloide general.PNG, id=74, 412.54124pt x 234.8775pt>
 File: figuras/cicloide general.PNG Graphic file (type png)
 <use figuras/cicloide general.PNG>
-Package pdftex.def Info: figuras/cicloide general.PNG  used on input line 96.
+Package pdftex.def Info: figuras/cicloide general.PNG  used on input line 95.
 (pdftex.def)             Requested size: 123.76332pt x 70.46379pt.
  [3 <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/cicloide general.PNG>]
 <figuras/pend 1.PNG, id=82, 211.992pt x 133.09724pt>
 File: figuras/pend 1.PNG Graphic file (type png)
 <use figuras/pend 1.PNG>
-Package pdftex.def Info: figuras/pend 1.PNG  used on input line 174.
+Package pdftex.def Info: figuras/pend 1.PNG  used on input line 173.
 (pdftex.def)             Requested size: 105.99573pt x 66.54845pt.
 <figuras/pend 2.PNG, id=83, 211.992pt x 137.91525pt>
 File: figuras/pend 2.PNG Graphic file (type png)
 <use figuras/pend 2.PNG>
-Package pdftex.def Info: figuras/pend 2.PNG  used on input line 175.
+Package pdftex.def Info: figuras/pend 2.PNG  used on input line 174.
 (pdftex.def)             Requested size: 105.99573pt x 68.95744pt.
  [4 <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/pend 1.PNG> <d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/figuras/pend 2.PNG>] ("d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.aux"
 LaTeX Info: Redefining \. on input line 25.
@@ -467,7 +467,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  71i,12n,74p,387b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.pdf" (4 pages, 353168 bytes).
+Output written on "d:/Latex\Segundo curso\Segundo Cuatri\Curvas\cicloide\cicloide.pdf" (4 pages, 353102 bytes).
 PDF statistics:
  134 PDF objects out of 1000 (max. 8388607)
  14 named destinations out of 1000 (max. 500000)

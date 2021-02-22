@@ -39,28 +39,27 @@ Si tomamos una circunferencia de radio $r$ y observamos la trayectoria que recor
 \href{https://www.geogebra.org/calculator/ju6wnwpc}{Geogebra applet}
 \end{center}
 \newpage\section{Parametrización}
-Partimos de la equación de una circunferencia cuyo ángulo sea medido de la siguiente manera:
+Partimos de la ecuación de una circunferencia cuyo ángulo sea medido de la siguiente manera:
 \begin{center}
         \includegraphics[scale=0.4]{figuras/circulo angulo.PNG}
-\end{center} Pues nos resultará idóneo. cuando rodemos la circunferencia. Se tiene:\\
+\end{center} Pues nos resultará idóneo cuando rodemos la circunferencia. Se tiene:\\
 $\left\{\begin{array}{lll}
     \theta = 0 & \Rightarrow & \alpha(\theta)=(0,-1) \\
     \theta = \frac{\pi}{2} & \Rightarrow & \alpha(\theta)=(-1,0) \\
     \theta = \pi & \Rightarrow & \alpha(\theta)=(0,1) \\
     \theta = \frac{3\pi}{2} & \Rightarrow & \alpha(\theta)=(1,0)
 \end{array}\right.$
-y, por tanto la ecuación de esta circunferencia viene dada por $\alpha(\theta)=(-\sen(\theta,-\cos(\theta))$ (si es de radio $1$).
-Ahora vamos a suponer que la circunferencia tiene radio $r$; $\alpha(\theta)=r(-\sen(\theta,-\cos(\theta))$.
-La ''apoyamos'' en el eje $X$, centrandola en $(0,r)$: $\alpha(\theta)=r(-\sen(\theta,1-\cos(\theta))$.
+y, por tanto la ecuación de esta circunferencia viene dada por $\alpha(\theta)=(-\sen(\theta),-\cos(\theta))$ (si es de radio $1$).
+Ahora vamos a suponer que la circunferencia tiene radio $r$; $\alpha(\theta)=r(-\sen(\theta),-\cos(\theta))$.
+La ''apoyamos'' en el eje $X$, centrándola en $(0,r)$: $\alpha(\theta)=r(-\sen(\theta),1-\cos(\theta))$.
 Ahora vamos a rodarla. Esto lo haremos encontrando una función adecuada $x(\theta)$ tal que la coordenada $x$  del punto avance.
-Consideramos $\alpha(\theta)=r(x(\theta)-\sen(\theta),-\cos(\theta))$, que es la ecuación de la circunferencia cuya coordenada
+Consideramos $\alpha(\theta)=r(x(\theta)-\sen(\theta),1-\cos(\theta))$, que es la ecuación de la circunferencia cuya coordenada
 $x$ va desplazándose acorde con $x(\theta)$. Para lograr la cicloide, debemos hallar $x(\theta)$ tal que $x(\theta)$
 ''avance al ritmo de la rodada de la circunferencia''. Para ello, consideramos el siguiente esquema:
 \begin{center}
     \includegraphics[scale=0.3]{figuras/esquema.PNG}
 \end{center}
 Sabiendo que la posición del centro de la circunferencia tiene por coordenada $x=r\theta$ (una vez rodado un ángulo $\theta$),
-es decir $x(\theta)=r\theta$,
 queremos hallar el valor de $a$, pues la coordenada del punto $P$ (genera la cicloide) es $r\theta-a$.
 Conociendo el ángulo $\theta$ y el radio $r$, vamos a hallar $a$ en función de $r$ y $\theta$.
 $$
@@ -83,21 +82,21 @@ $$
 $$
 a=h\sen\left( \frac{\pi-\theta}{2} \right)= r\sen(\theta)
 $$
-Por tanto la cicloide tiene la Parametrización
+Por tanto la cicloide tiene la parametrización
 $$
-\alpha(t)=(r\theta-r\sen(\theta),r-r\cos(\theta))
+\alpha(\theta)=(r\theta-r\sen(\theta),r-r\cos(\theta))
 $$
 Se nos puede plantear la duda ¿qué ocurriria si en vez de tomar $x(t)=rt$, tomáramos una función distinta?
 Es decir, si el punto $P$ que dibuja la cicloide, girara por la circunferencia más rápido o despacio que la rodadura,
-en vez de estar fijo. Nos queda una degeneración de la cicloide. Algunas de estas variciones pueden entenderse también de la
-siguiente manera: Habiendo partido de una circunferncia $c(t)=r(-\sen(t),1-\cos(t))=(-r\sen(t),r-r\cos(t))$, de radio $r$
-y centrada en $(0,r)$, ¿qué ocurriria si el punto que que dibuja la cicloide estuviera dentro o fuera del círculo? Es decir:\\
+en vez de estar fijo. Nos queda una degeneración de la cicloide. Algunas de estas variaciones pueden entenderse también de la
+siguiente manera: Habiendo partido de una circunferencia $c(t)=r(-\sen(t),1-\cos(t))=(-r\sen(t),r-r\cos(t))$, de radio $r$
+y centrada en $(0,r)$, ¿qué ocurriría si el punto que que dibuja la cicloide estuviera dentro o fuera del círculo? Es decir:\\
 \begin{center}
     \includegraphics[scale=0.3]{figuras/cicloide general.PNG}
 \end{center}
 Podemos hacer esto tomando una variación $v$ en el radio de la circunferencia generatriz, quedándonos:
-$\alpha(t)=(rt-(r+v)\sen(t),r-(r+v)\cos(t))$ De esta manera, la circunferencia sigue rodando a la vez $P$, y sigue apoyada en el eje,
-pero el punto no está en la propia circunferencia, si no dentro o fuera, dependiento del signo de $v$:
+$\alpha(t)=(rt-(r+v)\sen(t),r-(r+v)\cos(t))$ De esta manera, la circunferencia sigue rodando a la vez que $P$, y sigue apoyada en el eje,
+pero el punto no está en la propia circunferencia, si no dentro o fuera, dependiendo del signo de $v$:
 $$
 \begin{array}{ll}
     v>0 & \text{Cicloide alargada} \\
@@ -163,7 +162,7 @@ $$
 \section{Curiosidades}
 \subsection{Curva braquistócrona}
 La palabra braquistócrona viene del griego \textit{braquistos} que significa el más corto y \textit{chronos} que significa tiempo,
-es decir, la curva que tiene el tiempo más corto. Si tenemos dos puntos $ P $, $ Q $ y queremos enncontrar la trayectoria que
+es decir, la curva que tiene el tiempo más corto. Si tenemos dos puntos $ P $, $ Q $ y queremos encontrar la trayectoria que
 minimiza el tiempo de trayecto entre $ P $ y $ Q $. Obtenemos que dicha trayectoria es una cicloide.
 \subsection{Curva tautócrona o isócrona}
 Las palabras tautócrona e isócrona vienen de los prefijos griegos \textit{tauto/iso} que significan el mismo y de la palabra griega
@@ -174,7 +173,7 @@ el tiempo requerido para llegar al punto más bajo es siempre el mismo. De nuevo
     \includegraphics[scale=0.5]{figuras/pend 1.PNG}\\
     \includegraphics[scale=0.5]{figuras/pend 2.PNG}
 \end{center}
-Las curvas que se ven en la parte superior son cicloides, de esta manera las cuerdas que sostienen los pendulos van tomando la
+Las curvas que se ven en la parte superior son cicloides, de esta manera las cuerdas que sostienen los péndulos van tomando la
 forma de parte de la cicloide y otra parte recta. Estos péndulos tienen la propiedad de tener oscilaciones isócronas, es decir,
 el tiempo es el mismo.
 \end{document}

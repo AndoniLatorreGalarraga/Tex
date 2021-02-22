@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1613942824 "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex" "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.pdf" "cicloide" 1613942829
+["pdflatex"] 1613992224 "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex" "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.pdf" "cicloide" 1613992807
   "C:/Users/User/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1613327581 9293699 3f9a861f68fc7e71da7fbd877f49b43d ""
   "C:/Users/User/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1613903583 104882 21718b0db02983680cdd8987593b5315 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -97,11 +97,11 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/vmargin/vmargin.sty" 1090519524 7055 5eae49c3f07fead60d92def0a4f5c30f ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
-  "cicloide.aux" 1613942828 1894 41db69438469e1a6f567f199cc7daf86 "pdflatex"
-  "cicloide.out" 1613942828 1151 7e2ea9b7bbc14d29d0e661657fc4d751 "pdflatex"
-  "cicloide.tex" 1613942824 9127 b860309a4d3a376392983770b266b070 ""
-  "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.aux" 1613942828 1894 41db69438469e1a6f567f199cc7daf86 ""
-  "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex" 1613942824 9127 b860309a4d3a376392983770b266b070 ""
+  "cicloide.aux" 1613992228 1894 41db69438469e1a6f567f199cc7daf86 "pdflatex"
+  "cicloide.out" 1613992228 1151 7e2ea9b7bbc14d29d0e661657fc4d751 "pdflatex"
+  "cicloide.tex" 1613992224 9112 6a2ca8b2a096d8d1993de29ff92ea39f ""
+  "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.aux" 1613992228 1894 41db69438469e1a6f567f199cc7daf86 ""
+  "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.tex" 1613992224 9112 6a2ca8b2a096d8d1993de29ff92ea39f ""
   "figuras/cicloide descipcion 1.PNG" 1612732010 21757 0b57064b28777dbd11768d0032924ae3 ""
   "figuras/cicloide descipcion 2.PNG" 1612732059 22961 eca6e05fdcbda4effcc4ff5b5898705a ""
   "figuras/cicloide descipcion 3.PNG" 1612732092 22981 2702459b15b3b31c0a1ff8e48fece38f ""
@@ -113,9 +113,9 @@
   "figuras/pend 1.PNG" 1613941727 10537 0b777289f864f608fc9f55e08d120f49 ""
   "figuras/pend 2.PNG" 1613941756 8304 ba1acd857b0a8d0deeec5684e8320e1b ""
   (generated)
-  "cicloide.aux"
-  "cicloide.log"
-  "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.log"
-  "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.pdf"
-  "cicloide.out"
   "cicloide.pdf"
+  "cicloide.out"
+  "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.log"
+  "cicloide.log"
+  "d:/Latex/Segundo curso/Segundo Cuatri/Curvas/cicloide/cicloide.pdf"
+  "cicloide.aux"
