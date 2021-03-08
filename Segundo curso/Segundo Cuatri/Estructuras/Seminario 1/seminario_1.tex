@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Primer seminario de estructuras algebráicas}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}{\textbf{Proposición: }}
+\newcommand{\dem}{\textit{Dem: }}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+\noindent \textbf{2.}\\
+\textit{d)}
+$$
+o(\overline{12})=\frac{100}{m.c.d.(12,100)}=\frac{100}{4}=25
+$$
+\textit{e)}
+$$
+o(\overline{-35})=o(\overline{65})=\frac{100}{m.c.d.(65,100)}=\frac{100}{4}=20
+$$
+\textbf{4.}\\
+\textit{c)}
+Por el teorema de Euler, los candidatos son los divisores de $\phi(17)=16$.
+$$
+\overline{14} = \overline{-3}
+$$
+$$
+\begin{array}{ll}
+  \overline{-3}^2    & = \overline{9}\\
+  \overline{-3}^4    & = \overline{81}=\overline{-4}\\
+  \overline{-3}^8    & = \overline{16}=\overline{-1}\\
+  \overline{-3}^{16} & = \overline{1}
+\end{array}\quad \Rightarrow \quad o(\overline{14})=16
+$$
+\textit{e)}
+Por el teorema de Euler, los candidatos son los divisores de $\phi(25)=25-5=20$.
+$$
+\begin{array}{ll}
+  \overline{2}^2    & =\overline{4}\\
+  \overline{2}^4    & =\overline{16}\\
+  \overline{2}^5    & =\overline{32}=\overline{7}\\
+  \overline{2}^{10} & =\overline{49}=\overline{-1}\\
+  \overline{2}^{20} & =\overline{1}
+\end{array}\quad \Rightarrow \quad o(\overline{2})=20
+$$
+\textbf{7.}
+Si interpretamos $D_9$ como el subgrupo de $\Sigma_9$ generado por $a=\left(\begin{array}{c}123456789\\234567891\end{array}\right)$ y $b= \left(\begin{array}{c}123456789\\132547698\end{array}\right)$.
+$$
+a = (123456789) \quad \Rightarrow \quad o(a)=9
+$$
+$$
+b=(23)(45)(67)(89) \quad \Rightarrow \quad o(b)=2
+$$
+$$
+a^3=\left(\begin{array}{c}123456789\\456789123\end{array}\right)
+= (147)(258)(369) \quad \Rightarrow \quad o(a^3)=3
+$$
+\end{document}
