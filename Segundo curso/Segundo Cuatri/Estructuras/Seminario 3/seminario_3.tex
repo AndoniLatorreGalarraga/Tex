@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Tercer Seminario}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\mathbb{R}}
+\usepackage{tikz,mathtools}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+\noindent
+6. Sean $h\in H_1\cap H_2$ y $g\in G$ como $h\in H_1$ y $H_1\trianglelefteq G$ $g^{-1} h g \in H_1$, además como $h\in H_2$ y $H_2\trianglelefteq G$ $g^{-1} h g \in H_2$ y se tiene que $g^{-1} h g \in H_1\cap H_2$.\\\\
+\noindent
+9. La condicion es que $G$ sea abeliano.\\
+abeliano $\Rightarrow$ automorfismo\\
+Es biyectivo porque el inverso siempre existe y es único Además,
+$$
+\forall a,b\in G \quad f(ab)=b^{-1}a^{-1}\nota{=}{\text{abeliano}}a^{-1}b^{-1}=f(a)f(b)
+$$
+abeliano $\Leftarrow$ automorfismo\\
+$$
+\forall a,b\in G \quad f(ab)=f(a)f(b) \Rightarrow b^{-1}a^{-1}=a^{-1}b^{-1} \Rightarrow ab(b^{-1}a^{-1})ba=ab(a^{-1}b^{-1})ba \Rightarrow ba=ab
+$$
+12. Veamos que $f(ab)=f(a)f(b) \forall a,b\in G$.\\
+$n>0$
+$$
+f(ab)=(ab)^n=\underbrace{ab\cdots ab}_n \nota{=}{abeliano}\underbrace{a\cdots a}_n \underbrace{b\cdots b}_n=a^nb^n=f(a)f(b)
+$$
+$$
+f(ab)=(ab)^{-n}=\underbrace{-(ab)\cdots -(ab)}_n \nota{=}{abeliano}\underbrace{-a\cdots -a}_n \underbrace{-b\cdots -b}_n=a^{-n}b^{-n}=f(a)f(b)
+$$
+$n=0$
+$$
+f(ab)=(ab)^0=1=1\cdot 1=a^0b^0=f(a)f(b)
+$$
+No siempre es automorfismo. Sea $G=(\bb{Z},+)$, $f$ no es suprayectiva ya que con $n=2$ se tiene que $f^{-1}(\{3\})=\emptyset$
+\end{document}

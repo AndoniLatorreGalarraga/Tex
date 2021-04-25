@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Tabla $Q_8$}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}{\textbf{Proposición: }}
+\newcommand{\dem}{\textit{Dem: }}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+
+% \begin{table}[]
+    \begin{tabular}{|l|llllllll}
+    \hline
+     $\cdot$ & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{-1} & \multicolumn{1}{l|}{i} & \multicolumn{1}{l|}{-i} & \multicolumn{1}{l|}{j} & \multicolumn{1}{l|}{-j} & \multicolumn{1}{l|}{k} & \multicolumn{1}{l|}{-k} \\ \hline
+    1                    & 1                      & -1                      & i                      & -i                      & j                      & -j                      & k                      & -k                      \\ \cline{1-1}
+    -1                   & -1                     & 1                       & -i                     & i                       & -j                     & j                       & -k                     & k                       \\ \cline{1-1}
+    i                    & i                      & -i                      & -1                     & 1                       & k                      & -k                      & -j                     & j                       \\ \cline{1-1}
+    -i                   & -i                     & i                       & 1                      & -1                      & -k                     & k                       & j                      & -j                      \\ \cline{1-1}
+    j                    & j                      & -j                      & -k                     & k                       & -1                     & 1                       & i                      & -1                      \\ \cline{1-1}
+    -j                   & -j                     & j                       & k                      & -k                      & 1                      & -1                      & i                      & -i                      \\ \cline{1-1}
+    k                    & k                      & -k                      & j                      & -j                      & -i                     & i                       & -1                     & 1                       \\ \cline{1-1}
+    -k                   & -k                     & k                       & -j                     & j                       & i                      & -1                      & 1                      & -1                      \\ \cline{1-1}
+    \end{tabular}
+    % \end{table}
+\end{document}
