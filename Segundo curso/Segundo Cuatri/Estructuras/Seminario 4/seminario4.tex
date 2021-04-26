@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Cuarto Seminario de Estructuras Algebraicas}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+
+\textbf{Orden $11$}\\
+Sea $G$ grupo de orden $11$. Sea $a\in G-\{1\}$, como $o(a)\ne 1$ y $o(a)\mid 11$ se tiene que $o(a)=11$, ahora $|<a>|=11$ y como $<a>\le G$ y $|<a>|=|G|$ se tiene que $<a>=G$ y por lo tanto $G\simeq C_{11}$.\\
+
+\textbf{Orden $22$}\\
+Sea $G$ grupo de orden $22$. Por el primer teorema de Sylow sabemos que existen un $11$-Sylow y un $2$-Sylow. Estos grupos son de orden primo y por lo tanto cíclicos, sean $a,b$ sus generadores respectivos. Tenemos que $|<a,b>|\in \{1,2,11,22\}$, $1$ no puede ser porque $a\ne 1$ y por lo tanto el grupo se no trivial. $2$ no puede ser ya que $o(a)=11$ y $11$ no divide a $2$. $11$ no puede ser ya que $o(b)=2$ y $2$ no divide a $11$. Se tiene que $G=<a,b>$. Por el tercer teorema de Sylow $\nu_{11}(G)\mid 2$ y $\nu_{11}(G)\equiv 1 \mod 11$ por lo tanto $\nu_{11}(G)=1$ y por el segundo teorema de Sylow el unico grupo de orden $11$, $<a>$, y es normal. Ahora tenemos que $bab^{-1}=a^i$ para algun $i$, con $1\le i \le 10$ ahora $a=(b^2)^{-1}ab^2=b^{-1}a^ib=\underbrace{(b^{-1}ab)\cdots (b^{-1}ab)}_i=(a^i)^i=a^{i^2}$ y $a^{i^2-1}=1$ y $11$ divide a $i^2-1=(i-1)(i+1)$ entonces $i=1$ o $i=10$. Cuando $i=1$ $bab^{-1}=a$ y el grupo es abeliano e isomorfo a $C_{22}$. Cuando $i=10$, $bab^{-1}=a^{p-1}=a^{-1}$ y se tiene $G=<a,b\mid a^{11} = b^2 =1 ,^b=a^{-1}>$ que es isomorfo a $D_{11}$.\\
+
+\textbf{Orden $35$}\\
+Sea $G$ grupo de orden $35$. Sabemos que existen un único $5$-Sylow que es normal y un único $7$-Sylow que es normal, su intersección es trivial ya que los elementos no identidad son de orden 5 y 7 respectivamente y por tanto distintos. Por definición de producto directo y sabiendo que los Sylow son ciclicos $G\simeq C_5\times C_7\simeq C_{35}$.\\
+
+\textbf{Orden $49$}\\
+Sea $G$ grupo de orden $49$. Veamos que $|Z(G)|=49$, sabemos que $|Z(G)|$ divide a $49$ por lo que tiene que ser $1$, $7$ o $49$. Como $49=7^2$ tenemos que $G$ es p-grupo y por lo tanto $|Z(G)|>1$ entonces $|Z(G)|$ solo puede ser $7$ o $49$. Si es $7$ entonces $\left| G/Z(G) \right| = 7$ y $G/Z(G)$ seria cíclico, teniendose que $G$ es abeliano. Esto es contradictorio ya que si $G$ es abeliano $G/Z(G)\simeq 1$ y $1\ne 7$. Por lo tanto $|Z(G)|=49=|G|$ y $G$ es abeliano. Ahora sabemos que $G\simeq C_{49}$ o $G\simeq C_{7}\times C_{7}$. Estos no son isomorfos ya que en $C_{49}$ existen elementos de orden $49$ y en $C_{7}|\times C_{7}$ todos los elementos tienen orden menor o igual que $7$.
+$$
+\forall (g,g')\in C_7\times C_7 \quad (g,g')^7=1 \quad \because g,g'\in C_7 \Rightarrow
+\left\{\begin{array}{l}
+1=g^{|C_7|}=g^7\\
+1=g^{|C_7|}=g'^7
+\end{array}\right.
+$$
+
+\end{document}
