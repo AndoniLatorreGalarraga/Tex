@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Ejercicio 5}
+\author{Andoni Latorre Galarraga, Aitor Moreno Rebollo, Mariana Emilia Zaballa Bernabé}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}{\textbf{Proposición: }}
+\newcommand{\dem}{\textit{Dem: }}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+
+(a)\\
+Calculamos la función de verosimilitud:
+$$
+L(X_1, \cdots, X_n;\theta)=f(X_1, \cdots, X_n;\theta) = f(X_1;\theta) \cdots f(X_n;\theta) =
+$$
+$$
+\theta (1 - \theta)^{X_1 - 1} \cdots \theta (1 - \theta)^{X_n - 1}
+= \theta^n (1 - \theta)^{X_1 + \cdots X_n - n}
+$$
+Calculamos $\theta^*$:
+$$
+LnL(X_1, \cdots, X_n;\theta) = n Ln(\theta) + \bar{X} \Rightarrow \frac{d}{d\theta} LnL(X_1, \cdots, X_n;\theta) = 0
+$$
+$$
+\frac{n}{\theta^*}-\frac{\bar{X}}{1-\theta^*} = 0 \Rightarrow n - n \theta^* - \bar{X} \theta^* = 0 \Rightarrow 
+$$
+\end{document}

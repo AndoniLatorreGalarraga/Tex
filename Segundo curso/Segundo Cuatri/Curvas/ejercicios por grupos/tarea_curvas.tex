@@ -1,0 +1,284 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Curvas y Superficies}
+\author{Víctor Eguren, Andoni Latorre, Aitor Moreno, Mariana Zaballa, Gonzalo Romera}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+
+\textbf{Ejercicio 1}\\
+\textit{i)}
+$$
+X_u \times X_v = \left|\begin{array}{ccc}
+    i & j & k \\
+    \cos(v) & \sen(v) & 0 \\
+    -u\sen(v) & u\cos(v) & 1    
+\end{array}\right| = (\sen(v), -\cos(v),u)
+$$
+$$
+\Rightarrow X_3 = \frac{X_u\times X_v}{\| X_u \times X_v\|} = \frac{((\sen(v), -\cos(v),u))}{\sqrt{u^2+1}}
+$$
+$$
+L_{11} = X_3\cdot X_{uu} = 0
+$$
+$$
+L_{12} = X_3\cdot X_{uv} = \frac{1}{\sqrt{u^2+1}} (\sen(v), -\cos(v),u) (-\sen(v), \cos(v), 0) = \frac{-1}{\sqrt{u^2+1}}
+$$
+$$
+L_{22} = X_3\cdot X_{vv} = \frac{1}{\sqrt{u^2+1}} (\sen(v), -\cos(v),u) \cdot (-u\cos(v),-u\sen(v),0) = 0
+$$
+$$
+E = X_u \cdot X_u = 1
+$$
+$$
+F = X_u \cdot X_v = 0
+$$
+$$
+G = X_v \cdot X_v = u^2 + 1
+$$
+Sea $\alpha(t)=X(u(t),v(t))$
+$$
+II_{\alpha(t)}(\alpha'(t))=(u'(t))^2L_{11}(u(t),v(t))+2u'(t)v'(t)L_{12}(u(t),v(t))+(v'(t))^2L_{22}(u(t),v(t))
+= - \frac{2 u'(t) v'(t)}{(u(t)^2 +1)^{\frac{1}{2}}}
+$$
+$$
+K(X(u,v))= \frac{L_{11}(u,v)L_{22}(u,v)-(L_{12}(u,v))^2}{E(u,v)G(u,v)-(F(u,v)^2)} = \frac{-1}{(u^2+1)^2}
+$$
+$$
+H(X(u,v))= \frac{1}{2} \frac{-2FL_{12}+GL_{11}+EL_{22}}{EG-F^2}=0
+$$
+$$
+\left\{\begin{array}{l}
+    K=\lambda_1\lambda_2 \\
+    H = \frac{1}{2}(\lambda_1+\lambda_2)
+\end{array}\right.
+\Rightarrow
+\left\{ \begin{array}{l}
+    K=-\lambda_1^2 \\
+    \lambda_2 = - \lambda_1
+\end{array}\right.
+\Rightarrow
+\left\{ \begin{array}{l}
+    \lambda_1 = \frac{1}{u^2+1} \\
+    \lambda_2 = \frac{-1}{u^2+1}
+\end{array}\right.
+\text{ ó viceversa}
+$$
+\textit{ii)}
+$$
+\|\alpha'(t)\|^2 = I_{\alpha(t)}(\alpha'(t)) = (u'(t))^2E(u(t),v(t))+2u'(t)v'(t)F(u(t),v(t))+(v'(t))^2 G(u(t),v(t))
+$$
+$$
+= cosh^2(t)+1^2(senh^2(t)+1)=2cosh^2(t)
+$$
+$$
+k_n(\alpha'(t))=\frac{1}{\|\alpha'(t)\|} II_{\alpha(t)} (\alpha'(t))=\frac{1}{cosh^2(t)}
+$$
+\textit{iii)}\\
+$\beta$ línea asintótica$\quad \Leftrightarrow \quad (u'(t))^2L_{11}(u(t),v(t))+2u'(t)v'(t)L_{12}(u(t),v(t))+(v'(t))^2L_{22}(u(t),v(t)) = 0$.
+$$
+(u'(t))^2L_{11}+2u'(t)v'(t)L_{12}+(v'(t))^2L_{22}= - \frac{2}{\sqrt{t^2+1}}\cdot 1 \cdot 0 = 0 \Rightarrow \text{$\beta$ línea asintótica}
+$$
+$\beta$ línea de curvatura $\Leftrightarrow$
+$$
+\left|\begin{array}{ccc}
+    (u'(t))^2 & -u'(t)v'(t) & (v'(t))^2 \\
+    E & F & G \\
+    L_{11} & L_{12} & L_{22}    
+\end{array}\right| = 0
+$$
+$$
+\left|\begin{array}{ccc}
+    (u'(t))^2 & -u'(t)v'(t) & (v'(t))^2 \\
+    E & F & G \\
+    L_{11} & L_{12} & L_{22}    
+\end{array}\right| =
+\left|\begin{array}{ccc}
+    1 & 0 & 0 \\
+    1 & 0 & t^2+1 \\
+    0 & \frac{-1}{\sqrt{t^2+1}} & 0    
+\end{array}\right| = \frac{t^2+1}{\sqrt{t^2+1}} \ne 0 \quad \forall t\in \R
+$$
+$$
+\Rightarrow \quad \text{$\beta$ no es línea de curvatura}
+$$
+
+\textbf{Ejercicio 2}\\
+\textit{i)}\\
+Sea $f(x,y,z)=x^2+y^2-z$. $S=f^{-1}(0)\text{ regular }\Leftrightarrow \nabla f(x,y,z)\ne (0,0,0) \quad \forall (x,y,z)\in S$.
+$$
+Df(x,y,z)=(2x,2y,-1)\ne (0,0,0) \forall (x,y,,z)\in S \quad \Rightarrow \quad \text{$S$ resgular}
+$$
+\textit{ii)}\\
+$$
+X(u,v)=(u,v,u^2+v^2)
+$$
+$$
+X_u(u,v)=(1,0,2u), X_v(u,v)=(0,1,2v)
+$$
+$$
+\Rightarrow X_u \times X_v = \left|\begin{array}{ccc}
+    i & j & k \\
+    1 & 0 & 2u \\
+    0 & 1 & 2v    
+\end{array}\right| = (-2u,-2v,1) \quad \Rightarrow \quad X_3 = \frac{(-2u,-2v,1)}{\sqrt{4u^2+4v^2+1}}
+$$
+$$
+L_{11} = \frac{2}{\sqrt{4u^2+4v^2+1}} \quad , \quad L_{12}=0 \quad , \quad L_{22}= \frac{2}{\sqrt{4u^2+4v^2+1}}
+$$
+$$
+E = 1+4u^2 \quad , \quad F=4uv \quad , \quad G=1+av^2
+$$
+$$
+K=\frac{4}{4u^2+4v^2+1}\frac{1}{4u^2+4v^2+1}=\frac{4}{(4u^2+4v^2+1)^2}
+$$
+$$
+H = \frac{1}{2} \frac{4}{4u^2+4v^2+1} \left(-8uv0+(1+4v^2)\frac{2}{\sqrt{4u^2+4v^2+1}}+(1+4u^2)\frac{2}{\sqrt{4u^2+4v^2+1}}\right) = \frac{2+4v^2+4u^2}{(4u^2+4v^2+1)^{\frac{3}{2}}}
+$$
+$$
+\left\{ \begin{array}{l}
+    K = \lambda_1 \lambda_2\\
+    H = \frac{1}{2}(\lambda_1+\lambda_2)
+\end{array}\right. \Rightarrow
+\left\{ \begin{array}{l}
+    K = \lambda_1 \lambda_2\\
+    \lambda_1 = 2H-\lambda_2
+\end{array}\right. \Rightarrow
+\left\{ \begin{array}{l}
+    K = 2H\lambda_2 - \lambda_2^2\\
+    \lambda_1 = 2H - \lambda_2
+\end{array}\right. \Rightarrow -\lambda^2 + 2H\lambda - K = 0 \Rightarrow \lambda = H \pm \sqrt{H^2-K}
+$$
+$$
+H^2-K = \frac{(2+4v^2+4u^2)^2}{(4u^2+4v^2+1)^3}-\frac{4}{(4u^2+4v^2+1)^2}= \frac{16(u^2+v^2)^2}{(4u^2+4v^2+1)^3}
+$$
+$$
+\Rightarrow \left\{ \begin{array}{l}
+    \lambda_1 = H + \sqrt{H^-K} = 2 \frac{1+4u^2+4v^2}{(4u^2+4v^2+1)^{\frac{3}{2}}}\\
+    \lambda_2 = H - \sqrt{H^-K} = \frac{2}{(4u^2+4v^2+1)^{\frac{3}{2}}}
+\end{array}\right.
+$$
+\textit{iii)}\\
+$$
+\alpha(t) = (\alpha_1(t), \alpha_2(t), \alpha_(t)) = (t,t,2t^2)
+$$
+$$
+\alpha_1^2(t)+\alpha_2^2 = t^2+t^2=\alpha_3(t) \Rightarrow \text{$\alpha$ esta sobre $S$.}
+$$
+$$
+\beta(t)= (\beta_1(t), \beta_2(t), \beta_3(t))= (senh(t),1,senh^2(t))
+$$
+$$
+\beta_1^2(t)+\beta_2^2(t)= senh^2(t)+1\ne senh^2(t)=\beta_2 \Rightarrow \text{$\beta$ no esta sobre $S$}
+$$
+$$
+\alpha(t)=X(u,v)
+$$
+$$
+(u'(t))^2L_{11}(u(t),v(t))+2u'(t)v'(t)L_{12}(u(t),v(t))+(v'(t))^2L_{22}(u(t),v(t))
+$$
+$$
+= \frac{2}{\sqrt{8t^2+1}} + \frac{2}{\sqrt{8t^2+1}} = \frac{4}{\sqrt{8t^2+1}} \ne 0 \quad \forall t \in \R \quad \Rightarrow \quad \text{$\alpha$ no es línea asintótica}
+$$
+$$
+\left|\begin{array}{ccc}
+    (u'(t))^2 & -u'(t)v'(t) & (v'(t))^2 \\
+    E & F & G \\
+    L_{11} & L_{12} & L_{22}    
+\end{array}\right| =
+\left|\begin{array}{ccc}
+    1 & -1 & 1 \\
+    1+4t^2 & 4t^2 & 1+4t^2 \\
+    \frac{2}{\sqrt{8t^2+1}} & 0 & \frac{2}{\sqrt{8t^2+1}} 
+\end{array}\right| = 0
+$$
+$$
+\Rightarrow \quad \text{$\alpha$ es línea de curvatura}
+$$
+
+\textbf{Ejercicio 3}\\
+\textit{i)}\\
+$$
+X_u = (1,0,2u), X_v=(0,1,-2v)
+$$
+$$
+X_u \times X_v = \left|\begin{array}{ccc}
+    i & j & k \\
+    1 & 0 & 2u \\
+    0 & 1 & -2v    
+\end{array}\right| = (-2u,2v,1) \Rightarrow X_3 = \frac{(-2u,2v,1)}{\sqrt{4u^2+4v^2+1}}
+$$
+$$
+L_{11}=\frac{2}{\sqrt{4u^2+4v^2+1}} \quad , \quad L_{12}=0 \quad , \quad L_{22}=\frac{-2}{\sqrt{4u^2+4v^2+1}} 
+$$
+$$
+E=1+4u^2 \quad , \quad F=-4uv \quad , \quad G=1+4v^2
+$$
+Sea $\alpha(t)=X(u(t),v(t))$
+$$
+I_{\alpha(t)}(\alpha'(t)) = (u'(t))^2E(u(t),v(t))+2u'(t)v'(t)F(u(t),v(t))+(v'(t))^2 G(u(t),v(t))
+$$
+$$
+= (u'(t))^2(1+4u^2)+8u'(t)v'(t)u(t)v(t)+(v'(t))^2 (1+4v^2)
+$$
+$$
+II_{\alpha(t)}(\alpha'(t))= \frac{2}{\sqrt{4u^2+4v^2+1}} ((u'(t))^2-(v'(t))^2)
+$$
+$$
+K = \frac{-4}{4u^2+4v^2+1} \frac{1}{4u^2+4v^2+1} = \frac{-4}{(4u^2+4v^2+1)^2}
+$$
+\textit{ii)}\\
+$$
+\text{$\alpha$ línea asintótica} \quad \Leftrightarrow \quad II_{\alpha(t)}(\alpha'(t))=0 \quad \Leftrightarrow \quad \frac{2}{\sqrt{4u^2+4v^2+1}} ((u'(t))^2-(v'(t))^2) = 0
+$$
+$$
+\Leftrightarrow \quad (u'(t))^2 = (v'(t))^2 \quad \Leftrightarrow \quad u'(t)=\pm v'(t) \quad \Leftrightarrow \quad u(t)=\pm v(t) + \text{cte.}
+$$
+$$
+\alpha(t)= X(t,0) = (t,0,t^2) \Rightarrow \alpha'(t)= (1,0,2t)=
+$$
+$$
+k_n(\alpha'(t))= \frac{1}{\| \alpha'(t)\|^2} II_{\alpha(t)}(\alpha'(t))= \frac{2}{\sqrt{4t^2+1}} \frac{1}{\sqrt{4t^2+1}} = \frac{2}{4t^2+1}
+$$
+$$
+k_n(\alpha'(t))\cdot X_3(\alpha(t)) = \frac{2}{4t^2+1} \frac{(-2t,0,1)}{\sqrt{4t^2+1}} = \frac{2}{(4t^2+1)^{\frac{3}{2}}}(-2t,0,1)
+$$
+$$
+t\ne\text{cte.} \quad \Rightarrow \quad \text{$\alpha$ no es línea asintótica.}
+$$
+$$
+\left|\begin{array}{ccc}
+    (u'(t))^2 & -u'(t)v'(t) & (v'(t))^2 \\
+    E & F & G \\
+    L_{11} & L_{12} & L_{22}    
+\end{array}\right| =
+\left|\begin{array}{ccc}
+    1 & 0 & 0 \\
+    1+4t^2 & 0 & 1 \\
+    \frac{2}{\sqrt{4t^2+1}} & 0 & \frac{-2}{\sqrt{4t^2+1}}
+\end{array}\right|=0
+$$
+$$
+\Rightarrow \quad \text{$\alpha$ línea de curvatura}
+$$
+\end{document}
