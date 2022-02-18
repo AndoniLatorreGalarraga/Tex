@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1645180174 "d:/Latex/Tercer Curso/Metodos Numericos II/2.7/latorre_interpolacion.tex" "latorre_interpolacion.pdf" "latorre_interpolacion" 1645180175
+["pdflatex"] 1645180809 "d:/Latex/Tercer Curso/Metodos Numericos II/2.7/latorre_interpolacion.tex" "latorre_interpolacion.pdf" "latorre_interpolacion" 1645180810
   "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1645041114 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/User/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1640116032 9769494 ae42ef42ef403a09f505e3bc677d49e7 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -21,7 +21,9 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy10.tfm" 1136765053 1124 6c73e740cf17375f03eec0ee63599741 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
+  "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247593067 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247593067 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1247593067 36281 c355509802a035cadc5f15869451dcee ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247593067 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247593067 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247593066 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
@@ -64,9 +66,9 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1636710260 32262 2bb622a0aa56c4a7a5cbdfe9d122c15a ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/vmargin/vmargin.sty" 1090519524 7055 5eae49c3f07fead60d92def0a4f5c30f ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "d:/Latex/Tercer Curso/Metodos Numericos II/2.7/latorre_interpolacion.tex" 1645180173 1977 69d6779a42b3dcf9e0677038d8d140c8 ""
-  "latorre_interpolacion.aux" 1645180174 194 72658fb03bfd53fc103956ba2036b889 "pdflatex"
-  "latorre_interpolacion.tex" 1645180173 1977 69d6779a42b3dcf9e0677038d8d140c8 ""
+  "d:/Latex/Tercer Curso/Metodos Numericos II/2.7/latorre_interpolacion.tex" 1645180808 2422 f15132345dbce1735b2a047c0cb54673 ""
+  "latorre_interpolacion.aux" 1645180809 194 72658fb03bfd53fc103956ba2036b889 "pdflatex"
+  "latorre_interpolacion.tex" 1645180808 2422 f15132345dbce1735b2a047c0cb54673 ""
   (generated)
   "latorre_interpolacion.aux"
   "latorre_interpolacion.log"
