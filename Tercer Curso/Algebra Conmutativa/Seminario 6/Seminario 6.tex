@@ -1,0 +1,172 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor,multicol}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario 6}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}{\textbf{Proposición: }}
+\newcommand{\dem}{\textit{Dem: }}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}
+\stepcounter{section}
+\section{}
+\noindent\textit{c)}\\
+Sean $x,y\in \varphi(N_1)$, $a,b\in A$. Entonces,
+$$
+\exists u,v\in N_1 : \varphi(u)=x, \varphi(v)=y
+$$
+Ahora, por $N_1 \le M_1$,
+$$
+\begin{array}{c}
+au+bv\in N_1 \\
+\Rightarrow \varphi(au+bv)\in\varphi(N_1) \\
+\Rightarrow a\varphi(u)+b\varphi(v)\in\varphi(N_1) \\
+\Rightarrow ax+by\in\varphi(N_1)
+\end{array}
+$$
+Como se cumple $\forall x,y\in\varphi(N_1)$, $\forall a,b\in A$, tenemos que $\varphi(N_1)\le M_2$.\\\\
+Sean $x,y\in\varphi^{-1}(N_2)$, $a,b\in A$. Como $N_2\le M_2$ y $\varphi(x),\varphi(y)\in N_2$.
+$$
+\begin{array}{c}
+\varphi(ax+by)=a\varphi(x)+b\varphi(y)\in N_2 \\
+\Rightarrow ax+by\in \varphi^{-1}(N_2)
+\end{array}
+$$
+Como se cumple $\forall x,y\in\varphi^{-1}(N_2)$, $\forall a,b\in A$, tenemos que $\varphi^{-1}(N_2)\le M_1$.\\\\
+\textit{d)}
+$$
+M_1\le M_1 \Rightarrow \text{im}\varphi=\varphi(M_1)\le M_2
+$$
+$$
+\{0_{M_2}\}\le M_2 \Rightarrow \text{ker}\varphi=\varphi^{-1}(\{0_{M_2}\})\le M_1
+$$
+\section{}
+\noindent Veamos que la siguiente aplicación es un isomorfismo.
+$$
+\begin{array}{crcl}
+\overline{\varphi} : & \frac{M_1}{\text{ker}\varphi} & \longrightarrow & \text{im}\varphi \\
+& m+\text{ker}\varphi & \longmapsto     & \varphi(m)
+\end{array}
+$$
+Veamos que está bien definido.
+$$
+\begin{array}{c}
+m+\text{ker}\varphi=m'+\text{ker}\varphi \\
+\Rightarrow m-m'\in\text{ker}\varphi \\
+\Rightarrow \varphi(m-m')=0 \\
+\Rightarrow \varphi(m)-\varphi(m')=0 \\
+\Rightarrow \varphi(m)=\varphi(m')
+\end{array}
+$$
+Veamos que es homomorfismo.
+$$
+\begin{array}{c}
+    \overline{\varphi}(\overline{x}+\overline{y}) = \overline{\varphi}(\overline{x+y}) = \varphi(x+y) \\
+    = \varphi(x)+\varphi(y) = \overline{\varphi}(\overline{x})+\overline{\varphi}(\overline{y})
+\end{array}
+$$
+$$
+\overline{\varphi}(a\overline{x}) = \overline{\varphi}(\overline{ax}) = \varphi(ax) = a\varphi(x) = a\overline{\varphi}(\overline{x})
+$$
+Veamos que es inyectivo.
+$$
+\begin{array}{c}
+    \overline{\varphi}(\overline{x}) = \overline{\varphi}(\overline{y}) \\
+    \Rightarrow \overline{\varphi}(\overline{x-y}) = 0 \\
+    \Rightarrow \varphi(x-y) = 0 \\
+    \Rightarrow x-y\in\text{ker}\varphi \\
+    \Rightarrow \overline{x} = \overline{y}
+\end{array}
+$$
+Veamos que es suprayectivo.
+$$
+\begin{array}{c}
+    m\in \text{im}\varphi \\
+    \Rightarrow \exists x\in M_1 : \varphi(x)=m \\
+    \Rightarrow \overline{\varphi}(\overline{x}) = \varphi(x)=m \text{ con } \overline{x}\in\frac{M_1}{\text{ker}\varphi}
+\end{array}
+$$
+\section{}
+\noindent Consideramos la siguiente aplicación.
+$$
+\begin{array}{crcl}
+\varphi : & \frac{M}{N} & \longrightarrow & \frac{M}{L} \\
+& m+N & \longmapsto     & m+L
+\end{array}
+$$
+Veamos que está bien definido.
+$$
+\begin{array}{c}
+    m+N = m'+N \Rightarrow m-m'\in N \subseteq L \\
+    \Rightarrow m+L = m'+L
+\end{array}
+$$
+Veamos que es homomorfismo.\\
+$$
+\begin{array}{c}
+    \varphi((a+b)+N) = (a+b)+L = (a+L)+(b+L) \\
+    = \varphi(a+N) + \varphi(b+N)
+\end{array}
+$$
+Veamos que es suprayectivo. Dado $m+L \in M/L$, $\varphi(m+N) = m+L$.\\
+Calculamos el núcleo.
+$$
+\left(\varphi(m+N)=m+L=0+L \Leftrightarrow m\in L\right) \Rightarrow \text{ker}\varphi = \frac{L}{N}
+$$
+Por el ejercicio 3, concluimos
+$$
+\frac{M/N}{L/N} \simeq \frac{M}{L}
+$$
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\section{}
+\noindent Si $x,y\in A[X^2]$, $a,b\in A$. Evidentemente, $ax+by \in A[X^2]$ y concuimos $A[X^2]\le A[X]$.\\\\
+Dos elementos $\overline{p},\overline{q}\in\frac{A[X]}{A[X^2]}$ son iguales si y solo si $p-q\in A[X^2]$. Esto ocurre si y solo si los coeficientes $\left( \sum_{i=0}^N k_i X^i\right)$ con $i$ impar son iguales en $p$ y $q$. Es decir, no importa el valor de de los $k_i$ con $i$ par. Entonces,
+$$
+\begin{array}{crcl}
+\varphi : & A[X]/A[X^2] & \longrightarrow & A[X] \\
+& \displaystyle\overline{\sum_{i=0}^N k_i X^i} & \longmapsto     & \displaystyle\sum_{\substack{i=0 \\ i \text{ impar}}}^N k_iX^{\frac{i-1}{2}}
+\end{array}
+$$
+Es inyectivo y está bien definido. Finalmente, como esta claro que es suprayectivo, quedaría ver que es homomorfismo.
+$$
+\begin{array}{c}
+    \displaystyle\varphi\left(a\overline{\sum_{i=0}^N k_i X^i}\right) = \displaystyle\varphi\left(\overline{\sum_{i=0}^N ak_i X^i}\right) \\
+    = \displaystyle\sum_{\substack{i=0 \\ i \text{ impar}}}^N ak_iX^{\frac{i-1}{2}} = \displaystyle a \sum_{\substack{i=0 \\ i \text{ impar}}}^N k_iX^{\frac{i-1}{2}} = \displaystyle a \varphi\left(\overline{\sum_{i=0}^N k_i X^i}\right)
+\end{array}
+$$
+$$
+\begin{array}{c}
+    \displaystyle\varphi\left(\overline{\sum_{i=0}^N k_i X^i} + \overline{\sum_{i=0}^N l_i X^i}\right) = \varphi\left(\overline{\sum_{i=0}^N (k_i+l_i) X^i}\right) \\
+    \displaystyle = \sum_{\substack{i=0 \\ i \text{ impar}}}^N (k_i+l_i)X^{\frac{i-1}{2}} = \sum_{\substack{i=0 \\ i \text{ impar}}}^N k_iX^{\frac{i-1}{2}} + \sum_{\substack{i=0 \\ i \text{ impar}}}^N l_iX^{\frac{i-1}{2}} \\
+    \displaystyle = \varphi\left(\overline{\sum_{i=0}^N k_i X^i}\right) + \varphi\left(\overline{\sum_{i=0}^N l_i X^i}\right)
+\end{array}
+$$
+Conluimos $\displaystyle\frac{A[X]}{A[X^2]} \simeq A[X]$.
+\end{multicols}
+\end{document}

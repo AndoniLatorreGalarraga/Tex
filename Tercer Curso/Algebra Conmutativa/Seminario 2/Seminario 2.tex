@@ -1,0 +1,300 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor,multicol,tikz,mathtools}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario 2}
+\author{Andoni Latorre Galarraga, Mariana Emilia Zaballa Bernabe}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}{\textbf{Proposición: }}
+\newcommand{\dem}{\textit{Dem: }}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[<-] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}
+
+% EJERCICIO 9
+
+\noindent \textbf{9.}\\
+\indent Se pide probar que $\left( \exists n \in \mathbb{N}^+ \text{ t.q. } a^n\in I \Rightarrow a \in I \right)$ \indent $\Leftrightarrow A/I \text{ no tiene elementos nilpotentes no nulos}$.\\\\
+\indent \indent $\boxed{\Rightarrow}$ Supongamos que $\exists \bar{a}\in A/I$ y $\exists n \in \bb{N}^+$ \indent \indent t.q. $\bar{a}^n=\bar{0}$.
+$$
+(\bar{a}^n) = (a+I)^n = a^n+I = \bar{0}
+$$
+$$
+\Rightarrow a^n \in I \overset{\text{hip.}}{\Rightarrow} a \in I \Rightarrow \bar{a}=\bar{0}
+$$
+\indent \indent $\boxed{\Rightarrow}$ Por hipótesis si $A/I$ no tiene elementos \indent \indent nipotentes no nulos. Dado $\bar{a} \in A/I$, si $\exists n \in \bb{N}$ \indent \indent t.q. $\bar{a}^n = \bar{0}$. Entonces,
+$$
+\bar{a}^n = (a + I)^n = a^n + I = \bar{0}
+$$
+$$
+\Rightarrow a^n \in I \Rightarrow \bar{a} = \bar{0} \Rightarrow a \in I
+$$
+\textbf{11.}\\
+\indent \textit{(a)} Si $A = \bb{Z}/6\bb{Z}$, tenemos que $(2)\ne \{0\} \ne (3)$ y \indent $(2)\cap (3) = \{0\}$.\\\\
+\indent \textit{(b)} Sean $I, J$ ideales no nulos tales que $I\cap J = \indent \{ 0_A\}$. Si $0_A\ne i\in I$, $0_A\ne j\in J$. Tenemos que \indent $ij \in I$ por ser $I$ ideal. Además $ij \in J$ por ser $J$ \indent ideal. Es decir, $ij \in I \cap J \Rightarrow ij=0_A$ \#\\\\
+\indent Queremos probar que si $\{I_k\}_{1\le k \le n}$ con $n \ge 2$ \indent entonces $\bigcap_{k=1}^n I_k \ne \{0_A\}$. Por inducción, ya \indent hemos probado para $n=2$.
+$$
+\bigcap_{k=1}^n I_k = I_n \cap \bigcap_{k=1}^{n-1} \ne \{0_A\}
+$$
+\indent por ser $\bigcap_{k=1}^{n-1}$ no nulo por hipótesis de inducción.\\\\
+\indent \textit{(c)} $\bb{Z}$ es D.I. y $(n)$ es no nulo para $n\in \bb{N}^+$
+$$
+\bigcap_{n=2}^\infty (n) = \{0\}
+$$
+\textbf{25.}\\
+\indent Supongamos que $\phi, \psi$ son homomorfismos. Sea \indent $a+bi\in \bb{Z}[i]$
+$$
+\left\{\begin{array}{cc}
+    \phi(a+bi)= \phi(a) + \phi(b)a_0\\
+    \psi(a+bi)= \psi(a) + \psi(b)a_0\\
+\end{array}\right.
+$$
+$$
+\left\{\begin{array}{ll}
+    \phi(0) = 0_A = \psi(0)\\
+    \phi(a) = \phi(\underbrace{1+\cdots+1}_a) = a1_a & a>0\\
+    \psi(a) = \psi(\underbrace{1+\cdots+1}_a) = a1_a\\
+    \phi(-a) = \phi(\underbrace{(-1)+\cdots+(-1)}_a) = -a1_a & a>0\\
+    \psi(-a) = \psi(\underbrace{(-1)+\cdots+(-1)}_a) = -a1_a & a>0
+\end{array}\right.
+$$
+$$
+\Rightarrow \phi(a+bi) = \psi(a+bi)
+$$
+\indent Es decir, el homomorfismo es único.\\\\
+\indent El homomorfismo explícito es:
+$$
+\begin{array}{crcl}
+\phi : & \bb{Z} & \longrightarrow & \bb{Z}/10\bb{Z} \\
+& i & \longmapsto     & \bar{7}\\
+& a \in \bb{Z} & \longmapsto     & \bar{a}
+\end{array}
+$$
+\indent veamos que es homomorfismo. Si $x=+bi$, $y= \indent c+di$
+$$
+\phi (x+y) = \phi (a+c+(b+d)i)
+$$
+$$
+=\phi (a)+\phi (c)+\phi (b)\bar{7}+\phi (d)\bar{7} = \phi (a+bi) + \phi (c+di)$$
+$$
+=\phi (x)+\phi (y)
+$$
+$$
+\phi (xy)=\phi (ac-bd+adi+bci)
+$$
+$$
+=\phi (a)\phi (c)-\phi (b)\phi (d)+\phi (a)\phi (d)\bar{7}+\phi (b)\phi (c)\bar{7} 
+$$
+$$
+\bar{a}\bar{c}-\bar{b}\bar{d}+ \bar{a}\bar{d}\bar{7} +\bar{b}\bar{c}\bar{7}=
+\bar{a}\bar{c}+(\bar{b}\bar{7})(\bar{d}\bar{7})+ \bar{a}\bar{d}\bar{7} +\bar{b}\bar{c}\bar{7}
+$$
+$$
+\bar{a}(\bar{c}+\bar{d}\bar{7}) + \bar{b}\bar{7}(\bar{d}\bar{7}+\bar{c})=
+(\bar{c}+\bar{d}\bar{7})(\bar{a}+\bar{b}\bar{7})=
+$$
+$$
+\phi(c+di)\phi(a+bi)=\phi(y)\phi(x)=\phi(x)\phi(y)
+$$
+$$
+\phi(0)=\bar{0}+\bar{0}\bar{7} = \bar{0}
+$$
+$$
+\phi(1)=\bar{1}+\bar{0}\bar{7} = \bar{1}
+$$
+\textbf{26.}\\
+\indent \indent \textit{Lema} $a+bi\in(3+i)\Rightarrow \alpha + \beta i \in (3+i) \forall \alpha \in \indent \indent \bar{a}, \beta \in \bar{b}$\\
+\indent \indent \textit{Dem} Basta con probar que $\exists c,d \in \bb{Z}$ t.q.
+$$
+(c+di)(3+i)=\alpha + \beta i
+$$
+\indent \indent Por hipótesis $\exists \gamma \delta \in \bb{Z}$ t.q. $(\gamma+\delta i)(3+1)= \indent \indent a+bi$. Si $\alpha = a + 10n$, $\beta = b+10m$ con \indent \indent $n,m\in \bb{Z}$. Entonces, $d=3m-n+\delta$ y \indent \indent $c=m+3n+\gamma$.
+$$
+(c+di)(3+i)
+$$
+$$
+=(m+3n+\gamma+(3m-n+\delta)i)(3+i)
+$$
+$$
+=(3 + i) \gamma - (1 - 3 i) \delta + 10 i m + 10 n
+$$
+$$
+(3 + i) \gamma + (3+i) i\delta + 10 i m + 10 n = \alpha + \beta i
+$$
+\indent \textit{(i), (iii)} Bastaría con probar $ker\phi = (3 + i)$ y \indent el resutado sería evidente por el primer teorema \indent de isomorfía.
+$$
+a+bi\in ker\phi \Leftrightarrow \bar{a}+\bar{7}\bar{b}= \bar{0} \Leftrightarrow a \equiv 3b \quad (\text{mod } 10)
+$$
+$$
+\begin{array}{c|c}
+    \bar{a} & \bar{b} \\ \hline
+    \bar{0}&\bar{0} \\ 
+    \bar{3}&\bar{1} \\ 
+    \bar{6}&\bar{2} \\ 
+    \bar{9}&\bar{3} \\ 
+    \bar{2}&\bar{4} \\ 
+    \bar{5}&\bar{5} \\ 
+    \bar{8}&\bar{6} \\ 
+    \bar{1}&\bar{7} \\ 
+    \bar{4}&\bar{8} \\ 
+    \bar{7}&\bar{9} \\ 
+\end{array}
+$$
+\indent Por el lema, basta con observar que:
+$$ 
+ (0+0i)(3+i)=0+0i 
+ $$
+ $$ 
+ (1+0i)(3+i)=3+1i 
+ $$
+ $$ 
+ (2+0i)(3+i)=6+2i 
+ $$
+ $$ 
+ (3+0i)(3+i)=9+3i 
+ $$
+ $$ 
+ (1+1i)(3+i)=2+4i 
+ $$
+ $$ 
+ (2+1i)(3+i)=5+5i 
+ $$
+ $$ 
+ (3+1i)(3+i)=8+6i 
+ $$
+ $$ 
+ (1+2i)(3+i)=1+7i 
+ $$
+ $$ 
+ (2+2i)(3+i)=4+8i 
+ $$
+ $$ 
+ (3+2i)(3+i)=7+9i 
+ $$
+\indent \textit{(ii)} Por se $\phi$ biyectiva, basta con observar que \indent $\{\phi(n)\mid n\in \bb{Z}, 0 \le n\le 9\} = \{\bar{n}\mid n\in \bb{Z}, 0\le \indent n\le 9\} = \bb{Z}/10\bb{Z}$.\\
+\textbf{28.}\\
+\indent Consideramos el homomorfismo
+$$
+\begin{array}{rrcl}
+\phi : & K[X_1, \cdots, X_n] & \longrightarrow & K[X_{r+1}, \cdots, X_n] \\
+&i=1,\cdots,r \quad X_i & \longmapsto     & a_i\\
+& P & \longmapsto     & P \quad \forall P\in K[X_{r+1}, \cdots, X_n]
+\end{array}
+$$
+Veamos que $\phi$ es homomorfismo. Sean $Q,P \in K[X_1, \cdots, X_n]$.
+$$
+P = \sum_{j_1,\cdots, j_n}c_{j_1,\cdots,j_n}X_1^{j_1}\cdots X_n^{j_n} \quad j_k\in \bb{N}
+$$
+$$
+Q = \sum_{i_1,\cdots, i_n}b_{i_1,\cdots,i_n}X_1^{i_1}\cdots X_n^{i_n} \quad i_k\in \bb{N}
+$$
+$$
+\phi(PQ)=\phi\left( \sum_{i_k} \sum_{j_k} c_{j_1,\cdots,j_n} b_{i_1,\cdots,i_n} X_1^{i_1+j_1}\cdots X_n^{i_n+j_n} \right) =
+$$
+$$
+\sum_{i_k} \sum_{j_k} c_{j_1,\cdots,j_n} b_{i_1,\cdots,i_n} a_1^{i_1+j_1}\cdots a_r^{i_r+j_r} X_{r+1}^{i_{r+1}+j_{r+1}}\cdots X_n^{i_n+j_n}
+$$
+$$
+= \sum_{i_k} b_{i_1,\cdots,i_n} a_1^{i_1}\cdots a_r^{i_r} X_{r+1}^{i_{r+1}}\cdots X_n^{i_n}
+$$
+$$
+\cdot \sum_{j_k} c_{j_1,\cdots,j_n} a_1^{j_1}\cdots a_r^{j_r} X_{r+1}^{j_{r+1}}\cdots X_n^{j_n}
+$$
+$$
+=\phi(P)\phi(Q)
+$$
+$$
+\phi(P+Q)= \phi \left(\sum_{i_k} \left( c_{i_1,\cdots,i_n} b_{i_1,\cdots,i_n}\right) X_1^{i_1}\cdots X_n^{i_n} \right)
+$$
+$$
+\sum_{i_k} \left( c_{i_1,\cdots,i_n} + b_{i_1,\cdots,i_n}\right) a_1^{i_1} \cdots a_r^{i_r}X_{r+1}^{i_{r+1}}\cdots X_n^{i_n}
+$$
+$$
+\sum_{i_k} c_{i_1,\cdots,i_n} a_1^{i_1} \cdots a_r^{i_r}X_{r+1}^{i_{r+1}}\cdots X_n^{i_n}
+$$
+$$
++ \sum_{i_k} b_{i_1,\cdots,i_n} a_1^{i_1} \cdots a_r^{i_r}X_{r+1}^{i_{r+1}}\cdots X_n^{i_n}
+$$
+$$
+=\phi(P)+\phi(Q)
+$$
+$$
+\phi(1) = 1
+$$
+\indent Veamos que $ker\phi = (X_1-a_1, \cdots, X_r-a_r)$.\\
+\indent \indent $\boxed{\subseteq}$
+$$
+\phi(X_i-a_i)=0\Rightarrow (X_1-a_1, \cdots, X_r-a_r) \subseteq ker\phi
+$$
+\indent \indent $\boxed{\supseteq}$ Dado $P\in ker \phi$ $\exists q,r \in K[X_1,\cdots]$ t.q.
+$$
+P= q \sum_{i=1}^r (X_i-ai) \quad deg(r)<deg\left(\sum_{i=1}^r (X_i-ai)\right)=1
+$$
+$$
+\Rightarrow deg(r) = 0
+$$
+\indent \indent Además,
+$$
+0= \phi(p) = \phi(q)+\phi\left(\sum_{i=1}^r (X_i-ai)\right)+\phi(r)
+$$
+$$
+= \phi(q)+\sum_{i=1}^r \underbrace{\phi(X_i-ai)}_{=0}+\phi(r)=\phi(r)
+\nota{\Rightarrow}{\text{$r\in K[X_{r+1},\cdots,X_n]$}} r =0
+$$
+$$
+\Rightarrow P= q \sum_{i=1}^r (X_i-ai)
+$$
+$$
+\Rightarrow P\in  (X_1-a_1, \cdots, X_r-a_r)
+$$
+$$
+(X_1-a_1, \cdots, X_r-a_r) \subseteq Ker\phi
+$$
+\indent \indent Así se concluye que
+$$
+Ker\phi = (X_1-a_1, \cdots, X_r-a_r)
+$$
+\indent \indent Por el primer teorema de isomorfía,
+$$
+\frac{K[X_1,\cdots,X_n]}{(X_1-a_1, \cdots, X_r-a_r)} \simeq K[X_{r+1}, \cdots, X
+_n]
+$$
+$$
+\begin{array}{l}
+    I = (X_1-a_1, \cdots, X_r-a_r)\\
+    A = K[X_1,\cdots,X_n]\\
+    B = K[X_{r+1}, \cdots, X_n]
+\end{array}
+$$
+\indent \indent Veamos que $I$ es primo. $I$ primo $\Leftrightarrow$ $A/I$ D.I.\\
+\indent \indent $K$ cuerpo $\Rightarrow$ $B$ D.I. $\Rightarrow$ $A/I$ D.I. $\Leftrightarrow$ $I$ primo.\\
+\indent \indent Cuando $r\ne n$, $I$ no es maximal ya que $A$ no \indent \indent es cuerpo, en concreto no es D.I.P.\\
+\indent \indent Cuando $r=n$, $\frac{K[X_1,\cdots,X_n]}{(X_1-a_1, \cdots, X_n-a_n)} \simeq K$ y \indent \indent $(X_1-a_1, \cdots, X_n-a_n)=J$ es primo en \indent \indent $A$ $\Leftrightarrow$ $J$ es maximal. Además está claro que \indent \indent $\forall J'\subset A$ ideal en $A$, se tiene que $J'\subseteq J$.
+
+\end{multicols}
+\end{document}

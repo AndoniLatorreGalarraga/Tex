@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor,multicol,scalerel}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario 5}
+\author{Andoni Latorre Galarraga, Mariana Emilia Zaballa Bernabe}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}{\textbf{Proposición: }}
+\newcommand{\dem}{\textit{Dem: }}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+
+\noindent \textbf{9.}\\
+Consideramos el homomorfismo evaluación $\varphi_1$.
+$$
+\begin{array}{crcl}
+\varphi_1 : & K[X,Y]=K[X][Y] & \longrightarrow & K[X] \\
+& p(Y) & \longmapsto     & p(g(X))
+\end{array}
+$$
+Junto con el homomorfismo $\varphi_2$.
+$$
+\begin{array}{crcl}
+\varphi_2 : & K[X] & \longrightarrow & \frac{K[X]}{(f(X))}=D \\
+& p & \longmapsto     & p+(f(X))
+\end{array}
+$$
+Tenemos que $\varphi=\varphi_1 \circ \varphi_2$ es homomorfismo por ser composición de homomorfismos.
+$$
+\begin{array}{crcccl}
+\varphi : & K[X,Y]=K[X][Y] & \longrightarrow & K[X] & \longrightarrow & \frac{K[X]}{(f(X))}=D \\
+& p(Y) & \longmapsto & p(g(X)) & \longmapsto & p(g(X))+(f(X))
+\end{array}
+$$
+$$
+\begin{array}{crcl}
+\varphi : & K[X,Y] & \longrightarrow & D \\
+& X & \longmapsto & X +(f(X)) \\
+& Y & \longmapsto & g(x) +(f(X)) \\
+& k\in K & \longmapsto & k +(f(X)) \\
+\end{array}
+$$
+Veamos que $ker\varphi = (f(X), Y-g(X))$.\\
+$\boxed{ker\varphi \supseteq (f(X), Y-g(X))}$
+$$
+\varphi(f(X)) = f(X) +(f(X)) = 0_D
+$$
+$$
+\varphi(Y-g(X)) = \varphi(Y) - \varphi(g(X)) = (g(X)+(f(X))) - (g(x)+(f(X))) = 0_D
+$$
+$\boxed{ker\varphi \subseteq (f(X), Y-g(X))}$\\
+Sea $p\in ker\varphi$. Dividimos entre $Y-g(X)$.
+$$
+p = q (Y-g(X)) + r \text{ con } q,r\in K[X,Y]  \text{ y } 1>deg_Y(r)=0 \Rightarrow r\in K[X]
+$$
+Aplicando $\varphi$:
+$$
+0_D = \varphi(q)0_D + \varphi(r) = \varphi(r) = r + (f(X)) \Rightarrow r \in (f(X))\subseteq (f(X), Y-g(X))
+$$
+Tenemos que $p\in(f(X), Y-g(X))$.\\
+Por el primer teorema de isomorfía y por ser $\varphi$ sobreyectivo.
+$$
+\frac{K[X,Y]}{(f(X),Y-g(X))} \sim im(\varphi) = D
+$$
+$$
+f \text{ irreducible } \Leftrightarrow
+\frac{K[X]}{(f(X))} \text{ DI } \Leftrightarrow
+\frac{K[X,Y]}{(f(X), Y-g(X))} \text{ DI } \Leftrightarrow
+(f(X), Y-g(X)) \text{ primo}
+$$
+\\
+\textbf{1.}\\
+\textit{a)}\\
+Por inducción en $n$.\\
+$\boxed{n=1}$
+$$
+X^\alpha \ge X^0 \text{ porque } \alpha \ge 0
+$$
+$\boxed{n-1\Rightarrow n}$
+$$
+(X^{\alpha_1}_1\cdots X^{\alpha_{n-1}}_{n-1})X^{\alpha_n}_n > (X^0_1\cdots X^0_{n-1})X^0_n \text{ y } \alpha_n > 0
+$$
+\textit{b)}\\
+$\boxed{n=1}$
+$$
+X^\alpha \ge X^\beta \Leftrightarrow \alpha \ge \beta
+$$
+$\boxed{n-1\Rightarrow n}$
+$$
+(X^{\alpha_1}_1\cdots X^{\alpha_{n-1}}_{n-1})X^{\alpha_n}_n \ge (X^{\beta_1}_1\cdots X^{\beta_{n-1}}_{n-1})X^{\beta_n}_n
+$$
+\textit{c)}\\
+Tomando $(\bar{X}^{\bar{\alpha}_1},\cdots,\bar{X}^{\bar{\alpha}_n},\cdots)\subseteq Mon(X_1,\cdots,X_n) \Rightarrow \exists \bar{X}^{\bar{\alpha}_i} \in (\bar{X}^{\bar{\alpha}_1},\cdots,\bar{X}^{\bar{\alpha}_n},\cdots) \text{ t.q. } \bar{X}^{\bar{\alpha}_i} < \bar{X}^{\bar{\alpha}_j} \:\: \forall j\ne i$ (es decir, todo subconjnto de $Mon(X_1,\cdots,X_n)$ tiene un elemento mínimo y máximo) $\Rightarrow \forall j>i$ t.q $\bar{X}^{\bar{\alpha}_i} \ge \bar{X}^{\bar{\alpha}_l}$, $\bar{X}^{\bar{\alpha}_i} = \bar{X}^{\bar{\alpha}_j}$.\\
+\textbf{2.}\\
+\textit{a)}\\
+$$
+\begin{array}{rrllllllllll}
+ 6X^2Y &        & -X & +4Y^3 & -1 & & |2XY +Y^3 \\
+-6X^2Y & -3XY^3 &    &       &    & & \overline{3X-\frac{3}{2}Y^2} \\
+\cline{1-5}
+ /\:\:\:     & -3XY^3 & -X & +4Y^3 & -1 & \\
+       &  3XY^3 &    &      &     & +\frac{3}{2}Y^5 \\
+\cline{2-6}
+       & /\:\:\:& -X & +4Y^3 & -1 & +\frac{3}{2}Y^5
+\end{array}
+$$
+$ 6X^2Y -X + 4Y^3 -1 = (2XY+Y^3)(3X-\frac{3}{2}Y^2) -X + 4Y^3 -1 +\frac{3}{2}Y^5$\\
+\textit{b)}\\
+$$
+\begin{array}{rrlllllllllllllllll}
+ 4Y^3 & +6X^2Y & -X & -1 & & |Y^3+2XY \\
+-4Y^3 & -8XY   &    &    & & \overline{4\quad\quad\quad\quad} \\
+\cline{1-5}
+/\:\:\:     & 6X^2Y & -8XY & -X & -1 \\
+\end{array}
+$$
+$ 6X^2Y -X + 4Y^3 -1 = 4(2XY+Y^3) + 6X^2Y-8XY-X-1$\\
+\end{document}

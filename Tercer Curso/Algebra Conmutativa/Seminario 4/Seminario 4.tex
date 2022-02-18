@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor,multicol}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Ejercicio 8}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}{\textbf{Proposición: }}
+\newcommand{\dem}{\textit{Dem: }}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+
+\section*{a)}
+
+Tenemos que $X^2 + 1 - (Y^2 + 1) = X^2 - Y^2 \in (X^2 + 1, Y^2 + 1)$. Pero $(X + Y)(X - Y) = X^2 - Y^2$ y
+$$
+\text{deg}_X(X + Y) = \text{deg}_X(X - Y) = \text{deg}_Y(X + Y) = \text{deg}_Y(X - Y) < \text{deg}_X(X^2 + 1) = \text{deg}_Y(Y^2 + 1)
+$$
+$$
+\Rightarrow X + Y, X - Y \notin (X^2 + 1, Y^2 + 1)
+$$
+
+\section*{b)}
+
+Veamos que $\frac{\R[X,Y]}{(X^2 + 1, X^2Y)}$ es DI. Plantemos el homorfismo
+$$
+\begin{array}{crcl}
+\varphi : & \R[X,Y] & \longrightarrow &  \bb{C} \\
+& X & \longmapsto & i \\
+& Y & \longmapsto & 0 \\
+& c \in \R & \mapsto & c
+\end{array}
+$$
+Calculamos $\text{ker}\varphi$. Sea $\varphi(f) = 0$ si dividimos $f$ entre $Y$ tenmos que $f = g Y + h$ con $\text{deg}_Y(h) = 0$ entonces $\varphi(f) = 0 \Rightarrow \varphi(h) = 0$ pero $h \in \R[X]$ es tal que $i$ es una raiz y por tanto $-i$ también. Es decir $h \in (X^2 + 1)$ ya que $(X+i)(X-i) = X^2 + 1$. Concluimos que $\text{ker}\varphi = (X^2 + 1, Y)$. Ahora, veamos que $(X^2 + 1, Y) = (X^2 + 1, X^2Y)$. Sean $a,b\in\R[X,Y]$,
+$$
+a (X^2+1) + b X^2 Y = a (X^2+1) + b ((X^2+1)Y - Y) = (a + bY) (X^2+1) - bY \in (X^2 + 1) - bY
+$$
+$$
+a (X^2+1) + b Y = a (X^2+1) + b ((X^2+1)Y - X^2Y) = (a + bY) (X^2+1) - bX^2Y \in (X^2 + 1) - bY
+$$
+Tenemos que $\frac{\R[X,Y]}{(X^2 + 1, X^2Y)} \simeq \varphi(\R[X,Y]) \subseteq \bb{C}$ que concluye la prueba.
+
+\end{document}

@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor,multicol}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{GEOMETRIA GLOBAL}
+\author{Andoni Latorre Galarraga}
+\date{18 de Febrero}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}{\textbf{Proposición: }}
+\newcommand{\dem}{\textit{Dem: }}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+Def: $\mathcal{S}\subset \bb{R}^3$, decimos que es superficie regular si $\forall p \in \mathcal{S} \exists V$ abierto (con la topología relativa) y $\exists \mathcal{U} \text{(abierto y conexo)} \subset \bb{R}^2$ y $\varphi : \mathcal{U} \longrightarrow V\in \bb{R}^3 $ tal que.\\
+i) $\varphi$ homeomorfismo, $\exists (\varphi)^{-1}$ continua \\
+ii) $\varphi$ diferenciable \\
+iii) $D\varphi$ inyectiva (no confundir diferencial con matriz jacobiana)\\
+(por el teorema de la función inversa $\exists \tilde{V}\subset V \text{t.q} \varphi^{-1} : \tilde{V}\longmapsto \tilde{\mathcal{U}}$ diferenciable)
+\\
+\\
+$\begin{array}{crcl}
+\alpha : & \bb{R} & \longrightarrow & \bb{R}^2 \\
+& t & \longmapsto     & (x(t),y(t))
+\end{array}$\\
+Cilindro:\\
+$\begin{array}{crcl}
+\varphi : & \bb{R}^2 & \longrightarrow & \bb{R}^3 \\
+& (t,z) & \longmapsto     & (x(t),y(t),z)
+\end{array}$
+
+\end{document}

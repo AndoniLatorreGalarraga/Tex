@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,xcolor,multicol}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario 3}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\p}{\textbf{Proposición: }}
+\newcommand{\dem}{\textit{Dem: }}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}
+\section{} % 1
+\textit{a)} Sea $c = \text{mcm}(a, b)$.\\
+\indent \indent $\boxed{(a)\cap(b)\supseteq (c)}$
+$$
+\left.\begin{array}{rcl}
+    a\mid c & \Rightarrow & (c) \subseteq (a) \\
+    b\mid c & \Rightarrow & (c) \subseteq (b)
+\end{array}\right\} \Rightarrow (c) \subseteq (a) \cap (b)
+$$
+\indent \indent $\boxed{(a)\cap(b)\subseteq (c)}$
+$$
+x\in (a) \cap (b) \Rightarrow
+\left\{\begin{array}{lcr}
+    (x) \subseteq (a) & \Rightarrow & a\mid x \\
+    (x) \subseteq (b) & \Rightarrow & b\mid x
+\end{array}\right.
+$$
+$$
+\Rightarrow
+c \mid x \Rightarrow x\in (c) \Rightarrow (a) \cap (b) \subseteq (c)
+$$
+\indent \textit{c)} En el DFU $\bb{C}[X, Y]$, $(X)+(Y)\ne \indent (\text{MCM}(X,Y))$. Si $C = \text{MCM}(X,Y)$ tenemos que \indent $C = 1$, es decir, $(C) = \bb{C}[X,Y]$ pero $1\notin (X) + (Y)$
+
+\section{}
+Sabemos que $r(a)= \{b\in A : \exists n \in \bb{N} : b^n \in(a)\}$. \\
+\indent Sea $b \in a$ y su producto en irreducibles $b = \indent q_1^{e_1} \cdots q_r^{e_s}$. Ahora, $b^n = q_1^{n e_1} \cdots q_r^{n e_s}$. Para que \indent $b^n \in (a)$ se necesita que $a\mid b^n$, es decir,
+$$
+\forall i \in \{1, \cdots, m\} \exists j \in \{1, \cdots, r\} :
+$$
+$$
+\exists n_i\in\bb{N}_{>0} \: p_i^{n_i} \mid q_j^{ne_j} \Leftrightarrow p_i \sim q_j
+$$
+\indent Entonces $b$ es de la forma $cp_1\cdots p_m$ con $c\in A$.
+$$
+r(a) = (p_1\cdots p_m)
+$$
+
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\section{}
+\textit{a)}\\
+\indent $\boxed{\text{ker }\varphi \supseteq (X^2 -Y^3)}$
+$$
+\varphi(X^2 - Y^2) = \varphi(X)^2 + \varphi(Y)^3 = (T^3)^2 - (T^2)^3
+$$
+$$
+= 0_{K[X,Y]} \Rightarrow \varphi(f(X^2 -Y^3)
+$$
+$$
+= \varphi(f) 0_{K[X,Y]} \forall f\in K[X,Y]
+$$
+$$
+\Rightarrow \text{ker }\varphi \supseteq (X^2 -Y^3)
+$$
+\indent $\boxed{\text{ker }\varphi \subseteq (X^2 -Y^3)}$\\
+\indent Sea $f(X,Y)\in \text{ker}\varphi$. Si dividimos $f(X,Y)$ entre \indent $X^2-Y^3$ respecto de $X$.
+$$
+f(X,Y) = q(X,Y) (X^2 - Y^3) + r(X,Y)
+$$
+$$
+\text{con } 2>\deg_X(r)
+$$
+\indent Podemos escribir $r(X,Y) = a(Y)X + b(Y)$.
+$$
+\varphi(f)=\varphi(q)\varphi(X^2-Y^3)+\varphi(r)
+$$
+$$
+0 = \varphi(a(Y))\varphi(X)+\varphi(b(Y))
+$$
+$$
+0 = \varphi(\sum_{i\ge 0}a_iY^i)T^3+\varphi(\sum_{i\ge 0}b_iY^i)
+$$
+$$
+0 = \sum_{i\ge 0}\varphi(a_i)T^{2i+3}+\sum_{i\ge 0}\varphi(b_i)T^{2i}
+$$
+$$
+\Rightarrow \varphi(a_i)=\varphi(b_i)=0 \quad \forall i \ge 0
+$$
+\indent Como $K$ es cuerpo y $1\ne 0$ en $K[T]$.
+$$
+a_i = b_i = 0 \quad \forall i \ge 0
+$$
+$$
+\Rightarrow r(X,Y) = 0 \Rightarrow f(X,Y)\in (X^2 - Y^3)
+$$
+\\
+\indent \textit{b)}\\
+\indent $\boxed{K[T^2,T^3] \supseteq \{\sum_{i\ge 0} c_i T^i \in K[T]\mid c_1 = 0\}}$\\
+$$
+\sum_{i\ge 0} c_i T^i = \underbrace{c_0}_{\in K[T^2,T^3]} + \underbrace{c_2T^2}_{\in K[T^2,T^3]} + \underbrace{c_3 T^3}_{\in K[T^2,T^3]}
+$$
+$$
++ \underbrace{c_4 T^4}_{= c_4 (T^2)^2\in K[T^2,T^3]} + \underbrace{c_5 T^5}_{= c_5 T^2T^3\in K[T^2,T^3]} \cdots \in K[T^2,T^3]
+$$
+\indent En general si $i$ es par $c_i T^i =c_i(T^2)^{i/2} \in \indent K[T^2,T^3]$, cuando $i\ge 3$ es impar $c_iT^i = \indent c_i T^3 (T^2)^{\frac{i-3}{2}} \in K[T^2,T^3]$.\\
+\indent $\boxed{K[T^2,T^3] \subseteq \{\sum_{i\ge 0} c_i T^i \in K[T]\mid c_1 = 0\}}$\\
+\indent Como $\{\sum_{i\ge 0} c_i T^i \in K[T]\mid c_1 = 0\}$ es subanillo \indent de $K[T]$ y $T^2, T^3 \in \{\sum_{i\ge 0} c_i T^i \in K[T]\mid c_1 = 0\}$. \indent Se tiene que,
+$$
+K[T^2,T^3] \subseteq \{\sum_{i\ge 0} c_i T^i \in K[T]\mid c_1 = 0\}
+$$
+\end{multicols}
+\end{document}
