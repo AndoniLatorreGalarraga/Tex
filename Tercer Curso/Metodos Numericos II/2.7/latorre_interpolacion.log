@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.21)  18 FEB 2022 11:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.21)  18 FEB 2022 18:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -232,18 +232,31 @@ Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \mult@nat@firstbox=\box95
 \colbreak@box=\box96
 \mc@col@check@num=\count284
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/spalign\spalign.sty
+Package: spalign 2016/10/05 aligns delimited by spaces
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+\spalignsystabspace=\dimen168
+\spalign@curcols=\count285
+\spaligntoks=\toks27
+\spalignmaxcols=\count286
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count285
+\etb@tempcnta=\count287
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/vmargin\vmargin.sty
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
-\PaperWidth=\dimen168
-\PaperHeight=\dimen169
+\PaperWidth=\dimen169
+\PaperHeight=\dimen170
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count286
+\l__color_backend_stack_int=\count288
 \l__pdf_internal_box=\box97
 ) (latorre_interpolacion.aux
 LaTeX Info: Redefining \. on input line 8.
@@ -267,17 +280,17 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count287
-\scratchdimen=\dimen170
+\scratchcounter=\count289
+\scratchdimen=\dimen171
 \scratchbox=\box98
-\nofMPsegments=\count288
-\nofMParguments=\count289
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count290
-\MPscratchDim=\dimen171
-\MPnumerator=\count291
-\makeMPintoPDFobject=\count292
-\everyMPtoPDFconversion=\toks28
+\nofMPsegments=\count290
+\nofMParguments=\count291
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count292
+\MPscratchDim=\dimen172
+\MPnumerator=\count293
+\makeMPintoPDFobject=\count294
+\everyMPtoPDFconversion=\toks29
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -329,22 +342,32 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 30--52
+Underfull \hbox (badness 10000) in paragraph at lines 30--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--52
+Underfull \hbox (badness 10000) in paragraph at lines 30--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--52
+Underfull \hbox (badness 10000) in paragraph at lines 30--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--52
+Underfull \hbox (badness 10000) in paragraph at lines 30--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--54
 
  []
 
@@ -355,15 +378,15 @@ LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 5461 strings out of 478659
- 82512 string characters out of 2846393
- 411010 words of memory out of 3000000
- 23517 multiletter control sequences out of 15000+600000
+ 5960 strings out of 478659
+ 91806 string characters out of 2846393
+ 420913 words of memory out of 3000000
+ 24000 multiletter control sequences out of 15000+600000
  410073 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,62p,393b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on latorre_interpolacion.pdf (1 page, 105065 bytes).
+Output written on latorre_interpolacion.pdf (1 page, 106753 bytes).
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[spanish]{babel}
-\usepackage{amssymb,amsmath,geometry,xcolor,multicol}
+\usepackage{amssymb,amsmath,geometry,xcolor,multicol,spalign}
 \usepackage{etoolbox} %titulo
 \makeatletter %titulo
 \patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
@@ -48,7 +48,14 @@ i) $\forall p \in \mathcal{S} \exists V \in \mathcal{N}_\text{abierto}, \exists 
 \varphi_i : & U_i\text{(conexo)} & \longrightarrow & V
 \end{array}$ cumple la definición anterior.\\
 ii) $\mathcal{S}_i = \bigcup_{i\in I} \varphi(u_i) $\\
-iii) Compatibilidad entre lass cartas.\\\\
-
-
+iii) \textcolor{blue}{Compatibilidad entre las cartas.}\\\\
+\\
+\\
+$$
+\spalignsys{
+    2x +  y + 3z = 10 ;
+     x \:  \: +  z =  6 ;
+     x + 3y + 2z = 13
+}
+$$
 \end{document}

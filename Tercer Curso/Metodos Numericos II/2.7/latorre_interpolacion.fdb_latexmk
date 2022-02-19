@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1645180809 "d:/Latex/Tercer Curso/Metodos Numericos II/2.7/latorre_interpolacion.tex" "latorre_interpolacion.pdf" "latorre_interpolacion" 1645180810
-  "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1645041114 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["pdflatex"] 1645205228 "d:/Latex/Tercer Curso/Metodos Numericos II/2.7/latorre_interpolacion.tex" "latorre_interpolacion.pdf" "latorre_interpolacion" 1645205230
+  "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1645204793 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/User/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1640116032 9769494 ae42ef42ef403a09f505e3bc677d49e7 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -36,6 +36,8 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/generic/babel/txtbabel.def" 1638206364 5233 a89961f969f72563cb59411e9dc4ae8e ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1583523400 6501 4011d89d9621e0b0901138815ba5ff29 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty" 1583523400 1057 525c2192b5febbd8c1f662c9468335bb ""
+  "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/generic/kvsetkeys/kvsetkeys.sty" 1576433820 13807 952b0226d4efca026f0e19dd266dcc22 ""
+  "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty" 1601732009 18568 4409f8f50cd365c68e684407e5350b1b ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/epstopdf-sys.cfg" 1616067285 584 2a1075dd71571459f59146da9f7502ad ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amsfonts.sty" 1358197772 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amssymb.sty" 1358197772 13829 94730e64147574077f8ecfea9bb69af4 ""
@@ -62,13 +64,15 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty" 1636824463 7996 a8fb260d598dcaf305a7ae7b9c3e3229 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty" 1636824463 2671 4de6781a30211fe0ea4c672e4a2a8166 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1636824463 4009 187ea2dc3194cd5a76cd99a8d7a6c4d0 ""
+  "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty" 1602224496 22521 d2fceb764a442a2001d257ef11db7618 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1634573416 29971 6c47712bf4bc87d15b2ca318615f75a3 ""
+  "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/spalign/spalign.sty" 1475821195 8530 207d58ff4ae5c5969a2e8bfa0e0de73d ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1636710260 32262 2bb622a0aa56c4a7a5cbdfe9d122c15a ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/vmargin/vmargin.sty" 1090519524 7055 5eae49c3f07fead60d92def0a4f5c30f ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "d:/Latex/Tercer Curso/Metodos Numericos II/2.7/latorre_interpolacion.tex" 1645180808 2422 f15132345dbce1735b2a047c0cb54673 ""
-  "latorre_interpolacion.aux" 1645180809 194 72658fb03bfd53fc103956ba2036b889 "pdflatex"
-  "latorre_interpolacion.tex" 1645180808 2422 f15132345dbce1735b2a047c0cb54673 ""
+  "d:/Latex/Tercer Curso/Metodos Numericos II/2.7/latorre_interpolacion.tex" 1645205228 2551 605a522967b2d3176248d9d0758f65e2 ""
+  "latorre_interpolacion.aux" 1645205229 194 72658fb03bfd53fc103956ba2036b889 "pdflatex"
+  "latorre_interpolacion.tex" 1645205228 2551 605a522967b2d3176248d9d0758f65e2 ""
   (generated)
   "latorre_interpolacion.aux"
   "latorre_interpolacion.log"
