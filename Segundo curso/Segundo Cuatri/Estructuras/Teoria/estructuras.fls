@@ -1,7 +1,7 @@
 PWD d:\Latex\Segundo curso\Segundo Cuatri\Estructuras\Teoria
 INPUT C:\Users\User\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
 INPUT d:\Latex\Segundo curso\Segundo Cuatri\Estructuras\Teoria\estructuras.tex
-OUTPUT d:\Latex\Segundo curso\Segundo Cuatri\Estructuras\Teoria\estructuras.log
+OUTPUT estructuras.log
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -91,7 +91,6 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
-INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.def
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\babel\txtbabel.def
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
@@ -253,10 +252,10 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT d:\Latex\Segundo curso\Segundo Cuatri\Estructuras\Teoria\estructuras.aux
-INPUT d:\Latex\Segundo curso\Segundo Cuatri\Estructuras\Teoria\estructuras.aux
-INPUT d:\Latex\Segundo curso\Segundo Cuatri\Estructuras\Teoria\estructuras.aux
-OUTPUT d:\Latex\Segundo curso\Segundo Cuatri\Estructuras\Teoria\estructuras.aux
+INPUT .\estructuras.aux
+INPUT estructuras.aux
+INPUT estructuras.aux
+OUTPUT estructuras.aux
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -272,6 +271,10 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopd
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
@@ -311,11 +314,11 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
-OUTPUT d:\Latex\Segundo curso\Segundo Cuatri\Estructuras\Teoria\estructuras.pdf
-INPUT C:\Users\User\AppData\Local\MiKTeX\pdftex\config\pdftex.map
+OUTPUT estructuras.pdf
+INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
-INPUT d:\Latex\Segundo curso\Segundo Cuatri\Estructuras\Teoria\estructuras.aux
+INPUT estructuras.aux
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb

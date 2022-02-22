@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Entrega 1}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+\section*{\textcolor{WildStrawberry}{Conceptos}}
+
+\textcolor{red}{Espacio topológico}\\
+Un \textcolor{red}{espacio topológico} es un par ordenado $\textcolor{blue}{(X,\tau_X)}$ donde $\textcolor{blue}{X}$ es un conjunto y $\textcolor{blue}{\tau_X}$ es una topología sobre $\textcolor{blue}{X}$.\\
+
+$\textcolor{red}{T_2}$ \textcolor{red}{(de Hausdorff)}\\
+Un espacio topológico $\textcolor{blue}{(X,\tau_X)}$ se dice $\textcolor{red}{T_2}$ si
+$$
+\forall a,b\in \textcolor{blue}{X} \text{ con } a \ne b, \: \exists \mathcal{U},\mathcal{V}\in \textcolor{blue}{\tau_X} \: : \: a\in\mathcal{U}, b\in\mathcal{V}, \mathcal{U}\cap\mathcal{V}=\emptyset
+$$
+, es decir, todo par de puntos distintos se puede separar por abiertos disjuntos.\\\\
+
+\textcolor{red}{Compacto}\\
+Un espacio topológico $\textcolor{blue}{(X,\tau_X)}$ se dice \textcolor{red}{compacto} si
+$$
+\forall \{\mathcal{U}_i\}_{i\in I} \subseteq \textcolor{blue}{\tau_X}\: :\: \bigcup_{i\in I} \mathcal{U}_i = \textcolor{blue}{X} \quad, \exists J\subseteq I \: :\: |J|\le\infty, \bigcup_{j\in J} \mathcal{U}_j = \textcolor{blue}{X}
+$$
+, es decir, todo recubrimiento por abiertos de $\textcolor{blue}{X}$ tiene un subrecubrimiento finito.\\
+
+\textcolor{red}{Aplicación continua}\\
+Se dice que la aplicación $\textcolor{blue}{f:(X,\tau_X)\longrightarrow (Y, \tau_Y)}$ es \textcolor{red}{continua} si
+$$
+\forall \mathcal{U}\in \textcolor{blue}{\tau_Y}, f^{-1}(\mathcal{U})\in \textcolor{blue}{\tau_X}
+$$
+, es decir, la antiimagen de cualquier abierto es un abierto.\\\\
+
+\textcolor{red}{Aplicación topologicamente cerrada}\\
+Se dice que la aplicación $\textcolor{blue}{f:(X,\tau_X)\longrightarrow (Y, \tau_Y)}$ es \textcolor{red}{cerrada} si
+$$
+\forall \mathcal{U} \in \textcolor{blue}{\tau_x}, \quad \textcolor{blue}{f}(\mathcal{U}^c)^c\in \textcolor{blue}{\tau_Y}
+$$
+, es decir, la imagen de todo cerrado es un cerrado.\\\\
+
+\textcolor{red}{Homeomorfismo}\\
+Se dice que la aplicación $\textcolor{blue}{f:(X,\tau_X)\longrightarrow (Y, \tau_Y)}$ es un \textcolor{red}{homeomorfismo} si es continua, biyectiva y su inversa es continua.\\
+
+\textcolor{red}{Homeomorfo}\\
+Los espacios topológicos $\textcolor{blue}{(X,\tau_x)}$ y $\textcolor{blue}{(Y,\tau_Y)}$ se dicen \textcolor{red}{homeomorfos} si existe un homeomorfismo $\textcolor{blue}{f:(X,\tau_X)\longrightarrow (Y, \tau_Y)}$.\\
+
+\textcolor{red}{Identificación}\\
+Se dice que la aplicación $\textcolor{blue}{f:(X,\tau_X)\longrightarrow (Y, \tau_Y)}$ es una \textcolor{red}{identificación} si es sobreyectiva y $\mathcal{U}\in \textcolor{blue}{\tau_Y} \Leftrightarrow f^{-1}(\mathcal{U})\in \textcolor{blue}{\tau_X}$.
+
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Entrega 2}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+\textcolor{WildStrawberry}{Proposición:}\\
+Sean $\textcolor{blue}{\tilde{\Phi}_1, \tilde{\Phi}_2:X\longrightarrow \bb{R}}$ dos elevaciones de una aplicación continua $\textcolor{blue}{\Phi: X \longrightarrow \bb{S}^1}$, donde $\textcolor{blue}{X}$ es un espacio topológico conexo, entonces $\textcolor{red}{\exists k\in \bb{Z} \: :\: \tilde{\Phi}_2-\tilde{\Phi}_1 = 2k\pi}$.\\
+
+\textcolor{WildStrawberry}{\textit{Dem:}}\\
+Por ser $\textcolor{blue}{\tilde{\Phi}_1},\textcolor{blue}{\tilde{\Phi}_2}$ elevaciones de $\textcolor{blue}{\Phi}$, tenmos que $\textcolor{blue}{\tilde{\Phi}} = exp \circ \textcolor{blue}{\tilde{\Phi}_1} = exp \circ \textcolor{blue}{\Phi}_2$. Por la periodicidad de $exp$, tenemos que $\textcolor{blue}{\tilde{\Phi}_1} - \textcolor{blue}{\tilde{\Phi}_2} = 2\pi k(x)$ donde $k:\textcolor{blue}{X}\rightarrow \bb{Z}$. Como $\textcolor{blue}{X}$ es conexo, $(\frac{\textcolor{blue}{\tilde{\Phi}_1}- \textcolor{blue}{\tilde{\Phi}_2}}{2\pi})(\textcolor{blue}{X})=k(\textcolor{blue}{X})$ es conexo ya que $\frac{\textcolor{blue}{\tilde{\Phi}_1}- \textcolor{blue}{\tilde{\Phi}_2}}{2\pi}=k$ es continua. Pero los conexos en $\bb{Z}$ son los puntos por lo tanto, $k$ es contante.
+\end{document}

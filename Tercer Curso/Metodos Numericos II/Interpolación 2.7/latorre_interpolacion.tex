@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Ejemplo 2.7}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\usepackage{matlab-prettifier}
+\begin{document}
+
+\maketitle
+
+\section{Método de interpolación}
+
+Construimos un polinomio de interpolación $\textcolor{blue}{p(x)= a_5 x^5 + a_4 x^4 + a_3 x^3 + a_2 x^2 + a_1 x + a_0}$ que verifique las condiciones $\textcolor{blue}{p(-1)=f(-1), p(0)=f(0), p(1)=f(1), p''(-1)=f''(-1), p''(0)=f''(0), p''(1)=f''(1)}$. Planteamos el siguiente sistema lineal para calcular los coeficientes $\textcolor{blue}{a_i}$:
+$$
+\left(\begin{array}{cccccc}
+     -1 &  1 & -1 & 1 & -1 & 1 \\
+      0 &  0 &  0 & 0 &  0 & 1 \\
+      1 &  1 &  1 & 1 &  1 & 1 \\
+    -20 & 12 & -6 & 2 &  0 & 0 \\
+      0 &  0 &  0 & 2 &  0 & 0 \\
+     20 & 12 &  6 & 2 &  0 & 0
+\end{array}\right)
+\left(\begin{array}{c}
+    a_5 \\
+    a_4 \\
+    a_3 \\
+    a_2 \\
+    a_1 \\
+    a_0
+\end{array}\right)
+=
+\left(\begin{array}{c}
+    f(-1) \\
+    f(0) \\
+    f(1) \\
+    f''(-1) \\
+    f''(0) \\
+    f''(1)
+\end{array}\right) 
+$$
+Tras resolver el sistema, se tiene la fórmula de cuadratura
+$$
+\textcolor{red}{\mathcal{I}_5}= \int_{-1}^1 p(x) dx = \sum_{k=0}^5 \frac{a_k}{k+1} (1^{k+1}-(-1)^{k+1}) = \textcolor{red}{2 a_0 + \frac{2}{3} a_2 + \frac{2}{5} a_4}
+$$
+
+\section{Método directo}
+
+\noindent Plantemos el sistema,
+$$
+\begin{array}{r|l}
+    f(1) & \alpha_1 \\
+    f(0) & \alpha_0 \\
+    f(-1) & \alpha_{-1}\\
+    f''(1) & \beta_1 \\
+    f''(0) & \beta_0 \\
+    f''(-1) & \beta_{-1}
+\end{array}
+\quad  \quad
+\spalignsys{
+\alpha_1 + \alpha_0 + \alpha_{-1} \: \: \: \: \: \: = 2;
+\alpha_1 \: \: - \alpha_{-1} \: \: \: \: \: \: = 0;
+\alpha_1 \: \: + \alpha_{-1} + 2\beta_1 + 2\beta_0 + 2\beta_{-1} = \frac{2}{3};
+\alpha_1 \: \: - \alpha_{-1} + 6\beta_1 \: \: - 6\beta_{-1} = 0;
+\alpha_1 \: \: + \alpha_{-1} + 12\beta_1 \: \: + 12\beta_{-1} = \frac{2}{5};
+\alpha_1 \: \: - \alpha_{-1} + 20\beta_1 \: \: - 20\beta_{-1} = 0
+}
+$$
+Como este sistema no tiene solución única, podemos añadir una condición extra
+$$
+\begin{array}{r|l}
+    f(1) & \alpha_1 \\
+    f(0) & \alpha_0 \\
+    f(-1) & \alpha_{-1}\\
+    f''(1) & \beta_1 \\
+    f''(0) & \beta_0 \\
+    f''(-1) & \beta_{-1}
+\end{array}
+\quad  \quad
+\spalignsys{
+\alpha_1 + \alpha_0 + \alpha_{-1} \: \: \: \: \: \: = 2;
+\alpha_1 \: \: - \alpha_{-1} \: \: \: \: \: \: = 0;
+\alpha_1 \: \: + \alpha_{-1} + 2\beta_1 + 2\beta_0 + 2\beta_{-1} = \frac{2}{3};
+\alpha_1 \: \: - \alpha_{-1} + 6\beta_1 \: \: - 6\beta_{-1} = 0;
+\alpha_1 \: \: + \alpha_{-1} + 12\beta_1 \: \: + 12\beta_{-1} = \frac{2}{5};
+\alpha_1 \: \: - \alpha_{-1} + 20\beta_1 \: \: - 20\beta_{-1} = 0;
+\alpha_1 \: \: + \alpha_{-1} + 30\beta_1 \: \: + 30\beta_{-1} = \frac{2}{7}
+}
+$$
+El nuevo sistema tiene solución única
+\begin{multicols}{2}
+\begin{lstlisting}[style=Matlab-editor]
+a = [1 1 1 0 0 0;
+    1 0 -1 0 0 0;
+    1 0 1 2 2 2;
+    1 0 -1 6 0 -6;
+    1 0 1 12 0 12;
+    1 0 -1 20 0 -20;
+    1 0 1 30 0 30]
+b = [2; 0; 2/3; 0; 2/5; 0; 2/7]
+a\b
+
+ans =
+
+0.2381
+1.5238
+0.2381
+-0.0032
+0.1016
+-0.0032
+    \end{lstlisting}
+\end{multicols}
+\noindent Tenemos la fórmula de cuadratura
+$$
+\textcolor{red}{\mathcal{I}_6 = 0.2381 f(1) + 1.5238 f(0) + 0.2381 f(-1) - 0.0032 f''(1) + 0.1016 f''(0) - 0.0032 f''(-1) }
+$$
+\end{document}
