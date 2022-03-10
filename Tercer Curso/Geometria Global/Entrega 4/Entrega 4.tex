@@ -44,20 +44,86 @@
 \maketitle
 \begin{multicols}{2}
 \textcolor{WildStrawberry}{Problema:}\\
-Calcular un entorno tubular de la elipse $\textcolor{blue}{\alpha(t)=\cos t, 2 \sen t}$ en $\textcolor{blue}{[-2,2]}$.\\
+Calcular un entorno tubular de la elipse $\textcolor{blue}{\alpha(t)=(\cos t, 2 \sen t})$ en $\textcolor{blue}{[-2,2]}$.\\
+\begin{center}
 \begin{tikzpicture}
     \begin{axis}[
             xmin=-1.5,xmax=1.5,
             ymin=-3,ymax=3,
             grid=both,
             ]
-            \addplot [domain=-2:2,samples=100]({cos(deg(x))},{2*sin(deg(x))}); 
+            \addplot [domain=-2:2,samples=100]({cos(deg(x))},{2*sin(deg(x))});
     \end{axis}
-\end{tikzpicture}\\
+\end{tikzpicture}
+\end{center}
 Calculamos el vector normal a la curva en $\alpha(t)$.
 $$
 \alpha'(t) = (-\sen t, 2\cos t)
 $$
-
+Y la recta normal a la curva en $\alpha(t)$.
+$$
+\alpha(t)+\lambda \mathcal{J}\alpha'(t) = ((1+2\lambda)\cos t, (2+\lambda) \sen t)
+$$
+Intrescamos la recta con el eje $Y$.
+$$
+(1+2\lambda)\cos t = 0 \Rightarrow  \lambda = \frac{-1}{2}
+$$
+Tenemos que el punto de intersección es $(0, \frac{3}{2}\sen t)$. Como $\frac{3}{2}\sen t$ es creciente en $[\frac{-\pi}{2}, \frac{\pi}{2}]$ y decreciente en $[-2,2]\setminus [\frac{-\pi}{2}, \frac{\pi}{2}]$.
+$$
+\varepsilon < \inf \left\| \alpha(t)- (0, \frac{3}{2}\sen t)\right\| = \inf \sqrt{\cos^2 t + \frac{1}{4} \sen^2 t}
+$$
+Que es la distancia al origen de un punto en la elipse $(\cos t, \frac{1}{2}\sen t)$\\
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+          xmin=-1.25,xmax=1.25,
+          ymin=-0.75,ymax=0.75,
+          grid=both,
+          ]
+          \addplot [domain=0:360,samples=360]({cos(x)},{0.5*sin(x)});
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+Por lo tanto, $\varepsilon < \frac{1}{2}$. Ahora, para encontrar la frontera del entorno tublar
+$$
+\lambda = \pm \frac{1}{2 \left\| \alpha'(t) \right\|} = \pm \frac{1}{2 \sqrt{\sen^2 t + 4 \cos^2 t}}
+$$
+Y tenemos los extremos del entorno tubular
+$$
+\begin{array}{l}
+  ((1+\frac{1}{\sqrt{\sen^2 t + 4 \cos^2 t}})\cos t, (2+\frac{1}{2 \sqrt{\sen^2 t + 4 \cos^2 t}}) \sen t) \\
+  ((1-\frac{1}{\sqrt{\sen^2 t + 4 \cos^2 t}})\cos t, (2-\frac{1}{2 \sqrt{\sen^2 t + 4 \cos^2 t}}) \sen t)
+\end{array}
+$$
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+          xmin=-1.5,xmax=1.5,
+          ymin=-3,ymax=3,
+          grid=both,
+          ]
+          \addplot [domain=-2:2,samples=100]({cos(deg(x))},{2*sin(deg(x))});
+          \addplot [domain=-2:2,samples=100, color=red]({(1-1/(sin(deg(x))^2+4*cos(deg(x))^2)^0.5)*cos(deg(x))},{(2-0.5/(sin(deg(x))^2+4*cos(deg(x))^2)^0.5)*sin(deg(x))});
+          \addplot [domain=-2:2,samples=100, color=red]({(1+1/(sin(deg(x))^2+4*cos(deg(x))^2)^0.5)*cos(deg(x))},{(2+0.5/(sin(deg(x))^2+4*cos(deg(x))^2)^0.5)*sin(deg(x))});
+          \addplot [domain=0:1,samples=100, color=red]({-0.753738*x-0.078555*(1-x)},{2.18742*x+1.449769*(1-x)});
+          \addplot [domain=0:1,samples=100, color=red]({-0.753738*x-0.078555*(1-x)},{-2.18742*x-1.449769*(1-x)});
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+Dibujado sin distorsión:\\
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+          unit vector ratio={1 1},
+          grid=both,
+          ]
+          \addplot [domain=-2:2,samples=100]({cos(deg(x))},{2*sin(deg(x))});
+          \addplot [domain=-2:2,samples=100, color=red]({(1-1/(sin(deg(x))^2+4*cos(deg(x))^2)^0.5)*cos(deg(x))},{(2-0.5/(sin(deg(x))^2+4*cos(deg(x))^2)^0.5)*sin(deg(x))});
+          \addplot [domain=-2:2,samples=100, color=red]({(1+1/(sin(deg(x))^2+4*cos(deg(x))^2)^0.5)*cos(deg(x))},{(2+0.5/(sin(deg(x))^2+4*cos(deg(x))^2)^0.5)*sin(deg(x))});
+          \addplot [domain=0:1,samples=100, color=red]({-0.753738*x-0.078555*(1-x)},{2.18742*x+1.449769*(1-x)});
+          \addplot [domain=0:1,samples=100, color=red]({-0.753738*x-0.078555*(1-x)},{-2.18742*x-1.449769*(1-x)});
+  \end{axis}
+\end{tikzpicture}
+\end{center}
 \end{multicols}
 \end{document}

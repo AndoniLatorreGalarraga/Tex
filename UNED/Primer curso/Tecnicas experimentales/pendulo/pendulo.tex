@@ -1,0 +1,70 @@
+%\documentclass[twoside,twocolumn,spanish]{article}
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\title{Péndulo físico}
+\author{}
+\date{}
+\begin{document}
+
+\maketitle
+\begin{abstract}
+Se estudia la relacíon entre el periodo de oscilación de un péndulo físico y la distancia entre el eje de rotación y el centro de masas de dicho péndulo. A partir de los datos experimentales se calcula el valor de la aceleración de la gravedad $g$.
+
+\end{abstract}
+\begin{multicols}{2}
+\section{Introducción}
+
+\section{Fundamento Teórico}
+Si se tiene un cuerpo rígido, de masa $M$, suspendido en un eje de giro $O$ a una distancia $b$ del centro de masas del objeto, $C$. Cuando el objeto está desplazado de su posición de equilibrio por un ángulo $\theta$. La aceleración tangencial del centro de masas se puede expresar de dos formas distintas, al igualar estas se tiene.
+$$
+-M g b \sen(\theta) = I \frac{d^2 \theta}{dt^2}
+$$
+Donde $I$ es el momento de inercia del cuerpo respecto al eje $O$.\\
+Cuando se tienen valores pequeños de $\theta$ , menores a $20^\circ$, se puede aproximar $\theta \sim \sen(\theta)$.
+$$
+-M g b \theta = I \frac{d^2 \theta}{dt^2}
+$$
+Que tiene por solución $\sen \left( \theta \sqrt{\frac{Mgb}{I}} + \phi \right) + C$ (ver apéndice A). Que corresponde a un movimiento armónico simple de periodoP
+$$
+T = 2\pi \sqrt{\frac{I}{Mgb}}
+$$
+Si se llama $I_0$ al momento de inercia respecto al eje paralelo a $O$ que pasa por $C$, por el teorema de Huygens-Steiner, se tiene:
+$$
+T = 2\pi \sqrt{\frac{I_0 + Mb^2}{Mgb}}
+$$
+$I_0$ está relacionado con er radio de giro, $k$, mediante la relación $k = \sqrt{\frac{I_0}{M}}$. Por lo tanto,
+$$
+T = 2\pi \sqrt{\frac{Mk^2 + Mb^2}{Mgb}} = 2\pi \sqrt{\frac{k^2 + b^2}{gb}}
+$$
+Utilizaremos esta última expresión para el periodo de oscilación, en nuestro cálculo de $g$. Linealizamos la expresión de la siguiente manera:
+$$
+\textcolor{blue}{bT^2} = 4\pi^2 \frac{k^2}{g} + 4\pi^2 \frac{\textcolor{blue}{b^2}}{g}
+$$
+Obtenemos una relación lineal entre $bT^2$ y $b^2$. Estimaremos la pendiente y la ordenada en el origen de dicha relación para obtener el valor de $g$.
+
+\section{Dispositivo Experimental}
+En nuestro experimento hemos utilizado una varilla metálica como péndulo. La varilla tine unas marcas cada centímetro, estas marcas son tales que se puede situar un pequeño trozo de metal mediante un tornillo de presión para sujetar la varilla y que esta tenga como eje de rotación la marca en la que se situa el metal triangular. Ademas, la varilla central indica el centro de masas. De esta manera, contando ranunas desde el centro de la varilla podemos conocer el valor de $b$. En la Fig. 1 se puede ver el dispositivo experimental ya montado.
+\begin{center}
+    \includegraphics[scale=0.05, angle=-90]{figures/c2.png}\\
+    Figura 1
+\end{center}
+
+\section{Procedimiento y Resultados}
+Hemos tomado mediciones para $b\in \{6cm, 7cm, \cdots, 31cm, 32cm\}$. Para cada valor de $b$ hemos tomado 5 tiempos independientes, cada uno de estos correspondiente a 10 oscilaciones. Siempr
+
+
+\section{Conclusiones}
+
+
+\end{multicols}
+\appendix
+
+\section{Demostración de la ecuación diferencial}
+
+\end{document}

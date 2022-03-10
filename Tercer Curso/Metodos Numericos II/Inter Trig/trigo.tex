@@ -1,0 +1,293 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Interpolación trigonométrica}
+\author{\textcolor{WildStrawberry}{Yeray Alvarez, Andoni Latorre}}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+\noindent En primer lugar, vamos a encontrar una fórmula cerrada para la suma de senos y cosenos. Para ello, vamos a considerar la siguiente suma:
+
+$$
+\textcolor{red}{\sum_{j=0}^n \cos(jx)} + i \textcolor{blue}{\sum_{j=0}^n \sen(jx)} = \sum_{j=0}^n \cos(jx) + i \sen(jx) \nota{=}{\text{De Moivre}}
+$$
+\begin{equation}
+=\sum_{j=0}^n (\cos(x) + i \sen(x))^j \nota{=}{\text{Euler}} \sum_{j=0}^n (e^{ix})^j = \frac{1-e^{i(n+1)x}}{1-e^{ix}}
+\end{equation}
+
+\noindent Ahora bien, podemos escribir la siguiente igualdad:
+
+$$
+\sen(x) = \frac{e^{ix}-e^{-ix}}{2i} = \frac{e^{2ix}-1}{2ie^{ix}} \Rightarrow  1-e^{2ix} = -2ie^{ix}\sen(x)
+$$
+
+\noindent De donde se deduce, sustituyendo $x$ por $\frac{x}{2}$ y $x$ por $\frac{n+1}{2}x$, las igualdades:
+
+$$
+\begin{array}{rl}
+i) & \displaystyle{1-e^{ix} = -2ie^{i\frac{x}{2}}\sen(\frac{x}{2})} \\
+ii) & \displaystyle{1-e^{i(n+1)x} = -2ie^{i\frac{n+1}{2}x}\sen(\frac{n+1}{2}x)}
+\end{array}
+$$
+
+\noindent Ahora llevamos estos resultados a $(1)$ y obtenemos:
+
+$$
+= \frac{1-e^{i(n+1)x}}{1-e^{ix}} = (1) 
+= \frac{-2ie^{i\frac{n+1}{2}x}\sen(\frac{n+1}{2}x)}{-2ie^{i\frac{x}{2}}\sen(\frac{x}{2})}
+= e^{i\frac{n}{2}x} \frac{\sen(\frac{n+1}{2}x)}{\sen(\frac{x}{2})}
+$$
+$$
+= \textcolor{red}{\cos(\frac{n}{2} x ) \frac{\sen(\frac{n+1}{2}x)}{\sen(\frac{x}{2})}} + i \textcolor{blue}{\sen(\frac{n}{2} x ) \frac{\sen(\frac{n+1}{2}x)}{\sen(\frac{x}{2})}}
+$$
+
+\noindent Con este resultado en mente, podemos probar la ortogonalidad del sistema trigonométrico.
+Sustituyendo en la igualdad anterior $n$ por $2N-1$ y $x$ por $(p \pm q) \frac{\pi}{N}$ y obtenemos la siguiente expresión:
+
+$$
+\sum_{j=0}^{2N-1} \cos px_j \cos qx_j = 
+\frac{1}{2}\sum_{j=0}^{2N-1} \cos{(p-q)x_j} + \frac{1}{2}\sum_{j=0}^{2N-1} \cos{(p+q)x_j} =
+$$
+$$
+=\frac{1}{2}\sum_{j=0}^{2N-1} \cos \left((p-q)\frac{\pi}{N}j\right) +\frac{1}{2} \sum_{j=0}^{2N-1} \cos\left((p+q)\frac{\pi}{N}j\right) =
+$$
+$$
+=\frac{1}{2} \cos\left(\frac{2N-1}{2N}(p-q)\pi\right) \frac{\textcolor{WildStrawberry}{\sen\left((p-q)\pi\right)}}{\sen((p-q)\frac{\pi}{2N})} + \frac{1}{2}
+\cos\left(\frac{2N-1}{2N}(p+q)\pi\right) \frac{\textcolor{WildStrawberry}{\sen\left((p+q)\pi\right)}}{\sen((p+q)\frac{\pi}{2N})}
+\nota{=}{$p\ne q$} 0
+$$
+\noindent Cuando $p=q$,
+$$
+\sum_{j=0}^{2N-1} \cos\left(p\frac{\pi}{N}j\right) \cos\left(p\frac{\pi}{N}j\right) = \sum_{j=0}^{2N-1} \cos^2\left(p\frac{\pi}{N}j\right) =
+\frac{1}{2} \sum_{j=0}^{2N-1} 1 + \cos\left(\frac{p}{n}2\pi pj\right) =
+$$
+$$
+=\frac{1}{2} \sum_{j=0}^{2N-1} 1 + \frac{1}{2} \sum_{j=0}^{2N-1} \cos \left( \frac{p}{N} 2\pi j \right)
+\nota{=}{$p \ne 0,N$}
+N + \frac{1}{2}\left( \cos\left( \frac{2N-1}{2N} 2\pi p \right) \frac{\sen \left(2p \pi \right)}{\sen\left(\frac{p}{N}\pi \right)} \right)
+= N
+$$
+
+\noindent Cuando $p=q=0,N$,
+
+
+$$
+=\frac{1}{2} \sum_{j=0}^{2N-1} 1 + \frac{1}{2} \sum_{j=0}^{2N-1} \cos \left( \frac{p}{N} 2\pi j \right)
+\nota{=}{$p = 0,N$}
+N + N = 2N
+$$
+
+\noindent La suma finita de productos de senos es bastante similar a la de los cosenos:
+
+$$
+\sum_{j=0}^{2N-1} \sen px_j \sen qx_j = 
+\frac{1}{2}\sum_{j=0}^{2N-1} \cos{\left((p-q)x_j\right)} - \frac{1}{2}\sum_{j=0}^{2N-1} \cos{\left((p+q)x_j\right)} =
+$$
+$$
+=\frac{1}{2}\sum_{j=0}^{2N-1} \cos \left((p-q)\frac{\pi}{N}j\right) - \frac{1}{2} \sum_{j=0}^{2N-1} \cos\left((p+q)\frac{\pi}{N}j\right) =
+$$
+$$
+=\frac{1}{2} \cos\left(\frac{2N-1}{2N}(p-q)\pi\right) \frac{\textcolor{WildStrawberry}{\sen\left((p-q)\pi\right)}}{\sen((p-q)\frac{\pi}{2N})} + \frac{1}{2}
+\cos\left(\frac{2N-1}{2N}(p+q)\pi\right) \frac{\textcolor{red}{\sen\left((p+q)\pi\right)}}{\sen((p+q)\frac{\pi}{2N})}
+\nota{=}{$p\ne q$} 0
+$$
+
+\noindent Cuando $p=q$,
+$$
+\sum_{j=0}^{2N-1} \sen\left(p\frac{\pi}{N}j\right) \sen\left(p\frac{\pi}{N}j\right) = \sum_{j=0}^{2N-1} \sen^2\left(p\frac{\pi}{N}j\right) =
+\frac{1}{2} \sum_{j=0}^{2N-1} 1 - \cos\left(2p\frac{\pi}{N}j\right) =
+$$
+$$
+=\frac{1}{2} \sum_{j=0}^{2N-1} 1 - \frac{1}{2} \sum_{j=0}^{2N-1} \cos \left( \frac{p}{N} 2\pi j \right)
+\nota{=}{$p \ne 0,N$}
+N - \frac{1}{2}\left( \cos\left( \frac{2N-1}{2N} 2\pi p \right) \frac{\sen \left(2p \pi \right)}{\sen\left(\frac{p}{N}\pi \right)} \right)
+= N
+$$
+
+\noindent Finalmente, veremos que la suma de productos de senos y cosenos es nula:
+
+$$
+\sum_{j=0}^{2N-1} \cos px_j \sen qx_j = 
+\frac{1}{2}\sum_{j=0}^{2N-1} \sen{(p-q)x_j} + \frac{1}{2}\sum_{j=0}^{2N-1} \sen{(p+q)x_j} =
+$$
+
+$$
+=\frac{1}{2}\sum_{j=0}^{2N-1} \sen \left((p-q)\frac{\pi}{N}j\right) +\frac{1}{2} \sum_{j=0}^{2N-1} \sen\left((p+q)\frac{\pi}{N}j\right) =
+$$
+$$
+=\frac{1}{2} \sen\left(\frac{2N-1}{2N}(p-q)\pi\right) \frac{\textcolor{WildStrawberry}{\sen\left((p-q)\pi\right)}}{\sen((p-q)\frac{\pi}{2N})} + \frac{1}{2} \sen\left(\frac{2N-1}{2N}(p+q)\pi\right) \frac{\textcolor{WildStrawberry}{\sen\left((p+q)\pi\right)}}{\sen((p+q)\frac{\pi}{2N})} = 0
+$$
+
+\noindent Utilizando estas relaciones de ortogonalidad, demuestre que existe un único polinomio trigonométrico que interpola la función f por los nodos (1) con los coeficientes:
+
+$$
+\textcolor{red}{A_k = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j) \cos k x_j \quad \quad k = 0,\hdots,N}
+$$
+$$
+\textcolor{blue}{B_k = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j) \sen k x_j \quad \quad k = 1,\hdots,N-1}
+$$
+
+$$
+f(x) = \frac{A_0}{2} + \sum_{k=1}^{N-1} (A_k \cos k x + B_k \sen k x) + \frac{A_N}{2} \cos N x
+$$
+
+\noindent Veamos primero el valor del coeficiente $A_0$. Evaluamos la función interpoladora en $x_j$.
+$$
+\frac{A_0}{2} + \sum_{k=1}^{N-1} (A_k \cos k x_j + B_k \sen k x_j) + \frac{A_N}{2} \cos N x_j = f(x_j)
+$$
+Ahora, sumamos las expresiones para cada valor de $j$.
+$$
+\sum_{j=0}^{2N-1} \frac{A_0}{2} + \sum_{k=1}^{N-1} \sum_{j=0}^{2N-1} (A_k \cos k x_j + B_k \sen k x_j) + \sum_{j=0}^{2N-1} \frac{A_N}{2} \cos N x_j = \sum_{j=0}^{2N-1} f(x_j)
+$$
+$$
+2N \frac{A_0}{2} + \sum_{k=1}^{N-1} \left ( A_k \sum_{j=0}^{2N-1} \cos k x_j + B_k \sum_{j=0}^{2N-1} \sen k x_j \right ) + \frac{A_N}{2} \sum_{j=0}^{2N-1} \cos N x_j = \sum_{j=0}^{2N-1} f(x_j)
+$$
+Aplicando las relaciones de ortogonalidad vemos que las sumas marcadas valen $\textcolor{WildStrawberry}{0}$.
+$$
+2N \frac{A_0}{2} + \sum_{k=1}^{N-1} \left ( A_k \textcolor{WildStrawberry}{\sum_{j=0}^{2N-1} \cos k x_j \cos 0 x_j} + B_k \textcolor{WildStrawberry}{\sum_{j=0}^{2N-1} \sen k x_j \cos 0 x_j} \right ) + \frac{A_N}{2} \textcolor{WildStrawberry}{\sum_{j=0}^{2N-1} \cos N x_j \cos 0 x_j} = \sum_{j=0}^{2N-1} f(x_j)
+$$
+De donde finalmente se deduce:
+$$
+N A_0 = \sum_{j=0}^{2N-1} f(x_j) \Rightarrow \textcolor{blue}{A_0 = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j)}
+$$
+
+\noindent Para hallar el valor de $A_N$, partimos de la igualdad clásica multiplicada por $\cos N x_j$ y sumamos en j:
+$$
+\frac{A_0}{2} + \sum_{k=1}^{N-1} (A_k \cos k x_j + B_k \sin k x_j) + \frac{A_N}{2}\cos N x_j = f(x_j)
+$$
+$$
+\frac{A_0}{2}\cos N x_j + \sum_{k=1}^{N-1} (A_k \cos k x_j \cos N x_j + B_k \sin k x_j \cos N x_j) + \frac{A_N}{2}\cos N x_j \cos N x_j = f(x_j)\cos N x_j
+$$
+$$
+\frac{A_0}{2} \textcolor{WildStrawberry}{\sum_{j=0}^{2N-1} \cos N x_j \cos 0 x_j} + \sum_{k=1}^{N-1} \textcolor{WildStrawberry}{\sum_{j=0}^{2N-1}(A_k \cos k x_j \cos N x_j + B_k \sin k x_j \cos N x_j)} + \frac{A_N}{2} \textcolor{WildStrawberry}{\sum_{j=0}^{2N-1} \cos N x_j \cos N x_j}
+$$
+$$
+=\sum_{j=0}^{2N-1} f(x_j)\cos N x_j
+$$
+De donde finalmente deducimos:
+$$
+2N \frac{A_N}{2}  = \sum_{j=0}^{2N-1} f(x_j)\cos N x_j \Rightarrow \textcolor{red}{A_N = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j)\cos N x_j}
+$$
+
+\noindent Para hallar los coeficientes $A_m$ con $m\in \{1,\hdots,N-1\}$ tomamos la igualdad:
+$$
+\frac{A_0}{2} + \sum_{k=1}^{N-1} (A_k \cos k x_j + B_k \sen k x_j) + \frac{A_N}{2} \cos N x_j = f(x_j)
+$$
+La multiplicamos por $\cos(m x_j)$:
+$$
+\frac{A_0}{2}\cos m x_j + \sum_{k=1}^{N-1} (A_k \cos k x_j \cos m x_j + B_k \sin k x_j \cos m x_j) + \frac{A_N}{2}\cos N x_j \cos m x_j = f(x_j)\cos m x_j
+$$
+Y sumamos en j:
+$$
+\sum_{j=0}^{2N-1} \frac{A_0}{2}\cos m x_j + \sum_{k=1}^{N-1} \sum_{j=0}^{2N-1}(A_k \cos k x_j \cos m x_j + B_k \sin k x_j \cos m x_j) + \sum_{j=0}^{2N-1} \frac{A_N}{2}\cos N x_j \cos m x_j
+$$
+$$
+= \sum_{j=0}^{2N-1} f(x_j)\cos m x_j\
+$$
+Aplicando las relaciones de ortogonalidad obtenemos los valores de las sumas marcadas:
+$$
+\frac{A_0}{2} \textcolor{WildStrawberry}{ \sum_{j=0}^{2N-1} \cos m x_j \cos 0 x_j } + \sum_{k=1}^{N-1} \textcolor{WildStrawberry}{ \sum_{j=0}^{2N-1}(A_k \cos k x_j \cos m x_j + B_k \sin k x_j \cos m x_j ) } + \frac{A_N}{2} \textcolor{WildStrawberry}{ \sum_{j=0}^{2N-1}\cos N x_j \cos m x_j }
+$$
+$$
+= \sum_{j=0}^{2N-1} f(x_j)\cos m x_j
+$$
+Del sumatorio en j del producto de $\textcolor{WildStrawberry}{A_k \cos k x_j \cos m x_j}$ sobrevive el término que corresponde a $j=m$:
+$$
+N A_m  = \sum_{j=0}^{2N-1} f(x_j)\cos m x_j \Rightarrow \textcolor{blue}{A_m = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j)\cos m x_j}
+$$
+
+\noindent Mutatis mutandis, para hallar los coeficientes $B_m$ con $m\in \{1,\hdots,N-1\}$ seguiremos la misma serie de pasos multiplicando esta vez las respectivas igualdades por $\sen m x_j$ y luego sumando en j:
+
+$$
+\frac{A_0}{2} + \sum_{k=1}^{N-1} (A_k \cos k x_j + B_k \sen k x_j) + \frac{A_N}{2} \cos N x_j = f(x_j)
+$$
+$$
+\frac{A_0}{2}\cos m x_j + \sum_{k=1}^{N-1} (A_k \cos k x_j \sen m x_j + B_k \sin k x_j \sen m x_j) + \frac{A_N}{2}\cos N x_j \sen m x_j = f(x_j)\sen m x_j
+$$
+$$
+\sum_{j=0}^{2N-1} \frac{A_0}{2}\sen m x_j + \sum_{k=1}^{N-1} \sum_{j=0}^{2N-1}(A_k \cos k x_j \sen m x_j + B_k \sen k x_j \sen m x_j) + \sum_{j=0}^{2N-1} \frac{A_N}{2}\cos N x_j \sen m x_j
+$$
+$$
+= \sum_{j=0}^{2N-1} f(x_j)\sen m x_j\
+$$
+$$
+\frac{A_0}{2} \textcolor{WildStrawberry}{ \sum_{j=0}^{2N-1} \sen m x_j \cos 0 x_j } + \sum_{k=1}^{N-1} \textcolor{WildStrawberry}{ \sum_{j=0}^{2N-1}(A_k \cos k x_j \sen m x_j + B_k \sin k x_j \sen m x_j ) } + \frac{A_N}{2} \textcolor{WildStrawberry}{ \sum_{j=0}^{2N-1}\cos N x_j \sen m x_j }
+$$
+$$
+= \sum_{j=0}^{2N-1} f(x_j)\sen m x_j
+$$
+Análogamente, del sumatorio en j del producto de $\textcolor{WildStrawberry}{B_k \sen k x_j \sen m x_j}$ sobrevive el término que corresponde a $j=m$:
+$$
+N B_m  = \sum_{j=0}^{2N-1} f(x_j)\sen m x_j \Rightarrow \textcolor{red}{B_m = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j)\sen m x_j}
+$$
+
+
+
+\noindent (iii) Suponga ahora que la función f tiene un desarrollo de Fourier
+$$
+f(x) = \frac{a_0}{2} + \sum_{k=1}^{\infty} (a_k \cos kx + b_k \sen kx)
+$$
+que converge puntualmente en $[0, 2\pi]$. ¿Están relacionados los coeficientes $ak, Ak, bk, Bk$ ?
+
+\noindent Es bien conocido que los coeficientes de Fourier para una función de clase C1 a trozos son de la siguiente forma:
+
+$$
+a_k =  \frac{1}{\pi} \int_0^{2\pi}f(x)\cos kxdx \quad \sim \quad A_k = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j) \cos kx_j
+$$
+$$
+b_k =  \frac{1}{\pi} \int_0^{2\pi}f(x)\sen kxdx \quad \sim \quad B_k = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j) \sen kx_j
+$$
+
+\noindent Si escribimos 
+
+$$
+A_k = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j) \cos kx_j = \frac{1}{\pi} \frac{2\pi}{2N} \sum_{j=0}^{2N-1} f(x_j) \cos kx_j = \frac{1}{\pi} \sigma(f(x)\cos kx, [0,2\pi], \pi/N)
+$$
+\noindent Que se trata de una suma de Riemann (1826-1866) en el intervalo $[0,2\pi]$ con diámetro de partición $\frac{\pi}{N}$ para la función $g(x)=f(x)\cos(kx)$, y tomando limites cuando $N\to\infty$ queda
+$$
+\frac{1}{\pi}\int_0^{2\pi} f(x) \cos kx dx
+$$
+
+\noindent Siguiendo un razonamiento similar podemos probar que $B_k$ es una suma de Riemann (1826-1866) en el intervalo $[0,2\pi]$ con diámetro de partición $\frac{\pi}{N}$ para la función $g(x)=f(x)\sen(kx)$, y tomando limites una vez más obtenemos el resultado deseado:
+$$
+B_k = \frac{1}{N} \sum_{j=0}^{2N-1} f(x_j) \sen kx_j = \frac{1}{\pi} \frac{2\pi}{2N} \sum_{j=0}^{2N-1} f(x_j) \sen kx_j = \frac{1}{\pi}\int_0^{2\pi} f(x) \sen kx dx
+$$
+
+\end{document}

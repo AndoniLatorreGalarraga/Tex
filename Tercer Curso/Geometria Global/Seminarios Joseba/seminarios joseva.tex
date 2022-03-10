@@ -1,0 +1,331 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Tareas propuestas en clase}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\usepackage[percent]{overpic}
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}
+\section*{\textcolor{WildStrawberry}{Tarea 1}}
+\noindent $\bullet$ Calcular la proyección estereografica de la esfera $\textcolor{blue}{\mathcal{S}}: x^2 + y^2 + (z-1)^2 = 1$ sobre el plano $\textcolor{blue}{XY}$.\\
+\\
+Consideramos el polo norte de la esfera $\textcolor{blue}{B} = \textcolor{blue}{(0,0,2)}$ y el punto en la esfera $\textcolor{blue}{E} = \textcolor{blue}{(x,y,z)}$
+\begin{center}
+    \begin{overpic}[scale = 0.2]{figures/esfera.png}
+        \put (50,39) {$\textcolor{blue}{B}$}
+        \put (61,31) {$\textcolor{blue}{E}$}
+        \put (82,17) {$\textcolor{blue}{C}$}
+    \end{overpic}
+\end{center}
+Consideramos la recta que pasa por $\textcolor{blue}{B}$ y $\textcolor{blue}{E}$.
+$$
+\textcolor{blue}{r} : \textcolor{blue}{B} + \lambda(\textcolor{blue}{E} - \textcolor{blue}{B} ) =  (\lambda x, \lambda y, 2 - \lambda(z-2) )
+$$
+Al interscar $\textcolor{blue}{r}$ con el plano $\textcolor{blue}{XY}$ para obtener el punto $\textcolor{blue}{C}$.
+$$
+0 = 2 - \lambda(z-2) \quad \Rightarrow \quad \lambda = \frac{2}{z-2}
+$$
+$$
+\Rightarrow \quad \textcolor{blue}{C} = (\frac{2x}{z-2}, \frac{2y}{z-2}, 0)
+$$
+Ahora tenemos la aplicación $\textcolor{blue}{\bb{X}^{-1}}$ dada por
+$$
+\begin{array}{crcl}
+\textcolor{blue}{\bb{X}^{-1}} : &\textcolor{blue}{\mathcal{S}} & \longrightarrow & \bb{R}^2 \\
+& (x,y,x) & \longmapsto     & (u,v) = (\frac{2x}{z-2}, \frac{2y}{z-2})
+\end{array}
+$$
+Calculamos $\textcolor{blue}{\bb{X}}$.
+$$
+x^2 + y^2 + (z-1)^2 = 1
+$$
+$$
+(\frac{u}{2}(z-2))^2 + (\frac{v}{2}(z-2))^2 + z^2-2z+1 = 1
+$$
+$$
+\frac{u^2+v^2}{4}(z^2-4z+4) + z^2-2z = 0
+$$
+$$
+\frac{u^2+v^2+4}{4} z^2 - (u^2+v^2+2) z + u^2+v^2  = 0
+$$
+Resolviendo la caudrática en $z$.
+$$
+z = 2\frac{(u^2+v^2+2) \pm 2}{u^2+v^2+4}
+$$
+Con el $+$ tenemos $z=2$ pero como el polo norte $\textcolor{blue}{B}$ no es parte de la proyección tomamos la otra solución.
+$$
+z = 2\frac{(u^2+v^2+2)-2}{u^2+v^2+4} = \frac{2u^2 + 2v^2}{u^2+v^2+4}
+$$
+$$
+x = \frac{u}{2}(z-2))^2 = \frac{u}{2}(\frac{2u^2 + 2v^2}{u^2+v^2+4}-2)) = \frac{-4u}{u^2 + v^2 + 4}
+$$
+$$
+y = \frac{v}{2}(z-2))^2 = \frac{v}{2}(\frac{2u^2 + 2v^2}{u^2+v^2+4}-2)) = \frac{-4v}{u^2 + v^2 + 4}
+$$
+$$
+\begin{array}{crcl}
+\textcolor{blue}{\bb{X}} : & \bb{R}^2 & \longrightarrow & \textcolor{blue}{S} \\
+& (u,v) & \longmapsto     & (\frac{-4u}{u^2 + v^2 + 4} , \frac{-4v}{u^2 + v^2 + 4}, \frac{2u^2 + 2v^2}{u^2+v^2+4})
+\end{array}
+$$
+
+\section*{\textcolor{WildStrawberry}{Tarea 2}}
+
+\noindent $\bullet$ Sea $\textcolor{blue}{\alpha: \bb{R}\longrightarrow \bb{R}^3}$ una curva regular $\textcolor{blue}{C^\infty}$ y $\textcolor{blue}{\bb{X}(u,v)=\alpha(u)+v\bb{N}(u)}$ una carta paramétrica. También se supone $\textcolor{blue}{\left\| \frac{d\alpha}{du} \right\|=1}$. Calcular las formas fundamentales.\\
+\\
+Calculamos $\textcolor{blue}{\bb{X}_u}$ y $\textcolor{blue}{\bb{X}_v}$.
+$$
+\begin{array}{rl}
+    \textcolor{blue}{\bb{X}_u} = & \bb{T} + v (-\kappa \bb{T} + \tau \bb{B}) \\
+    = & (1 - v\kappa) \bb{T} + v \tau \bb{B}\\
+    \textcolor{blue}{\bb{X}_v} = & \bb{N}
+\end{array}
+$$
+Sean el punto  $p=\textcolor{blue}{\bb{X}(u_0, v_0)}$ y la base de $T_p$ (el espacio tangente a la superficie en $p$) $\beta = \{ \textcolor{blue}{\bb{X}_u}, \textcolor{blue}{\bb{X}_u} \}$ tenemos
+$$
+(I_p)_\beta =
+\left(\begin{array}{cc}
+    \langle \textcolor{blue}{\bb{X}_u} , \textcolor{blue}{\bb{X}_u} \rangle & \langle \textcolor{blue}{\bb{X}_u} , \textcolor{blue}{\bb{X}_v} \rangle \\
+    \langle \textcolor{blue}{\bb{X}_v} , \textcolor{blue}{\bb{X}_u} \rangle & \langle \textcolor{blue}{\bb{X}_v} , \textcolor{blue}{\bb{X}_v} \rangle \\
+\end{array}\right)
+$$
+$$
+\langle \textcolor{blue}{\bb{X}_u} , \textcolor{blue}{\bb{X}_u} \rangle = \langle (1 - v\kappa) \bb{T} + v \tau \bb{B}, (1 - v\kappa) \bb{T} + v \tau \bb{B} \rangle =
+$$
+$$
+= (1 - v\kappa)^2 + (v \tau)^2 = 1 - 2 v\kappa + (v^2+\tau^2)\kappa^2
+$$
+$$
+\langle \textcolor{blue}{\bb{X}_u} , \textcolor{blue}{\bb{X}_v} \rangle = \langle \textcolor{blue}{\bb{X}_v} , \textcolor{blue}{\bb{X}_u} \rangle = \langle (1 - v\kappa) \bb{T} + v \tau \bb{B}, \bb{N} \rangle = 0
+$$
+$$
+\langle \textcolor{blue}{\bb{X}_v} , \textcolor{blue}{\bb{X}_v} \rangle = \langle \bb{N}, \bb{N} \rangle = 1
+$$
+$$
+(I_p)_\beta =
+\left(\begin{array}{cc}
+    1 + 2 v\kappa + (v^2+\tau^2)\kappa^2 & 0 \\
+    0 & 1 \\
+\end{array}\right)
+$$
+Tenemos que la primera forma fundamental es
+$$
+\begin{array}{crcl}
+I_p : & T_p\times T_p & \longrightarrow & \bb{R} \\
+& ((x_1, y_1), (x_2, y_2)) & \longmapsto     & \left(\begin{array}{cc}
+    x_1 & y_1 \\
+\end{array}\right) (I_p)_\beta \left(\begin{array}{cc}
+    x_2 \\
+    y_2
+\end{array}\right)
+\end{array}
+$$
+Donde las coordenadas de los vectores de $T_p$ estan dadas en la base $\beta$.
+$$
+I_p((x_1, y_1), (x_2, y_2)) = x_1x_2(1 + 2 v\kappa + (v^2+\tau^2)\kappa^2) + y_1 y_2
+$$
+Para calcular la segunda forma fundamental comenzamos con el cálculo de la aplicación de Gauss(1777-1855).
+$$
+\textcolor{blue}{\bb{X}_u} \times \textcolor{blue}{\bb{X}_v} =
+\left|\begin{array}{ccc}
+    \bb{T} & \bb{N} & \bb{B} \\
+    1 - v\kappa & 0 & v \tau \\
+    0 & 1 & 0    
+\end{array}\right|
+= -v\tau \bb{T} + (1 - v\kappa) \bb{B}
+$$
+$$
+N_p = \frac{\textcolor{blue}{\bb{X}_u} \times \textcolor{blue}{\bb{X}_v}}{\left\| \textcolor{blue}{\bb{X}_u} \times \textcolor{blue}{\bb{X}_v} \right\|
+} = \frac{-v\tau \bb{T} + (1 - v\kappa) \bb{B}}{\sqrt{(\tau^2+\kappa^2)v^2-2v\kappa+1}}
+$$
+Calculamos las segundas desivadas de la carta $\textcolor{blue}{\bb{X}}$.
+$$
+\begin{array}{rl}
+    \textcolor{blue}{\bb{X}_{uu}} = & -v\kappa'\bb{T} + (1- v\kappa) \kappa \bb{N} \\
+    + & v (\tau' \bb{B} + \tau (-\tau \bb{B})) \\
+    = & -v\kappa' \bb{T} + (\kappa - v\kappa^2) \bb{N} + (v\tau' - \tau^2)\bb{B} \\
+    \textcolor{blue}{\bb{X}_{uv}} = & -\kappa \bb{T} + \tau \bb{B} \\
+    \textcolor{blue}{\bb{X}_{vu}} = & -\kappa \bb{N} + \tau \bb{B}\\
+    \textcolor{blue}{\bb{X}_{vv}} = & 0
+\end{array}
+$$
+Ahora podemos calcular la segunda forma fundamental.
+$$
+\langle \textcolor{blue}{\bb{X}_{uu}}, N \rangle =
+$$
+$$
+=\frac{\left\| -v\kappa' \bb{T} + (\kappa - v\kappa^2) \bb{N} + (v\tau' - \tau^2)\bb{B} \right\|^2}{\sqrt{(\tau^2+\kappa^2)v^2-2v\kappa+1}}=
+$$
+$$
+=\frac{v^2\kappa'^2 + \kappa^2 + -2 v\kappa^3 + v^2 \kappa^4 + v^2\tau'^2 -2v\tau^2\tau'+\tau^4}{\sqrt{(\tau^2+\kappa^2)v^2-2v\kappa+1}}=
+$$
+$$
+=\frac{(\kappa'^2+\kappa^4+\tau'^2)v^2 - 2(\kappa^3+\tau^2\tau') v +\kappa^2 + \tau^4}{\sqrt{(\tau^2+\kappa^2)v^2-2v\kappa+1}}
+$$
+$$
+\langle \textcolor{blue}{\bb{X}_{uv}}, N \rangle =\langle \textcolor{blue}{\bb{X}_{vu}}, N \rangle =
+$$
+$$
+=\frac{(-\kappa \bb{T} + \tau \bb{B})(-v\tau \bb{T} + (1 + v\kappa) \bb{B})}{\sqrt{(\tau^2+\kappa^2)v^2-2v\kappa+1}} =
+$$
+$$
+=\frac{\tau + \kappa\tau v}{\sqrt{(\tau^2+\kappa^2)v^2-2v\kappa+1}}
+$$
+$$
+\langle \textcolor{blue}{\bb{X}_{vv}}, N \rangle = 0
+$$
+$$
+(II_p)_\beta =
+\left(\begin{array}{cc}
+    \langle \textcolor{blue}{\bb{X}_{uu}}, N \rangle & \langle \textcolor{blue}{\bb{X}_{uv}}, N \rangle \\
+    \langle \textcolor{blue}{\bb{X}_{vu}}, N \rangle & \langle \textcolor{blue}{\bb{X}_{vv}}, N \rangle \\
+\end{array}\right) =
+$$
+$$
+\frac{
+\left(\begin{array}{cc}
+    (\kappa'^2+\kappa^4+\tau'^2)v^2 - 2(\kappa^3+\tau^2\tau') v +\kappa^2 + \tau^4 & \tau \\
+    \tau & 0 \\
+\end{array}\right)
+}{\sqrt{(\tau^2+\kappa^2)v^2-2v\kappa+1}}
+$$
+Tenemos que la segunda forma fundamental es
+$$
+II_p((x_1,y_1),(x_2,y_2) =
+\left(\begin{array}{cc}
+    x_1 & y_1 \\
+\end{array}\right) (II_p)_\beta \left(\begin{array}{cc}
+    x_2 \\
+    y_2
+\end{array}\right)
+$$
+
+\section*{\textcolor{WildStrawberry}{Tarea 3}}
+\noindent $\bullet$ Calcular la distancia entre el punto $\textcolor{blue}{(0,0,2)}$ y $\textcolor{blue}{\bb{S}^2}$.\\
+\\
+Veamos que $\textcolor{blue}{\bb{S}^2}$ es una 2-variedad de clase $C^1$ para aplicar el teorema de los multiplicadores de Lagrange (1736-1813). Tenemos que $\forall x \in \textcolor{blue}{\bb{S}^2}$ existe un abierto en $\bb{R}^3$, en este caso $\bb{R}^3$ es el abierto y una función $F:\bb{R}^3\rightarrow \R$ de clase $C^1$ tal que\\
+i) $rg(DF(x))=1=3-2$\\
+ii) $\textcolor{blue}{\bb{S}^2}\cap \bb{R}^3 = \{x\in \bb{R}^3 \::\: F(x)=0\}$\\
+Es suficiente con tomar $F(x,y,z)= x^2+y^2+z^2-1$. ya que la condición ii) es evidente y $DF = (2x, 2y, 2z)$ solo es igual a 0 en el origen que no pertenece a $\textcolor{blue}{\bb{S}^2}$. Si $f(x,y,z)=x^2+y^2+(z-2)^2$ y $f_{|\textcolor{blue}{\bb{S}^2}}$ tiene un extremo relativo en $x_0$ entonces, $x_0$ es un punto estacionario de $g=f+\lambda F$.
+$$
+g = x^2+y^2+(z-2)^2 + \lambda (x^2+y^2+z^2-1)
+$$
+$$
+Dg(x,y,x) = (2x(1+\lambda), 2y(1+\lambda), z(1+2\lambda)-2)
+$$
+$$
+\left\{\begin{array}{l}
+    0 = 2x(1+\lambda) \\
+    0 = 2y(1+\lambda) \\
+    0 = z(1+2\lambda)-2 \\
+    x^2+y^2+z^2=1
+\end{array}\right.
+$$
+Cuando $x=y=0$ tenemos que $z=\pm 1$. Cuando $x \ne 0$ 0 $y \ne 0$  es necesario que $\lambda = -1$ y se tiene que
+$$
+0 = z(1-2)-2 \quad \Rightarrow \quad z=-2
+$$
+pero no hay ningun punto en en $\textcolor{blue}{\bb{S}^2}$ con $z=-2$. Veamos cuanto vale $f$ en $(0,0,\pm 1)$.
+$$
+f(0,0,1) = 1
+$$
+$$
+f(0,0,-1) = 9
+$$
+Tenemos que $(0,0,1)$ es el punto de $\textcolor{blue}{\bb{S}^2}$ más cercano a $(0,0,2)$ y por lo tanto $d(\textcolor{blue}{\bb{S}^2}, (0,0,2)) = 1$.
+
+\section*{\textcolor{WildStrawberry}{Tarea 4}}
+\noindent $\bullet$ Dada una curva reglar $\textcolor{blue}{\alpha : (f(t), g(t))}$, probar que la superficie de revolución dada por la carta $\textcolor{blue}{\mathcal{S}}: \textcolor{blue}{\bb{X}}(u,v)=(f(u)\cos(v), f(u)\sen(v), g(u))$ es orientable si $\textcolor{blue}{\mathcal{S}}\cap \langle (0,0,1) \rangle = \emptyset$. Ver bajo que condiciones es orientable cuando $\textcolor{blue}{\mathcal{S}}\cap \langle (0,0,1) \rangle \ne \emptyset$.\\
+\\
+Calculamos el campo normal unitario a la Superficie.
+$$
+\textcolor{blue}{\bb{X}_u} = (f'(u) \cos(v), f'(u) \sen(v), g'(u))
+$$
+$$
+\textcolor{blue}{\bb{X}_v} = (-\textcolor{blue}{f(u)}\sen(v), \textcolor{blue}{f(u)}\cos(v), 0)
+$$
+$$
+\textcolor{blue}{\bb{X}_u} \times \textcolor{blue}{\bb{X}_v} =
+\left|\begin{array}{ccc}
+    i & j & k \\
+    f'(u) \cos(v) & f'(u) \sen(v) & g'(u) \\
+    -\textcolor{blue}{f(u)}\sen(v) & \textcolor{blue}{f(u)}\cos(v) & 0
+\end{array}\right|=
+$$
+$$
+=i
+\left|\begin{array}{cc}
+    f'(u)\sen(v) & g'(u) \\
+    \textcolor{blue}{f(u)}\cos(v) & 0 \\
+\end{array}\right|
+- j
+\left|\begin{array}{cc}
+    f'(u)\cos(v) & g'(u) \\
+    -\textcolor{blue}{f(u)}\sen(v) & 0 \\
+\end{array}\right|
+$$
+$$
++ k
+\left|\begin{array}{cc}
+    f'(u)\cos(v) & f'(u)\sen(v) \\
+    -\textcolor{blue}{f(u)}\sen(v) & \textcolor{blue}{f(u)}\cos(v) \\
+\end{array}\right| =
+$$
+$$
+=i g'(u)\textcolor{blue}{f(u)}\cos(v) + j g'(u)\textcolor{blue}{f(u)}\sen(v) + k (f'(u)\textcolor{blue}{f(u)})=
+$$
+$$
+=(g'(u)\textcolor{blue}{f(u)}\cos(v), g'(u)\textcolor{blue}{f(u)}\sen(v), (f'(u)\textcolor{blue}{f(u)}))
+$$
+$$
+\frac{\textcolor{blue}{\bb{X}_u}\times \textcolor{blue}{\bb{X}_v}}{\left\| \textcolor{blue}{\bb{X}_u}\times \textcolor{blue}{\bb{X}_v} \right\|} =
+$$
+$$
+= \frac{(g'(u)\textcolor{blue}{f(u)}\cos(v), g'(u)\textcolor{blue}{f(u)}\sen(v), (f'(u)\textcolor{blue}{f(u)}))}{\textcolor{blue}{f(u)}\sqrt{f'(u)^2+g'(u)^2}}
+$$
+Como la curva es regular $f'(u)$ y $g'(u)$ nunca se anulan a la vez y al no haber intersección con $\langle (0,0,1) \rangle$, tampoco se anula $\textcolor{blue}{f(u)}$. Por lo tanto el campo normal unitario es continuo y la superficie es orientable.\\
+En el caso en que $\textcolor{blue}{\mathcal{S}}\cap \langle (0,0,1) \ne \emptyset$, si $f(u_0)=0$ es necesario que
+$$
+\lim_{u\to u_0} \frac{(g'(u)\cos(v),g'(u)\sen(v),f'(u))}{\sqrt{f'(u)^2+g'(u)^2}}
+$$
+no dependa de $v$, es decir $g'(u_0) \to 0$. Se tiene que si $\textcolor{blue}{\mathcal{S}}\cap \langle (0,0,1) \ne \emptyset$ y $\lim_{u\to u_0} g'(u) = 0$, entonces la superficie de revolución es orientable.
+\end{multicols}
+\end{document}

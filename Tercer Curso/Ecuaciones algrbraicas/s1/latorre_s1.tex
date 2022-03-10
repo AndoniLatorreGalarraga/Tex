@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario 1}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+$\boxed{a)\Rightarrow b)}$\\
+En el caso $n=1$, como $f$ no puede tener más de una raiz y tiene al menos una, $f$ tiene exactamnete una raiz. Ahora, argumentamos por induccíon sobre el grado del polinomio. Sea $f(x)\in k[x]$ de grado $\delta(f)=n\ge 2$, como tiene al menos una raiz, supongamos que $a\in K$ es raiz de $f$. Tenemos que $(x-a)\mid f(x)$. Es decir, $f(x)=(x-a)g(x)$, y también $\delta(g)=n-1$. Por la hipótesis de inducción $g$ tiene $n-1$ raices y $f$ se anula en esas $n-1$ raices y en $a$ dando un total de $n$ raices cmo se quería probar.\\
+
+$\boxed{b)\Rightarrow a)}$\\
+Si $f$ tiene $n$ raices y $n\ge 1$ entonces, $f$ tiene al menos una raiz.\\
+
+$\boxed{c)\Rightarrow d)}$\\
+Como $K[x]$ es DFU todo polinomio se puede escribir como producto de irreducibles. Veamos que todo polinomio de grado 1 se puede escibir en la forma $c(x-a)$ para concluir $d)$.\\
+$$
+ux+v \nota{=}{$K$ cuerpo} u(x+u^{-1}v)
+$$
+
+$\boxed{d)\Rightarrow c)}$\\
+Los polinomios de grado 1 siempre son irreducibles. Además, tenemos que un polinomio de grado $n\ge 2$ no es irreducible ya que se puede poner de la forma $c(x-a_1^{n_1})\cdots (x-a_t^{n_t})$ y los polinomios de grado 1 no son unidades.\\
+
+$\boxed{d)\Rightarrow a)}$\\
+Evidentemente $a_1$ es raiz de $f$.\\
+
+$\boxed{a)\Rightarrow d)}$\\
+Argumentando por inducción como en $\boxed{a)\Rightarrow b)}$ para obtener $f(x)=(x-a)g(x)$ con $\delta(g)=n-1$ y reescribiendo como en $\boxed{c)\Rightarrow d)}$ si fuera necesario se tiene el resultado deseado.
+
+\end{document}
