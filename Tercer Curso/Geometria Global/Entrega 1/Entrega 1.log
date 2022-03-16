@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.21)  20 FEB 2022 02:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2021.12.21)  10 MAR 2022 20:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -551,42 +551,17 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--55
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--62
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--62
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
 
  []
 
@@ -596,12 +571,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--72
  []
 
 
-Overfull \hbox (24.80435pt too wide) in paragraph at lines 73--75
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--82
+
+ []
+
+
+Overfull \hbox (24.80435pt too wide) in paragraph at lines 83--85
 \OT1/cmr/m/n/10 Los es-pa-cios to-pologi-cos $[][]$ y $[][]$ se di-cen []ho-meo-mor-fos[] si exis-te un ho-meo-mor-fis-mo $[][]$. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
 
  []
 
@@ -614,13 +614,13 @@ LaTeX Info: Redefining \% on input line 8.
 Here is how much of TeX's memory you used:
  16609 strings out of 478659
  325748 string characters out of 2846393
- 625253 words of memory out of 3000000
+ 628254 words of memory out of 3000000
  34427 multiletter control sequences out of 15000+600000
  410678 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,7n,80p,470b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on "Entrega 1.pdf" (1 page, 111809 bytes).
+Output written on "Entrega 1.pdf" (1 page, 114491 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

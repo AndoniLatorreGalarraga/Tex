@@ -36,6 +36,16 @@
 
 \section*{\textcolor{WildStrawberry}{Conceptos}}
 
+\textcolor{red}{Topología}\\
+Una \textcolor{red}{topología} $\textcolor{blue}{\tau_X}\subseteq \mathcal{P}(\textcolor{blue}{X})$ sobre un conjunto $\textcolor{blue}{X}$ es un subconjunto del conjunto potencia de $\textcolor{blue}{X}$ que cumple las siguentes propiedades,
+$$
+\begin{array}{ll}
+    i) & \{\emptyset, \textcolor{blue}{X}\}\subseteq \textcolor{blue}{\tau_X} \\
+    ii) & \forall\mathcal{U},\mathcal{V}\in \textcolor{blue}{\tau_X}, \quad \mathcal{U}\cap\mathcal{V}\in \textcolor{blue}{\tau_x} \\
+    iii) & \forall \sigma \subseteq \textcolor{blue}{\tau_x}, \quad \bigcup_{\mathcal{U}\in \sigma} \mathcal{U} \in \textcolor{blue}{\tau_X}
+\end{array}
+$$
+
 \textcolor{red}{Espacio topológico}\\
 Un \textcolor{red}{espacio topológico} es un par ordenado $\textcolor{blue}{(X,\tau_X)}$ donde $\textcolor{blue}{X}$ es un conjunto y $\textcolor{blue}{\tau_X}$ es una topología sobre $\textcolor{blue}{X}$.\\
 
@@ -44,7 +54,7 @@ Un espacio topológico $\textcolor{blue}{(X,\tau_X)}$ se dice $\textcolor{red}{T
 $$
 \forall a,b\in \textcolor{blue}{X} \text{ con } a \ne b, \: \exists \mathcal{U},\mathcal{V}\in \textcolor{blue}{\tau_X} \: : \: a\in\mathcal{U}, b\in\mathcal{V}, \mathcal{U}\cap\mathcal{V}=\emptyset
 $$
-, es decir, todo par de puntos distintos se puede separar por abiertos disjuntos.\\\\
+, es decir, todo par de puntos distintos se puede separar por abiertos disjuntos.\\
 
 \textcolor{red}{Compacto}\\
 Un espacio topológico $\textcolor{blue}{(X,\tau_X)}$ se dice \textcolor{red}{compacto} si
@@ -74,6 +84,12 @@ Se dice que la aplicación $\textcolor{blue}{f:(X,\tau_X)\longrightarrow (Y, \ta
 Los espacios topológicos $\textcolor{blue}{(X,\tau_x)}$ y $\textcolor{blue}{(Y,\tau_Y)}$ se dicen \textcolor{red}{homeomorfos} si existe un homeomorfismo $\textcolor{blue}{f:(X,\tau_X)\longrightarrow (Y, \tau_Y)}$.\\
 
 \textcolor{red}{Identificación}\\
-Se dice que la aplicación $\textcolor{blue}{f:(X,\tau_X)\longrightarrow (Y, \tau_Y)}$ es una \textcolor{red}{identificación} si es sobreyectiva y $\mathcal{U}\in \textcolor{blue}{\tau_Y} \Leftrightarrow f^{-1}(\mathcal{U})\in \textcolor{blue}{\tau_X}$.
+Se dice que la aplicación $\textcolor{blue}{f:(X,\tau_X)\longrightarrow (Y, \tau_Y)}$ es una \textcolor{red}{identificación} si es sobreyectiva y $\mathcal{U}\in \textcolor{blue}{\tau_Y} \Leftrightarrow f^{-1}(\mathcal{U})\in \textcolor{blue}{\tau_X}$.\\
+
+\textcolor{red}{Cociente}\\
+Dada una aplicacón sobreyectiva $\textcolor{blue}{f:(X, \tau_X) \longleftarrow Y}$ se define la \textcolor{red}{topología cociente} sobre $\textcolor{blue}{Y}$ como:
+$$
+\textcolor{blue}{\tau_Y} = \textcolor{blue}{\{\mathcal{V}\subseteq Y \: :\: f^{-1}(\mathcal{V})\in\tau_X\}}
+$$
 
 \end{document}

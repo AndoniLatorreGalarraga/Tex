@@ -1,7 +1,7 @@
-PWD d:\Latex\Tercer Curso\Geometria Global\Entrega 3
+PWD d:\Latex\Tercer Curso\Ecuaciones algrbraicas\s3
 INPUT C:\Users\User\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\Latex\Tercer Curso\Geometria Global\Entrega 3\Entrega 3.tex
-OUTPUT Entrega 3.log
+INPUT d:\Latex\Tercer Curso\Ecuaciones algrbraicas\s3\latorre_s3.tex
+OUTPUT latorre_s3.log
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -869,10 +869,10 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\Entrega 3.aux
-INPUT Entrega 3.aux
-INPUT Entrega 3.aux
-OUTPUT Entrega 3.aux
+INPUT .\latorre_s3.aux
+INPUT latorre_s3.aux
+INPUT latorre_s3.aux
+OUTPUT latorre_s3.aux
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -929,18 +929,18 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\get
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
-INPUT .\Entrega 3.out
-INPUT Entrega 3.out
-INPUT .\Entrega 3.out
-INPUT Entrega 3.out
-INPUT .\Entrega 3.out
-INPUT Entrega 3.out
-INPUT .\Entrega 3.out
-INPUT Entrega 3.out
-INPUT .\Entrega 3.out
-INPUT .\Entrega 3.out
-OUTPUT Entrega 3.out
-OUTPUT Entrega 3.pdf
+INPUT .\latorre_s3.out
+INPUT latorre_s3.out
+INPUT .\latorre_s3.out
+INPUT latorre_s3.out
+INPUT .\latorre_s3.out
+INPUT latorre_s3.out
+INPUT .\latorre_s3.out
+INPUT latorre_s3.out
+INPUT .\latorre_s3.out
+INPUT .\latorre_s3.out
+OUTPUT latorre_s3.out
+OUTPUT latorre_s3.pdf
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
@@ -977,11 +977,10 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
-INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT Entrega 3.aux
-INPUT .\Entrega 3.out
-INPUT .\Entrega 3.out
+INPUT latorre_s3.aux
+INPUT .\latorre_s3.out
+INPUT .\latorre_s3.out
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
@@ -1000,7 +999,7 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
-INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
-INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm7.pfb
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm7.pfb

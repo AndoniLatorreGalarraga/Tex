@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario Picard}
+\author{\textcolor{WildStrawberry}{Andoni Latorre Galarraga, Aitor Moreno Rebollo, Yeray Alvarez Gimenez}}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+Dada la función\\
+$$
+f(x, y) = \left \{ \begin{matrix}
+    0 \qquad \text{para} \ x \leq 0 \\
+    2x \quad \text{para} \ 0 <x, \ 0\leq y \leq x^2 \\
+    2x - 4\frac{y}{x} \quad 0<x, 0 \leq y \leq x^2  \\
+    -2x \quad \text{para} \quad 0<x, \ x^2 < y \\
+\end{matrix} \right .
+$$
+
+Se pide:\\
+i) Demuestre que $f(x, y)$ es una función continua pero no Lipschitziana.\\
+Veámoslo:\\
+Es evidente que $f$ es continua en todo $\bb{R}^2$ excepto los ejes y $\{ (x,y)\in \bb{R}^2 \:\mid\: 0<x, x^2=y \}$, donde no es tan trivial. En los ejes se tiene,
+$$
+0 = -2 \cdot 0 = -2x
+$$
+$$
+2x-\frac{4y}{x} = 2x- \frac{4\cdot 0}{x} = 2x
+$$
+$$
+2x=2\cdot 0 = 0
+$$
+En la sección parabólica se tiene,
+$$
+2x-\frac{4 y}{x} = 2x - \frac{4x^2}{x} = -2x
+$$
+En el origen es evidendente que $f\to 0$ cuando $(x,y)\to (0,0)$ en todas las regiones excepto debajo de la parabola. Vemaos que también se cumple debajo de la parabola. Obsevamos que $0\le y \le x^2$
+$$
+2x-\frac{4\cdot 0}{x} \ge 2x-\frac{4\cdot y}{x} \ge 2x-\frac{4\cdot x^2}{x}
+$$
+$$
+2x \ge 2x-\frac{4\cdot y}{x} \ge -2x
+$$
+Por el teorema del sándwich se tiene que $f\to 0$ en el origen y por lo tanto es continua en $\bb{R}^2$.\\
+Veamos que no es Lipschitziana:\\
+Tomamos los puntos $(1, y_1), \ (1, y_2)$, con $y_2 < 1 \leq y_1$. Entonces, $|f(1, y_1) - f(1, y_2)| = 4y_2$. Supongamos que se da que $4y_2 \leq L|y_1 - y_2|$. Entonces, podemos tomar $y_1$ y $y_2$ arbitrariamente cerca a la vez que $y_2$ está arbitrariamente cerca de 1. Entonces, basta tomar $y_2 = 1 - \epsilon$ y $y_1 = 1 + \epsilon$, y entonces debería cumplirse que $4(1 - \epsilon) \leq L|1 + \epsilon - 1 - \epsilon| = 0$, lo cual es falso para $\epsilon < 1$.\\
+
+ii) Estudie la convergencia de la iteración de Picard para el problema:\\
+$$
+\left \{ \begin{matrix}
+    y'(x) = f(x, y(x)) \\
+    y(0) = 0
+\end{matrix} \right .
+$$
+Veámoslo:\\
+La iteración de Picard está dada por la fórmula $y_{n + 1} = y_0 + \int_0^t f(u, y_n) du$. Tomamos $y_0 = 0$ y tenemos:\\
+$$
+y_1 = 0 + \int_0^t2udu = t^2
+$$
+$$
+y_2 = \int_0^t-2udu = -t^2
+$$
+$$
+y_3 = \int_0^t2udu = t^2 = y_1
+$$
+Por tanto, la sucesión toma los valores $t^2$ y $-t^2$ cíclicamente.
+
+iii) Estudie la convergencia de la poligonal de Euler.\\
+
+La fórmula de la poligonal de Euler es
+$$
+y_{n+1} = y_n + h f(t_n, y_n) \ \text{ con } \ y_0 \underset{h\rightarrow 0}{\longrightarrow} y(0)=0, \ t_n = t_0 + nh=nh.
+$$
+
+Veamos que $0 \leq y_n \leq \frac{1}{3}n^2h^2 \; \forall \; n \geq 4$ por inducción, para $n \geq 4$. La base:\\
+$$
+y_4 = 2h^2 + hf(3h,2h^2) = \frac{1}{3} \cdot 4^2h^2
+$$
+Veamos la inducción:\\
+\begin{align*}
+    y_{n+1} &= y_n + h f(nh,y_n)\\
+    &= y_n + h \left (2nh-4\frac{y_n}{nh} \right)\\
+    &=y_n \frac{n-4}{n} + 2nh^2
+\end{align*}
+
+Por hipotesis inductiva, $y_n$ es positivo. Como $n\geq4$, $(n-4)/n$ es positivo. Por tanto, $y_n(n-4)/n+2nh^2\geq 0 $. Veamos que $y_{n+1}\leq \frac{1}{3}(n+1)^2h^2$.
+\begin{align*}
+    y_{n+1} & \overset{\text{h.i.}}{\leq} \frac{1}{3}n^2h^2 \frac{n-4}{n}+2nh^2\\
+    & = \frac{1}{3}nh^2(n-4) + 2nh^2\\
+    & = nh^2\left (\frac{1}{3}n-\frac{4}{3}+2 \right)\\
+    & =\frac{1}{3} nh^2(n+2) \leq \frac{1}{3} h^2(n+1)^2
+\end{align*}
+
+Análogamente $y_n \geq \frac{1}{3} (n-1)^2h^2 \quad \forall \ n \geq 4$.\\
+
+Por tanto, tenemos que $\frac{1}{3} (n-1)^2h^2 \leq y_n \leq \frac{1}{3} n^2h^2$. \\
+
+Ahora, siendo $t = nh$, tenemos:
+$$
+\lim_{h\rightarrow0} \frac{1}{3} n^2h^2 = \lim_{h\rightarrow0} \frac{1}{3} t^2 = \frac{1}{3} t^2\\
+$$
+$$
+\lim_{h\rightarrow0} \frac{1}{3} (n-1)^2h^2 = \lim_{h\rightarrow0} \frac{1}{3} (t - h)^2 = \frac{1}{3} t^2
+$$
+
+Y entonces, tomando $n$ suficientemente grande, $\lim_{h\rightarrow0} y_n = \frac{1}{3} t^2$, que es solución pues 
+$$
+f(t,t^2/3) = 2t-4 \frac{1}{3} \frac{t^2}{t} = \frac{2}{3} t = \left ( \frac{1}{3}t^2 \right )'.
+$$
+
+Por tanto, la poligonal de Euler converge.
+
+\end{document}

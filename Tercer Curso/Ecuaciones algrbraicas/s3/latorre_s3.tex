@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario 3}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+a)\\
+Veamos que ocurre en el caso $n=1$. Si tenemos en cuenta Einsestein con $p=a_1$,
+$$
+\text{Irr}(\sqrt{a_1})\bb{Q}) = x^2-a_1
+$$
+Y tenemos que $|\bb{Q}(\sqrt{a_1}):\bb{Q}| = 2$. Para aplicar inducción, por el teorema del grado, tenemos que
+$$
+|\bb{Q}(\sqrt{a_1},\cdots,\sqrt{a_n}):\bb{Q}|
+=
+|\bb{Q}(\sqrt{a_1},\cdots,\sqrt{a_{n-1}})(\sqrt{a_n}):\bb{Q}|
+=
+$$
+$$
+=
+|\bb{Q}(\sqrt{a_1},\cdots,\sqrt{a_{n-1}}):\bb{Q}|
+\cdot
+|\bb{Q}(\sqrt{a_n}):\bb{Q}(\sqrt{a_1},\cdots,\sqrt{a_{n-1}})|
+\nota{=}{Hipótesis de inducción}
+$$
+$$
+=
+2^{n-1}
+\cdot
+|\bb{Q}(\sqrt{a_n}):\bb{Q}(\sqrt{a_1},\cdots,\sqrt{a_{n-1}})|
+$$
+Veamos ahora que $|\bb{Q}(\sqrt{a_n}):\bb{Q}(\sqrt{a_1},\cdots,\sqrt{a_{n-1}})|=2$. Por una parte es menor o igual que 2 ya que $\sqrt{a_n}$ es raiz de $x^2-a_n$. Por otra parte, no es 1 ya que $\sqrt{a_n}\notin \bb{Q}(\sqrt{a_1},\cdots,\sqrt{a_{n-1}})$. Cocluimos que
+$$
+|\bb{Q}(\sqrt{a_1},\cdots,\sqrt{a_n}):\bb{Q}| = 2^{n-1} 2 = 2^n
+$$
+
+b)\\
+Veamos que ocurre con $\bb{Q}(\sqrt{2},\sqrt{3},\sqrt{6})$.
+$$
+|\bb{Q}(\sqrt{2},\sqrt{3},\sqrt{6}):\bb{Q}|=|\bb{Q}(\sqrt{2},\sqrt{3})(\sqrt{6}):\bb{Q}| =
+$$
+$$
+= |\bb{Q}(\sqrt{2},\sqrt{3}):\bb{Q}| \cdot |\bb{Q}(\sqrt{6}):\bb{Q}(\sqrt{2},\sqrt{3})| =
+$$
+$$
+= 2^2 \cdot |\bb{Q}(\sqrt{6}):\bb{Q}(\sqrt{2},\sqrt{3})|
+$$
+Como $\sqrt{6}=\sqrt{2}\sqrt{6}$, deducimos $|\bb{Q}(\sqrt{6}):\bb{Q}(\sqrt{2},\sqrt{3})|=1$
+$$
+|\bb{Q}(\sqrt{2},\sqrt{3},\sqrt{6}):\bb{Q}|=2^2\cdot 1= 2^2 \ne 2^3
+$$
+
+c)\\
+$$
+|\bb{Q}(p,\sqrt{p}):\bb{Q}|
+= |\underbrace{\bb{Q}(p)}_{\nota{=}{$p\in\bb{Q}$} \bb{Q}}(\sqrt{p}):\bb{Q}
+= |\bb{Q}(\sqrt{p}):\bb{Q}|
+\nota{=}{a)} 2 < \infty
+$$
+
+d)\\
+Como $E\subseteq F$ y $|F:\bb{Q}| = 2$,
+$$
+|E:\bb{Q}|\le 2 \quad \Leftrightarrow \quad |E:\bb{Q}|\in \{1,2\} = \{2^0, 2^1\}
+$$
+\end{document}

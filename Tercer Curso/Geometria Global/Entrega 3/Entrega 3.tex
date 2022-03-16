@@ -59,7 +59,35 @@ No es simple por no ser inyectiva. $\textcolor{blue}{\alpha}(\frac{\pi}{3})=\tex
 \textit{iii)} ¿Es $\textcolor{blue}{\alpha}$ convexa?\\
 No es convexa, evidentemente la recta tangente en $\textcolor{blue}{\alpha}(0)$ que es $x= 1$ corta la curva en otros dos puntos. Además veremos que solo tiene 2 vértices, por el teorema de los 4 vértices no puede ser convexa.\\
 \textit{iv)} Calcular los vértices de $\textcolor{blue}{\alpha}$.\\
-Calculamos la \href{https://www.wolframalpha.com/input?i=Curvature+of+%28%282cos%28t%29-1%29*cos%28t%29%2C%282cos%28t%29-1%29*sin%28t%29%29}{\textcolor{WildStrawberry}{\underline{curvatura}}} y su \href{https://www.wolframalpha.com/input?i=derivative+%289+-+6+cos%28t%29%29%2F%285+-+4+cos%28t%29%29%5E%283%2F2%29}{\textcolor{WildStrawberry}{\underline{derivada}}}. Tenemos que
+Calculamos la \href{https://www.wolframalpha.com/input?i=Curvature+of+%28%282cos%28t%29-1%29*cos%28t%29%2C%282cos%28t%29-1%29*sin%28t%29%29}{\textcolor{WildStrawberry}{\underline{curvatura}}} y su \href{https://www.wolframalpha.com/input?i=derivative+%289+-+6+cos%28t%29%29%2F%285+-+4+cos%28t%29%29%5E%283%2F2%29}{\textcolor{WildStrawberry}{\underline{derivada}}}.
+$$
+\alpha(t) = ((2\cos t -1)\cos t, (2\cos t -1) \sen t)
+$$
+$$
+\alpha'(t) = (-2\sen t \cos t - (2\cos t -1)\sen t, -2\sen t \sen t + (2\cos t -1)\cos t) =
+$$
+$$
+= (\sen t - 4 \cos t \sen t, 2(\cos^2 t -\sen^2 t)-\cos t)
+$$
+$$
+\alpha''(t) = (\cos t - 4 (-\sen t \sen t + \cos t \cos t), 2(-2\cos t \sen t - 2 \sen t \cos t) + \sen t)=
+$$
+$$
+= (\cos t + 4(\sen^2 t - \cos^2 t), \sen t(1 - 8 \cos t))
+$$
+$$
+k_2(t) = \frac{\alpha''(t) \cdot \mathcal{J}\alpha'(t)}{\left\| \alpha'(t) \right\|^3} =
+$$
+$$
+= \frac{(\cos t + 4(\sen^2 t - \cos^2 t), \sen t(1 - 8 \cos t)) \cdot \mathcal{J}(\sen t - 4 \cos t \sen t, 2(\cos^2 t -\sen^2 t)-\cos t)}{\left\| (\sen t - 4 \cos t \sen t, 2(\cos^2 t -\sen^2 t)-\cos t) \right\|^3} =
+$$
+$$
+= \frac{(\cos t + 4(\sen^2 t - \cos^2 t)) (2(\cos^2 t -\sen^2 t)-\cos t) + (\sen t - 8\sen t \cos t) (\sen t - 4 \cos t \sen t)}{\left(\sqrt{\left( \sen t - 4 \cos t \sen t \right)^2+\left( 2(\cos^2 t -\sen^2 t)-\cos t \right)^2}\right)^3} =
+$$
+$$
+= \frac{9-6 \cos t}{(5-4\cos t)^{3/2}}
+$$
+Tenemos que
 $$
 k_2'(t)=\frac{12 \sen t(\cos t -2)}{(5- 4 \cos t)^{5/2}}
 $$
