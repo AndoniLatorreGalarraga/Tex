@@ -1,0 +1,514 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref,changepage}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Tarea Modelización}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+morekeywords={self},              % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{1.} Supongamos que tenemos identificado un producto por doce dígitos y queremos
+añadir a su derecha un dígito de control. Procederemos como sigue.\\
+\begin{adjustwidth}{1cm}{}
+\textit{a)} Por un lado, las cifras que ocupan un lugar impar, empezando a contar por la
+izquierda, se multiplican por tres y se retiene la última cifra. Hecho esto, se suman
+los números obtenidos.
+\\\\
+\textit{b)} Por otro, las cifras que ocupa un lugar par, empezando a contar por la izquierda,
+se multiplican por siete y se retiene la última cifra. Hecho esto, se suman los
+números obtenidos.
+\\\\
+\textit{c)} Se suma el resultado del apartado \textit{a)} y el del apartado \textit{b)}. El dígito de control es
+la última cifra de este número.\\
+\end{adjustwidth}
+Demostrar que este algoritmo detecta cualquier error de un único dígito.
+\\\\
+¿Este algoritmo detecta el intercambio de dos cifras consecutivas?
+\\\\
+En qué casos sí y en cuáles no.
+\\\\\\
+Sea $\textcolor{blue}{a_1a_2a_3a_4a_5a_6a_7a_8a_9a_{10}a_{11}a_{12}}$ el identificador del producto. Primero tomamos las cifras de posición impar $\textcolor{blue}{a_1}, \textcolor{blue}{a_3}, \textcolor{blue}{a_5}, \textcolor{blue}{a_7}, \textcolor{blue}{a_9}, \textcolor{blue}{a_{11}}$. Las multiplicamos por 3: $3\textcolor{blue}{a_1}, 3\textcolor{blue}{a_3}, 3\textcolor{blue}{a_5}, 3\textcolor{blue}{a_7}, 3\textcolor{blue}{a_9}, 3\textcolor{blue}{a_{11}}$ y retenemos la última cifra $\text{mód}(3\textcolor{blue}{a_1},10), \text{mód}(3\textcolor{blue}{a_3},10), \text{mód}(3\textcolor{blue}{a_5},10), \text{mód}(3\textcolor{blue}{a_7},10), \text{mód}(3\textcolor{blue}{a_9},10), \text{mód}(3\textcolor{blue}{a_{11}},10)$. Finálmente sumamos.
+$$
+\textcolor{red}{a} = \text{mód}(3\textcolor{blue}{a_1},10) + \text{mód}(3\textcolor{blue}{a_3},10) + \text{mód}(3\textcolor{blue}{a_5},10) + \text{mód}(3\textcolor{blue}{a_7},10) + \text{mód}(3\textcolor{blue}{a_9},10) + \text{mód}(3\textcolor{blue}{a_{11}},10)
+$$
+Procedemos con las cifras pares.
+$$
+\textcolor{red}{b} = \text{mód}(7\textcolor{blue}{a_2},10) + \text{mód}(7\textcolor{blue}{a_4},10) + \text{mód}(7\textcolor{blue}{a_6},10) + \text{mód}(7\textcolor{blue}{a_8},10) + \text{mód}(7\textcolor{blue}{a_{10}},10) + \text{mód}(7\textcolor{blue}{a_{12}},10)
+$$
+Sumamos $\textcolor{red}{a}$ y $\textcolor{red}{b}$ y nos quedamos con la última cifra para obtener el dígito de control $\textcolor{orange}{c}$.
+$$
+\textcolor{orange}{c} = \text{mód}(\textcolor{red}{a} + \textcolor{red}{b}, 10) =
+$$
+$$
+= \text{mód}(\sum_{i=1}^6 \text{mód}(3\textcolor{blue}{a_{2i-1}},10) + \sum_{i=1}^6 \text{mód}(7\textcolor{blue}{a_{2i}},10), 10) =
+$$
+$$
+= \text{mód}(\sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + \sum_{i=1}^6 7\textcolor{blue}{a_{2i}}, 10) = \text{mód}(\sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}, 10)
+$$
+Supongamos ahora que se produce un error en el dígito $\textcolor{blue}{a_k}$ de tal manera que en vez de $\textcolor{blue}{a_k}$ tenemos $\textcolor{ForestGreen}{b_k} \ne \textcolor{blue}{a_k}$.\\
+\begin{adjustwidth}{1cm}{}
+    Caso 1: $k$ es par. Supongamos que el dígito de control no ha cambiado
+    $$
+    \text{mód}(\sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}, 10) = \text{mód}(7\textcolor{ForestGreen}{b_k}-7 \textcolor{blue}{a_k} + \sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}, 10)
+    $$
+    $$
+    \Rightarrow
+    \sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}} \equiv_{10} 7\textcolor{ForestGreen}{b_k}-7 \textcolor{blue}{a_k} + \sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}
+    $$
+    $$ \Rightarrow
+    0 \equiv_{10} 7\textcolor{ForestGreen}{b_k}-7 \textcolor{blue}{a_k}
+    \rightarrow
+    7\textcolor{ForestGreen}{b_k} \equiv_{10} 7 \textcolor{blue}{a_k}
+    \Rightarrow
+    3\cdot 7\textcolor{ForestGreen}{b_k} \equiv_{10} 3 \cdot 7 \textcolor{blue}{a_k}
+    \Rightarrow
+    21\textcolor{ForestGreen}{b_k} \equiv_{10} 21 \textcolor{blue}{a_k}
+    \Rightarrow
+    1\textcolor{ForestGreen}{b_k} \equiv_{10} 1 \textcolor{blue}{a_k}
+    $$
+    Pero $\textcolor{ForestGreen}{b_k} \ne \textcolor{blue}{a_k}$ y $0 \le \textcolor{ForestGreen}{b_k} ,\textcolor{blue}{a_k} \le 9$, lo cual es contradictorio con $\textcolor{ForestGreen}{b_k} \equiv_{10} \textcolor{blue}{a_k}$.
+    \\\\
+    Caso 2: $k$ es impar. Supongamos que el dígito de control no ha cambiado
+    $$
+    \text{mód}(\sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}, 10) = \text{mód}(3\textcolor{ForestGreen}{b_k}-3 \textcolor{blue}{a_k} + \sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}, 10)
+    $$
+    $$
+    \Rightarrow
+    \sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}} \equiv_{10} 3\textcolor{ForestGreen}{b_k}-3 \textcolor{blue}{a_k} + \sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}
+    $$
+    $$ \Rightarrow
+    0 \equiv_{10} 3\textcolor{ForestGreen}{b_k}-3 \textcolor{blue}{a_k}
+    \rightarrow
+    3\textcolor{ForestGreen}{b_k} \equiv_{10} 3 \textcolor{blue}{a_k}
+    \Rightarrow
+    7\cdot 3\textcolor{ForestGreen}{b_k} \equiv_{10} 7 \cdot 3 \textcolor{blue}{a_k}
+    \Rightarrow
+    21\textcolor{ForestGreen}{b_k} \equiv_{10} 21 \textcolor{blue}{a_k}
+    \Rightarrow
+    1\textcolor{ForestGreen}{b_k} \equiv_{10} 1 \textcolor{blue}{a_k}
+    $$
+    Pero $\textcolor{ForestGreen}{b_k} \ne \textcolor{blue}{a_k}$ y $0 \le \textcolor{ForestGreen}{b_k} ,\textcolor{blue}{a_k} \le 9$, lo cual es contradictorio con $\textcolor{ForestGreen}{b_k} \equiv_{10} \textcolor{blue}{a_k}$.\\
+\end{adjustwidth}
+Veamos que ocurre si intercambiamos dos cifras consecutivas $\textcolor{blue}{a_{2k}}$ y $\textcolor{blue}{a_{2k-1}}$ con $k \in \{1,2,3,4,5,6\}$. Veamos que tiene que ocurrir para que se mantenga $\textcolor{orange}{c}$.
+$$
+\text{mód}(\sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}, 10) = \text{mód}(3 \textcolor{blue}{a_{2k}} + 7 \textcolor{blue}{a_{2k-1}} - 7 \textcolor{blue}{a_{2k}} - 3 \textcolor{blue}{a_{2k-1}} +\sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}, 10)
+$$
+$$
+\Leftrightarrow
+0 \equiv_{10} 3 \textcolor{blue}{a_{2k}} + 7 \textcolor{blue}{a_{2k-1}} - 7 \textcolor{blue}{a_{2k}} - 3 \textcolor{blue}{a_{2k-1}}
+\Leftrightarrow
+7 \textcolor{blue}{a_{2k}} - 3 \textcolor{blue}{a_{2k}} \equiv_{10} 7 \textcolor{blue}{a_{2k-1}} - 3 \textcolor{blue}{a_{2k-1}}
+\Leftrightarrow
+4 \textcolor{blue}{a_{2k}} \equiv_{10} 4 \textcolor{blue}{a_{2k-1}}
+$$
+En este punto podemos concluir que en ocasiones no va a detectar el cambio de cifras consecutivas ya que 4 y 10 no son coprimos. Estudiemos la función $\text{mód}(4 x, 10)$ para saber en que casos detecta y en cuales no.
+$$
+\begin{array}{c|c}
+    x & \text{mód}(4 x, 10) \\ \hline
+    0 & 0 \\
+    1 & 4 \\
+    2 & 8 \\
+    3 & 2 \\
+    4 & 6 \\
+    5 & 0 \\
+    6 & 4 \\
+    7 & 8 \\
+    8 & 2 \\
+    9 & 6 
+\end{array}
+$$
+No detecta el intercambio de dos dígitos consecutivos cuando estos distan en 5 es decir:
+\begin{center}
+cambiar 0 y 5,\\
+cambiar 1 y 6,\\
+cambiar 2 y 7,\\
+cambiar 3 y 8,\\
+cambiar 4 y 9.
+\end{center}
+No es casualidad que sean aquellos que distan por 5.
+$$
+4x \equiv_{10} 4x-0 \equiv_{10} 4x-20 \equiv_{10} 4(x-5) 
+$$
+Veamos ahora que ocurre si cambiamos $\textcolor{orange}{c}$ y $\textcolor{blue}{a_{12}}$. Supongamos que no se detecta el cambio
+$$
+\text{mód}(\sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}, 10) = \text{mód}(7 \textcolor{orange}{c} - 7\textcolor{blue}{a_{12}} + \sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}, 10)
+$$
+$$
+\Leftrightarrow
+\sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}} \equiv_{10} 7 \textcolor{orange}{c} - 7\textcolor{blue}{a_{12}} + \sum_{i=1}^6 3\textcolor{blue}{a_{2i-1}} + 7\textcolor{blue}{a_{2i}}
+$$
+$$
+\Leftrightarrow
+0 \equiv_{10} 7 \textcolor{orange}{c} - 7\textcolor{blue}{a_{12}}
+\Leftrightarrow 
+7\textcolor{blue}{a_{12}} \equiv_{10} 7 \textcolor{orange}{c}
+\Leftrightarrow
+3 \cdot 7\textcolor{blue}{a_{12}} \equiv_{10} 3 \cdot 7 \textcolor{orange}{c}
+\Leftrightarrow
+\textcolor{blue}{a_{12}} \equiv_{10} \textcolor{orange}{c}
+\nota{\Leftrightarrow}{$\textcolor{blue}{a_{12}},\textcolor{orange}{c}\in \{0,1,2,3,4,5,6,7,8,9\}$}
+\textcolor{blue}{a_{12}} = \textcolor{orange}{c}
+$$
+Es decir, la única manera de de que no se detecte el intercambio es que $\textcolor{blue}{a_{12}} = \textcolor{orange}{c}$, que no es realmente un intercambio. El algoritmo detecta cabiar la última cifra del identificador del producto con el dígito de control.
+\\\\
+\textit{Bonus}: Estudiamos la "simetría" del dígito de control.
+$$
+\begin{array}{ccccccccccccc}
+    \textcolor{blue}{a_1} & \textcolor{blue}{a_2} & \textcolor{blue}{a_3} & \textcolor{blue}{a_4} & \textcolor{blue}{a_5} & \textcolor{blue}{a_6} & \textcolor{blue}{a_7} & \textcolor{blue}{a_8} & \textcolor{blue}{a_9} & \textcolor{blue}{a_{10}} & \textcolor{blue}{a_{11}} & \textcolor{blue}{a_{12}} & \textcolor{orange}{c} \\
+    \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow \\
+    \textcolor{orange}{\tilde{c}} & \textcolor{ForestGreen}{b_{12}} & \textcolor{ForestGreen}{b_{11}} & \textcolor{ForestGreen}{b_{10}} & \textcolor{ForestGreen}{b_9} & \textcolor{ForestGreen}{b_8} & \textcolor{ForestGreen}{b_7} & \textcolor{ForestGreen}{b_6} & \textcolor{ForestGreen}{b_5} & \textcolor{ForestGreen}{b_{4}} & \textcolor{ForestGreen}{b_{3}} & \textcolor{ForestGreen}{b_{2}} & \textcolor{ForestGreen}{b_1} \\
+\end{array}
+$$
+$$
+\textcolor{orange}{\tilde{c}} \equiv_{10} \sum_{i=1}^6 3\textcolor{ForestGreen}{b_{2i-1}} + 7\textcolor{ForestGreen}{b_{2i}} \equiv_{10}
+$$
+$$
+\equiv_{10} 3 \textcolor{orange}{c} + 7\textcolor{blue}{a_{12}} + 3 \textcolor{blue}{a_{11}} + 7\textcolor{blue}{a_{10}} + 3 \textcolor{blue}{a_9} + 7\textcolor{blue}{a_8} + 3 \textcolor{blue}{a_7} + 7\textcolor{blue}{a_6} + 3 \textcolor{blue}{a_5} + 7\textcolor{blue}{a_4} + 3 \textcolor{blue}{a_3} + 7 \textcolor{blue}{a_2}
+$$
+$$
+\equiv_{10} 3 \textcolor{orange}{c} + 7\textcolor{blue}{a_{12}} + 3 \textcolor{blue}{a_{11}} + 7\textcolor{blue}{a_{10}} + 3 \textcolor{blue}{a_9} + 7\textcolor{blue}{a_8} + 3 \textcolor{blue}{a_7} + 7\textcolor{blue}{a_6} + 3 \textcolor{blue}{a_5} + 7\textcolor{blue}{a_4} + 3 \textcolor{blue}{a_3} + 7 \textcolor{blue}{a_2} + 3 \textcolor{blue}{a_1} - 3 \textcolor{blue}{a_1} \equiv_{10}
+$$
+$$
+\equiv_{10} 3 \textcolor{orange}{c} + \textcolor{orange}{c} - 3 \textcolor{blue}{a_1} \equiv_{10} 4 \textcolor{orange}{c} - 3 \textcolor{blue}{a_1} \equiv_{10}
+$$
+$$
+\textcolor{orange}{\tilde{c}} \equiv_{10} 4 \textcolor{orange}{c} - 3 \textcolor{blue}{a_1}
+\Rightarrow
+\textcolor{blue}{a_1} \equiv_{10} 4 \textcolor{orange}{c} - 3 \textcolor{blue}{a_1}
+\Rightarrow
+4 \textcolor{blue}{a_1} \equiv_{10} 4 \textcolor{orange}{c}
+$$
+Que no es necesariamente cierto $000000000003\textcolor{orange}{1}$ pero $130000000000\textcolor{orange}{4}$. Los casos en los que el código es simétrico son similares a los del intercambio de digitos consecutivos, por ejemplo: $700000000003\textcolor{orange}{2}$ y $230000000000\textcolor{orange}{7}$ ya que $7-2=5$.
+\begin{python}
+>>> def f(s):
+    	ss = 0
+    	for i in range(0,6):
+	    	ss += 7*int(s[2*i+1]) + 3*int(s[2*i])
+	    return int(ss) % 10
+
+>>> f('000000000003')
+1
+>>> f('130000000000')
+4
+>>> f('700000000003')
+2
+>>> f('230000000000')
+7
+\end{python}
+\textbf{2.} Se solicita a cuatro pintores, Ander, Beñat, Carlos y David, que presenten a concurso un cuadro y el mejor lo comprará el ayuntamiento. Se acuerda que sean ellos mismos quienes valoren las obras. Entre ellos acuerdan que cada uno se valore así mismo y a otros dos, pero que todos se den así mismo un punto. Una vez hechas las puntuaciones, la valoración final de cada obra es proporcional a la suma de las puntuaciones obtenidas, cada una de ellas ponderada por la valoración que tendrá quien la haya otorgado.
+\\\\
+El resultado de las votaciones de cada uno a otros dos es el siguiente.
+\begin{adjustwidth}{1cm}{}
+Ander da 4 puntos a Beñat y 6 a David.\\
+Beñat da 6 puntos a Ander y 8 a Carlos.\\
+Carlos da 7 puntos a Beñat y 7 a David.\\
+David da 5 a Ander y 3 a Carlos.\\
+\end{adjustwidth}
+¿Cuál es el resultado final?
+\\\\
+NOTA. Llegar al resultado de dos formas. Presentar las cuentas a mano, no se valorará si
+solo presentan los resultados, tanto los finales como los intermedios, aunque sean
+correctos.
+\\\\
+Sean $a,b,c,d$ las puntuaciones de Ander, Beñat, Carlos y David respectivamente. Tenemos el siguente sistema de ecuaciones:
+$$
+\left\{\begin{array}{ccccccccc}
+    a & = & k(1a & + & 6b & + & 0c & + & 5d)\\
+    b & = & k(4a & + & 1b & + & 7c & + & 0d)\\
+    c & = & k(0a & + & 8b & + & 1c & + & 3d)\\
+    d & = & k(6a & + & 0b & + & 7c & + & 1d)\\
+\end{array}\right.
+\Leftrightarrow
+1/k
+\left(\begin{array}{ccccccccc}
+    a\\
+    b\\
+    c\\
+    d\\
+\end{array}\right)
+=
+\left(\begin{array}{ccccccccc}
+    1 & 6 & 0& 5\\
+    4 & 1 & 7& 0\\
+    0 & 8 & 1& 3\\
+    6 & 0 & 7& 1\\
+\end{array}\right)
+\left(\begin{array}{ccccccccc}
+    a\\
+    b\\
+    c\\
+    d\\
+\end{array}\right)
+$$
+Es decir $1/k$ es un valor propio de la matriz cuadrada. Calculamos su polinomi característico
+$$
+\left|\begin{array}{ccccccccc}
+    1-x & 6 & 0& 5\\
+    4 & 1-x & 7& 0\\
+    0 & 8 & 1-x& 3\\
+    6 & 0 & 7& 1-x\\
+\end{array}\right| =
+$$
+$$
+= (1-x)
+\left|\begin{array}{ccccccccc}
+    1-x & 7& 0\\
+    8 & 1-x& 3\\
+    0 & 7& 1-x\\
+\end{array}\right|
+- 6
+\left|\begin{array}{ccccccccc}
+    4 & 7 & 0\\
+    0 & 1-x & 3\\
+    6 & 7 & 1-x\\
+\end{array}\right|
+- 5
+\left|\begin{array}{ccccccccc}
+    4 & 1-x & 7\\
+    0 & 8 & 1-x\\
+    6 & 0 & 7\\
+\end{array}\right| =
+$$
+$$
+= (1-x)\left(
+(1-x)
+\left|\begin{array}{ccccccccc}
+    1-x& 3\\
+    7& 1-x\\
+\end{array}\right|
+-
+7
+\left|\begin{array}{ccccccccc}
+    8 & 3\\
+    0 & 1-x\\
+\end{array}\right|\right)
+$$
+$$
+- 6 \left(
+4
+\left|\begin{array}{ccccccccc}
+    1-x & 3\\
+    7 & 1-x\\
+\end{array}\right|
+- 7
+\left|\begin{array}{ccccccccc}
+    0 & 3\\
+    6 & 1-x\\
+\end{array}\right|
+\right)
+$$
+$$
+- 5
+\left(
+4
+\left|\begin{array}{ccccccccc}
+    8 & 1-x\\
+    0 & 7\\
+\end{array}\right|
++ 6
+\left|\begin{array}{ccccccccc}
+    1-x & 7\\
+    8 & 1-x\\
+\end{array}\right|
+\right) =
+$$
+$$
+= (1-x)\left(
+(1-x)
+((1-x)^2 - 21)
+-
+7
+(8(1-x))\right)
+- 6 \left(
+4
+((1-x)^2-21)
+- 7
+(-18)
+\right)
+- 5
+\left(
+4
+(56)
++ 6
+((1-x)^2-56)
+\right)
+$$
+Haciendo el cambio de variable $t=1-x$
+$$
+= t(
+t
+(t^2 - 21)
+-
+7
+(8t))
+- 6 (
+4
+(t^2-21)
+- 7
+(-18)
+)
+- 5
+(
+4
+(56)
++ 6
+(t^2-56)
+)=
+t^4 - 131 t^2 + 308
+$$
+$$
+t^2 = \frac{131\pm\sqrt{15929}}{2}
+\Rightarrow
+x = 1 \pm \sqrt{\frac{131\pm\sqrt{15929}}{2}}
+$$
+Coomo
+$$
+\sqrt{\frac{131+\sqrt{15929}}{2}} = 11.34 \quad \sqrt{\frac{131+\sqrt{15929}}{2}} = 1.54
+$$
+Los valores propios positivos son
+$$
+\sqrt{\frac{131+\sqrt{15929}}{2}} = 12.34 = \frac{1}{k_1} \quad 1+\sqrt{\frac{131+\sqrt{15929}}{2}} = 2.54 = \frac{1}{k_2}
+$$
+Con $k_1$:
+$$
+\left\{\begin{array}{ccccccccc}
+    12.34a & = & 1a & + & 6b & + & 0c & + & 5d\\
+    12.34b & = & 4a & + & 1b & + & 7c & + & 0d\\
+    12.34c & = & 0a & + & 8b & + & 1c & + & 3d\\
+    12.34d & = & 6a & + & 0b & + & 7c & + & 1d\\
+\end{array}\right.
+$$
+$$
+\left\{\begin{array}{ccccccccc}
+    0 & = & 11.34a & + & 6b     & + & 0c     & + & 5d    \\
+    0 & = & 4a     & + & 11.34b & + & 7c     & + & 0d    \\
+    0 & = & 0a     & + & 8b     & + & 11.34c & + & 3d    \\
+    0 & = & 6a     & + & 0b     & + & 7c     & + & 11.34d\\
+\end{array}\right.
+$$
+Si iteramos unas cuantas veces con el método de Jacobi
+$$
+v^{(k+1)} = 
+\left(\begin{array}{cccc}
+    0.881 & 0 & 0 & 0 \\
+    0 & 0.881 & 0 & 0 \\
+    0 & 0 & 0.881 & 0 \\
+    0 & 0 & 0 & 0.881
+\end{array}\right)\left(-
+\left(\begin{array}{ccccccccc}
+ 0 & 6 & 0 & 5\\
+ 4 & 0 & 7 & 0\\
+ 0 & 8 & 0 & 3\\
+ 6 & 0 & 7 & 0\\
+\end{array}\right) v^{(k)}\right)
+$$
+\begin{python}
+>>> import numpy as np
+>>> D = np.array([[-0.881, 0, 0, 0], [0, -0.881, 0, 0], [0, 0, -0.881, 0], [0, 0, 0, -0.881]])
+>>> v = np.array([[1],[1],[1],[1]])
+>>> R = np.array([[ 0 , 6 , 0 , 5], [ 4 , 0 , 7 , 0], [ 0 , 8 , 0 , 3], [ 6 , 0 , 7 , 0]])
+>>> for k in range(15):
+        v = np.dot(D, np.dot(-1*R,v))
+        print(v.T)
+
+        
+[[ 9.691  9.691  9.691 11.453]]
+[[101.677091  93.915481  98.572447 110.991023]]
+[[ 985.35268888  966.20634933  955.26558388 1145.36138368]]
+[[10152.68365766  9363.50573139  9837.01248715 11099.69716919]]
+[[ 98389.65732641  96442.91321787  95330.48801299 114331.94182267]]
+[[1013429.44299852  934628.27199437  981908.97459686 1107990.8482035 ]]
+[[ 9821144.7320987   9626758.00346566  9515679.87281821 11412420.68202906]]
+[[1.01158756e+08 9.32929118e+07 9.80124183e+07 1.10597769e+08]]
+[[9.80329504e+08 9.60926039e+08 9.49838345e+08 1.13916777e+09]]
+[[1.00974891e+10 9.31233425e+09 9.78342713e+09 1.10396748e+10]]
+[[9.78547665e+10 9.59179466e+10 9.48111924e+10 1.13709722e+11]]
+[[1.00791359e+12 9.29540820e+11 9.76564483e+11 1.10196092e+12]]
+[[9.76769062e+12 9.57436067e+12 9.46388641e+12 1.13503044e+13]]
+[[1.00608161e+14 9.27851292e+13 9.74789486e+13 1.09995800e+14]]
+[[9.74993693e+14 9.55695837e+14 9.44668491e+14 1.13296742e+15]]
+\end{python}
+Como el vector propio tiene el mismo signo en todas los componentes continuamos. El ganador es David ya que es el mayor el valor absoluto.
+\\\\
+1. D\\
+2. A\\
+3. B\\
+4. C
+\end{document}

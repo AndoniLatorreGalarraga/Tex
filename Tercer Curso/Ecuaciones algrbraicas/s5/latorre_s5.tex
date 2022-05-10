@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario}
+\author{Andoni Latorre Galarraga}
+\date{31/03/2022}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+\begin{multicols}{2}
+
+\noindent \textbf{6.} Las raices de $x^5-2$ son $\sqrt[5]{2}, \sqrt[5]{2} \xi_5, \sqrt[5]{2} \xi_5^2, \sqrt[5]{2} \xi_5^3, \sqrt[5]{2} \xi_5^4$ donde $\xi_5$ es raiz quinta primitiva de la unidad. Deducimos que $F = \mathbb{Q}(\sqrt[5]{2}, \xi_5)$ Consideramos el siguiente equema:
+\begin{center}
+    \begin{tikzpicture}
+
+    \node (Q1) at (0,0) {$\mathbb{Q}$};
+    \node (Q2) at (2,2) {$\mathbb{Q}(\sqrt[5]{2})$};
+    \node (Q3) at (0,4) {$\mathbb{Q}(\sqrt[5]{2}, \xi_5)$};
+    \node (Q4) at (-2,2) {$\mathbb{Q}(\xi_5)$};
+
+    \draw (Q1)--(Q2) node [pos=0.7, below,inner sep=0.25cm] {5};
+    \draw (Q1)--(Q4) node [pos=0.7, below,inner sep=0.25cm] {4};
+    \draw (Q3)--(Q4);
+    \draw (Q2)--(Q3);
+
+    \end{tikzpicture}
+\end{center}
+\noindent El grado de $\mathbb{Q}(\sqrt[5]{2}, \xi_5)$ sobre $\bb{Q}$ es 5 ya que $x^5-2$ es irreducible sobre $\bb{Q}$ por Eisenstein con $p=2$. Para $\mathbb{Q}(\xi_5)$
+$$
+x^5-1 = (x - 1) (x^4 + x^3 + x^2 + x + 1)
+$$
+Para aplicar el criterio de la traslación $x=t+1$
+$$
+x^4 + x^3 + x^2 + x + 1 = (t+1)^4 + (t+1)^3 + (t+1)^2 + (t+1) + 1 =
+$$
+$$
+= t^4 + 5 t^3 + 10 t^2 + 10 t + 5
+$$
+que es irreducible por Eisenstein con $p=5$. Por ser $(4,5)=1$ tenemos que $|\mathbb{Q}(\sqrt[5]{2}, \xi_5):\bb{Q}| = 4\cdot 5 = 20$.\\\\
+Veamos que $\sqrt[3]{p}\notin F$
+
+\begin{center}
+\begin{tikzpicture}
+
+    \node (Q1) at (0,0) {$\mathbb{Q}$};
+    \node (Q2) at (2,2) {$\mathbb{Q}(\sqrt[3]{p})$};
+    \node (Q3) at (0,4) {$\mathbb{Q}(\sqrt[5]{2}, \xi_5)$};
+
+    \draw (Q1)--(Q2) node [pos=0.7, below,inner sep=0.25cm] {3};
+    \draw[red] (Q2)--(Q3);
+    \draw (Q1)--(Q3) node [pos=0.5, left,inner sep=0.25cm] {20};
+
+    \end{tikzpicture}
+\end{center}
+
+Sabemos que $x^3-p$ es irreducible por Eisenstein con $p=p$ y $3\nmid 20$ contradiciendo el teorema del grado.\\\\
+Para $\sqrt[4]{p}$,
+
+\begin{center}
+    \begin{tikzpicture}
+
+    \node (Q1) at (0,0) {$\mathbb{Q}$};
+    \node (Q2) at (2,2) {$\mathbb{Q}(\sqrt[4]{p})$};
+    \node (Q3) at (0,4) {$\mathbb{Q}(\sqrt[5]{2}, \xi_5)$};
+    \node (Q4) at (2,4) {$\bb{Q}(\sqrt[4]{p}, \sqrt[5]{2} )$};
+    \node (Q5) at (4,2) {$\bb{Q}(\sqrt[5]{2})$};
+
+    \draw (Q1)--(Q2) node [pos=0.8, below,inner sep=0.25cm] {4};
+    \draw (Q1)--(Q5) node [pos=0.8, below,inner sep=0.25cm] {5};
+    \draw (Q1)--(Q3) node [pos=0.5, left,inner sep=0.25cm] {20};
+    \draw (Q2)--(Q4);
+    \draw (Q5)--(Q4);
+
+    \end{tikzpicture}
+\end{center}
+Por ser 4 y 5 coprimos.
+\begin{center}
+    \begin{tikzpicture}
+
+    \node (Q1) at (0,0) {$\mathbb{Q}$};
+    \node (Q2) at (2,2) {$\mathbb{Q}(\sqrt[4]{p})$};
+    \node (Q3) at (0,4) {$\mathbb{Q}(\sqrt[5]{2}, \xi_5)$};
+    \node (Q4) at (2,4) {$\bb{Q}(\sqrt[4]{p}, \sqrt[5]{2})$};
+    \node (Q5) at (4,2) {$\bb{Q}(\sqrt[5]{2})$};
+
+    \draw (Q1)--(Q2) node [pos=0.8, below,inner sep=0.25cm] {4};
+    \draw (Q1)--(Q5) node [pos=0.8, below,inner sep=0.25cm] {5};
+    \draw (Q1)--(Q3) node [pos=0.5, left,inner sep=0.25cm] {20};
+    \draw (Q3)--(Q4)[redk] node [pos=0.5, above,inner sep=0.25cm] {1};
+    \draw (Q1)--(Q4) node [pos=0.7, left,inner sep=0.25cm] {20};
+    \draw (Q2)--(Q4);
+    \draw (Q5)--(Q4);
+
+    \end{tikzpicture}
+\end{center}
+Pero $\bb{Q}(\sqrt[4]{p}, \sqrt[5]{2}) \subseteq \bb{R} $, lo cual es contradictorio.
+\\\\
+\textbf{7.}  Por inducción sobre $n = \delta(f)$. Cuando $n = 1$ tenemos que $f$ es de la forma $ax+b$ con $a,b\in K$. La única raiz $-ba^{-1}\in K$ y por tanto $1\mid 1! = 1$. Para el paso de inducción consideramos dos casos.\\
+Caso 1: $f$ es reducible. Sean $f=pq$, $E_f, E_p, E_q$ los cuerpos de escisión de $f, p, q$ repectivamente y $R_f, R_p, R_q$ los conuntos de las raices de $f, p, q$ respectivamente.
+\begin{center}
+    \begin{tikzpicture}
+
+    \node (Q1) at (0,0) {$K$};
+    \node (Q3) at (0,2) {$E_q = K(R_q)$};
+    \node (Q4) at (0,4) {$E_f = K(R_f) = K(R_p, R_q)$};
+
+    \draw (Q3)--(Q4) node [pos=0.7, left,inner sep=0.25cm] {$n_2$};
+    \draw (Q1)--(Q3) node [pos=0.7, left,inner sep=0.25cm] {$n_1$};
+    \draw (Q3)--(Q4);
+
+    \end{tikzpicture}
+\end{center}
+Ahora, el grado de $E_f$ divide a 
+$$n_1! n_2! = n_1! (n-n_1)! \mid n!$$
+\end{multicols}
+\noindent Caso 2: $f$ es irreducible. Tomamos $u\in R_f$, en $K(u)$ podemso escribir $f = (x-u)g$ con $g\in k(u)[x]$ entonces
+$$
+|E_f:K| = |E_f:K(u)|\cdot |K(u):K| = n |E_f:K(u)|
+$$
+Como $|E_f:K(u)|$ divide a $(n-1)!$ se tiene que $|E_f : K| \mid n!$
+\end{document}

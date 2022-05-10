@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Cifrado Payfair}
+\author{Andoni Latorre Galarraga y Mariana Zaballa Bernabé}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+\section*{Cifrado}
+
+Utlizamos un bucle \textcolor{blue}{While Wend} para recorrer el mensaje. La variable $k$ es la posición del mensaje que vamos a leer. Dependiendo de si tenemos que introducir un caracter sin sentido $(\odot)$ avanzamos $k$ por 1 o por 2.
+$$
+\begin{array}{ccc}
+    a_1 & a_2 &  \\
+    \text{letra} & \text{letra} & k \leftarrow k + 2 \\
+    \text{letra} & \odot & k \leftarrow k + 1 \\
+\end{array}
+$$
+En la última posición nos aseguramos de aumentar el valor de $k$ para que no se cumpla la condición $k\le l$.
+\\
+Cuando ambas letras están en la misma fila/columna queremos sumar 1 módulo 5. Pero en vez de tener el resultado en $\{0,1,2,3,4\}$ lo queremos en $\{1,2,3,4,5\}$. Hemos logrado esto de la siguiente manera
+$$
+( x  \: \text{\textcolor{blue}{Mod}} \: 5 ) +1
+$$
+\\
+Para cuando no comparten ni fila ni columna hemos hecho una observación,
+$$
+\begin{array}{c|ccc}
+     & j_1 & j_2 \\ \hline
+    i_1 & a_1 &  \\
+    i_2 &  & a_2 
+\end{array}\quad , \quad
+\begin{array}{c|ccc}
+    & j_2 & j_1 \\ \hline
+   i_2 & a_2 &  \\
+   i_1 &  & a_1 
+\end{array}
+\Rightarrow sig(j_1-j_2) = sig(i_1-1_2) \Rightarrow (j_1-j_2)(i_1-i_2) > 0
+$$
+$$
+\begin{array}{c|ccc}
+     & j_1 & j_2 \\ \hline
+    i_1 &  & a_1 \\
+    i_2 & a_2 & 
+\end{array}\quad , \quad
+\begin{array}{c|ccc}
+    & j_1 & j_2 \\ \hline
+    i_2 &  & a_2 \\
+    i_1 & a_1 & 
+\end{array}
+\Rightarrow sig(j_1-j_2) \ne sig(i_1-1_2) \Rightarrow (j_1-j_2)(i_1-i_2) < 0
+$$
+Por eso utlizamos $(j_1-j_2)(i_1-i_2) > 0$ como condición en el \textcolor{blue}{If}. Calculamos $b_1, b_2$ como corresponde en cada caso
+$$
+\begin{array}{c|ccc}
+     & j_1 & j_2 \\ \hline
+    i_1 & a_1 & b_1 \\
+    i_2 & b_2 & a_2 
+\end{array}\quad , \quad
+\begin{array}{c|ccc}
+    & j_2 & j_1 \\ \hline
+   i_2 & a_2 & b_2 \\
+   i_1 & b_1 & a_1 
+\end{array} 
+\Rightarrow b_1 \text{ en } (i_1, j_2) \quad b_2 \text{ en } (i_2, j_1)
+$$
+$$
+\begin{array}{c|ccc}
+     & j_1 & j_2 \\ \hline
+    i_1 & b_2 & a_1 \\
+    i_2 & a_2 & b_1
+\end{array}\quad , \quad b_1 
+\begin{array}{c|ccc}
+    & j_1 & j_2 \\ \hline
+    i_2 & b_1 & a_2 \\
+    i_1 & a_1 & b_2
+\end{array}
+\Rightarrow b_1 \text{ en } (i_2, j_1) \quad b_2 \text{ en } (i_1, j_2)
+$$
+
+\section*{Descifrado}
+El código es basicamente el mismo con el cambio de restar 1 módulo 5 en vez de sumarlo y el cambio correspondiente al caso de fila y columna diferentes.
+$$
+\begin{array}{c|c}
+    x & ((x+3) \: \textcolor{blue}{\text{Mod}} \: 5) + 1 \\ \hline
+    1 & 5 \\
+    2 & 1 \\
+    3 & 2 \\
+    4 & 3 \\
+    5 & 4 \\
+\end{array}
+$$
+La idea para esta fórmula ha venido de $-1\equiv_5 4 = 3 + 1$.
+\end{document}

@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Hamming}
+\author{Andoni Latorre Galarraga y Mariana Zaballa Bernabé}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+\noindent Para calcular $p_1,p_2,p_3$ hemos utilizado la función $\textcolor{blue}{\text{RESIDUO}}$
+$$
+\begin{array}{c}
+p_1 = \textcolor{blue}{\text{RESIDUO}}(a_1 + a_2 + a_4; 2) \\
+p_2 = \textcolor{blue}{\text{RESIDUO}}(a_1 + a_3 + a_4; 2) \\
+p_3 = \textcolor{blue}{\text{RESIDUO}}(a_2 + a_3 + a_4; 2)
+\end{array}
+$$
+
+\noindent Hemos calculado $s_1,s_2,s_3$ de la misma manera que $p_1,p_2,p_3$. Para calcular $r_1,r_2,r_3$ también hemos utilizado la función $\textcolor{blue}{\text{RESIDUO}}$.
+$$
+r_j = \textcolor{blue}{\text{RESIDUO}}(s_j + q_j ; 2)
+$$
+
+\noindent La razón por la que funciona el código es que si tenmos dos números diferentes, necesariamente uno va a ser un 1 y el otro un 0, es decir $s_j+q_j=1\equiv_2 1$. Si los dos son iguales tenemos que $s_j+q_j= 2s_j=2q_j\equiv_2 0$. Para escribir $r_3r_2r_1$ hemos ''pensado'' en base 10 en la celda $\textcolor{orange}{\text{C21}}$ y en base 2 en la celda $\textcolor{orange}{\text{D21}}$.
+$$
+\begin{array}{l}
+    $\textcolor{orange}{\text{C21}}$ = 100r_3+10r_2+r_1 \\
+    $\textcolor{orange}{\text{D21}}$ = 4r_3+2r_2+r_1
+\end{array}
+$$
+\noindent Para corregir el código hemos utilizado
+$$
+\begin{array}{rl}
+\textcolor{Orchid}{\text{B18}} & = \textcolor{blue}{\text{RESIDUO}}(\textcolor{orange}{\text{B11}} + \textcolor{blue}{\text{SI}}(\textcolor{orange}{\text{C21}
+}-\text{B4} = 0;1;0);2) \\
+\textcolor{Orchid}{\text{C18}} & = \textcolor{blue}{\text{RESIDUO}}(\textcolor{orange}{\text{C11}} + \textcolor{blue}{\text{SI}}(\textcolor{orange}{\text{C21}
+}-\text{C4} = 0;1;0);2) \\
+\textcolor{Orchid}{\text{D18}} & = \textcolor{blue}{\text{RESIDUO}}(\textcolor{orange}{\text{D11}} + \textcolor{blue}{\text{SI}}(\textcolor{orange}{\text{C21}
+}-\text{D4} = 0;1;0);2) \\
+\textcolor{Orchid}{\text{E18}} & = \textcolor{blue}{\text{RESIDUO}}(\textcolor{orange}{\text{E11}} + \textcolor{blue}{\text{SI}}(\textcolor{orange}{\text{C21}
+}-\text{E4} = 0;1;0);2) \\
+\textcolor{Orchid}{\text{F18}} & = \textcolor{blue}{\text{RESIDUO}}(\textcolor{orange}{\text{F11}} + \textcolor{blue}{\text{SI}}(\textcolor{orange}{\text{C21}
+}-\text{F4} = 0;1;0);2) \\
+\textcolor{Orchid}{\text{G18}} & = \textcolor{blue}{\text{RESIDUO}}(\textcolor{orange}{\text{G11}} + \textcolor{blue}{\text{SI}}(\textcolor{orange}{\text{C21}
+}-\text{G4} = 0;1;0);2) \\
+\textcolor{Orchid}{\text{H18}} & = \textcolor{blue}{\text{RESIDUO}}(\textcolor{orange}{\text{H11}} + \textcolor{blue}{\text{SI}}(\textcolor{orange}{\text{C21}
+}-\text{H4} = 0;1;0);2) \\
+\end{array}
+$$
+Ya que sumar 1 módulo 2 es cambiar el bit.
+$$
+\begin{array}{l}
+    \textcolor{blue}{0} + 1 \equiv_2 \textcolor{blue}{1} \\
+    \textcolor{blue}{1} + 1 \equiv_2 \textcolor{blue}{0}
+\end{array}
+$$
+Para la codificación del segundo código $(7,4)$, el proceso es análogo al primero.
+\end{document}

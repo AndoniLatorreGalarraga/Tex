@@ -12,18 +12,17 @@
 \pgfplotsset{width=5cm,compat=1.12}
 \usepgfplotslibrary{fillbetween}
 
-\title{Péndulo físico}
-\author{}
+\title{Cálculo de la aceleración de la gravedad mediante un péndulo físico}
+\author{Andoni Latorre Galarraga \\ \href{mailto:alatorre73@alumno.uned.es}{alatorre73@alumno.uned.es}}
 \date{}
 \begin{document}
 
 \maketitle
 \begin{abstract}
 Se estudia la relacíon entre el periodo de oscilación de un péndulo físico y la distancia entre el eje de rotación y el centro de masas de dicho péndulo. A partir de los datos experimentales se calcula el valor de la aceleración de la gravedad $g$.
-
 \end{abstract}
+
 \begin{multicols}{2}
-\section{Introducción}
 
 \section{Fundamento Teórico}
 Si se tiene un cuerpo rígido, de masa $M$, suspendido en un eje de giro $O$ a una distancia $b$ del centro de masas del objeto, $C$. Cuando el objeto está desplazado de su posición de equilibrio por un ángulo $\theta$. La aceleración tangencial del centro de masas se puede expresar de dos formas distintas, al igualar estas se tiene.
@@ -35,7 +34,7 @@ Cuando se tienen valores pequeños de $\theta$ , menores a $20^\circ$, se puede 
 $$
 -M g b \theta = I \frac{d^2 \theta}{dt^2}
 $$
-Que tiene por solución $\sen \left( \theta \sqrt{\frac{Mgb}{I}} + \phi \right) + C$ (ver apéndice A). Que corresponde a un movimiento armónico simple de periodoP
+Que tiene por solución $\sen \left( \theta \sqrt{\frac{Mgb}{I}} + \phi \right) + C$. Que corresponde a un movimiento armónico simple de periodoP
 $$
 T = 2\pi \sqrt{\frac{I}{Mgb}}
 $$
@@ -54,16 +53,16 @@ $$
 Obtenemos una relación lineal entre $bT^2$ y $b^2$. Estimaremos la pendiente y la ordenada en el origen de dicha relación para obtener el valor de $g$.
 
 \section{Dispositivo Experimental}
-En nuestro experimento hemos utilizado una varilla metálica como péndulo. La varilla tine unas marcas cada centímetro, estas marcas son tales que se puede situar un pequeño trozo de metal mediante un tornillo de presión para sujetar la varilla y que esta tenga como eje de rotación la marca en la que se situa el metal triangular. Ademas, la varilla central indica el centro de masas. De esta manera, contando ranunas desde el centro de la varilla podemos conocer el valor de $b$. En la Fig. 1 se puede ver el dispositivo experimental ya montado.
+En nuestro experimento hemos utilizado una varilla metálica como péndulo. La varilla tine unas marcas cada centímetro. Al dadas estas marcas, supondremos que no hay error en $b$. Estas marcas son tales que se puede situar un pequeño trozo de metal mediante un tornillo de presión para sujetar la varilla y que esta tenga como eje de rotación la marca en la que se situa el metal triangular. Ademas, la varilla central indica el centro de masas. De esta manera, contando ranunas desde el centro de la varilla podemos conocer el valor de $b$. En la Fig. 1 se puede ver el dispositivo experimental ya montado.
 \begin{center}
     \includegraphics[scale=0.05, angle=-90]{figures/c2.png}\\
     Figura 1
 \end{center}
 
 \section{Procedimiento y Resultados}
-Hemos tomado mediciones para $b\in \{6cm, 7cm, \cdots, 31cm, 32cm\}$. Para cada valor de $b$ hemos tomado 5 tiempos independientes, cada uno de estos correspondiente a 10 oscilaciones. Siempre hemos tenído cudado de que la varilla no oscile con ángulos superiores a $20^\circ$. Los datos obtenidos son los siguientes:
+Hemos tomado mediciones para $b\in \{6\text{cm}, 7\text{cm}, \cdots, 30\text{cm}, 31\text{cm}\}$. Para cada valor de $b$ hemos tomado 5 tiempos independientes, cada uno de estos correspondiente a 10 oscilaciones. Siempre hemos tenído cudado de que la varilla no oscile con ángulos superiores a $20^\circ$. Los datos obtenidos son los siguientes:
 $$
-    \begin{array}{|c||c|c|c|c|c|}
+    \begin{array}{|c||c|c|c|c|c|} \hline
         b\text{(m)} & T_1\text{(s)} & T_2\text{(s)} & T_3\text{(s)} & T_4\text{(s)} & T_5\text{(s)} \\ \hline\hline
         0,06 & 15,07 & 15,13 & 15,19 & 15,13 & 15.00 \\ \hline
         0,07 & 14,31 & 13,28 & 14,31 & 14,28 & 14,38 \\ \hline
@@ -94,6 +93,46 @@ $$
     \end{array}
 $$
 
+Tomaremos como valor esperado del tiempo, $T^*$, la media aritmetica de los 5 tiempos (divididos entre 10). Para estimar el error absoluto, $\epsilon_{T^*}$, el error estándard de la media como se indica en \cite{manual} p. 48.
+$$
+T^* = \frac{1}{5} \sum_{i=1}^5 \frac{T_i}{10} \quad
+\epsilon_{T^*} = \sqrt{\frac{1}{5^2} \sum_{i=1}^5 (\frac{T_i}{10} - T^*)^2}
+$$
+$$
+\begin{array}{|l||l|l|} \hline
+  b\text{(cm)} & T^*\text{(s)} & \epsilon_{T^*}\text{(s)} \\ \hline \hline
+  0.06 & 1.510 & 0.003  \\ \hline
+  0.07 & 1.411 & 0.019  \\ \hline
+  0.08 & 1.388 & 0.003  \\ \hline
+  0.09 & 1.347 & 0.008  \\ \hline
+  0.10 & 1.327 & 0.004  \\ \hline
+  0.11 & 1.303 & 0.003  \\ \hline
+  0.12 & 1.282 & 0.002  \\ \hline
+  0.13 & 1.265 & 0.005  \\ \hline
+  0.14 & 1.254 & 0.003  \\ \hline
+  0.15 & 1.246 & 0.002  \\ \hline
+  0.16 & 1.2476 & 0.0018  \\ \hline
+  0.17 & 1.235 & 0.003  \\ \hline
+  0.18 & 1.243 & 0.002  \\ \hline
+  0.19 & 1.238 & 0.008  \\ \hline
+  0.20 & 1.250 & 0.004  \\ \hline
+  0.21 & 1.254 & 0.003  \\ \hline
+  0.22 & 1.2586 & 0.0009  \\ \hline
+  0.23 & 2.522 & 0.005  \\ \hline
+  0.24 & 2.536 & 0.003  \\ \hline
+  0.25 & 2.555 & 0.002  \\ \hline
+  0.26 & 2.55 & 0.02  \\ \hline
+  0.27 & 1.2988 & 0.0014  \\ \hline
+  0.28 & 1.301 & 0.003  \\ \hline
+  0.29 & 1.311 & 0.004  \\ \hline
+  0.30 & 1.323 & 0.004  \\ \hline
+  0.31 & 1.338 & 0.006  \\ \hline
+  \end{array}
+$$
+Los redondeos se han realizado como se indica en \cite{manual} p. 22. Primero se redondea $\epsilon$ a una cifra significativa (dos si la primera es 1). Despues, se redondea $T^*$ de manera que la última cifra significativa se del mismo orden decimal que $\epsilon$. Ahora, podemos calcular ${T^*}^2b$ y su error correspondiente con la ecuación 3.6 de \cite{manual}. Estos se redondean como antes. El error de ${T^*}^2b$ viene dado por:
+$$
+\epsilon_{{T^*}^2b} = 2bT^* \epsilon_{T^*}
+$$
 \begin{tikzpicture}
 
     \pgfplotsset{
@@ -138,7 +177,11 @@ $$
   \end{tikzpicture}
 \section{Conclusiones}
 
+\begin{thebibliography}{1}
 
+  \bibitem{manual}Manual de la asignatura. Versión 3.7
+
+\end{thebibliography}
 \end{multicols}
 \appendix
 

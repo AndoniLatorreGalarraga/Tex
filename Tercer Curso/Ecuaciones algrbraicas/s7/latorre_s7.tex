@@ -1,0 +1,235 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}
+\noindent \textbf{1.}\\
+Veamos que $\text{Gal}(\bb{Q}(\zeta)/\bb{Q})$ es cíclico de orden $p-1$. Sea $\sigma \in \text{Gal}(\bb{Q}(\zeta)/\bb{Q})$.
+$$
+\zeta^p -1 = 0 \Rightarrow \sigma(\zeta)^p -1 = 0
+$$
+Tenemos que $\sigma(\zeta)$ es raiz $p$-ésima de la unidad. Ahora, por ser $\zeta$ raiz primitiva.
+$$
+\sigma(\zeta) = \zeta^d
+$$
+para $d\in \{1, \cdots, p-1\}$. Veamos que $\sigma$ es automorfismo. Teniendo en cuenta que $\{\zeta, \zeta^2,\cdots, \zeta^{p-1}\}$ es base de $\bb{Q}(\zeta)/\bb{Q}$:
+$$
+\begin{array}{clcl}
+\sigma : & \bb{Q}(\zeta) & \longrightarrow & \bb{Q}(\zeta) \\
+& q\in\bb{Q} & \longmapsto     & q \\
+& \zeta & \longmapsto     & \zeta^d \\
+& \zeta^2 & \longmapsto     & \zeta^{2d}\\
+& & \vdots & \\
+& \zeta^{p-1} & \longmapsto     & \zeta^{(p-1)d}
+\end{array}
+$$
+Supongamos que $\sigma(\zeta^{k_1}) = \sigma(\zeta^{k_2})$ con $k_1 > k_2$.
+$$
+\zeta^{dk_1} = \zeta^{dk_1} \Rightarrow 1 = \zeta^{d(k_1-k_2)} \Rightarrow p\mid d(k_1-k_2)
+$$
+pero $p$ es primo y $d, (k_1-k_2) \in \{1, \cdots, p-1\}$, que es contradictorio. Por lo tanto $\sigma$ es inyectivo y
+$$
+\sigma(\{\zeta, \zeta^2,\cdots, \zeta^{p-1}\}) = \{\zeta, \zeta^2,\cdots, \zeta^{p-1}\}
+$$
+es decir, $\sigma$ es automorfismo. Si llamamos $\sigma_d$ al automorfismo que satisface $\zeta \longmapsto \zeta^d$. tenemos que
+$$
+\begin{array}{crcl}
+\varphi : & \text{Gal}(\bb{Q}(\zeta)/\bb{Q}) & \longrightarrow & ((\bb{Z}/p\bb{Z})^*, \cdot) \\
+& \sigma_k & \longmapsto     & \overline{k}
+\end{array}
+$$
+Es isomorfismo de grupos
+$$
+\sigma_a \circ \sigma_b : \zeta \longmapsto \zeta^{ab} \Rightarrow \varphi(\sigma_a \circ \sigma_b) = \overline{ab}
+$$
+$\text{Gal}(\bb{Q}(\zeta)/\bb{Q}) \simeq ((\bb{Z}/p\bb{Z})^*, \cdot) \simeq (\bb{Z}/(p-1)\bb{Z}, +)$, Probando que $\text{Gal}(\bb{Q}(\zeta)/\bb{Q})$ es cíclico. Ahora,
+$$
+|\text{Gal}(\bb{Q}(\zeta)/\bb{Q}) : \text{Gal}(\bb{Q}(\zeta)/E) | | \text{Gal}(\bb{Q}(\zeta)/E) | =
+$$
+$$
+= | \text{Gal}(\bb{Q}(\zeta)/\bb{Q}) |
+$$
+$$
+\Rightarrow
+[E:\bb{Q}] | \text{Gal}(\bb{Q}(\zeta)/E) | = | \text{Gal}(\bb{Q}(\zeta)/\bb{Q}) |
+$$
+$$
+\Rightarrow
+2 | \text{Gal}(\bb{Q}(\zeta)/E) | = | \text{Gal}(\bb{Q}(\zeta)/\bb{Q}) |
+$$
+$$
+\Rightarrow
+| \text{Gal}(\bb{Q}(\zeta)/E) | = \frac{p-1}{2}
+$$
+Como $\frac{p-1}{2}$ es divisor de $p-1$ existe un único subgrupo de orden $\frac{p-1}{2}$ (2.30 en el libro de rojo). Resumiendo, si $[E:\bb{Q}] = 2$ entonces solo existe un posible $\text{Gal}(\bb{Q}(\zeta)/E)$ y por lo tanto $\exists ! E$ por la correspondencia de Galois ya que $\bb{Q}(\zeta)/\bb{Q}$ es de Galois $p-1 = [\bb{Q}(\zeta):\bb{Q}]$.\\
+Supongamos que $E\subseteq \R \cap \bb{Q}(\zeta)$. Tenemos que $[\bb{Q}(\zeta): \bb{Q}(\zeta)\cap \R] = 2$ ya que $\bb{Q}(\zeta) = \left(\bb{Q}(\zeta)\cap \R\right)(i)$. Entonces,
+\begin{center}
+  \begin{tikzpicture}
+
+  \node (F1) at (0,0) {$\mathbb{Q}$};
+  \node (F2) at (0,1) {$E$};
+  \node (F3) at (0,2) {$\bb{Q}(\zeta)\cap \R$};
+  \node (F4) at (0,3) {$\bb{Q}(\zeta)$};
+
+  \draw (F1)--(F2) node [pos=0.5, right,inner sep=0.25cm] {2};
+  \draw (F2)--(F3);
+  \draw (F3)--(F4) node [pos=0.5, right,inner sep=0.25cm] {2};
+
+  \end{tikzpicture}
+\end{center}
+$\Rightarrow 4\mid [\bb{Q}(\zeta):\bb{Q}] = p-1 \Rightarrow p \equiv 1 (\text{mod }4)$\\
+\noindent\textbf{2.}\\
+\textit{i)}\\
+Las raices de $(x^3-3)(x^2-3)$ son $\{\sqrt[3]{3}\zeta_3, \sqrt[3]{3}\zeta_3^2, \pm \sqrt{3}\}$.
+$$
+\zeta_3 = e^{i\frac{2\pi}{3}} = \cos(\frac{2\pi}{3}) + i \sin(\frac{3\pi}{3}) = -\frac{1}{2} + i \frac{\sqrt{3}}{2}
+$$
+$$
+\zeta_3^2 = e^{i\frac{4\pi}{3}} = \cos(\frac{2\pi}{3}) + i \sin(\frac{4\pi}{3}) = -\frac{1}{2} - i \frac{\sqrt{3}}{2}
+$$
+Veamos que
+$$
+\left\{ -\frac{\sqrt[3]{3}}{2} \pm i \frac{\sqrt[6]{3}}{2}, \pm \sqrt{3} \right\} \subset \bb{Q}(\sqrt[6]{3}, i)
+$$
+Es suficiente con observar que $\sqrt[6]{3}^2 = \sqrt[3]{3}$ y $\sqrt[6]{3}^3 = \sqrt[2]{3}$. Veamos ahora que
+$$
+\{ \sqrt[6]{3}, i \} \subset \bb{Q}\left( -\frac{\sqrt[3]{3}}{2} \pm i \frac{\sqrt[6]{3}}{2}, \pm \sqrt{3} \right)
+$$
+$$
+-\left( -\frac{\sqrt[3]{3}}{2} + i \frac{\sqrt[6]{3}}{2} -\frac{\sqrt[3]{3}}{2} - i \frac{\sqrt[6]{3}}{2} \right) = \sqrt[3]{3}
+$$
+$$
+\frac{\sqrt{3}}{\sqrt[3]{3}} = \sqrt[6]{3}
+$$
+$$
+\left( -\frac{\sqrt[3]{3}}{2} + i \frac{\sqrt[6]{3}}{2} \right) - \left( -\frac{\sqrt[3]{3}}{2} - i \frac{\sqrt[6]{3}}{2} \right) = i \sqrt[6]{3}
+$$
+$$
+i \frac{\sqrt[6]{3}}{\sqrt[6]{3}} = i
+$$
+Tenemos que $\bb{Q}(\sqrt[6]{3}, i) = \bb{Q}\left( -\frac{\sqrt[3]{3}}{2} \pm i \frac{\sqrt[6]{3}}{2}, \pm \sqrt{3} \right)$. $\bb{Q}(\sqrt[6]{3}, i)$ es el cuerpo de escisión de $(x^3-3)(x^2-3)$ sobre $\bb{Q}$ y $F/\bb{Q}$ es de Galois.\\
+Las raices de $x^3 + \sqrt{3}$ son $-\sqrt[6]{3}$ y $\frac{\sqrt[6]{3}}{2} \pm i\frac{\sqrt[3]{3}^2}{2}$. Por un lado,
+$$
+\left( \frac{\sqrt[6]{3}}{2} + i\frac{\sqrt[3]{3}^2}{2} \right) - \left( \frac{\sqrt[6]{3}}{2} - i\frac{\sqrt[3]{3}^2}{2} \right) = i \sqrt[3]{3}^2
+$$
+$$
+i \frac{\sqrt[3]{3}^2}{\sqrt[6]{3}^4} = i
+$$
+$$
+\Rightarrow F \subset \bb{Q}\left( -\sqrt[6]{3}, \frac{\sqrt[6]{3}}{2} \pm i\frac{\sqrt[3]{3}^2}{2} \right)
+$$
+Por otro lado,
+$$
+\sqrt[6]{3}^2 = \sqrt[3]{3} \Rightarrow \bb{Q}\left( -\sqrt[6]{3}, \frac{\sqrt[6]{3}}{2} \pm i\frac{\sqrt[3]{3}^2}{2} \right) \subset F
+$$
+es decir, $F$ es el cuerpo de escisión de $x^3 + \sqrt{3}$ sobre $\bb{Q}(\sqrt{3})$.\\
+\textit{ii)}\\
+Consideramos
+$$
+\sigma :
+\left\{\begin{array}{ccc}
+    \zeta & \longmapsto & \zeta^d\\
+    \sqrt[6]{3} & \longmapsto & \sqrt[6]{3} \\
+\end{array}\right.
+$$
+Si $d = 2$
+$$
+\sigma(\zeta^3) = \zeta^6 = 1 = \sigma(1)
+$$
+Si $d = 3$
+$$
+\sigma(\zeta^2) = \zeta^6 = 1 = \sigma(1)
+$$
+Si $d = 4$
+$$
+\sigma(\zeta^4) = \zeta^12 = 1 = \sigma(1)
+$$
+Ninguno es automorfismo por no ser inyectivo. Con $d=5$
+$$
+\sigma:\zeta\longmapsto \zeta^5 \longmapsto \zeta
+$$
+$$
+\sigma:\zeta^2\longmapsto \zeta^4 \longmapsto \zeta^2
+$$
+$$
+\sigma:\zeta^3\longmapsto \zeta^3
+$$
+Es automorfismo de orden 2. Ahora, consideramos
+$$
+\tau :
+\left\{\begin{array}{ccc}
+    \zeta & \longmapsto & \zeta\\
+    \sqrt[6]{3} & \longmapsto & \zeta \sqrt[6]{3} \\
+\end{array}\right.
+$$
+$$
+\tau: \sqrt[6]{3} \longmapsto \zeta \sqrt[6]{3} \longmapsto \zeta^2 \sqrt[6]{3} \longmapsto \cdots \longmapsto \zeta^5 \sqrt[6]{3} \longmapsto \sqrt[6]{3}
+$$
+Es automorfismo de orden 6. Además podemos mandar $\sqrt[6]{3}$ a cualquier raiz de $x^6-3$ haciendo $\tau(\tau(\cdots(\tau(\sqrt[6]{3}))))$. Por lo tanto
+$$
+\text{Gal}(F/\bb{Q}) = \{\text{Id}, \sigma, \tau, \tau^2, \tau^3, \tau^4, \tau^5, \sigma\tau, \sigma\tau^2, \sigma\tau^3, \sigma\tau^4, \sigma\tau^5\}
+$$
+Que es isomorfo a $D_{12}$.\\
+\textit{iii)}\\
+$$
+| \text{Gal}(F/\bb{Q}) : \text{Gal}(F/E) | | \text{Gal}(F/E) | = | \text{Gal}(F/\bb{Q}) |
+$$
+Como $6 = [E:\bb{Q}] = | \text{Gal}(F/\bb{Q}) : \text{Gal}(F/E) |$ y $| \text{Gal}(F/\bb{Q}) | = 12$.
+$$
+| \text{Gal}(F/E) | = 2
+$$
+Que nos deja como opciones para $\text{Gal}(F/E)$
+$$
+\langle \sigma \rangle, \langle \tau^3 \rangle, \langle \sigma \tau \rangle, \langle \sigma \tau^2 \rangle, \langle \sigma \tau^3 \rangle, \langle \sigma \tau^4 \rangle, \langle \sigma \tau^5 \rangle
+$$
+Y los subcuerpos intermedios serían
+$$
+\text{Fix}\langle \sigma \rangle, \text{Fix}\langle \tau^3 \rangle, \text{Fix}\langle \sigma \tau \rangle, \text{Fix}\langle \sigma \tau^2 \rangle
+$$
+$$
+\text{Fix}\langle \sigma \tau^3 \rangle, \text{Fix}\langle \sigma \tau^4 \rangle, \text{Fix}\langle \sigma \tau^5 \rangle
+$$
+\textit{iv)}\\
+No, $D_{12}$ no teine elementos de orden 4 y por lo tanto no tiene subgrupos cíclicos de orden 4.
+\end{multicols}
+\end{document}
