@@ -1,8 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1652215093 "d:/Latex/UNED/Primer curso/Tecnicas experimentales/pendulo/pendulo.tex" "pendulo.pdf" "pendulo" 1652215096
+["pdflatex"] 1652293902 "d:/Latex/UNED/Primer curso/Tecnicas experimentales/pendulo/pendulo.tex" "pendulo.pdf" "pendulo" 1652293905
   "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1649362722 82560 ef239c2cb0a12117bb5525d1036b4375 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0900.pk" 1646414365 22504 6d2968a3886cf6a9249526ebaa7f2987 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1646385416 40136 1674195cbc12588a4e9771be711f4f0b ""
+  "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0700.pk" 1646385408 17000 bf191d3267dfa990ae37d49307d4694d ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0900.pk" 1646413978 21356 ebbae271272e41baf151f63c53f9b2a1 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk" 1646385414 23808 b3b8b678bf19e584157473086791a869 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk" 1646385418 28440 cd9b203ece951ed7acd3f0f0df29c2ad ""
@@ -229,11 +230,11 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1636713860 32262 2bb622a0aa56c4a7a5cbdfe9d122c15a ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636288472 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "d:/Latex/UNED/Primer curso/Tecnicas experimentales/pendulo/pendulo.tex" 1652215092 8844 8c3b60ebe4cf5688d3de7f8c965260b3 ""
+  "d:/Latex/UNED/Primer curso/Tecnicas experimentales/pendulo/pendulo.tex" 1652293901 9924 c106cc390c7fea3f98d9979e9582cfda ""
   "figures/c2.png" 1646403285 3430902 83614c8ee548f7129273c56d7690ccbc ""
-  "pendulo.aux" 1652215095 1534 111145cd08db3f12f9703ea05096e280 "pdflatex"
-  "pendulo.out" 1652215095 848 a0877b232b5097d20e45760c0c240769 "pdflatex"
-  "pendulo.tex" 1652215092 8844 8c3b60ebe4cf5688d3de7f8c965260b3 ""
+  "pendulo.aux" 1652293904 1427 c82dc9d945c998c3ffa160837e048378 "pdflatex"
+  "pendulo.out" 1652293904 587 ef3a5094d45f2ce51ff6e8d337ec9072 "pdflatex"
+  "pendulo.tex" 1652293901 9924 c106cc390c7fea3f98d9979e9582cfda ""
   (generated)
   "pendulo.aux"
   "pendulo.log"
