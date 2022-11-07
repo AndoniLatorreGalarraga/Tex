@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario 2}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+\textbf{(8.)}\\
+\textit{i)} $G$ es de orden $24=3\cdot2^3$ de manera que todos los 3-subgrupos de Syllow son de orden 3. Como todos los p-subgrupos estan relacionados por conjugación es sufiente con encontrar uno que sea normal para concluir que este es único. Buscamos un elemento de orden 3, de la presentación de $G$ concluimos que $o(x^2)=3$. Tenemos que $\text{Syl}_3(G)= \{ \langle x^2 \rangle \}$. Para ver que $P = \langle x^2 \rangle$ es normal, conjugamos con los generadores de $G$.
+$$
+(x^2)^x=x^2\in \langle x^2 \rangle
+$$
+$$
+(x^2)^y=(x^2)^{-1} \in \langle x^2 \rangle
+$$
+Todo subgrupo, $H$, de orden divisible entre 3 tiene un elemento de orden 3 y por lo tanto un subgrupo, $K\leq H$, de orden 3 (el generado por ese elemento). Como solo existe un subgrupo de $G$ de orden 3, este tiene que ser $P$ y concluimos que $P\leq H$.\\
+\textit{ii)} Veamos que $G/P = \langle \bar{x}, \bar{y} \mid \overline{x}^2=\overline{y}^4=1,\overline{y}^{\overline{x}}=\overline{y} \rangle$
+$$
+\overline{y}^{\overline{x}} = \overline{x^{-1}yx} = \overline{(y^{-1}xy)yx} = \overline{y^{-2}x^{-1}y^3x} = \overline{y^{-3}xy^4x} = \overline{yx^2} = \overline{y}
+$$
+Para encontrar los subrupos de orden divisible entre 3 de $G$ buscamos los subgrupos $H/P$ de $G/P$. Como $G/P$ es abeliano los $H/P$ son de la forma $\{1\},C_2,C_4,C_2\times C_2, C_2\times C_4$. Teniendo en cuenta el orden de los elementos de $G/P$
+$$
+\begin{array}{c|c}
+    \overline{h} & o(\overline{h}) \\ \hline
+    \overline{1} & 1 \\
+    \overline{y^2} & 2 \\
+    \overline{x} & 2 \\
+    \overline{xy^2} & 2 \\
+    \overline{y} & 4 \\
+    \overline{y^3} & 4 \\
+    \overline{xy} & 4 \\
+    \overline{xy^3} & 4
+\end{array}
+$$
+Por lo que los subgrupos de $G/P$ son:
+$$
+\{
+\langle \overline{1} \rangle,
+\langle \overline{y^2} \rangle,
+\langle \overline{x} \rangle,
+\langle \overline{xy^2} \rangle,
+\langle \overline{y} \rangle,
+\langle \overline{xy} \rangle,
+\langle \overline{y^2}, \overline{x} \rangle,
+\langle \overline{y}, \overline{x}  \rangle
+\}
+$$
+Y los subgrupos de $G$ que buscamos son:
+$$
+\{
+\langle x^2 \rangle,
+\langle y^2, x^2 \rangle,
+\langle x, x^2 \rangle,
+\langle xy^2, x^2 \rangle,
+\langle y, x^2 \rangle,
+\langle xy, x^2 \rangle,
+\langle y^2, x, x^2 \rangle,
+\langle y, x , x^2 \rangle
+\}
+$$
+$$
+\{
+\langle x^2 \rangle,
+\langle y^2, x^2 \rangle,
+\langle x \rangle,
+\langle xy^2, x^2 \rangle,
+\langle y, x^2 \rangle,
+\langle xy, x^2 \rangle,
+\langle y^2, x \rangle,
+\langle y, x \rangle
+\}
+$$
+Todos son normales. Por ser $G/P$ abeliano, $H/P\trianglelefteq G/P$ y $H\trianglelefteq P$.\\
+\textit{iii)} Probamos con $Q = \langle x^3, y \rangle$.
+$$
+(x^3)^y = (x^3)^{-1} = x^3
+$$
+Tenemos que $Q \simeq C_2 \times C_4$. Como $n_2 \equiv 1$ (mod 2), $n_2\mid 3$ y $Q$ no es normal en $G$, hay 3 2-subgrupos de Syllow. Obtenemos los que faltan por conjugación.
+$$
+Q^x = \langle x^3, y^{x} \rangle = \langle x^3, yx^2 \rangle
+$$
+$$
+Q^{x^2} = \langle x^3, y^{x^2} \rangle = \langle x^3, yx^4 \rangle
+$$
+\\
+\textbf{16.}\\
+\textit{i)} $144 = 2^4 3^2$. Tenemos que $n_3 \equiv 1$ (mod 3) y $n_3\mid 16$. Est nos da 3 valores posibles: $1, 4, 16$. Suponiedo que $G$ es simple tendriamos que no es abeliano por no ser de orden primo y $n_3>= 5$. Es decir $n_3 = 16$.\\
+\textit{ii)} $|G : \langle P, Q \rangle | \leq 4 \Leftrightarrow |\langle P, Q \rangle| \geq 36$.
+$$
+|\langle P, Q \rangle| \ge |PQ| = \frac{|P|\cdot|Q|}{|P\cap Q |} \ge \frac{81}{3} = 27
+$$
+Ya que $|P\cap Q |\leq 3$ por ser distintos y ser 3-Syllow. Ahora, tenemos tres opciones para $|P\cap Q |$: 1, 2 y 3. 2 no puede ser ya que entonces habria un elementos de orden 2 en $P$ y $Q$. Como $P$ y $Q$ son abelianos por ser de orden 3 o 9, su intersección es normal en $P$ y en $Q$, por ser $G$ simple, es necesrio $|P\cap Q |= 1$.\\
+\textit{iii)}
+\end{document}

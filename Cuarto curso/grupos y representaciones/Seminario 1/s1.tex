@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Seminario 1}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+\textbf{7.}\\
+Por el teorema de Cayley sabemos que $Q_8$ se puede sumergir en $S_n$ con $n\ge 8$. Veamos que es necesario que $n\ge 8$. Supongamos que tenemos la siguiente acción fiel de $Q_8$ sobre $\Omega_n = \{1,\dots,n\}$.
+$$
+\begin{array}{crcl}
+\theta : & Q_8 & \longrightarrow & S_n \\
+& g & \longmapsto     & \begin{array}{crcl}
+\theta_g : & \Omega_n & \longrightarrow & \Omega_n \\
+& \omega & \longmapsto     & \omega^g
+\end{array}
+\end{array}
+$$
+Por ser fiel, $\theta$ tiene núcleo trivial y por lo tanto es inyectiva. Entonces,
+$$
+Q_8 \simeq Im(\theta)\le S_n
+$$
+Como el núcleo es trivial, tenemos que
+$$
+\text{Ker}\theta = \{1\} = \bigcap_{\omega \in \Omega_n} \text{Stab}_{Q_8}(\omega)
+$$
+Sabemos que $Q_8$ tiene el sigiente retículo:
+\begin{center}
+  \begin{tikzpicture}
+
+  \node (Q1) at (0,0) {$\langle -1 \rangle$};
+  \node (Q2) at (2,2) {$\langle i \rangle$};
+  \node (Q3) at (0,4) {$Q_8$};
+  \node (Q4) at (-2,2) {$\langle j \rangle$};
+  \node (Q5) at (0,2) {$\langle k \rangle$};
+  \node (Q6) at (0,-2) {$\langle 1 \rangle$};
+
+  \draw (Q1)--(Q2);
+  \draw (Q1)--(Q4);
+  \draw (Q3)--(Q4);
+  \draw (Q3)--(Q5);
+  \draw (Q2)--(Q3);
+  \draw (Q5)--(Q1);
+  \draw (Q6)--(Q1);
+
+  \end{tikzpicture}
+\end{center}
+Observamos que todo subgrupo no trivial de $Q_8$ contiene a $\langle -1 \rangle$. Al ser los estabilizadores subgrupos, la única manera de que su intersección sea $\{1\}$ es que al menos uno de ellos sea trivial. En caso contrario se tendria $\langle -1 \rangle \subseteq \bigcap_{\omega \in \Omega_n} \text{Stab}_{Q_8}(\omega)$ que contradice que la acción sea fiel.
+\\
+Sea $\omega$ tal que $\text{Stab}_{Q_8}(\omega)=\{1\}$.
+$$
+|\text{Orb}_{Q_8}(\omega)| = |Q_8|/|\text{Stab}_{Q_8}(\omega)| = 8/1
+$$
+Como $\text{Stab}_{Q_8}(\omega)\subseteq \Omega_n$, $|\text{Stab}_{Q_8}(\omega)|\leq |\Omega_n|=n$ y vemos que es necesario $n\ge 8$.
+\\
+\\
+\textbf{8.}\\
+\textit{i)}\\
+En $D_{2p} = \langle r, s \mid r^p = s^2=1, r^s=r^{-1}\rangle$, $\langle s \rangle$ tiene indice $p$ pero $s^r = sr^2\notin \langle s \rangle $.\\
+\textit{ii)}\\
+Sea $\Omega= \{Hx \mid x\in G\}$, observamos $|\Omega |=p$ Consideramos la siguiente acción sobre las coclases a derecha:
+$$
+\begin{array}{crcl}
+ \theta : & G & \longrightarrow & S_\Omega \simeq S_p\\
+& g & \longmapsto     & \begin{array}{crcl}
+\theta_g : & \Omega & \longrightarrow & \Omega \\
+& Hx & \longmapsto     & Hxg
+\end{array}
+\end{array}
+$$
+Sabemos que el núcleo de $\theta$ es $H_G$, por el primer teorema de isomorfía,
+$$
+G/H_G \simeq Im(\theta)\le S_\Omega \simeq S_p
+$$
+De donde se tiene,
+$$
+|G:H_G| \Big| p! \Rightarrow |G:H_G|=|G:H|\cdot |H:H_G| = p |H:H_G|\Big| p! \Rightarrow |H:H_G|\Big| (p-1)!
+$$
+Por otra parte,
+$$
+|G| = |G:\{1\}| = |G:H|\cdot|H:H_G|\cdot|H_G:\{1\}| \Rightarrow |H:H_G|\Big| |G|
+$$
+Por $|H:H_G|\Big| (p-1)!$, $|H:H_G|$ no tiene factores primos $>p-1$. Por $|H:H_G|\Big| |G|$, $|H:H_G|$ no tiene factores primos $\le p-1$ ya que estos dividiarian a $|G|$ y $p$ no sería el menor primo que divide a $|G|$. Concluimos que $|H:H_G|= 1 \Rightarrow H = H_G$ y por lo tanto $H\trianglelefteq  G$.
+\\
+\\
+\textbf{15.}\\
+\textit{i)}\\
+Sea $R_i(G)=\{g\in G \mid o(g) = p^i\}$. Consideramos la acción por conjugación:
+$$
+\begin{array}{crcl}
+\theta : & G & \longrightarrow & S_{R_i(G)} \\
+& g & \longmapsto     & \begin{array}{crcl}
+\theta_g : & R_i(G) & \longrightarrow & R_i(G) \\
+& r & \longmapsto     & g^{-1}rg
+\end{array}
+\end{array}
+$$
+$$
+\text{Fix}(R_i(G)) = \{r \in R_i(G)\mid r^g=r \forall g \in G\} = R_i(G) \cap Z(G) = R_i(Z(G))
+$$
+Por ser $p$-grupo,
+$$
+|R_i(G)| \equiv_p | \text{G}(R_i(G))|
+$$
+$$
+N_i(G) \equiv_p |R_i(Z(G))| = N_i(Z(G))
+$$
+\textit{ii)}\\
+\end{document}

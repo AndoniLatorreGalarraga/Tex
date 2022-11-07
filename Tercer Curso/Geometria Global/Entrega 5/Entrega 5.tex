@@ -1,0 +1,188 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Entrega 5}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+\textcolor{WildStrawberry}{Problema:}\\
+Probar que, si $\textcolor{blue}{\bb{X}:\mathcal{U}\in \bb{R}^2 \longrightarrow \bb{X}(\mathcal{U})\subset S }$, tal que $F = 0$, entonces
+$$
+K = - \frac{1}{2\sqrt{EG}}\left[ \left(\frac{E_v}{\sqrt{EG}}\right)_v + \left(\frac{G_u}{\sqrt{EG}}\right)_u \right]
+$$
+
+\textcolor{WildStrawberry}{Solución:}\\
+Por definición de los símbolos de Christoffel
+$$
+\left\{\begin{array}{l}
+    \textcolor{blue}{\bb{X}}_{uu} = \Gamma_{11}^1 \textcolor{blue}{\bb{X}}_u + \Gamma_{11}^2 \textcolor{blue}{\bb{X}}_v + e N \\
+    \textcolor{blue}{\bb{X}}_{uv} = \Gamma_{12}^1 \textcolor{blue}{\bb{X}}_u + \Gamma_{12}^2 \textcolor{blue}{\bb{X}}_v + f N \\
+    \textcolor{blue}{\bb{X}}_{vv} = \Gamma_{22}^1 \textcolor{blue}{\bb{X}}_u + \Gamma_{22}^2 \textcolor{blue}{\bb{X}}_v + g N
+\end{array}\right.
+$$
+Como $F = 0$, $\textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_v = 0$. Despejamos los 6 símbolos de Christoffel.
+
+$$
+\textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_{uu} = \Gamma_{11}^1 \textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_u + \Gamma_{11}^2 \textcolor{blue}{\bb{X}}_u\textcolor{blue}{\bb{X}}_v + e \textcolor{blue}{\bb{X}}_u N
+$$
+$$
+\textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_{uu} = \Gamma_{11}^1 E
+$$
+
+$$
+\textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_{uv} = \Gamma_{12}^1 \textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_u + \Gamma_{12}^2 \textcolor{blue}{\bb{X}}_u\textcolor{blue}{\bb{X}}_v + f \textcolor{blue}{\bb{X}}_u N
+$$
+$$
+\textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_{uv} = \Gamma_{12}^1 E
+$$
+
+$$
+\textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_{vv} = \Gamma_{22}^1 \textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_u + \Gamma_{22}^2 \textcolor{blue}{\bb{X}}_u\textcolor{blue}{\bb{X}}_v + g \textcolor{blue}{\bb{X}}_u N
+$$
+$$
+\textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_{vv} = \Gamma_{22}^1 E
+$$
+
+$$
+\textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_{uu} = \Gamma_{11}^1 \textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_u + \Gamma_{11}^2 \textcolor{blue}{\bb{X}}_v\textcolor{blue}{\bb{X}}_v + e \textcolor{blue}{\bb{X}}_u N
+$$
+$$
+\textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_{uu} = \Gamma_{11}^2 G
+$$
+
+$$
+\textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_{uv} = \Gamma_{12}^1 \textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_u + \Gamma_{12}^2 \textcolor{blue}{\bb{X}}_v\textcolor{blue}{\bb{X}}_v + f \textcolor{blue}{\bb{X}}_v N
+$$
+$$
+\textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_{uv} = \Gamma_{12}^2 G
+$$
+
+$$
+\textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_{vv} = \Gamma_{22}^1 \textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_u + \Gamma_{22}^2 \textcolor{blue}{\bb{X}}_v\textcolor{blue}{\bb{X}}_v + g \textcolor{blue}{\bb{X}}_v N
+$$
+$$
+\textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_{vv} = \Gamma_{22}^2 G
+$$
+Ahora observamos que
+$$
+(\textcolor{blue}{\bb{X}}_u\textcolor{blue}{\bb{X}}_u)_u = \textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_{uu} + \textcolor{blue}{\bb{X}}_{uu} \textcolor{blue}{\bb{X}}_u =
+2 \textcolor{blue}{\bb{X}}_{uu}\textcolor{blue}{\bb{X}}_u
+$$
+$$
+E_u = 2 \textcolor{blue}{\bb{X}}_{uu}\textcolor{blue}{\bb{X}}_u
+$$
+
+$$
+(\textcolor{blue}{\bb{X}}_u\textcolor{blue}{\bb{X}}_u)_v = \textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_{uv} + \textcolor{blue}{\bb{X}}_{uv} \textcolor{blue}{\bb{X}}_u =
+2 \textcolor{blue}{\bb{X}}_{uv}\textcolor{blue}{\bb{X}}_u
+$$
+$$
+E_v = 2 \textcolor{blue}{\bb{X}}_{uv}\textcolor{blue}{\bb{X}}_u
+$$
+
+$$
+(\textcolor{blue}{\bb{X}}_v\textcolor{blue}{\bb{X}}_v)_u = \textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_{vu} + \textcolor{blue}{\bb{X}}_{vu} \textcolor{blue}{\bb{X}}_v =
+2 \textcolor{blue}{\bb{X}}_{vu}\textcolor{blue}{\bb{X}}_v
+$$
+$$
+G_u = 2 \textcolor{blue}{\bb{X}}_{vu}\textcolor{blue}{\bb{X}}_v
+$$
+
+$$
+(\textcolor{blue}{\bb{X}}_v\textcolor{blue}{\bb{X}}_v)_v = \textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_{vv} + \textcolor{blue}{\bb{X}}_{vv} \textcolor{blue}{\bb{X}}_v =
+2 \textcolor{blue}{\bb{X}}_{vv}\textcolor{blue}{\bb{X}}_v
+$$
+$$
+G_v = 2 \textcolor{blue}{\bb{X}}_{vv}\textcolor{blue}{\bb{X}}_v
+$$
+De donde obtenemos las siguientes expresiones para los símbolos de Christoffel
+$$
+\Gamma_{11}^1 = \frac{E_u}{2E}
+$$
+$$
+\Gamma_{12}^1 = \frac{E_v}{2E}
+$$
+$$
+\Gamma_{22}^1 = \frac{-G_u}{2E}
+$$
+$$
+\Gamma_{11}^2 = \frac{-E_v}{2G}
+$$
+$$
+\Gamma_{12}^2 = \frac{G_u}{2G}
+$$
+$$
+\Gamma_{22}^2 = \frac{G_v}{2G}
+$$
+Sustituimos en la ecuación de la curvatura en términos de los símbolos de Christoffel.
+$$
+K = - \frac{1}{E} \left( \left( \Gamma_{12}^2 \right)_u - \left( \Gamma_{11}^2 \right)_v + \Gamma_{12}^1\Gamma_{11}^2 - \Gamma_{11}^1\Gamma_{12}^2 + \left( \Gamma_{12}^2 \right)^2 - \Gamma_{11}^2\Gamma_{22}^2 \right) =
+$$
+$$
+= - \frac{1}{E} \left( \left( \frac{G_u}{2G} \right)_u - \left(\frac{-E_v}{2G} \right)_v + \frac{E_v}{2E}\frac{-E_v}{2G} - \frac{E_u}{2E}\frac{G_u}{2G} + \left( \frac{G_u}{2G} \right)^2 - \frac{-E_v}{2G}\frac{G_v}{2G} \right) =
+$$
+$$
+= - \frac{1}{2E} \left( \left( \frac{G_u}{G} \right)_u + \left(\frac{E_v}{G} \right)_v - \frac{E_v^2}{2EG} - \frac{E_uG_u}{2EG} + \frac{G_u^2}{2G^2} + \frac{E_vG_v}{2G^2} \right) =
+$$
+$$
+= - \frac{1}{2E} \left( \frac{G_{uu}G-G_uG_u}{G^2} + \frac{E_{vv}G-E_vG_v}{G^2} - \frac{E_v^2}{2EG} - \frac{E_uG_u}{2EG} + \frac{G_u^2}{2G^2} + \frac{E_vG_v}{2G^2} \right) =
+$$
+$$
+= - \frac{1}{2EG} \left( G_{uu}-\frac{G_u^2}{G} + E_{vv} - \frac{E_vG_v}{G} - \frac{E_v^2}{2E} - \frac{E_uG_u}{2E} + \frac{G_u^2}{2G} + \frac{E_vG_v}{2G} \right)
+$$
+$$
+= - \frac{1}{2EG} \left( G_{uu} + E_{vv} - \frac{E_v^2}{2E} - \frac{E_uG_u}{2E} - \frac{G_u^2}{2G} - \frac{E_vG_v}{2G} \right)
+$$
+$$
+= - \frac{1}{2EG} \left( G_{uu} + E_{vv} - E_v\frac{E_vG}{2EG} - G_u\frac{E_uG}{2EG} - G_u\frac{EG_u}{2EG} - E_v\frac{EG_v}{2EG} \right)
+$$
+$$
+= - \frac{1}{2EG}\left( E_{vv} - E_v \frac{E_vG+EG_v}{2EG} + G_{uu}- G_u \frac{E_uG+EG_u}{2EG} \right)
+$$
+$$
+= - \frac{1}{2}\left( \frac{E_{vv} - E_v \frac{E_vG+EG_v}{2EG}}{EG} + \frac{G_{uu}- G_u \frac{E_uG+EG_u}{2EG}}{EG} \right)
+$$
+$$
+= - \frac{1}{2\sqrt{EG}}\left( \frac{E_{vv}\sqrt{EG} - E_v \frac{E_vG+EG_v}{2\sqrt{EG}}}{EG} + \frac{G_{uu}\sqrt{EG}- G_u \frac{E_uG+EG_u}{2\sqrt{EG}}}{EG} \right)
+$$
+$$
+= - \frac{1}{2\sqrt{EG}}\left( \left(\frac{E_v}{\sqrt{EG}}\right)_v + \left(\frac{G_u}{\sqrt{EG}}\right)_u \right)
+$$
+\end{document}

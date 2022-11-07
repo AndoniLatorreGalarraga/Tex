@@ -1,0 +1,257 @@
+%\documentclass[twoside,twocolumn,spanish]{article}
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\setlength\columnsep{20pt}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{width=5cm,compat=1.12}
+\usepgfplotslibrary{fillbetween}
+
+\title{Calculo de la resistencia interna de una fuente}
+\author{Andoni Latorre Galarraga \\ \href{mailto:alatorre73@alumno.uned.es}{alatorre73@alumno.uned.es}}
+\date{}
+\begin{document}
+
+\maketitle
+\begin{abstract}
+Se comparan miden diferentes resistencias individualmente y luego se comparan las combinaciones de estas con las predicciones teóricas. Tambien se calcula la resistencia interna de varias fuentes. El experimento se desrroya de acuerdo con el proceso descrito en \cite{web}.
+\end{abstract}
+
+\begin{multicols}{2}
+
+\section*{Fundamento Teórico}
+\subsection*{Ley de Ohm}
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[ american resistor , l=$R$] (4,0) to[ short , l=$I$] (4,-1) to[ battery1 , l=$\varepsilon$ ] (0,-1) -- (0,0); 
+\end{circuitikz}
+\end{center}
+La ley de Ohm dice que la diferencia de potencial entre ambos bornes de un conductor, $\varepsilon$, es igual al producto de la resistencia de dicho conductor, $R$, y la intensidad de la corriente, $I$.
+$$
+\varepsilon = I R
+$$
+\subsection*{Combinaciones de reistencias}
+\subsubsection*{En serie}
+\begin{center}
+  \begin{circuitikz}
+  \draw (0,0) to[ american resistor , l=$R_1$] (2,0) to[ american resistor , l=$R_2$] (4,0) -- (4,-1) to[ battery1 , l=$\varepsilon$ ] (0,-1) -- (0,0); 
+  \end{circuitikz}
+  \end{center}
+Si se tienen dos resistencias conectadas en serie, el conjunto de estas se comporta como una única resistencia, $R$. Esta resistencia es la suma de las anteriores.
+$$
+R = R_1 + R_2
+$$
+\subsubsection*{En paralelo}
+\begin{center}
+  \begin{circuitikz}
+  \draw (0,0) -- (1,0);
+  \draw (1,0) -- (1,-1) to[ american resistor , l=$R_2$] (3,-1) -- (3,1) to[ american resistor , l=$R_1$] (1,1) -- (1,0);
+  \draw (3,0) -- (4,0) -- (4,-2) to[ battery1 , l=$\varepsilon$ ] (0,-2) -- (0,0); 
+  \end{circuitikz}
+  \end{center}
+Si se tienen dos resistencias conectadas en paralelo, el conjunto de estas se comporta como una única resistencia, $R$. Esta resistencia es el inverso de la suma de los inversos las anteriores resistencias.
+$$
+R = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2}}
+$$
+\section*{Dispositivo Experimental, Procedimiento y Resultados}
+Primero se han medido individualmente 4 resistencias utilizando un multímetro. Dos de las resistencias estaban etiquetadas como $220K\Omega$ y ambas se han medido como $(220 \pm 1)K\Omega$. Las otras dos resistencias estaban etiquetadas como $47K\Omega$ y ambas se han medido en $(46\pm 1)K\Omega$. Luego se han comparado los valores teoricos con los experimentales de diversas configuraciones de resistencias. Los errores para los valores teóricos son los siguientes:
+$$
+R = R_1 + R_2 \quad \epsilon_R = \sqrt{\epsilon_{R_1}^2 + \epsilon_{R_1}^2}
+$$
+$$
+R = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2}}
+\quad
+\epsilon_R =
+\frac{2}{\frac{1}{R_1} + \frac{1}{R_1}}
+\sqrt{\frac{\epsilon_{R_1}^2}{R_1^4} + \frac{\epsilon_{R_2}^2}{R_2^4}}
+$$
+En la Tabla 1 se pueden ver las diferentes combinaciones de resistencias, sus valores experimentales $R_e$ y los teóricos, $R_t$, obtenidos con las ecuaciones anteriores.
+\begin{center}
+  Tabla 1:\\
+  \addtolength{\leftskip}{-0.5cm}$
+  \begin{array}{|c|c|c|} \hline
+    \text{Resistencias} & R_e (K\Omega) & R_t (K\Omega) \\ \hline \hline
+
+    \begin{circuitikz}
+      \draw (0 ,0) to[ american resistor , l=$(46\pm 1)K\Omega$] (2,0) to[ american resistor , l=$(46\pm 1)K\Omega$] (4,0);
+    \end{circuitikz} & 93 \pm 1 & \begin{array}{c} 92.0 \\ \pm \\ 1.4 \end{array}\\ \hline
+
+    \begin{circuitikz}
+      \draw (0 ,0) to[ american resistor , l=$(220 \pm 1)K\Omega$] (2,0) to[ american resistor , l=$(220 \pm 1)K\Omega$] (4,0);
+    \end{circuitikz} & 439 \pm 1 &\begin{array}{c} 440.0 \\ \pm \\ 1.4 \end{array}\\ \hline
+
+    \begin{circuitikz}
+      \draw (0 ,0) to[ american resistor , l=$(220 \pm 1)K\Omega$] (2,0) to[ american resistor , l=$(46\pm 1)K\Omega$] (4,0);
+    \end{circuitikz} & 267 \pm 1 & \begin{array}{c}  266.0 \\ \pm \\ 1.4\end{array}\\ \hline
+
+    \begin{circuitikz}
+      \draw (0.5,0) -- (1,0);
+      \draw (1,0) -- (1,-0.75) to[ american resistor , l=$(46\pm 1)K\Omega$] (3,-0.75) -- (3,0.75) to[ american resistor , l=$(46\pm 1)K\Omega$] (1,0.75) -- (1,0);
+      \draw (3,0) -- (3.5,0);
+    \end{circuitikz} & 23 \pm 1 & \begin{array}{c} 23.00 \\ \pm \\ 0.03 \end{array}\\ \hline
+
+    \begin{circuitikz}
+      \draw (0.5,0) -- (1,0);
+      \draw (1,0) -- (1,-0.75) to[ american resistor , l=$(220 \pm 1)K\Omega$] (3,-0.75) -- (3,0.75) to[ american resistor , l=$(220 \pm 1)K\Omega$] (1,0.75) -- (1,0);
+      \draw (3,0) -- (3.5,0);
+    \end{circuitikz} & 110 \pm 1 & \begin{array}{c}  110.000 \\ \pm \\ 0.006 \end{array}\\ \hline
+
+  \end{array}$\\$
+  \begin{array}{|c|c|c|} \hline
+    \text{Resistencias} & R_e (K\Omega) & R_t (K\Omega) \\ \hline \hline
+
+    \begin{circuitikz}
+      \draw (0.5,0) -- (1,0);
+      \draw (1,0) -- (1,-0.75) to[ american resistor , l=$(46 \pm 1)K\Omega$] (3,-0.75) -- (3,0.75) to[ american resistor , l=$(220 \pm 1)K\Omega$] (1,0.75) -- (1,0);
+      \draw (3,0) -- (3.5,0);
+    \end{circuitikz} & 38 \pm 1 & \begin{array}{c} 38.05 \\ \pm \\ 0.04 \end{array}\\ \hline
+  \end{array}
+  $
+\end{center}
+Una vez conocidas las resistencias de las distintas combinaciones hemos realizado el siguiente montaje.
+\begin{center}
+  \begin{circuitikz}
+    \draw[dashed] (0,0) -- (2,0) -- (2,4) -- (0,4) -- (0,0);
+    \node at (1,0.5){Pila};
+    \draw (1,1) -- (4,1) -- (4,2.25) circle [radius = 10pt]node[circle,fill=white,minimum size=10pt]{V} (4,2.25) -- (4,3.5) -- (1,3.5);
+    \draw (1,1) to[battery1, l=$\varepsilon$] (1,2) to[ american resistor , l=$R_i$] (1,3.5);
+    \draw (3,1) to[ american resistor , l=$R$] (3,3.5);
+  \end{circuitikz}
+\end{center}
+El objetivo es medir la resistencia interna de la pila, $R_i$, a la cual no podemos acceder directamente. Aplicando la leyes de Kirchhoff y Ohm conseguimos una relación lineal entre $V$ y $\frac{V}{R}$.
+$$
+\varepsilon = V_{R_i} + V = I R_i + V = \frac{V}{R} R_i + V
+$$
+$$
+V = -R_i \frac{V}{R} + \varepsilon
+$$
+Calcullamos el error de $\frac{V}{R}$.
+$$
+\epsilon_{\frac{V}{R}} = \sqrt{
+  \left|
+    \frac{\partial \frac{V}{R}}{\partial V}
+  \right|^2 \epsilon_V^2
+  +
+  \left|
+    \frac{\partial \frac{V}{R}}{\partial R}
+  \right|^2 \epsilon_R^2
+}
+$$
+$$
+= \frac{1}{R} \sqrt{\epsilon_V^2 + \frac{V^2}{R^2}\epsilon_R^2}
+$$
+$\epsilon_V = 0.01$V y $\epsilon_R = 1K\Omega$. Recogemos los resultados en la siguiente tabla:
+\begin{center}
+  Tabla 2:
+  $$
+  \begin{array}{|l|l|l|} \hline
+    \frac{V}{R}\text{(V/$K\Omega$)} & \epsilon_{\frac{V}{R}}\text{(V/$K\Omega$)} & V\text{(V)} \\ \hline \hline
+    0.183   & 0.004   & 8.40  \\ \hline
+    0.0937  & 0.0010  & 8.71  \\ \hline
+    0.331   & 0.014   & 7.61  \\ \hline
+    0.04041 & 0.00019 & 8.89  \\ \hline
+    0.03326 & 0.00013 & 8.88  \\ \hline
+    0.214   & 0.006   & 8.14  \\ \hline
+    0.02052 & 0.00005 & 9.01  \\ \hline
+    0.0801  & 0.0007  & 8.81  \\ \hline
+    \end{array}
+  $$
+\end{center}
+En la siguiente figura se puede ver $V$ frente a $\frac{V}{R}$ junto con la recta de regresión.
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{figures/regresión1.png}\\
+  Figura 1: $V$ frente a $\frac{V}{R}$ con la recta de regresión.
+\end{center}
+A partir de la pendiente y la ordenada en el origen de la recta de regresión obtenemos los siguientes resultados:
+$$
+R_i = (4.4 \pm 0.2) K\Omega
+$$
+$$
+\varepsilon = (9.10 \pm 0.03) \text{V}
+$$
+Conectando directamente el voltímetro a los bornes de la pila se tiene un voltage de $(9.09 \pm 0.01)$V.\\\\
+Finalmente, hemos montado un circuito con un potenciometro como se muestra a continuación.
+\begin{center}
+  \begin{circuitikz}
+    \draw[dashed] (0,0) -- (3,0) -- (3,4) -- (0,4) -- (0,0);
+    \node at (1.5,0.5){Fuente efectiva};
+    \draw (1,1) -- (4.5,1) -- (4.5,2.25) circle [radius = 10pt]node[circle,fill=white,minimum size=10pt]{V} (4.5,2.25) -- (4.5,3.5) -- (3.5,3.5) -- (3.5,2.25) -- (3,2.25);
+    \draw (1,1) to[battery1, l=$\varepsilon$] (1,3.5);
+    \draw (1,3.5) -- (2.5,3.5) to[ american potentiometer , l_=$R_i$] (2.5,1);
+    \draw (4.5,3.5) -- (6,3.5) to[ american resistor , l_=$R$] (6,1) -- (4.5,1);
+  \end{circuitikz}
+\end{center}
+El potenciometro tenía varias posiciones, hemos seleccionado las posiciones 0, 5 y 10. En cada una de estas posiciones hemos tomado el voltaje para 3 resistencias de la Tabla 1. Los datos son los siguientes.
+\begin{center}
+  Tablas 3, 4 y 5:\\
+  Posición 0:
+  $$
+  \begin{array}{|l|l|}\hline
+      R(K\Omega) & V\text{(V)} \\ \hline \hline
+      23\pm1  & 6.33\pm0.01 \\ \hline
+      46\pm1  & 7.32\pm0.01 \\ \hline
+      220\pm1 & 8.58\pm0.01 \\ \hline
+  \end{array}
+  $$
+  Posición 5:
+  $$
+  \begin{array}{|l|l|}\hline
+      R(K\Omega) & V\text{(V)} \\ \hline \hline
+      23\pm1  & 0.35\pm0.01 \\ \hline
+      46\pm1  & 0.65\pm0.01 \\ \hline
+      220\pm1 & 2.34\pm0.01 \\ \hline
+  \end{array}
+  $$
+  Posición 10:
+  $$
+  \begin{array}{|l|l|}\hline
+      R(K\Omega) & V\text{(V)} \\ \hline \hline
+      23\pm1  & 0.17\pm0.01 \\ \hline
+      46\pm1  & 0.33\pm0.01 \\ \hline
+      220\pm1 & 1.23\pm0.01 \\ \hline
+  \end{array}
+  $$
+\end{center}
+El proceso a seguir para determinar $\varepsilon$ y $R_i$, es el mismo que con la pila. Los resultados se resumen en las siguientes figuras, donde se ha representado $V$ frente a $\frac{V}{R}$ y se ha calculado la recta de regresión.
+\begin{center}
+  \includegraphics[width=0.45\textwidth]{figures/regresión0.png}\\
+  Figura 2: Posición 0 del potenciómetro.\\
+  $\text{ }$\\
+  $\text{ }$\\
+  \includegraphics[width=0.45\textwidth]{figures/regresión5.png}\\
+  Figura 3: Posición 5 del potenciómetro.\\
+  $\text{ }$\\
+  $\text{ }$\\
+  \includegraphics[width=0.45\textwidth]{figures/regresión10.png}\\
+  Figura 4: Posición 10 del potenciómetro.\\
+\end{center}
+También se ha medido directamente el voltaje del potenciometro conectando el voltimetro directamente a los bornes.
+\begin{center}
+  Tabla 6:
+  $$
+  \begin{array}{|l|l|}\hline
+    p & V\text{(V)} \\ \hline \hline
+    0  & 9.01\pm0.01 \\ \hline
+    5  & 6.85\pm0.01 \\ \hline
+    10 & 4.36\pm0.01 \\ \hline
+\end{array}
+  $$
+\end{center}
+\section*{Conclusiones}
+Las diferentes combinaciones de resistencias recogidas en la Tabla 1 claramente coinciden con las predicciones teóricas, siendo siempre compatibles el valor teórico con el experimental. El valor de de $\varepsilon$ obtenido para la pila, $(9.10 \pm 0.03) \text{V}$, es compatible con el obtenido por medición directa, $(9.09 \pm 0.01) \text{V}$ y muy cercano a los 9V indicados en la pila. Respecto al potenciometro, se ve que la resistencia interna aumenta con la posición del potenciómetro como era de esperar. Por último, los valores de $\varepsilon$ obtenidos para cada una de las posiciones del potenciómetro parecen estar cerca de los obtenidos por medición directa, recogiodos en la tabla 6.
+
+\begin{thebibliography}{1}
+
+  \bibitem{manual}Manual de la asignatura. Versión 3.7
+
+  \bibitem{web}\url{https://uned-labo.netlify.app/practicas/te/4_practica_corriente_continua_1/prak4.html}
+
+\end{thebibliography}
+\end{multicols}
+\end{document}

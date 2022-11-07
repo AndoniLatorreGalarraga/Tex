@@ -1,0 +1,277 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Entrega 6}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+\textcolor{WildStrawberry}{Problema:}\\
+Probar que el elipsoide es un ovaloide.
+
+\textcolor{WildStrawberry}{Solución:}\\
+El elipsoide, $\textcolor{blue}{\mathcal{E}}$, es compacto y conexo por ser homeomorfo a $\bb{S}^2$.
+$$
+\begin{array}{crcl}
+f : & \bb{R}^3 & \longrightarrow & \bb{R}^3 \\
+& (x,y,z) & \longmapsto & (ax, by, cz) \\
+& \bb{S}^2 & \longmapsto & \textcolor{blue}{\mathcal{E}}
+\end{array}
+$$
+$f$ es continua por ser lineal. Calculemos la curvatura de Gauss. Tomamos la siguiente parametrización,
+$$
+\textcolor{blue}{\bb{X}}(u,v) = (a \sen v \cos u, b \sen v \sen u, c \cos v) \quad v\in (0, \pi) \quad u\in(0, 2\pi)
+$$
+$$
+\begin{array}{cc}
+    \textcolor{blue}{\bb{X}}_u = (-a \sen v \sen u, b \sen v \cos u, 0) & \textcolor{blue}{\bb{X}}_v = (a \cos v \cos u, b \cos v \sen u, -c \sen v) \\
+    \textcolor{blue}{\bb{X}}_{uu} = (-a \sen v \cos u, -b \sen v \sen u, 0) & \textcolor{blue}{\bb{X}}_{vu} = (-a \cos v \sen u, b \cos v \cos u, 0) \\
+    \textcolor{blue}{\bb{X}}_{uv} = (-a \cos v \sen u, b \cos v \cos u, 0) & \textcolor{blue}{\bb{X}}_{vv} = (-a \sen v \cos u, -b \sen v \sen u, -c \cos v)
+\end{array}
+$$
+$$
+E = \textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_u = a^2 \sen^2 v \sen^2 u + b^2 \sen^2 v \cos^2 u = \sen^2 v (a^2 \sen^2 u + b^2 \cos^2 u) = \sen^2 v ((a^2-b^2)\sen^2 u + b^2)
+$$
+$$
+F = \textcolor{blue}{\bb{X}}_u \textcolor{blue}{\bb{X}}_v = - a^2 \sen v \sen u \cos v \cos u + b^2 \sen v \cos u \cos v \sen u = (b^2 - a^2) \sen v \sen u \cos v \cos u
+$$
+$$
+G = \textcolor{blue}{\bb{X}}_v \textcolor{blue}{\bb{X}}_v = a^2 \cos^2 v \cos^2 u + b^2 \cos^2 v \sen^2 u + c^2 \sen^2 v = \cos^2 v ((a^2-b^2) \cos^2 u + b^2 - c^2) + c^2
+$$
+$$
+\textcolor{blue}{\bb{X}}_u \land \textcolor{blue}{\bb{X}}_v =
+\left|\begin{array}{ccc}
+    i & j & k \\
+    -a \sen v \sen u & b \sen v \cos u & 0 \\
+    a \cos v \cos u & b \cos v \sen u & -c \sen v    
+\end{array}\right| =
+\left(\begin{array}{c}
+-bc \sen^2 v \cos u \\
+-ac \sen^2 v \sen u \\
+-ab \sen v \sen^2 u \cos v - ab \sen v \cos^2 u \cos v
+\end{array}\right)
+$$
+$$
+\textcolor{blue}{\bb{X}}_u \land \textcolor{blue}{\bb{X}}_v =
+\left(\begin{array}{c}
+-bc \sen^2 v \cos u \\
+-ac \sen^2 v \sen u \\
+-ab \sen v \cos v
+\end{array}\right) \quad
+\| \textcolor{blue}{\bb{X}}_u \land \textcolor{blue}{\bb{X}}_v \| = \frac{1}{n} \ge 0
+$$
+$$
+N = (-nbc \sen^2 v \cos u, -nac \sen^2 v \sen u, -nab \sen v \cos v)
+$$
+$$
+e = N \textcolor{blue}{\bb{X}}_{uu} =
+nabc \sen^3 v \cos^2 u + nabc \sen^3 v \sen^2 u =
+nabc \sen^3 v
+$$
+$$
+f = N \textcolor{blue}{\bb{X}}_{uv} =
+nabc \sen^2 v \cos u \cos v \sen u - nabc \sen^2 v \sen u \cos u \cos v =
+0
+$$
+$$
+g = N \textcolor{blue}{\bb{X}}_{vv} =
+nabc \sen^3 v \cos^2 u + nabc \sen^3 v \sen^2 u + nabc \sen v \cos^2 v =
+nabc (\sen^3 v + \sen v \cos^2 v) = 
+nabc \sen v
+$$
+$$
+K = \frac{eg-f^2}{EG-F^2} = \frac{nabc \sen^3 v nabc \sen v}{EG-F^2} = \frac{(nabc)^2 \sen^4 v}{EG-F^2}
+$$
+Veamos que $EG - F^2$ es positivo.
+$$
+EG = \left(\sen^2 v ((a^2-b^2)\sen^2 u + b^2)\right) \left(\cos^2 v ((a^2-b^2) \cos^2 u + b^2 - c^2) + c^2\right) =
+$$
+$$
+= \sen^2 v \left(
+  ((a^2-b^2)\sen^2 u + b^2) (\cos^2 v ((a^2-b^2) \cos^2 u + b^2 - c^2) + c^2)
+\right) =
+$$
+$$
+\begin{array}{l}
+  = \sen^2 v ( \\
+  (a^2-b^2)\sen^2 u \cos^2 v ((a^2-b^2) \cos^2 u + b^2 - c^2) + \\
+  (a^2-b^2)\sen^2 u c^2 + \\
+  b^2 \cos^2 v ((a^2-b^2) \cos^2 u + b^2 - c^2) + \\
+  b^2 c^2 ) =
+\end{array}
+\begin{array}{l}
+  = \sen^2 v ( \\
+  (a^2-b^2)\sen^2 u \cos^2 v ((a^2-b^2) \cos^2 u + b^2 - c^2) + \\
+  c^2(a^2-b^2)\sen^2 u + \\
+  (a^2-b^2) b^2 \cos^2 v \cos^2 u + b^4 \cos^2 v - b^2c^2 \cos^2 v + \\
+  b^2 c^2 ) =
+\end{array}
+$$
+$$
+\begin{array}{l}
+  = \sen^2 v ( \\
+  (a^2-b^2)\sen^2 u \cos^2 v ((a^2-b^2) \cos^2 u + b^2 - c^2) + \\
+  c^2(a^2-b^2)\sen^2 u + \\
+  (a^2-b^2) b^2 \cos^2 v \cos^2 u + b^4 \cos^2 v - b^2c^2 \cos^2 v + \\
+  b^2 c^2 )
+\end{array}
+$$
+$$
+F^2 = (b^2 - a^2)^2 \sen^2 v \sen^2 u \cos^2 v \cos^2 u
+$$
+$$
+\begin{array}{l}
+  EG-F^2
+  = \sen^2 v ( \\
+  + (a^2-b^2)\sen^2 u \cos^2 v ((a^2-b^2) \cos^2 u + b^2 - c^2) \\
+  + c^2(a^2-b^2)\sen^2 u \\
+  + (a^2-b^2) b^2 \cos^2 v \cos^2 u + b^4 \cos^2 v - b^2c^2 \cos^2 v \\
+  + b^2 c^2 \\
+  - (b^2 - a^2)^2\sen^2 u \cos^2 v \cos^2 u) =
+\end{array}
+$$
+Es suficiente probar que $\frac{EG-F^2}{\sen^2 v}$ es positivo.
+$$
+\begin{array}{l}
+  (a^2-b^2)\sen^2 u \cos^2 v ((a^2-b^2) \cos^2 u + b^2 - c^2) \\
+  + c^2(a^2-b^2)\sen^2 u \\
+  + (a^2-b^2) b^2 \cos^2 v \cos^2 u + b^4 \cos^2 v - b^2c^2 \cos^2 v \\
+  + b^2 c^2 \\
+  - (b^2 - a^2)^2\sen^2 u \cos^2 v \cos^2 u =
+\end{array}
+\begin{array}{l}
+  = (a^2-b^2)\sen^2 u \cos^2 v (a^2-b^2) \cos^2 u \\
+  + (a^2-b^2)\sen^2 u \cos^2 v (b^2 - c^2) \\
+  + c^2(a^2-b^2)\sen^2 u \\
+  + (a^2-b^2) b^2 \cos^2 v \cos^2 u + b^4 \cos^2 v - b^2c^2 \cos^2 v \\
+  + b^2 c^2 \\
+  - (b^2 - a^2)^2\sen^2 u \cos^2 v \cos^2 u =
+\end{array}
+$$
+$$
+\begin{array}{l}
+  = (a^2-b^2)^2 \sen^2 u \cos^2 v \cos^2 u \\
+  + (a^2-b^2)(b^2 - c^2) \sen^2 u \cos^2 v \\
+  + c^2(a^2-b^2)\sen^2 u \\
+  + (a^2-b^2) b^2 \cos^2 v \cos^2 u \\
+  + b^4 \cos^2 v \\
+  + b^2 c^2 \\
+  - (b^2 - a^2)^2\sen^2 u \cos^2 v \cos^2 u \\
+  - b^2c^2 \cos^2 v =
+\end{array}
+\begin{array}{l}
+  = (a^2-b^2)(b^2 - c^2) \sen^2 u \cos^2 v \\
+  + c^2(a^2-b^2)\sen^2 u \\
+  + (a^2-b^2) b^2 \cos^2 v \cos^2 u \\
+  + b^2 c^2 \\
+  + b^4 \cos^2 v \\
+  - b^2c^2 \cos^2 v =
+\end{array}
+$$
+$$
+\begin{array}{l}
+  = (a^2b^2 - a^2c^2 - b^4 + b^2c^2) \sen^2 u \cos^2 v \\
+  + (a^2c^2 - b^2c^2)\sen^2 u \\
+  + (a^2b^2-b^4) \cos^2 v \cos^2 u \\
+  + b^2 c^2 \\
+  + b^4 \cos^2 v \\
+  - b^2c^2 \cos^2 v =
+\end{array}
+\begin{array}{l}
+  = a^2b^2 \sen^2 u \cos^2 v \\
+  - a^2c^2 \sen^2 u \cos^2 v \\
+  - b^4 \sen^2 u \cos^2 v \\
+  + b^2c^2 \sen^2 u \cos^2 v \\
+  + a^2c^2 \sen^2 u \\
+  - b^2c^2 \sen^2 u \\
+  + a^2b^2 \cos^2 v \cos^2 u \\
+  - b^4 \cos^2 v \cos^2 u \\
+  + b^2c^2 \\
+  + b^4 \cos^2 v \\
+  - b^2c^2 \cos^2 v =
+\end{array}
+$$
+$$
+\begin{array}{l}
+  = a^2b^2 (\sen^2 u \cos^2 v + \cos^2 v \cos^2 u) \\
+  + a^2c^2 (\sen^2 u - \sen^2 u \cos^2 v) \\
+  + b^2c^2 (1 + \sen^2 u \cos^2 v - \sen^2 u - \cos^2 v)\\
+  + b^4 (\cos^2 v - \sen^2 u \cos^2 v - \cos^2 v \cos^2 u) =
+\end{array}
+\begin{array}{l}
+  = a^2b^2 (\sen^2 u \cos^2 v + \cos^2 v \cos^2 u) \\
+  + a^2c^2 \sen^2 u (1 - \cos^2 v) \\
+  + b^2c^2 (1 + \sen^2 u \cos^2 v - \sen^2 u - (1 - \sen^2 v))\\
+  + b^4 \cos^2 v (1 - \sen^2 u - \cos^2 u) =
+\end{array}
+$$
+$$
+\begin{array}{l}
+  = a^2b^2 (\sen^2 u \cos^2 v + \cos^2 v \cos^2 u) \\
+  + a^2c^2 \sen^2 u \sen^2 v \\
+  + b^2c^2 (1 + \sen^2 u \cos^2 v - \sen^2 u - 1 + \sen^2 v) =
+\end{array}
+\begin{array}{l}
+  = a^2b^2 (\sen^2 u \cos^2 v + \cos^2 v \cos^2 u) \\
+  + a^2c^2 \sen^2 u \sen^2 v \\
+  + b^2c^2 (\sen^2 u \cos^2 v - \sen^2 u + \sen^2 v) =
+\end{array}
+$$
+$$
+\begin{array}{l}
+  = a^2b^2 (\sen^2 u \cos^2 v + \cos^2 v \cos^2 u) \\
+  + a^2c^2 \sen^2 u \sen^2 v \\
+  + b^2c^2 (\sen^2 u (\cos^2 v - 1) + \sen^2 v) =
+\end{array}
+\begin{array}{l}
+  = a^2b^2 (\sen^2 u \cos^2 v + \cos^2 v \cos^2 u) \\
+  + a^2c^2 \sen^2 u \sen^2 v \\
+  + b^2c^2 \sen^2 v (1 - \sen^2 u) =
+\end{array}
+$$
+$$
+\begin{array}{l}
+  = a^2b^2 (\sen^2 u \cos^2 v + \cos^2 v \cos^2 u) \\
+  + a^2c^2 \sen^2 u \sen^2 v \\
+  + b^2c^2 \sen^2 v \cos^2 u > 0
+\end{array}
+$$
+Tenemos que $K>0$. Los cálculos funcionan cuando $\sen v \ne 0$ que nunca ocurre con $v\in (0, \pi)$. El resto de cartas necesarias para cubrir $\textcolor{blue}{\mathcal{E}}$ son similares a $\textcolor{blue}{\bb{X}}$ y los cálculos son casi idénticos.
+\end{document}

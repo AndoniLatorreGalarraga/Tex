@@ -1,0 +1,41 @@
+%\documentclass[twoside,twocolumn,spanish]{article}
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\setlength\columnsep{20pt}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{width=5cm,compat=1.12}
+\usepgfplotslibrary{fillbetween}
+
+\title{}
+\author{Andoni Latorre Galarraga \\ \href{mailto:alatorre73@alumno.uned.es}{alatorre73@alumno.uned.es}}
+\date{}
+\begin{document}
+
+\maketitle
+\begin{abstract}
+
+\end{abstract}
+
+\begin{multicols}{2}
+
+\section*{Fundamento Teórico}
+
+\section*{Dispositivo Experimental}
+
+\section*{Procedimiento y Resultados}
+
+\section*{Conclusiones}
+
+\begin{thebibliography}{1}
+
+  \bibitem{manual}Manual de la asignatura. Versión 3.7
+
+\end{thebibliography}
+\end{multicols}
+\end{document}

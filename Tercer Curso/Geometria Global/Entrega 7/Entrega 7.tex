@@ -1,0 +1,207 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Entrega 7}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+
+\textcolor{WildStrawberry}{Problema:}\\
+Ver si las curvas coordenadas son geodésicas para una superficie de revolución.
+
+\textcolor{WildStrawberry}{Solución:}\\
+Si la superficie viene parametrizada por $\textcolor{blue}{\bb{X}}(u,v)=(f(u)\cos v, f(u)\sen v, g(u))$, las curvas coordenadas son
+$$
+\textcolor{blue}{\alpha_u} : \textcolor{blue}{\bb{X}}(u_0, t) = (f(u_0)\cos t, f(u_0)\sen t, g(u_0))
+$$
+$$
+\textcolor{blue}{\alpha_v} : \textcolor{blue}{\bb{X}}(t, v_0) = (f(t)\cos v_0, f(t)\sen v_0, g(t))
+$$
+Para que las curvas sean geodésicas necesitamos que la componente tangencial de sus segundas derivadas sea nula.
+$$
+\textcolor{blue}{\bb{X}}_u = (f'(u) \cos v, f'(u) \sen v, g'(u))
+$$
+$$
+\textcolor{blue}{\bb{X}}_v = (-f(u)\sen v, f(u)\cos v, 0)
+$$
+$$
+N = \textcolor{blue}{\bb{X}}_u \land \textcolor{blue}{\bb{X}}_v =
+\left|\begin{array}{ccc}
+    i & j & k \\
+    f'(u) \cos v & f'(u) \sen v & g'(u) \\
+    -f(u)\sen v & f(u)\cos v & 0
+\end{array}\right|=
+$$
+$$
+=i
+\left|\begin{array}{cc}
+    f'(u)\sen v & g'(u) \\
+    f(u)\cos v & 0 \\
+\end{array}\right|
+- j
+\left|\begin{array}{cc}
+    f'(u)\cos v & g'(u) \\
+    -f(u)\sen v & 0 \\
+\end{array}\right|
++ k
+\left|\begin{array}{cc}
+    f'(u)\cos v & f'(u)\sen v \\
+    -f(u)\sen v & f(u)\cos v \\
+\end{array}\right| =
+$$
+$$
+=i g'(u)f(u)\cos v + j g'(u)f(u)\sen v + k (f'(u)f(u))=
+$$
+$$
+=(g'(u)f(u) \cos v, g'(u)f(u)\sen v, f'(u)f(u))
+$$
+Empecemos por $\textcolor{blue}{\alpha_u}$. Veamos si está parametrizada por longitud de arco:
+$$
+\textcolor{blue}{\alpha_u}' = (-f(u_0) \sen t, f(u_o) \cos t, 0)
+$$
+$$
+\| \textcolor{blue}{\alpha_u'} \| = |f(u_o)|
+$$
+Tenemos que,
+$$
+\beta_u' = \frac{\textcolor{blue}{\alpha_u}'}{f(u_o)}
+$$
+Donde $\beta_u$ es $\textcolor{blue}{\alpha_u}$ parametrizada por longitud de arco.
+$$
+\beta_u' = (-\sen t, \cos t, 0)
+$$
+$$
+\beta_u'' = (-\cos t, -\sen t, 0)
+$$
+Como $\beta_u'\beta_u'' = 0$, bastaría con ver que $\beta_u''\cdot (N \land \beta_u') = 0$.
+$$
+N \land \beta_u' =
+\left|\begin{array}{ccc}
+    i & j & k \\
+    g'(u_0)f(u_0) \cos t & g'(u_0)f(u_0)\sen t & f'(u_0)f(u_0) \\
+    -\sen t & \cos t & 0 
+\end{array}\right| =
+$$
+$$
+= ( f'(u_0)f(u_0)\cos t , -f'(u_0)f(u_0)\sen t , g'(u_0)f(u_0) \cos^2 t + g'(u_0)f(u_0)\sen^2 t ) =
+$$
+$$
+= ( f'(u_0)f(u_0)\cos t , -f'(u_0)f(u_0)\sen t , g'(u_0)f(u_0) )
+$$
+$$
+\beta_u''\cdot (N \land \beta_u') =
+(-\cos t, -\sen t, 0) \cdot ( f'(u_0)f(u_0)\cos t , -f'(u_0)f(u_0)\sen t , g'(u_0)f(u_0) ) =
+$$
+$$
+= -f'(u_0)f(u_0)\cos^2 t + f'(u_0)f(u_0)\sen^2 t = (f'(u_0)f(u_0))(1-2\cos^2 t)
+$$
+Si $f(u_0) = 0$, $\| \textcolor{blue}{\alpha_u}'\| = 0$ y la curva no es regular. Cuando $f'(u_0)=0$, $\textcolor{blue}{\alpha_u}$ es geodésica.\\
+Veamos que ocurre con $\textcolor{blue}{\alpha_v}$.
+$$
+\textcolor{blue}{\alpha_v}' = (f'(t)\cos v_0, f'(t) \sen v_0, g'(t))
+$$
+$$
+\| \textcolor{blue}{\alpha_v}' \| = \sqrt{f'(t)^2 + g'(t)^2}
+$$
+$$
+\beta_v ' = \frac{ \textcolor{blue}{\alpha_v}' }{\sqrt{f'(t)^2 + g'(t)^2}}
+$$
+$$
+\beta_v '' = ( \cos v_0 h(t), \sen v_0 h(t), l(t) )
+$$
+Con
+$$
+h(t) = \frac{f''(t) \sqrt{f'(t)^2 + g'(t)^2} - f'(t) \frac{f'(t)f''(t) + g'(t)g''(t)}{\sqrt{f'(t)^2 + g'(t)^2}}}{f'(t)^2 + g'(t)^2}
+$$
+$$
+l(t) = \frac{g''(t) \sqrt{f'(t)^2 + g'(t)^2} - g'(t) \frac{f'(t)f''(t) + g'(t)g''(t)}{\sqrt{f'(t)^2 + g'(t)^2}}}{f'(t)^2 + g'(t)^2}
+$$
+$$
+\beta'_v\beta''_v = \frac{ \textcolor{blue}{\alpha_v}' }{\| \textcolor{blue}{\alpha_v}' \|}\beta''_v =
+\frac{ 1}{\| \textcolor{blue}{\alpha_v}' \|} (f'(t)\cos v_0, f'(t) \sen v_0, g'(t)) \cdot ( \cos v_0 h(t), \sen v_0 h(t), l(t) )
+$$
+$$
+= \frac{ 1}{\| \textcolor{blue}{\alpha_v}' \|}(f'(t)h(t)\cos^2 v_0 + f'(t)h(t)\sen^2 v_0 + g'(t)l(t)) = \frac{ 1}{\| \textcolor{blue}{\alpha_v}' \|}( f'(t)h(t) + g'(t)l(t) )
+$$
+Nos centramos en $f'(t)h(t) + g'(t)l(t)$.
+$$
+f'(t)h(t) + g'(t)l(t) =
+$$
+$$
+= \frac{
+    f'(t)f''(t) \sqrt{f'(t)^2 + g'(t)^2} - f'(t)^2 \frac{f'(t)f''(t) + g'(t)g''(t)}{\sqrt{f'(t)^2 + g'(t)^2}} +
+    g'(t)g''(t) \sqrt{f'(t)^2 + g'(t)^2} - g'(t)^2 \frac{f'(t)f''(t) + g'(t)g''(t)}{\sqrt{f'(t)^2 + g'(t)^2}}}{f'(t)^2 + g'(t)^2}=
+$$
+$$
+= \frac{
+    (f'(t)f''(t) + g'(t)g''(t)) \sqrt{f'(t)^2 + g'(t)^2} - (f'(t)^2 + g'(t)^2) \frac{f'(t)f''(t) + g'(t)g''(t)}{\sqrt{f'(t)^2 + g'(t)^2}}}{f'(t)^2 + g'(t)^2}
+$$
+Entonces,
+$$
+\beta'_v\beta''_v =
+\frac{
+    (f'(t)f''(t) + g'(t)g''(t)) - (f'(t)^2 + g'(t)^2) \frac{f'(t)f''(t) + g'(t)g''(t)}{f'(t)^2 + g'(t)^2}}{f'(t)^2 + g'(t)^2}
+= 0
+$$
+Veamos que ocurre con $\beta_v''\cdot(N \land \textcolor{blue}{\alpha_v}')$.
+$$
+N \land \textcolor{blue}{\alpha_v}' =
+\left|\begin{array}{ccc}
+    i & j & k \\
+    g'(t)f(t) \cos v_0 & g'(t)f(t)\sen v_0 & f'(t)f(t) \\
+    f'(t)\cos v_0 & f'(t) \sen v_0 & g'(t) \\
+\end{array}\right| =
+$$
+$$
+= ( g'(t)^2f(t)\sen v_0 - f'(t)^2f(t)\sen v_o , -g'(t)^2f(t)\cos v_0 + f'(t)^2f(t)\cos v_0, 0 )
+$$
+$$
+= ( \sen v_0 (g'(t)^2f(t)- f'(t)^2f(t)) , -\cos v_0(g'(t)^2f(t) - f'(t)^2f(t)), 0 )
+$$
+$$
+= (g'(t)^2f(t)- f'(t)^2f(t))(\sen v_0, -\cos v_0, 0 )
+$$
+$$
+\frac{\beta_v''\cdot(N \land \textcolor{blue}{\alpha_v}')}{(g'(t)^2f(t)- f'(t)^2f(t))} =
+(\sen v_0, -\cos v_0, 0 ) \cdot
+( \cos v_0 h(t), \sen v_0 h(t), l(t) ) = 0
+$$
+Y se tiene que $\textcolor{blue}{\alpha_v}$ es geodésica.
+\end{document}

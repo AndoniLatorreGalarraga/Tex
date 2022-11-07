@@ -19,12 +19,12 @@
 
 \maketitle
 \begin{abstract}
-Se estudia la relacíon entre el periodo de oscilación de un péndulo físico y la distancia entre el eje de rotación y el centro de masas de dicho péndulo. A partir de los datos experimentales se calcula el valor de la aceleración de la gravedad $g$.
+Se estudia la relación entre el periodo de oscilación de un péndulo físico y la distancia entre el eje de rotación y el centro de masas de dicho péndulo. A partir de los datos experimentales se calcula el valor de la aceleración de la gravedad $g$. El experimento se desarrolla siguiendo el proceso explicado en \cite{web}.
 \end{abstract}
 
 \begin{multicols}{2}
 
-\section{Fundamento Teórico}
+\section*{Fundamento Teórico}
 Si se tiene un cuerpo rígido, de masa $M$, suspendido en un eje de giro $O$ a una distancia $b$ del centro de masas del objeto, $C$. Cuando el objeto está desplazado de su posición de equilibrio por un ángulo $\theta$. La aceleración tangencial del centro de masas se puede expresar de dos formas distintas, al igualar estas se tiene.
 $$
 -M g b \sen(\theta) = I \frac{d^2 \theta}{dt^2}
@@ -34,7 +34,7 @@ Cuando se tienen valores pequeños de $\theta$ , menores a $20^\circ$, se puede 
 $$
 -M g b \theta = I \frac{d^2 \theta}{dt^2}
 $$
-Que tiene por solución $\sen \left( \theta \sqrt{\frac{Mgb}{I}} + \phi \right) + C$. Que corresponde a un movimiento armónico simple de periodoP
+Que tiene por solución $\sen \left( \theta \sqrt{\frac{Mgb}{I}} + \phi \right) + C$. Que corresponde a un movimiento armónico simple de periodo
 $$
 T = 2\pi \sqrt{\frac{I}{Mgb}}
 $$
@@ -42,7 +42,7 @@ Si se llama $I_0$ al momento de inercia respecto al eje paralelo a $O$ que pasa 
 $$
 T = 2\pi \sqrt{\frac{I_0 + Mb^2}{Mgb}}
 $$
-$I_0$ está relacionado con er radio de giro, $k$, mediante la relación $k = \sqrt{\frac{I_0}{M}}$. Por lo tanto,
+$I_0$ está relacionado con el radio de giro, $k$, mediante la relación $k = \sqrt{\frac{I_0}{M}}$. Por lo tanto,
 $$
 T = 2\pi \sqrt{\frac{Mk^2 + Mb^2}{Mgb}} = 2\pi \sqrt{\frac{k^2 + b^2}{gb}}
 $$
@@ -50,17 +50,19 @@ Utilizaremos esta última expresión para el periodo de oscilación, en nuestro 
 $$
 \textcolor{blue}{bT^2} = 4\pi^2 \frac{k^2}{g} + 4\pi^2 \frac{\textcolor{blue}{b^2}}{g}
 $$
-Obtenemos una relación lineal entre $bT^2$ y $b^2$. Estimaremos la pendiente y la ordenada en el origen de dicha relación para obtener el valor de $g$.
+Obtenemos una relación lineal entre $bT^2$ y $b^2$ (resaltados en azul). Estimaremos la pendiente y la ordenada en el origen de dicha relación para obtener el valor de $g$.
 
-\section{Dispositivo Experimental}
-En nuestro experimento hemos utilizado una varilla metálica como péndulo. La varilla tine unas marcas cada centímetro. Al dadas estas marcas, supondremos que no hay error en $b$. Estas marcas son tales que se puede situar un pequeño trozo de metal mediante un tornillo de presión para sujetar la varilla y que esta tenga como eje de rotación la marca en la que se situa el metal triangular. Ademas, la varilla central indica el centro de masas. De esta manera, contando ranunas desde el centro de la varilla podemos conocer el valor de $b$. En la Fig. 1 se puede ver el dispositivo experimental ya montado.
+\section*{Dispositivo Experimental}
+En nuestro experimento hemos utilizado una varilla metálica como péndulo. La varilla tine unas marcas cada centímetro. Al dadas estas marcas, supondremos que no hay error en $b$. Estas marcas son tales que se puede situar un pequeño trozo de metal mediante un tornillo de presión para sujetar la varilla y que esta tenga como eje de rotación la marca en la que se sitúa el metal triangular. Ademas, la varilla central indica el centro de masas. De esta manera, contando ranuras desde el centro de la varilla podemos conocer el valor de $b$. En la Fig. 1 se puede ver el dispositivo experimental ya montado.
 \begin{center}
     \includegraphics[scale=0.06, angle=-90]{figures/c2.png}\\
     Figura 1: Dispositivo experimental montado.
 \end{center}
 
-\section{Procedimiento y Resultados}
-Hemos tomado mediciones para $b\in \{6\text{cm}, 7\text{cm}, \cdots, 30\text{cm}, 31\text{cm}\}$. Para cada valor de $b$ hemos tomado 5 tiempos independientes, cada uno de estos correspondiente a 10 oscilaciones (excepto para $23 \text{cm}\le b \le 26\text{cm}$ que hemos tomado 20). Siempre hemos tenído cudado de que la varilla no oscile con ángulos superiores a $20^\circ$. Los datos obtenidos son los siguientes:
+\section*{Procedimiento y Resultados}
+Hemos tomado mediciones para $b\in \{8\text{cm}, 9\text{cm}, \cdots, 30\text{cm}, 31\text{cm}\}$. Para cada valor de $b$ hemos tomado 5 tiempos independientes, cada uno de estos correspondiente a 10 oscilaciones (excepto para $23 \text{cm}\le b \le 26\text{cm}$ que hemos tomado 20). Siempre hemos tenido cuidado de que la varilla no oscile con ángulos superiores a $20^\circ$ como se indica en \cite{web}. En la Tabla 1 se muestran los datos obtenidos.
+\begin{center}
+Tabla 1:
 $$
     \begin{array}{|c||c|c|c|c|c|} \hline
         b\text{(m)} & T_1\text{(s)} & T_2\text{(s)} & T_3\text{(s)} & T_4\text{(s)} & T_5\text{(s)} \\ \hline\hline
@@ -92,19 +94,23 @@ $$
         0.33 & 13.50 & 13.54 & 13.21 & 13.41 & 13.22  \\ \hline
     \end{array}
 $$
-Tomaremos como valor esperado del tiempo, $T^*$, la media aritmetica de los 5 tiempos (divididos entre 10 o 20 segun corresponda). Para estimar el error absoluto, $\epsilon_{T^*}$, el error estándard de la media como se indica en \cite{manual} p. 48.
+\end{center}
+Tomaremos como valor esperado del tiempo, $T^*$, la media aritmética de los 5 tiempos (divididos entre 10 o 20 según corresponda). Para estimar el error absoluto, $\epsilon_{T^*}$, el error estándar de la media como se indica en \cite{manual} p. 48.
 $$
 T^* = \frac{1}{5} \sum_{i=1}^5 \frac{T_i}{10} \quad
 \epsilon_{T^*} = \sqrt{\frac{1}{5^2} \sum_{i=1}^5 (\frac{T_i}{10} - T^*)^2}
 $$
-Los redondeos se han realizado como se indica en \cite{manual} p. 22. Primero se redondea $\epsilon$ a una cifra significativa (dos si la primera es 1). Despues, se redondea $T^*$ de manera que la última cifra significativa se del mismo orden decimal que $\epsilon$. Ahora, podemos calcular ${T^*}^2b$ y su error correspondiente con la ecuación 3.6 de \cite{manual}. Estos se redondean como antes. El error de ${T^*}^2b$ viene dado por:
+Los redondeos se han realizado como se indica en \cite{manual} p. 22. Primero se redondea $\epsilon$ a una cifra significativa (dos si la primera es 1). Después, se redondea $T^*$ de manera que la última cifra significativa se del mismo orden decimal que $\epsilon$. Ahora, podemos calcular ${T^*}^2b$ y su error correspondiente con la ecuación 3.6 de \cite{manual}. Estos se redondean como antes. El error de ${T^*}^2b$ viene dado por:
 $$
 \epsilon_{{T^*}^2b} =
 \sqrt{\left| \frac{d {T^*}^2b}{d T^*} \right|^2 \epsilon_{T^*}^2}=
 2bT^* \epsilon_{T^*}
 $$
+En la Tabla 2 se muestran los valores de $T^*$ y ${T^*}^2b$ junto con sus errores.
+\begin{center}
+Tabla 2:
 $$
-  \begin{array}{|l|l|l|l|l|} \hline
+  \begin{array}{|l||l|l|l|l|} \hline
     b\text{(m)} & T^*\text{(s)} & \epsilon_{T^*}\text{(s)} & {T^*}^2b\text{(s\textsuperscript{2}m)} & \epsilon_{{T^*}^2b}\text{(s\textsuperscript{2}m)}\\ \hline \hline
     0.08 & 1.510 & 0.003 & 0.1824 & 0.0007  \\ \hline
     0.09 & 1.411 & 0.019 & 0.179 & 0.005  \\ \hline
@@ -134,9 +140,11 @@ $$
     0.33 & 1.338 & 0.006 & 0.591 & 0.005  \\ \hline
     \end{array}
 $$
-Finálmente, se hace el cálculo de la regresión lineal y sus errores con las ecuaciones de \cite{manual} p. 79-80.
+\end{center}
+Finalmente, se hace el cálculo de la regresión lineal y sus errores con las ecuaciones de \cite{manual} p. 79-80. En la Fig. 2 se pueden ver los valores de ${T^*}^2b$ con sus barras de error frente a los valores de $b^2$.
 \begin{center}
-\includegraphics[scale=0.7]{figures/regresión.png}
+\includegraphics[width = 0.45\textwidth]{figures/regresión.png}
+Figura 2: ${T^*}^2b$ frente a $b^2$ junto con la recta de regresión $y=mx+n$.
 \end{center}
 Se tiene que
 $$
@@ -182,14 +190,39 @@ $$
 $$
 k = (0.195 \pm 0.004) \text{ m}
 $$
-\section{Conclusiones}
-
+\section*{Conclusiones}
+El valor de la gravedad local se puede consultar en \cite{gravedad} sabiendo que la latitud del laboratorio es de unos $43.3305^\circ$. El valor obtenido en \cite{gravedad} es de $9.8047$ ms\textsuperscript{-2}. El valor obtenido experimentalmente, $(9.92 \pm 0.05)$ ms\textsuperscript{-2}, está cerca del valor de \cite{gravedad} pero no se encuentra dentro del error. Lo más seguro es que esto sea consecuencia de errores sistemáticos, por ejemplo, que se le aplique una pequeña fuerza a la varilla al soltarla. No obstante, el error relativo en el valor de $g$ es del $0.5\%$ y el resultado se acerca al valor real. Considero que el resultado es bastante bueno.
+\\\\
+Respecto al valor de $k$, en \cite{web} se dan 3 métodos para su cálculo. El primero consiste en observar que el periodo $T$ toma su valor mínimo cuando $b=k$.
+\begin{center}
+  \includegraphics[width = 0.45\textwidth]{figures/mínimo.png}
+  Figura 3: $T^*$ frente a $b$. Se observa un mínimo alrededor de $0.19$ m.
+\end{center}
+Calculemos el valor mínimo de $T$. Derivando $T$ respecto a $b$ se tiene,
+$$
+\frac{dT}{db} = \frac{d \left( 2\pi \sqrt{\frac{k^2 + b^2}{gb}}\right) }{db} =
+\pi \frac{b^2-k^2}{gb^2} \sqrt{\frac{gb}{k^2+b^2}}
+$$
+Observamos que la derivada toma el valor 0 cuando $k=b$. En la Fig. 3 se muestran los valores de $T^*$ con sus errores, los cuales se pueden consultar en la Tabla 2, frente a los valores de $b$. El mínimo parece estar alrededor de $0.19$ m. El segundo método consiste en un cálculo teórico del radio de giro. Sabiendo que el momento de inercia de una varilla de longitud $L$ y masa $M$ es $I = \frac{1}{12}ML^2$.
+$$
+Mk^2=\frac{1}{12}ML^2 \Rightarrow k = \frac{L}{\sqrt{12}}
+$$
+Sabiendo que nuestra varilla mide ($66 \pm 0.1$) cm y utilizando la ecuación 3.6 de \cite{manual}.
+$$
+\epsilon_k = \sqrt{\left| \frac{dk}{dL} \right|^2 \epsilon_L^2} = \frac{1}{\sqrt{12}} \epsilon_L
+$$
+$$
+k = (0.1905 \pm 0.0003) \text{m}
+$$
+El tercer método consiste el tomar el valor obtenido experimentalmente, $k = (0.195 \pm 0.004) \text{ m}$. De nuevo, muy cerca del valor teórico y del observado en la Fig. 3. El valor de $k$ obtenido experimentalmente es bastante bueno y tiene un error relativo del $2\%$. En mi opinión el mejor valor de $k$ es el obtenido teóricamente, tiene un error relativo del $0.16\%$ y está menos expuesto a errores sistemáticos. 
 \begin{thebibliography}{1}
 
   \bibitem{manual}Manual de la asignatura. Versión 3.7
 
+  \bibitem{web}\url{https://uned-labo.netlify.app/practicas/te/1_practica_pendulo_fisico/prak1.html} 14/5/2022
+ 
+  \bibitem{gravedad}\url{https://www.sensorsone.com/local-gravity-calculator/} 14/5/2022
+
 \end{thebibliography}
-
 \end{multicols}
-
 \end{document}

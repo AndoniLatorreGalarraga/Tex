@@ -64,16 +64,16 @@ $$
 \alpha(t) = ((2\cos t -1)\cos t, (2\cos t -1) \sen t)
 $$
 $$
-\alpha'(t) = (-2\sen t \cos t - (2\cos t -1)\sen t, -2\sen t \sen t + (2\cos t -1)\cos t) =
+\alpha'(t) = ( {-2\sen t \cos t - (2\cos t -1)\sen t}, {-2\sen t \sen t + (2\cos t -1)\cos t}) =
 $$
 $$
-= (\sen t - 4 \cos t \sen t, 2(\cos^2 t -\sen^2 t)-\cos t)
+= ({\sen t - 4 \cos t \sen t}, {2(\cos^2 t -\sen^2 t)-\cos t})
 $$
 $$
 \alpha''(t) = (\cos t - 4 (-\sen t \sen t + \cos t \cos t), 2(-2\cos t \sen t - 2 \sen t \cos t) + \sen t)=
 $$
 $$
-= (\cos t + 4(\sen^2 t - \cos^2 t), \sen t(1 - 8 \cos t))
+= (\cos t {+ 4(\sen^2 t - \cos^2 t)}, {\sen t(1 - 8 \cos t)})
 $$
 $$
 k_2(t) = \frac{\alpha''(t) \cdot \mathcal{J}\alpha'(t)}{\left\| \alpha'(t) \right\|^3} =
@@ -82,14 +82,83 @@ $$
 = \frac{(\cos t + 4(\sen^2 t - \cos^2 t), \sen t(1 - 8 \cos t)) \cdot \mathcal{J}(\sen t - 4 \cos t \sen t, 2(\cos^2 t -\sen^2 t)-\cos t)}{\left\| (\sen t - 4 \cos t \sen t, 2(\cos^2 t -\sen^2 t)-\cos t) \right\|^3} =
 $$
 $$
-= \frac{(\cos t + 4(\sen^2 t - \cos^2 t)) (2(\cos^2 t -\sen^2 t)-\cos t) + (\sen t - 8\sen t \cos t) (\sen t - 4 \cos t \sen t)}{\left(\sqrt{\left( \sen t - 4 \cos t \sen t \right)^2+\left( 2(\cos^2 t -\sen^2 t)-\cos t \right)^2}\right)^3} =
+= \frac{{-(\cos t + 4(\sen^2 t - \cos^2 t)) (2(\cos^2 t -\sen^2 t)-\cos t) + (\sen t - 8\sen t \cos t) (\sen t - 4 \cos t \sen t)}}{{\left(\sqrt{\left( \sen t - 4 \cos t \sen t \right)^2+\left( 2(\cos^2 t -\sen^2 t)-\cos t \right)^2}\right)^3}} =
+$$
+Abreviamos $s = \sen t$ y $c = \cos t$
+$$
+= \frac{{-(c  + 4(s^2  - c^2 )) (2(c^2  -s^2 )-c ) + (s  - 8s  c ) (s  - 4 c  s )}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(c^2  -s^2 )-c  )^2})^3}} =
+$$
+Sustituimos $s^2 = 1-c^2$
+$$
+= \frac{{-(c  + 4(\textcolor{red}{1-c^2}  - c^2 )) (2(c^2  -\textcolor{red}{(1-c^2)} )-c ) + (s  - 8s  c ) (s  - 4 c  s )}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(c^2  -\textcolor{red}{(1-c^2)} )-c  )^2})^3}} =
+$$
+$$
+= \frac{{-(c  + 4( 1-c^2 - c^2 )) (2(c^2  \textcolor{red}{-1+c^2} )-c ) + (s  - 8s  c ) (s  - 4 c  s )}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(c^2 \textcolor{red}{-1+c^2} )-c  )^2})^3}} =
+$$
+$$
+= \frac{{-(c  + 4( 1-\textcolor{red}{2c^2} )) (2(\textcolor{red}{2c^2}  -1 )-c ) + (s  - 8s  c ) (s  - 4 c  s )}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(\textcolor{red}{2c^2}  -1 )-c  )^2})^3}} =
+$$
+$$
+= \frac{{-(c  +\textcolor{red}{ 4 - 8c^2 }) (\textcolor{red}{4c^2 - 2} - c ) + (s  - 8s  c ) (s  - 4 c  s )}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(2c^2  -1 )-c  )^2})^3}} =
+$$
+$$
+= \frac{{-(c  + 4 - 8c^2 ) (4c^2 - 2 - c ) + \textcolor{red}{s^2}(1 - 8 c ) (1 - 4 c )}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(2c^2  -1 )-c  )^2})^3}} =
+$$
+$$
+= \frac{{-(c  + 4 - 8c^2 ) (4c^2 - 2 - c ) + \textcolor{red}{(1-c^2)}(1 - 8 c ) (1 - 4 c )}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(2c^2  -1 )-c  )^2})^3}} =
+$$
+$$
+= \frac{{-(c  + 4 - 8c^2 ) (4c^2 - 2 - c ) \textcolor{red}{-32 c^4 + 12 c^3 + 31 c^2 - 12 c + 1}}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(2c^2  -1 )-c  )^2})^3}} =
+$$
+$$
+= \frac{{-(\textcolor{red}{-32 c^4 + 12 c^3 + 31 c^2 - 6 c - 8}) + -32 c^4 + 12 c^3 + 31 c^2 - 12 c + 1}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(2c^2  -1 )-c  )^2})^3}} =
+$$
+$$
+= \frac{\textcolor{red}{9-6c}}{{(\sqrt{( s  - 4 c  s  )^2+( 2(2c^2  -1 )-c  )^2})^3}} =
+$$
+$$
+= \frac{9-6c}{{(\sqrt{\textcolor{red}{s^2}( 1 - 4 c )^2+( 2(2c^2  -1 )-c  )^2})^3}} =
+$$
+$$
+= \frac{9-6c}{{(\sqrt{\textcolor{red}{(1 - c^2)}( 1 - 4 c )^2+( 2(2c^2  -1 )-c  )^2})^3}} =
+$$
+$$
+= \frac{9-6c}{{(\sqrt{(1 - c^2)( \textcolor{red}{1 - 8c +16c^2} )+( \textcolor{red}{4c^2 - 2} - c )^2})^3}} =
+$$
+$$
+= \frac{9-6c}{{(\sqrt{\textcolor{red}{-16 c^4 + 8 c^3 + 15 c^2 - 8 c + 1} +( 4c^2 - 2 - c )^2})^3}} =
+$$
+$$
+= \frac{9-6c}{{(\sqrt{-16 c^4 + 8 c^3 + 15 c^2 - 8 c + 1 +\textcolor{red}{16 c^4 - 8 c^3 - 15 c^2 + 4 c + 4}})^3}} =
+$$
+$$
+= \frac{9-6c}{{(\sqrt{\textcolor{red}{5-4c}})^3}} =
 $$
 $$
 = \frac{9-6 \cos t}{(5-4\cos t)^{3/2}}
 $$
-Tenemos que
+Derivamos
 $$
-k_2'(t)=\frac{12 \sen t(\cos t -2)}{(5- 4 \cos t)^{5/2}}
+k_2'(t) =
+-\frac{(9-6 \cos t)((5-4\cos t)^{3/2})' - (9-6 \cos t)'((5-4\cos t)^{3/2})}{(5-4\cos t)^3}
+$$
+$$
+=-\frac{(9-6 \cos t)\frac{3}{2}(5-4\cos t)^{1/2}(4 \sen t) - 6 \sen t(5-4\cos t)^{3/2}}{(5-4\cos t)^3}=
+$$
+$$
+=-\frac{(5-4\cos t)^{1/2}((9-6 \cos t)\frac{3}{2}(4 \sen t) - 6 \sen t(5-4\cos t))}{(5-4\cos t)^3}=
+$$
+$$
+=-\frac{(9-6 \cos t)(6 \sen t) - 6 \sen t(5-4\cos t)}{(5-4\cos t)^{5/2}}=
+$$
+$$
+=-\frac{6 \sen t(9-6 \cos t- 5 + 4\cos t)}{(5-4\cos t)^{5/2}}=
+$$
+$$
+=-\frac{6 \sen t(4 - 2 \cos t)}{(5-4\cos t)^{5/2}}=
+$$
+$$
+=\frac{12 \sen t(\cos t -2)}{(5- 4 \cos t)^{5/2}}
 $$
 Tenemos ceros, y por lo tanto vértices, en $0, \pi$ y $2\pi$, es decir, en $(3,0)$ y $(1,0)$.
 \end{document}

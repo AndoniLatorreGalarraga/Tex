@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+\usepackage{etoolbox} %titulo
+\makeatletter %titulo
+\patchcmd{\@maketitle}{\vskip 2em}{\vspace*{-3cm}}{}{} %titulo
+\makeatother %titulo
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmargins{2.5cm}       % margen izquierdo
+{1.5cm}                        % margen superior
+{16.5cm}                      % anchura del texto
+{23.42cm}                    % altura del texto
+{10pt}                           % altura de los encabezados
+{1cm}                           % espacio entre el texto y los encabezados
+{0pt}                             % altura del pie de página
+{2cm}                           % espacio entre el texto y el pie de página
+\title{Entrega 8}
+\author{Andoni Latorre Galarraga}
+\date{}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\nota}[3][2ex]{
+    \underset{\mathclap{
+        \begin{tikzpicture}
+          \draw[->] (0, 0) to ++(0,#1);
+          \node[below] at (0,0) {#3};
+        \end{tikzpicture}}}{#2}
+}
+\begin{document}
+
+\maketitle
+\section*{\textcolor{red}{Definiciones}}
+
+\textcolor{WildStrawberry}{Campo vectorial sobre una curva}\\
+Si $\textcolor{blue}{\alpha}: I\subseteq \bb{R}^2 \longrightarrow \mathcal{S}\subseteq \bb{R}^3$ es una curva sobre una superficie $\mathcal{S}$, un \textcolor{WildStrawberry}{campo vectorial sobre} $\textcolor{blue}{\alpha}$ es una aplicación $w:I\longrightarrow \bb{R}^3$. Este campo se dice \textcolor{WildStrawberry}{diferenciable} si $w$ es diferenciable y se dice \textcolor{WildStrawberry}{tangente} si satisface $w(t)\in T_{\textcolor{blue}{\alpha}(t)}(\mathcal{S})$ para todo $t\in I$.\\\\
+
+\textcolor{WildStrawberry}{Derivada covariante de un campo sobre un curva}\\
+Si $\textcolor{blue}{w}: I \subseteq \bb{R} \longrightarrow \bb{R}^3$ es un campo vectorial diferenciable sobre $\textcolor{blue}{\alpha}: I\subseteq \bb{R}^2 \longrightarrow \textcolor{blue}{\mathcal{S}}\subseteq \bb{R}^3$, con $\textcolor{blue}{\mathcal{S}}$ superficie regular. Entonces, la \textcolor{WildStrawberry}{derivada covariante de} $\textcolor{blue}{w}$ es la componente tangencial de $\textcolor{blue}{w}'$. Se escribe $\frac{D \textcolor{blue}{w}}{dt}$. Ademas, si $N$ es un campo normal unitario de $\textcolor{blue}{\mathcal{S}}$, la componente normal de $\textcolor{blue}{w}'$ es $\textcolor{blue}{w}'\cdot N(\textcolor{blue}{\alpha})$ y se tiene que
+$$
+\frac{D \textcolor{blue}{w}}{dt}(t) = \textcolor{blue}{w}'(t) - \langle \textcolor{blue}{w}', N(\textcolor{blue}{\alpha}(t)) \rangle N(\textcolor{blue}{\alpha}(t))
+$$
+
+\textcolor{WildStrawberry}{Valor algebraico de la derivada covariante}\\
+Si $\textcolor{blue}{w}: I \subseteq \bb{R} \longrightarrow \bb{R}^3$ es un campo vectorial diferenciable, tangente y unitario a lo largo de una curva $\textcolor{blue}{\alpha}: I\subseteq \bb{R}^2 \longrightarrow \textcolor{blue}{\mathcal{S}}\subseteq \bb{R}^3$ sobre una superficie orientada $\textcolor{blue}{\mathcal{S}}$. Observamos que $\frac{D \textcolor{blue}{w}}{dt}\cdot N(\textcolor{blue}{\alpha}(t)) = 0$ y $\textcolor{blue}{w}(t)\cdot \textcolor{blue}{w}'(t)=0$, por ser la derivada covariante parte de $T_{\textcolor{blue}{\alpha}(t)}(\textcolor{blue}{\mathcal{S}})$ y por ser $\textcolor{blue}{w}$ unitario. Deducimos
+$$
+\frac{D \textcolor{blue}{w}}{dt}(t) = \lambda(t) (N(\textcolor{blue}{\alpha}(t)) \land \textcolor{blue}{w}(t) )
+$$
+Llamamos \textcolor{WildStrawberry}{valor algebraico de la derivada covariante} a $\lambda(t)$ y escribimos $\lambda(t) = \left[\frac{D \textcolor{blue}{w}}{dt}(t)\right]$.\\\\
+
+\textcolor{WildStrawberry}{Curvatura geodésica}\\
+Si $\textcolor{blue}{\alpha}: I\subseteq \bb{R}^2 \longrightarrow \textcolor{blue}{\mathcal{S}}\subseteq \bb{R}^3$ es una curva parametrizada por longitud de arco sobre una superficie regular orientada $\textcolor{blue}{\mathcal{S}}$. Llamamos \textcolor{WildStrawberry}{curvatura geodésica de} $\textcolor{blue}{\alpha}$ a $\left[\frac{D \textcolor{blue}{\alpha}'}{dt}\right]$. Escribimos
+$$
+\left[\frac{D \textcolor{blue}{\alpha}'}{dt}(t)\right] = k_g(t)
+$$\\\\
+
+\textcolor{WildStrawberry}{Geodésica}\\
+Si $\textcolor{blue}{\alpha}: I\subseteq \bb{R}^2 \longrightarrow \textcolor{blue}{\mathcal{S}}\subseteq \bb{R}^3$ es una curva regular sobre una superficie regular orientada $\textcolor{blue}{\mathcal{S}}$. Se dice que $\textcolor{blue}{\alpha}$ es \textcolor{WildStrawberry}{geodésica} si
+$$
+\frac{D \textcolor{blue}{\alpha}'}{dt}(t) = 0 \quad \forall t
+$$
+Es decir $\textcolor{blue}{\alpha}'$ es paralelo a lo largo de $\textcolor{blue}{\alpha}$.\\\\
+
+\textcolor{WildStrawberry}{Proposición:}\\
+Las geodésicas están parametrizadas por parámetro proporcional a la longitud de arco. Es decir, Si $\textcolor{blue}{\alpha}: I\subseteq \bb{R}^2 \longrightarrow \textcolor{blue}{\mathcal{S}}\subseteq \bb{R}^3$ es una geodésica. Entonces, $\| \textcolor{blue}{\alpha}' \|$ es constante.
+
+\textcolor{WildStrawberry}{Dem:}\\
+Si no es constante $\| \textcolor{blue}{\alpha}'(t) \|^2 = 2 n(t)$. Derivando, $\textcolor{blue}{\alpha}'\textcolor{blue}{\alpha}'' = n'(t)$. Entonces, para algún $t_0$ se tiene $\textcolor{blue}{\alpha}'\textcolor{blue}{\alpha}'' \ne 0$. Como $\textcolor{blue}{\alpha}'$ está en el espacio tangente, ahora es imposible que $\textcolor{blue}{\alpha}''$ tenga derivada covariante nula ya que tiene componente tangencial. Esto contradice que $\textcolor{blue}{\alpha}$ sea geodésica y queda probada la proposición.\\\\
+
+\textcolor{WildStrawberry}{Proposición:}\\
+Si $\textcolor{blue}{f}: \bb{R}^3 \longrightarrow \bb{R}^3$ es una isometría y $\textcolor{blue}{\alpha}$ es geodésica en $\textcolor{blue}{\mathcal{S}}$. Entonces, $\textcolor{blue}{f}(\textcolor{blue}{\alpha})$ es geodésica sobre $\textcolor{blue}{f}(\textcolor{blue}{\mathcal{S}})$.
+
+\textcolor{WildStrawberry}{Dem:}\\
+Si $\textcolor{blue}{\alpha} = \bb{X}(u,v)$ entonces $\textcolor{blue}{f}(\textcolor{blue}{\alpha})=(\textcolor{blue}{f}\circ\bb{X})(u,v)$ y se tiene
+$$
+\textcolor{blue}{f}(\textcolor{blue}{\alpha})' = (\textcolor{blue}{f}\circ\bb{X})_u u' + (\textcolor{blue}{f}\circ\bb{X})_v v'
+$$
+$$
+\textcolor{blue}{f}(\textcolor{blue}{\alpha})'' = (\textcolor{blue}{f}\circ\bb{X})_{uu} (u')^2 + (\textcolor{blue}{f}\circ\bb{X})_{uv} u'v' + (\textcolor{blue}{f}\circ\bb{X})_u u'' + (\textcolor{blue}{f}\circ\bb{X})_{vu} u'v' + (\textcolor{blue}{f}\circ\bb{X})_{vv} (v')^2 + (\textcolor{blue}{f}\circ\bb{X})_v v''
+$$
+Por definición de los símbolos de Christoffel,
+$$
+\begin{array}{ll}
+\textcolor{blue}{f}(\textcolor{blue}{\alpha})'' &
+   = (\textcolor{blue}{f}\circ\bb{X})_{uu} (u')^2 \\
+ & + (\textcolor{blue}{f}\circ\bb{X})_{uv} u'v' \\
+ & + (\textcolor{blue}{f}\circ\bb{X})_u u'' \\
+ & + (\textcolor{blue}{f}\circ\bb{X})_{vu} u'v' \\
+ & + (\textcolor{blue}{f}\circ\bb{X})_{vv} (v')^2 \\
+ & + (\textcolor{blue}{f}\circ\bb{X})_v v''
+\end{array}
+\Rightarrow
+\begin{array}{ll}
+\frac{D\textcolor{blue}{f}(\textcolor{blue}{\alpha})'}{dt} &
+   = (\Gamma_{11}^1 (\textcolor{blue}{f}\circ\bb{X})_u + \Gamma_{11}^2 (\textcolor{blue}{f}\circ\bb{X})_v ) (u')^2 \\
+ & + (\Gamma_{12}^1 (\textcolor{blue}{f}\circ\bb{X})_u + \Gamma_{12}^2 (\textcolor{blue}{f}\circ\bb{X})_v ) u'v' \\
+ & + (\textcolor{blue}{f}\circ\bb{X})_u u'' \\
+ & + (\Gamma_{12}^1 (\textcolor{blue}{f}\circ\bb{X})_u + \Gamma_{12}^2 (\textcolor{blue}{f}\circ\bb{X})_v ) u'v' \\
+ & + (\Gamma_{22}^1 (\textcolor{blue}{f}\circ\bb{X})_u + \Gamma_{22}^2 (\textcolor{blue}{f}\circ\bb{X})_v ) (v')^2 \\
+ & + (\textcolor{blue}{f}\circ\bb{X})_v v'' =
+\end{array}
+$$
+$$
+\frac{D\textcolor{blue}{f}(\textcolor{blue}{\alpha})'}{dt} =
+(\textcolor{blue}{f}\circ\bb{X})_u \left( \Gamma_{11}^1 (u')^2 + 2\Gamma_{12}^1 u'v' + u'' + \Gamma_{22}^1 (v')^2 \right) +
+(\textcolor{blue}{f}\circ\bb{X})_v \left( \Gamma_{11}^2 (u')^2 + 2\Gamma_{12}^2 u'v' + \Gamma_{22}^2 (v')^2 + v''\right)
+$$
+Como $u$ y $v$ satisfacen las ecuaciones diferenciales de las geodésicas, la derivada covariante es nula y $\textcolor{blue}{f}(\textcolor{blue}{\alpha})$ es geodésica.\\\\
+
+\textcolor{WildStrawberry}{Proposición:}\\
+Si $\textcolor{blue}{\alpha}: I\subseteq \bb{R}^2 \longrightarrow \textcolor{blue}{\mathcal{S}}\subseteq \bb{R}^3$ es una curva regular parametrizada por longitud de arco sobre una superficie regular orientada $\textcolor{blue}{\mathcal{S}}$ Entonces, $k(s)^2=k_n(s)^2+k_g(s)^2$.
+
+\textcolor{WildStrawberry}{Dem:}\\
+Por definición de curvatura normal, $k_n = k (\bb{N}\cdot N)$ donde $N$ es el vector normal a la superficie y $\bb{N}$ es el vector normal a la curva. Por ser $\textcolor{blue}{\alpha}$ parametrizada por longitud de arco, $k\bb{N}=\textcolor{blue}{\alpha}''$. Se tiene que $k_n = \textcolor{blue}{\alpha}''\cdot N$. Ahora, como $\textcolor{blue}{\alpha}'$ es unitario $\frac{D \textcolor{blue}{\alpha'}}{dt} = k_g (N\land \textcolor{blue}{\alpha'})$.
+$$
+\textcolor{blue}{\alpha}'' = (\textcolor{blue}{\alpha}''\cdot N)N + k_g (N\land \textcolor{blue}{\alpha'})
+$$
+$$
+k \bb{N} = k_n N + k_g (N\land \textcolor{blue}{\alpha'})
+$$
+Tomado $\| \cdot \|^2$ a ambos lados se tiene $k^2 = k_n^2 + k_g^2$.
+\end{document}

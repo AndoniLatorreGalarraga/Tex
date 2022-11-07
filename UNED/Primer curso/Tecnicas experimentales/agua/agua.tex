@@ -1,0 +1,106 @@
+%\documentclass[twoside,twocolumn,spanish]{article}
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amssymb,amsmath,geometry,multicol,spalign,hyperref}
+\setlength\columnsep{20pt}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz,mathtools}
+\usepackage{pgfplots}
+\pgfplotsset{width=5cm,compat=1.12}
+\usepgfplotslibrary{fillbetween}
+
+\title{Cálculo del calor de vaporización del agua}
+\author{Andoni Latorre Galarraga \\ \href{mailto:alatorre73@alumno.uned.es}{alatorre73@alumno.uned.es}}
+\date{}
+\begin{document}
+
+\maketitle
+\begin{abstract}
+Se calienta agua utilizando una corriente electrica de la cual se miide el voltaje y la intensidad. También se mide la cantidad de agua evaporada. A partir de los datos experimentales se calcula el calor de vaporizaciñon del agua. El experimento de realiza de acuerdo con el proceso descrito en \cite{web}.
+\end{abstract}
+
+\begin{multicols}{2}
+
+\section*{Fundamento Teórico}
+Una corente electrica de intensidad $I$ que circula a traves del agua mediante una diferencia de potencial $V$ proporciona una potencia $W = IV$ al agua. En condiciones ideales, tras un tiempo $\tau$,
+$$
+W\tau = Mq
+$$
+Donde $M$ son los gramos de agua vaporizados y $q$ el calor de vaporización del agua. En la práctica, se tiene que
+$$
+(W-P)\tau = (M+m)q
+$$
+Donde $P$ representa las pérdidas por unidad de de tiempo y $m$ el agua que no entra en el condensador. Esto se puede solucionar con el método de las diferencias, donde se mide con dos potencias diferentes y se tiene
+$$
+(W_1-W_2)\tau = (M_1-M_2)q
+$$
+
+\section*{Procedimiento y Resultados}
+Primero se ha pesado el vaso donde se va a recoger el agua, el resultado es de $(84.33\pm0.01)$g. Durante un tiempo $\tau=360.1\pm0.1$s. Se mantiene una potencia constante y al final del tiempo se calcula la masa evaporada por diferencia, utilizando la cantidad de agua condensada. La potencia se mide indirectamente a partir de la intensidad y el voltaje. Los datos obteidos se resumen en la siguiente tabla.
+\begin{center}
+  Tabla 1:
+  $$
+  \begin{array}{|l|l|l|} \hline
+    I(A) & V(V) & M(g) \\ \hline \hline
+    1.6 & 143.3 & 111.31  \\ \hline
+    1.45 & 133.0 & 106.15  \\ \hline
+    1.28 & 125.4 & 100.78  \\ \hline
+    1.21 & 117.6 & 97.89  \\ \hline
+    1.12 & 109.4 & 94.85  \\ \hline
+    1.0 & 98.8 & 90.97  \\ \hline
+    0.95 & 94.8 & 89.59  \\ \hline
+    1.66 & 163.4 & 120.59  \\ \hline
+    1.73 & 173.9 & 123.34  \\ \hline
+    1.63 & 167.6 & 119.26  \\ \hline
+    \end{array}
+  $$
+\end{center}
+Se calcula $W = I V$ y $\delta M = M- m$. Luego, se calcula la energia $E= Wm$.
+\begin{center}
+  $$
+  \begin{array}{|l|l|l|} \hline
+    \Delta M(g) & W(W )& E(\text{cal}) \\ \hline \hline
+      26.98 & 229.28 & 19335.18  \\ \hline
+      21.82 & 192.85 & 16263.04  \\ \hline
+      16.45 & 160.51 & 13535.98  \\ \hline
+      13.56 & 142.30 & 11999.82  \\ \hline
+      10.52 & 122.53 & 10332.79  \\ \hline
+      6.64  & 98.80  & 8331.80   \\ \hline
+      5.26  & 90.06  & 7594.76   \\ \hline
+      36.26 & 271.24 & 22874.01  \\ \hline
+      39.01 & 300.85 & 25370.43  \\ \hline
+      34.93 & 273.19 & 23037.94  \\ \hline
+      \end{array}
+  $$
+\end{center}
+Representando $\Delta M$ frente a $E$ junto con la recta de regresión $y=ax+b$, se tiene la siguiente figura:
+\begin{center}
+  \includegraphics[width=0.45\textwidth]{figures/regresión.png}\\
+  Figura 1:$\Delta M$ frente a $E$.\\
+  $\text{ }$\\
+  $\text{ }$\\
+  $\text{ }$
+\end{center}
+La pendiente de la recta es igual a $\frac{1}{q}$, de donde se deduce:
+$$
+q = \frac{1}{a} \quad \epsilon_q = \frac{\epsilon_a}{a^2}
+$$
+Como nuesto valor de $a$ es $(0.00194\pm0.00003)$g/cal.
+$$
+q = (516\pm 9) \text{cal/g}
+$$
+\section*{Conclusiones}
+El valor de $q$ obtenido es muy cercano al valor real $\approx 530$cal/g. El valor obtenido experimentalmente tiene un error de menos del 2\%. En resumen, un resultado preciso aunque algo inexacto. Es un resultado aceptable que difiere con el valor real en menos del 3\%.
+
+\begin{thebibliography}{1}
+
+  \bibitem{manual}Manual de la asignatura. Versión 3.7
+
+  \bibitem{web}\url{https://uned-labo.netlify.app/practicas/te/8_practica_vaporizacion_agua/prak8.html} 17/6/2022
+
+\end{thebibliography}
+\end{multicols}
+\end{document}
